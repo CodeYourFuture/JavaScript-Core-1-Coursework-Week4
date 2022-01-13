@@ -20,3 +20,8 @@ let pairs = pairsByIndex.map(function (indexes) {
 });
 
 console.log(pairs);
+
+/* EXPECTED RESULT
+
+  [ [ 'Islam', 'Luke' ], [ 'Lesley', 'Mozafar' ], [ 'Harun', 'Irina' ] ]
+*/
