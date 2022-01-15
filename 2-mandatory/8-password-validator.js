@@ -1,7 +1,8 @@
-/* 
+/* eslint-disable no-use-before-define */
+/*
 Password Validation
 
-Write a program that should check if each password in an array 
+Write a program that should check if each password in an array
 contains a valid password (see below for password criteria) and return a
 new array with true or false booleans for whether that password was valid or not.
 
@@ -11,7 +12,7 @@ To be valid, a password must:
 - Have at least one English lowercase letter (a-z)
 - Have at least one number (0-9)
 - Have at least one non-alphanumeric symbol ("!", "#", "$", "%", ".", "*", "&")
-- Must not be any previous password in the passwords array. 
+- Must not be any previous password in the passwords array.
 
 We have supplied functions which will help you with some of these checks.
 
@@ -23,7 +24,12 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+const validatePasswords = (passwords) => passwords.map((e, i) => e.length >= 5
+                                                                 && containsUppercaseLetter(e)
+                                                                 && containsLowercaseLetter(e)
+                                                                 && containsNumber(e)
+                                                                 && containsSymbol(e)
+                                                                 && !passwords.slice(0, i).includes(e));
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -55,7 +61,7 @@ test("Example 1", () => {
       "384#HsHF",
       "dvyyeyy!5",
       "tryT3729",
-    ])
+    ]),
   ).toEqual([false, false, true, false, false]);
 });
 
@@ -67,6 +73,6 @@ test("Example 2", () => {
       "Jai33",
       "shajsaUA**&&",
       "Pl3nty!",
-    ])
+    ]),
   ).toEqual([true, true, false, false, false]);
 });

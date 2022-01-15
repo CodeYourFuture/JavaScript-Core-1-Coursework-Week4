@@ -12,10 +12,10 @@
         Input: Is an array
         Output: Is an array
         Logic: Only strings that start with A, and finish with family
-  
+
 */
 
-function getSettlers() {}
+const getSettlers = (arr) => arr.filter((e) => e.includes("family") && e[0] === "A");
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
