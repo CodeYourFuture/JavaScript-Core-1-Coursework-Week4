@@ -2,10 +2,10 @@
    This program should check if the array `group` contains only students
 */
 
-let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
-let group = ["Austine", "Dany", "Swathi", "Daniel"];
+const students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
+const group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+const groupIsOnlyStudents = group.every((e) => students.includes(e)); // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");

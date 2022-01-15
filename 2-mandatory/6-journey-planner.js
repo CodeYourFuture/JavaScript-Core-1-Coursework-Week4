@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-identical-title */
 /*
  Before we go to the big story, we will introduce some more string methods.
  Some of the methods you're using on arrays are similar to ones you can use on strings.
@@ -17,15 +18,14 @@
  Hint: search for string methods like Includes and IndexOf.
 */
 
-function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
+const checkCodeIsThere = (stringText) => {
+  const magicWord = "code";
+  // edit code below
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   }
-}
+  return "Not found";
+};
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +64,7 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+const getTransportModes = (arr) => arr.slice(1);
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +81,7 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+const isAccessibleByTransportMode = (arr, transportMode) => arr.includes(transportMode);
 
 /*
   Implement the function getLocationName that
@@ -92,7 +92,7 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+const getLocationName = (arr) => arr[0];
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,9 +121,7 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(locations, transportMode) {
-  // Implement the function body
-}
+const journeyPlanner = (locations, transportMode) => locations.filter((e) => e.includes(transportMode)).map((e) => getLocationName(e));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -163,13 +161,13 @@ describe("isAccessibleByTransportMode", () => {
 
   test("negative case", () => {
     expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(
-      false
+      false,
     );
   });
 
   test("ignores substring matches", () => {
     expect(
-      isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")
+      isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat"),
     ).toEqual(false);
   });
 });
@@ -177,7 +175,7 @@ describe("isAccessibleByTransportMode", () => {
 describe("getLocationName", () => {
   test("example 1", () => {
     expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual(
-      "London Bridge"
+      "London Bridge",
     );
   });
 
