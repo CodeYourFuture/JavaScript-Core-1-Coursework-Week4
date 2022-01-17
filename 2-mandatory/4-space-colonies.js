@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(familyColonise) {
+  return familyColonise.filter(x=> x.includes("family") && x[0]==="A")
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
