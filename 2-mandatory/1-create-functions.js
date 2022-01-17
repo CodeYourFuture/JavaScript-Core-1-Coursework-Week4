@@ -13,7 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arrSorted) {
-  return arrSorted.sort();
+  const copy = [...arrSorted];
+  return copy.sort();
 }
 
 /*
