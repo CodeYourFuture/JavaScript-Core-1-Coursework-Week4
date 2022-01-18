@@ -1,7 +1,7 @@
 /*
   The voyagers decide that they quite like this planet, and some of them want to settle there and colonise it.
 
-  They call the planet "Alpha" and they decide that the FAMILIES whose last names start with 'A' should stay,
+  They call the planet "Alpha" and they decide that the FAMILIES whose first names start with 'A' should stay,
   while the others go on in search of other planets to call home.
 
   Create a function that returns an array of colonisers that will stay, according to the above rules.
@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter(familyName => familyName.startsWith('A') && familyName.endsWith(' family'))
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

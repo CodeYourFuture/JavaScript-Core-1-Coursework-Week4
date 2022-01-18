@@ -3,9 +3,37 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
-let numbersMultipliedByOneHundred; // complete this statement
+function hundred(number) {
+  return number * 100;
+}
 
-console.log(numbersMultipliedByOneHundred);
+
+
+let numbersMultipliedByOneHundred = numbers.map(hundred); // complete this statement
+
+console.log(numbersMultipliedByOneHundred); // 1
+
+numbersMultipliedByOneHundred = numbers.map(function hundred(number) {
+  return number * 100;
+});
+
+console.log(numbersMultipliedByOneHundred); // 2
+
+numbersMultipliedByOneHundred = numbers.map(function (number) {
+  return number * 100;
+});
+
+console.log(numbersMultipliedByOneHundred); // 3
+
+numbersMultipliedByOneHundred = numbers.map(number => {
+  return number * 100;
+});
+
+console.log(numbersMultipliedByOneHundred); // 4
+
+numbersMultipliedByOneHundred = numbers.map(number => number * 100);
+
+console.log(numbersMultipliedByOneHundred); // 5
 
 /* EXPECTED RESULT
 

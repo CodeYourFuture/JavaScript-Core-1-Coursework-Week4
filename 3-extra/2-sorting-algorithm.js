@@ -14,7 +14,54 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+
+/*
+
+Gnome sort is a sorting algorithm which is similar to Insertion sort, except that moving an element to its proper place is accomplished 
+by a series of swaps, as in Bubble Sort.
+
+The pseudocode for the algorithm is:
+
+procedure gnomeSort(a[]):
+    pos := 0
+    while pos < length(a):
+        if (pos == 0 or a[pos] >= a[pos-1]):
+            pos := pos + 1
+        else:
+            swap a[pos] and a[pos-1]
+            pos := pos - 1
+ 
+ http://en.wikipedia.org/wiki/Gnome_sort   
+
+*/
+
+function gnomeSort(array)  {
+    let pos = 0, temp;
+    while (pos < array.length)
+    {
+        if (pos === 0 || array[pos] >= array[pos-1])
+            ++pos
+        else
+        {
+            temp = array[pos];
+            array[pos] = array[pos - 1];
+            array[pos - 1] = temp;
+            --pos;
+        }
+      }
+
+      return array
+}
+
+function sortAges(arr) { 
+       let numberArray = [];
+       for (let i = 0; i< arr.length; i++) {
+            if (Number.isFinite(arr[i]))
+                  numberArray.push(arr[i])
+       }
+
+       return gnomeSort(numberArray);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+
+function first5(array) {
+        return array.slice(0,5);
 }
 
 /*
@@ -11,7 +13,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(array) {
+        const copy = array.slice();
+        return copy.sort()
 }
 
 /*
@@ -24,7 +29,9 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+
+function tidyUpString(aString) {
+        return aString.map(element => element.trim().replace(/\//g,"").toLowerCase())
 }
 
 /*
@@ -33,7 +40,15 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+// slice(start, end): If start is greater than the index range of the sequence, an empty array is returned.
+
+function remove(array,index) {   
+       let removed = [];
+
+       if (index !== 0) // if nonzero then slice all the elements before 'index'
+              removed = array.slice(0,index);
+              
+       return removed.concat(array.slice(index+1)) // concatenate all the elements that follow 'index'
 }
 
 /*
@@ -44,8 +59,21 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+    /* 
+        - The numbers must be rounded to 2 decimal places.
+        My understanding of that phrase is that 
+                   formatPercentage(23) = "23.00%"
+                   formatPercentage(18.1) = "18.10%"
+        Apparently, for this exercise, that is not the case!!
+        
+    return array.map(number => number >= 100 ? "100%" : number.toFixed(2) + "%");
+
+    */
+
+    return array.map(number => number >= 100 ? "100%" : `${Math.round(number*100)/100}%`)
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
