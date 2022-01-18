@@ -35,7 +35,7 @@ These are the requirements your project needs to fulfill:
 
 // Returns true if string consists of 16 digits; the last digit being even.
 function valid16DigitNumber(string) {
-  return /^[0-9]{15}[02468]$/.test(string);
+  return /^\d{15}[02468]$/.test(string);
 }
 
 function validateCreditCardNumber(aString) {

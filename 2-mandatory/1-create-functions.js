@@ -47,6 +47,7 @@ function remove(array,index) {
 
        if (index !== 0) // if nonzero then slice all the elements before 'index'
               removed = array.slice(0,index);
+              
        return removed.concat(array.slice(index+1)) // concatenate all the elements that follow 'index'
 }
 
