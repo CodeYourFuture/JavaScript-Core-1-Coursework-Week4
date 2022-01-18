@@ -21,6 +21,7 @@ names[3] = names[3].substring();
 names[4] = names[4].substring();
 
 names.forEach((name) => {
+  name = name.split(" ")[0];
   console.log(name);
 });
 
