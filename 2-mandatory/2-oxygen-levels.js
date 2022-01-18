@@ -15,7 +15,7 @@
 
 
 function isLevelOK(oxygenLevel) {       
-        if (!(/^[+-]?\d+(.?\d+)%$/.test(oxygenLevel)))
+        if (!(/^[+-]?\d+(.?\d+)?%$/.test(oxygenLevel)))
                   return false; // Not a valid percentage
                   
        let level = parseFloat(oxygenLevel);
