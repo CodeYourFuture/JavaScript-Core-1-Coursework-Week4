@@ -31,9 +31,14 @@ Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
+const remove = (arr, n) => {
+  let newarr = arr.splice(n, 1);
+  return newarr;
+};
 
-function remove() {}
-
+// const remove = (newarray, n) => newarray.slice(0, n).concat(n + 1);
+// const remove = (newarray, n) => newarray.splice(n, 1);
+// let arr = newarray;
 /*
 Write a function that:
 - Takes an array of numbers as input.
