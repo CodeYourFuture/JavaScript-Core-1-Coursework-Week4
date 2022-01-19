@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter((value) => value.match(/^A/g) && value.match(/family$/g));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
