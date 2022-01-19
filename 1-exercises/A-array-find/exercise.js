@@ -16,6 +16,11 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+function findLongNameThatStartsWithA(names) {
+  names.sort((a, b) => b.length - a.length);
+  let longestName = names.find((name) => name[0] === "A");
+  return longestName;
+}
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
