@@ -8,9 +8,10 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let str1 = statement.substring(0, 4);
+let str2 = statement.substring(9, 25);
 
-console.log(result);
+console.log(str1.concat(' ', str2));
 
 /* EXPECTED OUTPUT 
 

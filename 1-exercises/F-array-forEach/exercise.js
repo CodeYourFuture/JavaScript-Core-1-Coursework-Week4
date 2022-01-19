@@ -9,6 +9,15 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+num = 1; 
+console.log(arr.forEach(function(num){ // trying to print out fizz
+  num % 3 === 0
+  return "fizz"
+  
+}))
+
+//arr.forEach(num => console.log(num)); //this function only logs the array
+
 /* EXPECTED OUTPUT */
 
 /*
