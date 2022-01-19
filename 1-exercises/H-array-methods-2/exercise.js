@@ -15,8 +15,9 @@ let everyone = [
   "Swathi",
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.filter((v, index) => index <= 4); // complete this statement
+
+let lastFive = everyone.filter((v, index, array) => index >= array.length - 5); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

@@ -6,7 +6,9 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  return streetNames.filter((street) => /Lane/g.test(street));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
