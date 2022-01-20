@@ -7,7 +7,17 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function haveAttendedEnoughClasses(num) {
+  if(num >= 8){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function getEligibleStudents(attendanceArr) {
+  return attendanceArr.filter(haveAttendedEnoughClasses);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

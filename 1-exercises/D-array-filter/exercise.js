@@ -14,7 +14,6 @@ function filterOut(pair){
   }     
 } 
 
-
 let pairsByIndex = pairsByIndexRaw.filter(filterOut); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];

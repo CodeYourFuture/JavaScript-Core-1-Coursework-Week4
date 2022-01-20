@@ -21,16 +21,6 @@ function findSafeOxygenLevel(oxygenLevels) {
   return oxygenLevels.find(isLevelSafe);
 }
 
-// function findSafeOxygenLevel(oxygen) {
-//   return oxygen.find((element) => {
-//     return element.includes("%")
-//       ? parseFloat(element) > 19.5 && parseFloat(element) < 23.5
-//       : false;
-//   });
-// }
-
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
