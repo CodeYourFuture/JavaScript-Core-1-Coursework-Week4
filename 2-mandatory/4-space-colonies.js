@@ -11,11 +11,14 @@
   HINT: Whenever you read the above the instructions, try to come up with the main input and output and logic
         Input: Is an array
         Output: Is an array
-        Logic: Only strings that start with A, and finish with family
   
 */
 
-function getSettlers() {}
+const getSettlers = (familyList) => {
+  return familyList.filter((family) => {
+    return family.includes("family") && family.startsWith("A");
+  });
+};
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
