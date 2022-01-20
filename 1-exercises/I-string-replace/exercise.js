@@ -10,10 +10,16 @@
   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 */
 
-let story =
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+let story ="I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+let regex =/\b(?:dogs|10|day|great)\b/gi
+const changes = {
+  dogs: "cats",
+  10: "100000",
+  day:"night",
+  great:"brilliant"
+};
 
-let result = story.replace("", "");
+let result = story.replace(regex,e => changes[e]);
 
 /* EXPECTED OUTPUT */
 

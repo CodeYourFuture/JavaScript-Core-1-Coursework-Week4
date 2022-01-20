@@ -8,7 +8,21 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
+let a= arr.forEach(e=>{
+  if(e%15===0){
+    console.log('fizzbuzz')
+  }else if (e%5===0){
+    console.log('buzz')
+  }else if(e%3===0){
+    console.log('fizz')
+  }else{
+    console.log(e)
+  }
+}
+ 
+)
+// for(i=0; i<15;)
+// console.log((++i%3 ? '':'Fizz')+(i%5? '':'buzz')||i);
 /* EXPECTED OUTPUT */
 
 /*
