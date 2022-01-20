@@ -15,7 +15,22 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+newArr = [];
+
+let arr2 = [];
+arr2 = arr.filter(x => x.substring(0,1) === "A");
+newArr = arr2.filter(funky);
+return newArr;
+
+function funky(el){
+  if ((el.split(' ').length) > 1){
+    return el;
+  }
+}
+
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
