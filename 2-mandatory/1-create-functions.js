@@ -31,11 +31,10 @@ Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
-const remove = (arr, n) => {
-  let newarr = arr.splice(n, 1);
-  return newarr;
-};
-
+const remove = (inputArray, n) =>
+  n == 0
+    ? inputArray.slice(n + 1)
+    : inputArray.slice(0, n).concat(inputArray.slice(n + 1));
 // const remove = (newarray, n) => newarray.slice(0, n).concat(n + 1);
 // const remove = (newarray, n) => newarray.splice(n, 1);
 // let arr = newarray;
@@ -47,7 +46,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {}
+function formatPercentage(arr) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) arr[i] = 100;
+    newArr.push(Math.round(arr[i] * 100) / 100 + "%");
+  }
+  return newArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
