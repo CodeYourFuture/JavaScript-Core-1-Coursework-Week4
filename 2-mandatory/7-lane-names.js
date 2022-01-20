@@ -6,7 +6,11 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  return streetNames.filter(
+    (streetName) => streetName.indexOf("Lane") === streetName.length - 4
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
