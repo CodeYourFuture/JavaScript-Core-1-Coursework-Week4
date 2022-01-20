@@ -1,3 +1,5 @@
+"use strict";
+
 /*
   You are given a list of some London street names.
   
@@ -5,20 +7,15 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
-
 function getLanes(array) {
-  return array.filter((item) => item.indexOf("Lane") > -1);
+  return array.filter(function (item) {
+    return item.indexOf("Lane") > -1;
+  });
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("getLanes function works", () => {
-  const streetNames = [
-    "Abchurch Lane",
-    "Adam's Court",
-    "Addle Hill",
-    "Addle Lane",
-    "Alban Highwalk",
-  ];
 
+test("getLanes function works", function () {
+  var streetNames = ["Abchurch Lane", "Adam's Court", "Addle Hill", "Addle Lane", "Alban Highwalk"];
   expect(getLanes(streetNames)).toEqual(["Abchurch Lane", "Addle Lane"]);
 });

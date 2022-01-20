@@ -1,5 +1,32 @@
 "use strict";
 
+function _toConsumableArray(arr) {
+  return (
+    _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread()
+  );
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function _iterableToArray(iter) {
+  if (
+    Symbol.iterator in Object(iter) ||
+    Object.prototype.toString.call(iter) === "[object Arguments]"
+  )
+    return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+}
+
 /*
 Write a function that:
 - Accepts an array as a parameter.
@@ -15,10 +42,10 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 
-
 function sortArray(array) {
-  return array.sort();
+  return [...array].sort();
 }
+
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -30,11 +57,13 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 
-
 function tidyUpString(array) {
-  return array.map(function (item) {
-    return item.replace(/[^A-Z0-9]/gi, "").toLowerCase();
-  });
+  return [...array].map((item) =>
+    item
+      .trim()
+      .replace(/[^a-zA-Z ]/g, "")
+      .toLowerCase()
+  );
 }
 /*
 Write a function that:
@@ -42,10 +71,14 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-
 function remove(array, index) {
-  array.splice(array[index] - 1, 1);
-  return array;
+  var newArray;
+  if (index > array.length) {
+    newArray = array;
+  } else {
+    newArray = array.slice(0, index).concat(array.slice(index + 1));
+  }
+  return newArray;
 }
 /*
 Write a function that:
@@ -55,9 +88,8 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-
 function formatPercentage(array) {
-  return array.map(function (item) {
+  return [...array].map((item) => {
     if (item < 100) {
       return Number(item.toFixed(2)) + "%";
     } else {
@@ -65,8 +97,8 @@ function formatPercentage(array) {
     }
   });
 }
-/* ======= TESTS - DO NOT MODIFY ===== */
 
+/* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", function () {
   var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -83,7 +115,14 @@ test("first5 function returns a a smaller array for fewer than five elements", f
   expect(letters).toEqual(copyOfOriginal);
 });
 test("sortArray function returns a sorted version of the array", function () {
-  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual(["a", "c", "e", "f", "n", "z"]);
+  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual([
+    "a",
+    "c",
+    "e",
+    "f",
+    "n",
+    "z",
+  ]);
 });
 test("sortArray function doesn't change the passed in array", function () {
   var before = ["a", "n", "c", "e", "z", "f"];
@@ -92,7 +131,27 @@ test("sortArray function doesn't change the passed in array", function () {
   expect(before).toEqual(copy);
 });
 test("tidyUpString function works", function () {
-  expect(tidyUpString(["/Daniel", " /Sanyia", "AnTHonY", "irina", " Gordon", "ashleigh   ", "   Alastair  ", " anne marie  "])).toEqual(["daniel", "sanyia", "anthony", "irina", "gordon", "ashleigh", "alastair", "anne marie"]);
+  expect(
+    tidyUpString([
+      "/Daniel",
+      " /Sanyia",
+      "AnTHonY",
+      "irina",
+      " Gordon",
+      "ashleigh   ",
+      "   Alastair  ",
+      " anne marie  ",
+    ])
+  ).toEqual([
+    "daniel",
+    "sanyia",
+    "anthony",
+    "irina",
+    "gordon",
+    "ashleigh",
+    "alastair",
+    "anne marie",
+  ]);
 });
 describe("remove function", function () {
   test("removes index 0", function () {
@@ -117,5 +176,10 @@ describe("remove function", function () {
   });
 });
 test("formatPercentage function works", function () {
-  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual(["23%", "18.1%", "100%", "0.37%"]);
+  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
+    "23%",
+    "18.1%",
+    "100%",
+    "0.37%",
+  ]);
 });

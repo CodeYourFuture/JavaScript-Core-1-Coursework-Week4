@@ -14,7 +14,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  return array.sort();
+  return [...array].sort();
 }
 
 /*
@@ -28,7 +28,12 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
-  return array.map((item) => item.replace(/[^A-Z0-9]/gi, "").toLowerCase());
+  return [...array].map((item) =>
+    item
+      .trim()
+      .replace(/[^a-zA-Z ]/g, "")
+      .toLowerCase()
+  );
 }
 /*
 Write a function that:
@@ -37,10 +42,14 @@ Write a function that:
 */
 
 function remove(array, index) {
-  array.splice(array[index] - 1, 1);
-  return array;
+  let newArray;
+  if (index > array.length) {
+    newArray = array;
+  } else {
+    newArray = array.slice(0, index).concat(array.slice(index + 1));
+  }
+  return newArray;
 }
-
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -50,7 +59,7 @@ Write a function that:
 */
 
 function formatPercentage(array) {
-  return array.map((item) => {
+  return [...array].map((item) => {
     if (item < 100) {
       return Number(item.toFixed(2)) + "%";
     } else {

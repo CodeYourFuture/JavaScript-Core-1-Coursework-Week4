@@ -1,3 +1,5 @@
+"use strict";
+
 /*
   The space travellers have safely landed and are foraging for food in the natural wildlife.
 
@@ -20,7 +22,6 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
-
 function isBushSafe(berryArray) {
   if (
     berryArray.every((item) => {
@@ -32,16 +33,14 @@ function isBushSafe(berryArray) {
     return "Toxic! Leave bush alone!";
   }
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("isBushSafe finds toxic busy", () => {
+test("isBushSafe finds toxic busy", function () {
   expect(
     isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
   ).toEqual("Toxic! Leave bush alone!");
 });
-
-test("isBushSafe function finds safe bush", () => {
+test("isBushSafe function finds safe bush", function () {
   expect(isBushSafe(["pink", "pink", "pink", "pink"])).toEqual(
     "Bush is safe to eat from"
   );
