@@ -30,7 +30,9 @@ function validatePasswords(passwordArray) {
         !containsLowercaseLetter(password) || 
         !containsNumber(password) || 
         !containsSymbol(password) ||
-        array.slice(0, index + 1).filter((entry) => entry === password).length > 1){
+        array.findIndex((element) => element === password) !== index)
+        //array.slice(0, index + 1).filter((entry) => entry === password).length > 1)
+        {
       return false
     } 
     return true
