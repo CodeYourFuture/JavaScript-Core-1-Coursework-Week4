@@ -7,8 +7,11 @@
 */
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
-
-let pairsByIndex; // Complete this statement
+//check if the elements of pairsByIndexRaw are arrays and paired
+function isPaired(isElementArray) {
+  return Array.isArray(isElementArray) && isElementArray.length == 2;
+}
+let pairsByIndex = pairsByIndexRaw.filter(isPaired)// Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
