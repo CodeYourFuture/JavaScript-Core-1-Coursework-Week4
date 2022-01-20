@@ -28,12 +28,13 @@ function hasPink(arr){
     return false;
   }
 }
+
 function isBushSafe(berryArray) {  
     if(berryArray.every(hasPink)){
       return "Bush is safe to eat from";
     }else if (berryArray.some(hasPink)){
       return "Toxic! Leave bush alone!"
-    }else {
+    }else{
       return "Toxic! Leave bush alone!"
     }
   }
