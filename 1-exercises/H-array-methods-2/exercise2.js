@@ -3,11 +3,15 @@
   -------------------------
   Complete the capitalise function 
   It should return a string with the first letter in uppercase
-  For example, capitailise("hello") should return "Hello"
+  For example, capitalise("hello") should return "Hello"
   Tip: use the string method .split() and the array method .join()
 */
 
-function capitalise(str) {}
+function capitalise(str) {
+  let splitedStr = str.split("");
+  splitedStr[0] = str.charAt(0).toUpperCase();
+  return splitedStr.join("");
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE
