@@ -19,9 +19,23 @@
   The .every() method will only return true if all values match watch you're looking for. 
   
   Let's first look at an example that will teach you how to use these methods.
+
+  
+
+  we can create function1 that finds color of berries and pass this function to berryArray.every(function1)
 */
 
 function isBushSafe(berryArray) {
+  if (
+    berryArray.every((item) => {
+      return item === "pink";
+    })
+  ) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
+
   //Write your code here
 }
 
