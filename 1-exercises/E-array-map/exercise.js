@@ -3,9 +3,14 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
-let numbersMultipliedByOneHundred; // complete this statement
+function multiplied(num) {
+  return num * 100;
+}
+let numbersMultipliedByOneHundred = numbers.map(multiplied); // complete this statement
 
-console.log(numbersMultipliedByOneHundred);
+let numbersMultiplied = numbers.map((number) => number * 100);
+console.log(`callback function : ${numbersMultipliedByOneHundred}`);
+console.log(`Using arrow function : ${numbersMultiplied}`);
 
 /* EXPECTED RESULT
 

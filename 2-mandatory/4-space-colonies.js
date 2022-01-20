@@ -15,8 +15,10 @@
   
 */
 
-function getSettlers() {}
-
+let getSettlers = (allFamilies) =>
+  allFamilies.filter(
+    (family) => family[0] === "A" && family.includes("family")
+  );
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
