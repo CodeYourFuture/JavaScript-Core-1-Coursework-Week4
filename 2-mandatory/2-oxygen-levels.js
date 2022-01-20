@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+const findSafeOxygenLevel = (planets) =>
+  planets.find(
+    (e) =>
+      e[e.length - 1] == "%" && parseFloat(e) > 19.5 && parseFloat(e) < 23.5
+  );
+
+// [e.length-1] gets the last element of the string "%"
+// parseFloat(e) gets each element and transform in number.
+// at the end it will return only the string with "%"
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

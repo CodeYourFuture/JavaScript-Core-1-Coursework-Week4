@@ -15,7 +15,8 @@
   
 */
 
-function getSettlers() {}
+const getSettlers = (arrayVoyagers) =>
+  arrayVoyagers.filter((v) => v.startsWith("A") && v.endsWith("family"));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
