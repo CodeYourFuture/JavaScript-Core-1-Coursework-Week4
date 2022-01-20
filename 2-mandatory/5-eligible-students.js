@@ -7,7 +7,11 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+const getEligibleStudents = (arrayOfStudent) =>
+  arrayOfStudent.filter(isEligible).map((value) => value[0]);
+
+const isEligible = (studentWithAttendanceCount) =>
+  studentWithAttendanceCount[1] >= 8;
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

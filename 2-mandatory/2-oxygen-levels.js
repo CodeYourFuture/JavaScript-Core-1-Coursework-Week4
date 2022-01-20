@@ -10,8 +10,17 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+const isAcceptedLevel = (level) => {
+  let newLevel;
+  if (level.substring(level.length - 1) === "%") {
+    newLevel = Number(level.replace("%", ""));
+  } else {
+    return false;
+  }
+  return newLevel > 19.5 && newLevel < 23.5;
+};
 
-function findSafeOxygenLevel() {}
+const findSafeOxygenLevel = (oxygenLevel) => oxygenLevel.find(isAcceptedLevel);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -14,8 +14,8 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
+const isAllowedToStay = (name) => name.includes("family") && name[0] === "A";
+const getSettlers = (names) => names.filter(isAllowedToStay);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
