@@ -6,7 +6,7 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+const getLanes = (streetNames) => streetNames.filter(streetName => streetName.includes("Lane"));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
