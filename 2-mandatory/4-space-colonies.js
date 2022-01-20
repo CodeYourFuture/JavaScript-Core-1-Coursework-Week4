@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  let listOfFamilies;
+  listOfFamilies= array.filter(item=> item[0]==='A'&& item.includes('family'))
+  return listOfFamilies
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

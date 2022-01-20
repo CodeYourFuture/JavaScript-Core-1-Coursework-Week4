@@ -3,16 +3,22 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+
+function first5(arr) {
+  let newArr = arr.slice(0,5)
+  return newArr
 }
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return arr.sort();
 }
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,7 +30,10 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+
+
+function tidyUpString(arr) {
+return arr.map(item => item.replace('/','').trim().toLowerCase());
 }
 
 /*
@@ -33,9 +42,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr,index) {
+  arr.splice(index,1)
+  return arr
 }
-
+ 
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -43,11 +54,17 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+let numbers=[23, 18.103, 187.2, 0.372]
 
-function formatPercentage() {
+
+function formatPercentage(num) { 
+ let stringOfNumbers =num.map(number => Math.round(number*100)/100+'%').replace(num>100,100);
+ console.log(stringOfNumbers)
+  return stringOfNumbers
 }
+console.log(formatPercentage(numbers))
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
