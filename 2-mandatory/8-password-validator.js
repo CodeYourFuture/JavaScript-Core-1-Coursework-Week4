@@ -23,8 +23,6 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
-
 function validatePasswords(passwordArray) {
   return passwordArray.map((password, index, array) => {
     // if it fails a single check => return false
