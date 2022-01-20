@@ -4,22 +4,25 @@
 */
 
 // write your code here
+function findLongNameThatStartsWithA(arrayOfNames) {
+  return arrayOfNames.find((name) => name.startsWith('A') && name.length > 7)
+}
 
 let names = [
-  "Rakesh",
-  "Antonio",
-  "Alexandra",
-  "Andronicus",
-  "Annam",
-  "Mikey",
-  "Anastasia",
-  "Karim",
-  "Ahmed",
-];
+  'Rakesh',
+  'Antonio',
+  'Alexandra',
+  'Andronicus',
+  'Annam',
+  'Mikey',
+  'Anastasia',
+  'Karim',
+  'Ahmed',
+]
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+let longNameThatStartsWithA = findLongNameThatStartsWithA(names)
 
-console.log(longNameThatStartsWithA);
+console.log(longNameThatStartsWithA)
 
 /* EXPECTED OUTPUT */
 // "Alexandra"

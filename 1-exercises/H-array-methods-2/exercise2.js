@@ -7,15 +7,20 @@
   Tip: use the string method .split() and the array method .join()
 */
 
-function capitalise(str) {}
+function capitalise(str) {
+  return str
+    .charAt(0)
+    .toUpperCase()
+    .concat(str.split('').slice(1, str.length).join(''))
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
-let name = "daniel";
+let name = 'daniel'
 
-console.log(capitalise(name));
-console.log(capitalise("hello"));
+console.log(capitalise(name))
+console.log(capitalise('hello'))
 
 /* 
   EXPECTED RESULT

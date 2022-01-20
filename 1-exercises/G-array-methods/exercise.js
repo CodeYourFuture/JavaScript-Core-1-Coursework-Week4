@@ -3,14 +3,14 @@
   --------------------
 */
 
-let numbers = [3, 2, 1];
-let sortedNumbers; // complete this statement
+let numbers = [3, 2, 1]
+let sortedNumbers = numbers.sort((a, b) => a - b) // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
 
-console.log(sortedNumbers);
+console.log(sortedNumbers)
 
 /* 
   EXPECTED RESULT
