@@ -14,8 +14,14 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
+function colonisersA(families) {
+  if (families.startsWith("A") && families.includes("family")) {
+    return true;
+  }
+}
+function getSettlers(colonisers) {
+  return colonisers.filter(colonisersA)
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
