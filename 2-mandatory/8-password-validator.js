@@ -23,12 +23,42 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const newArr = passwords.map((item, index) =>
+    item.length >= 5 && containsUppercaseLetter(item) && containsLowercaseLetter(item) && containsNumber(item) && containsSymbol(item) && checkPreviousPassword(passwords, index))
+  return newArr
+}
+
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
+const checkPreviousPassword = (arr, index) => {
+  const newArr = []
+  let i = 0;
+  do {
+    if (index === 0) {
+      newArr.push("");
+    } else {
+      newArr.push(arr[i]);
+      i++
+    }
+
+  } while (i < index);
+
+  return newArr.includes(arr[index]) ? false : true;
+}
+
+// console.log(validatePasswords([
+//   "StUFf27%",
+//   "Pl3nty!",
+//   "Jai33",
+//   "shajsaUA**&&",
+//   "Pl3nty!",
+// ]));
+
+
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
@@ -44,6 +74,7 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

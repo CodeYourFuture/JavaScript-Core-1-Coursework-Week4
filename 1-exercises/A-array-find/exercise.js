@@ -4,7 +4,12 @@
 */
 
 // write your code here
-
+const findLongNameThatStartsWithA = (arr) => {
+  let result = arr.find((item) => (
+    item.includes("A") && item.length > 7
+  ))
+  return result
+}
 let names = [
   "Rakesh",
   "Antonio",

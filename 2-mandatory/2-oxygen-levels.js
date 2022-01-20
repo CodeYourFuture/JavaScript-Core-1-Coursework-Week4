@@ -11,7 +11,32 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+// const planet1 = ["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
+
+// function findSafeOxygenLevel(planet) {
+//   let oxygenLevel = planet
+//     .filter(item => item.includes("%"))
+//     .map(value => (value.replace(/%/g, "")));
+
+
+//   let oxygenNumber = oxygenLevel.map(Number);
+
+//   for (let num of oxygenNumber) {
+//     if (19.5 < num && num < 23.5) {
+//       return `${num}%`;
+//     }
+//   }
+// }
+// findSafeOxygenLevel(planet1);
+
+function findSafeOxygenLevel(arr) {
+  const newArr = arr.filter(item => item.includes("%") && parseFloat(item) > 19.5 && parseFloat(item) < 23.5);
+
+  return newArr[0];
+
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

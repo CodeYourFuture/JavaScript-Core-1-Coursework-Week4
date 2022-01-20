@@ -11,18 +11,19 @@
   Use the tests to confirm which message to return
   
   This exercise can be solved in a few different ways. One way might include the array methods
-  .some() and .every(). 
-  
+  .some() and .every().
+
   The .some() method tests to see if some of the values (at least 1) in an array 
   match what you're looking for and returns true or false. 
   
   The .every() method will only return true if all values match watch you're looking for. 
   
   Let's first look at an example that will teach you how to use these methods.
+  npm test -- --testPathPattern
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  return berryArray.every(item => item === "pink") ? "Bush is safe to eat from" : "Toxic! Leave bush alone!"
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

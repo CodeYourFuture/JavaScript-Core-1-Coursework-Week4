@@ -6,10 +6,12 @@
   - Do not edit any of the existing code
 */
 
-let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
-
-let pairsByIndex; // Complete this statement
-
+let pairsByIndexRaw = [
+  [0, 3],
+  [1, 2],
+  [2, 1], null, [1], false, "whoops"
+];
+let pairsByIndex = pairsByIndexRaw.filter(item => item && item.length > 1 && typeof item !== "string");
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
