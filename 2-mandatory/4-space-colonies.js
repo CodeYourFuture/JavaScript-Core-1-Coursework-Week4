@@ -14,8 +14,8 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
+let getSettlers = (arr) =>
+  arr.filter((e) => e.includes("family") && e[0] === "A");
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
