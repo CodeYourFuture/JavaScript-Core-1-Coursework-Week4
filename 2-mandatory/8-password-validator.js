@@ -23,8 +23,20 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
-
+function validatePasswords(passwordArray) {
+  return passwordArray.map((password, index, array) => {
+    if (password.length < 5 || 
+        !containsUppercaseLetter(password) || 
+        !containsLowercaseLetter(password) || 
+        !containsNumber(password) || 
+        !containsSymbol(password) ||
+        array.slice(0, index + 1).filter((entry) => entry === password).length > 1){
+      return false
+    } 
+    return true
+  });
+}
+//npm test -- --testPathPattern 2-mandatory/8-password-validator.js
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);

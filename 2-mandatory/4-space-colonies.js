@@ -14,8 +14,10 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
+// filter through array to return strings with index that begins with A
+function getSettlers(alphaPlanet) {
+  return alphaPlanet.filter(familyName => familyName.startsWith("A") && familyName.endsWith("family"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
