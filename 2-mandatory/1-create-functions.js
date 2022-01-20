@@ -3,16 +3,14 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
-}
+const first5 = (arr) => arr.slice(0, 5);
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
-}
+const sortArray = (arr) => arr.slice().sort();
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,17 +22,20 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+const tidyUpString = (arrOfStrings) =>
+  arrOfStrings.map((str) => str.trim().replace(/\//g, "").toLowerCase());
 
 /*
 Write a function that:
-- Takes an array and an index as input.
+- Takes an array and an index as input
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+const remove = (array, index) => {
+  const arr = [...array];
+  arr.splice(index, 1);
+  return arr;
+};
 
 /*
 Write a function that:
@@ -44,8 +45,10 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+const formatPercentage = (arrOfNumbers) =>
+  arrOfNumbers.map((value) =>
+    value > 100 ? 100 + "%" : Math.round(value * 100) / 100 + "%"
+  );
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
