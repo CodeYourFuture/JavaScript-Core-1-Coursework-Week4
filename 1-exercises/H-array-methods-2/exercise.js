@@ -5,7 +5,7 @@
   The variable `lastFive` should contain the last five items of `everyone`
 */
 
-let everyone = [
+const everyone = [
   "Daniel",
   "Irina",
   "Rares",
@@ -15,8 +15,8 @@ let everyone = [
   "Swathi",
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.slice(0, 5); // complete this statement
+let lastFive = everyone.slice(2, 7); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

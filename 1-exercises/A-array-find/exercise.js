@@ -5,7 +5,7 @@
 
 // write your code here
 
-let names = [
+const names = [
   "Rakesh",
   "Antonio",
   "Alexandra",
@@ -17,7 +17,7 @@ let names = [
   "Ahmed",
 ];
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+let longNameThatStartsWithA = names.find((name) => name.length > 7);
 
 console.log(longNameThatStartsWithA);
 

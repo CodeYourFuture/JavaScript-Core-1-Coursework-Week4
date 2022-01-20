@@ -6,7 +6,8 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+const getLanes = (arrayOfStreetNames) =>
+  arrayOfStreetNames.filter((e) => e.endsWith("Lane"));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
