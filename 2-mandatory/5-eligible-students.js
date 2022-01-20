@@ -7,7 +7,13 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(studentNameAndScore) {
+  return studentNameAndScore.filter((studentScore) => {
+    return studentScore[1] >= 8;
+  }).map((studentName) => {
+    return studentName[0];
+  })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
