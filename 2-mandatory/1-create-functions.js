@@ -4,6 +4,9 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5() {
+  const first5 = (arrayOfFirstFiveNumbers) => {
+    return arrayOfFirstFiveNumbers.slice(0, 5);
+  }
 }
 
 /*
@@ -12,10 +15,14 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray() {
+  const sortArray = (arrOfLetters) => {
+    return arrOfLetters.slice().sort();
+  }
 }
 
 /*
-NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
+NOTE: This exercise is the same as one you did last week - try to do it again using things you
+ learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
 
 Write a function that:
@@ -25,6 +32,11 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString() {
+  const tidyUpString = (arrOfString) => {
+    return arrOfString.map((string) => {
+      return string.trim("").replace("/", "").toLowerCase();
+    });
+  }
 }
 
 /*
@@ -33,7 +45,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+
+const newArray = [];
+return newArray.splice(index, 1);
 }
 
 /*
@@ -44,9 +59,13 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage(arrOfNumbers) {
+  return arrOfNumbers.map((n)=> {
+    if(n >= 100) return "100%";
+    return Number(n.toFixed(2)) + "%";
+  });
 
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
