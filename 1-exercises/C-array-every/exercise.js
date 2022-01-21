@@ -6,7 +6,11 @@ let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
 function isStudents(student) {
-  return student === students;
+  for (element of students) {
+    if (element === student) {
+      return true;
+    }
+  }
 }
 
 let groupIsOnlyStudents = group.every(isStudents); // complete this statement
