@@ -22,20 +22,38 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+// PreviousPassword = ["fhD8!yrjj", "ttkTu.wer3", "dvyyeyY!5", "qwbfj76%", "tytT3729."];
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwordArray) {
+  return passwordArray.map((password, index, array) => {
+    // if it fails a single check => return false
+    if (
+      password.length < 5 ||
+      !containsUppercaseLetter(password) ||
+      !containsLowercaseLetter(password) ||
+      !containsNumber(password) ||
+      !containsSymbol(password) ||
+      array.findIndex((element) => element === password) !== index
+    ) {
+      return false;
+    }
+    // if it passes _all_ checks, return true
+    return true;
+  });
+}
+
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
 
-// Returns true if string contains at least one lowercase letter.
+// // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
   return /[a-z]/.test(string);
 }
 
-// Returns true if string contains at least one number.
+// // Returns true if string contains at least one number.
 function containsNumber(string) {
   return /[0-9]/.test(string);
 }

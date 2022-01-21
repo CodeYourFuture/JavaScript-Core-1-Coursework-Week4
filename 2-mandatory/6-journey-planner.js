@@ -20,13 +20,13 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    let interpol = stringText.indexOf(magicWord)
+    return interpol
   } else {
     return "Not found";
   }
 }
-
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
   The input provided contains a list of locations in London. Each of locations is followed by a list
@@ -64,8 +64,12 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
-
+let list = ['Tower Bridge', 'Tube', 'Bus','Boat']
+function getTransportModes(location) {
+  let map =  location.map(e => e)
+  return map.splice(1)
+}
+// console.log(getTransportModes(list))
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -81,8 +85,12 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
-
+function isAccessibleByTransportMode(transportModes, IsAvailable) {
+  let isthere = transportModes.includes(IsAvailable)
+  return isthere
+}
+let x = getTransportModes(list)
+// console.log(isAccessibleByTransportMode(list, 'Tube')) 
 /*
   Implement the function getLocationName that
 
@@ -92,8 +100,11 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
-
+function getLocationName(location) {
+  let destination = location.map(e => e)
+  return destination[0]
+}
+// console.log(getLocationName(list))
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
 
@@ -121,8 +132,14 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
+
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  
+  let filters = locations.filter(function(e){
+    return e.includes(transportMode.toLowerCase())
+  })
+  if(filters){ return filters.map(e => getLocationName(e))}
+  else{ return `Not found`}
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
