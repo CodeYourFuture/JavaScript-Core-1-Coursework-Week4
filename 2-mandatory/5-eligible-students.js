@@ -11,11 +11,15 @@ function getEligibleStudents(obj) {
 
  let out = [];
 
-out = Object.fromEntries(
+let over = obj.filter(function(x){
+  if (x[1] > 7) {
+    return x;
+  }
+})
 
-    Object.entries(obj).filter([k,v] => v > 7))
-
-);
+  over.map(function(x){
+    return out.push(x[0])
+  })
 
 return out;
 }

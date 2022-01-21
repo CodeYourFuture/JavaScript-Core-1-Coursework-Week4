@@ -25,6 +25,7 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(passwordsArr) {
 
+ 
 
 return passwordsArr.map((password, index, array) => {
 
@@ -47,7 +48,11 @@ if (containsSymbol(password) === false) {
   return false;
 }
 
-// Must not be any previous password in the passwords array.
+
+
+if (array.findIndex((element) => element === password) !== index){
+   return false;
+}
 
 
 return true
