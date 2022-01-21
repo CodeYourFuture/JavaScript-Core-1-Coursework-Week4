@@ -26,7 +26,6 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(passwords) {
   return passwords.map((password, index, array) => {
-    // if it fails a single check => return false
     if (
       password.length < 5 ||
       !containsUppercaseLetter(password) ||
@@ -37,7 +36,6 @@ function validatePasswords(passwords) {
     ) {
       return false;
     }
-    // if it passes _all_ checks, return true
     return true;
   });
 }
