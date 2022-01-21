@@ -5,8 +5,19 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
+// const streetNames = [
+//   "Abchurch Lane",
+//   "Adam's Court",
+//   "Addle Hill",
+//   "Addle Lane",
+//   "Alban Highwalk",
+// ];
 
-function getLanes() {}
+function getLanes(LondonStreetNames) {
+  const streetWithLane = LondonStreetNames.filter(streetName => streetName.includes("Lane"))
+  return streetWithLane;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

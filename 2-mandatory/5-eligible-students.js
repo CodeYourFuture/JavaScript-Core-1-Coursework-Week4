@@ -7,7 +7,10 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(array) {
+  const eligibleStu = array.filter(item => item[1] >= 8).map(item => item[0]);
+  return eligibleStu;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -29,6 +32,8 @@ test("getEligibleStudents function works", () => {
 });
 
 test("getEligibleStudents function can return empty array", () => {
-  const attendance = [["Jacob", 7]];
+  const attendance = [
+    ["Jacob", 7]
+  ];
   expect(getEligibleStudents(attendance)).toEqual([]);
 });
