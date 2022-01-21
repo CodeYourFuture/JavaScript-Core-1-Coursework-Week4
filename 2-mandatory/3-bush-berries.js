@@ -21,8 +21,20 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+function ifBushHasAllPinkBerries(berry) {
+  return berry === 'pink';
+}
+
 function isBushSafe(berryArray) {
-  //Write your code here
+  //create function that checks if bush has all berries 
+  //function that checks if its safe for astronauts to eat
+  let berryIsAllPink = berryArray.every(ifBushHasAllPinkBerries);
+
+  if(berryIsAllPink) {
+    return 'Bush is safe to eat from';
+  } else {
+    return 'Toxic! Leave bush alone!';
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

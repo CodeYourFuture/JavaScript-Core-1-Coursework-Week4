@@ -3,16 +3,29 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  const newArray = [];
+  const numberOfElements = Math.min(array.length, 5); 
+  for (let i = 0; i < numberOfElements; i++) {
+    newArray.push(array[i]);
+  }
+  return newArray;
 }
+
+//return array.slice(0, 5);
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  const newArray = array.slice();
+  newArray.sort();
+  return newArray;
 }
+
+//return array.slice().sort();
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +37,25 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arrayOfStrings) {
+  const newArray = [...arrayOfStrings];
+  const trimmedArray = newArray.map((element) => {
+    return element.trim();
+  });
+  //removes '/' 
+  const noSlashes = trimmedArray.map((element) => {
+    return element.replace('/', '');
+  });
+  //makes string lowercase
+  const lowerCase = noSlashes.map((element) => {
+    return element.toLowerCase();
+  });
+  return lowerCase;
 }
+
+// return arrayOfStrings.map((string) => {
+//   string.trim().replace('/', '').lowerCase();
+// }
 
 /*
 Write a function that:
@@ -33,7 +63,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+  const newArray = [...array];
+  newArray.splice(index, 1);
+  return newArray;
 }
 
 /*
@@ -44,8 +77,36 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arrayOfNumbers) {
+  const nothingAboveOneHundred = arrayOfNumbers.map((number) => {
+
+    if (number > 100) {
+      return 100;
+    } else {
+      return number;
+    }
+  });
+
+  const roundedNumbers = nothingAboveOneHundred.map((number) => {
+    //18.13 is an entry
+    //18.103 * 100 = 1810.3
+    //Math.round(1810.3) = 1810
+    //1810 / 100 = 18.1
+    return Math.round((number + Number.EPSILON) * 100) / 100;
+  });
+ 
+  const withPercentageSign = roundedNumbers.map((number) => {
+    return number + '%';
+  });
+
+  return withPercentageSign;
 }
+
+/* 
+return arrayOfNumbers
+  .map((number) => (number > 100 ? 100 : number))
+  .map((number) => Math.round(number * 100) / 100 + '%');
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
