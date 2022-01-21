@@ -10,7 +10,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationTransportModes) {
+  return locationTransportModes.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportModes, transportMode) {
+  return transportModes.includes(transportMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +96,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationTransports) {
+  return locationTransports[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -123,6 +129,14 @@ function getLocationName() {}
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+  let journey = [];
+  locations.forEach(location => {
+    if(isAccessibleByTransportMode(location, transportMode)) {
+      journey.push(getLocationName(location));
+    }
+  });
+
+  return journey;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -8,7 +8,15 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+const unpairedItems = (item) => {
+  //if item is not a pair it should be filtered out
+  //item has to be an array & if so item needs to have 2 values in array
+  if (Array.isArray(item) && item.length === 2) {
+    return item;
+  }
+}
+
+let pairsByIndex = pairsByIndexRaw.filter(unpairedItems); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
