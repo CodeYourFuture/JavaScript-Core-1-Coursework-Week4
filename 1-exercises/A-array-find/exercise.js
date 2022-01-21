@@ -4,6 +4,15 @@
 */
 
 // write your code here
+function IsFirstName(names) {
+  if (names.length > 7 && names.startsWith('A')) {
+    return IsFirstName
+  }
+}
+
+function findLongNameThatStartsWithA(names) {
+  return names.find(IsFirstName);
+}
 
 let names = [
   "Rakesh",
