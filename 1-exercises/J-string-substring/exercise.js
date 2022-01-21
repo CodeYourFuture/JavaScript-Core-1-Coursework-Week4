@@ -4,11 +4,11 @@
   You should remove the word "and dogs" by using substring 
 */
 
-let statement = "I like programming and dogs";
+let statement = 'I like programming and dogs'
 
-statement = statement.substring();
+statement = statement.substring(0, statement.indexOf('and dogs')).trim()
 
-console.log(statement);
+console.log(statement)
 
 /* EXPECTED OUTPUT 
 

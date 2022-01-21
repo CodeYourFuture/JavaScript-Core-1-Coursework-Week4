@@ -6,11 +6,19 @@
   HINT: You will need to use .substring() twice
 */
 
-let statement = "I do not like programming";
+let statement = 'I do not like programming'
 
-let result = "";
+let removeWord = 'not'
+let result = statement
+  .substring(0, statement.indexOf(removeWord) - 1)
+  .concat(
+    statement.substring(
+      statement.indexOf(removeWord) + removeWord.length,
+      statement.length,
+    ),
+  )
 
-console.log(result);
+console.log(result)
 
 /* EXPECTED OUTPUT 
 

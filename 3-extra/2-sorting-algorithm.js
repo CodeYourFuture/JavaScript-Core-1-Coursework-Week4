@@ -14,32 +14,51 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  function lessThan(a, b) {
+    return a < b ? a : b
+  }
+  const numbersOnly = []
+  const sortedArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Number.isInteger(arr[i])) numbersOnly.push(arr[i])
+  }
+  while (numbersOnly.length > 0) {
+    let num = numbersOnly[0]
+    for (let i = 0; i < numbersOnly.length; i++) {
+      num = lessThan(num, numbersOnly[i])
+    }
+    sortedArr.push(num)
+    numbersOnly.splice(numbersOnly.indexOf(num), 1)
+  }
+
+  return sortedArr
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [
-  "🎹",
+  '🎹',
   100,
-  "💩",
+  '💩',
   55,
-  "🥵",
-  "🙈",
+  '🥵',
+  '🙈',
   45,
-  "🍕",
-  "Sanyia",
+  '🍕',
+  'Sanyia',
   66,
-  "James",
+  'James',
   23,
-  "🎖",
-  "Ismeal",
-];
-const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
+  '🎖',
+  'Ismeal',
+]
+const agesCase2 = ['28', 100, 60, 55, '75', '🍕', 'Elamin']
 
-test("sortAges function works - case 1", () => {
-  expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
-});
+test('sortAges function works - case 1', () => {
+  expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100])
+})
 
-test("sortAges function works - case 2", () => {
-  expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
-});
+test('sortAges function works - case 2', () => {
+  expect(sortAges(agesCase2)).toEqual([55, 60, 100])
+})
