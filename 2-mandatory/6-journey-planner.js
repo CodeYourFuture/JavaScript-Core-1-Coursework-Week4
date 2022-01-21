@@ -20,7 +20,9 @@
 function checkCodeIsThere(stringText) {
   let magicWord = 'code'
   //edit code below
-  return stringText.match('code') ? stringText.indexOf('code') : 'Not found'
+  return stringText.search(magicWord) >= 0
+    ? stringText.indexOf(magicWord)
+    : 'Not found'
 }
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -125,7 +127,7 @@ function getLocationName(locations) {
 */
 function journeyPlanner(locations, transportMode) {
   return locations
-    .filter((location) => location.includes(transportMode))
+    .filter((location) => isAccessibleByTransportMode(location, transportMode))
     .map((location) => getLocationName(location))
 }
 

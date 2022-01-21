@@ -7,7 +7,7 @@
 */
 
 function getLanes(streetNames) {
-  return streetNames.filter((street) => street.match('Lane'))
+  return streetNames.filter((street) => street.indexOf('Lane') >= 0)
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

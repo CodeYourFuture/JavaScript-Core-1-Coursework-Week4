@@ -15,10 +15,24 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 */
 
 function sortAges(arr) {
-  const numbersOnly = arr.filter((a) => Number.isInteger(a))
-  return numbersOnly.sort(function (a, b) {
-    return a - b
-  })
+  function lessThan(a, b) {
+    return a < b ? a : b
+  }
+  const numbersOnly = []
+  const sortedArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Number.isInteger(arr[i])) numbersOnly.push(arr[i])
+  }
+  while (numbersOnly.length > 0) {
+    let num = numbersOnly[0]
+    for (let i = 0; i < numbersOnly.length; i++) {
+      num = lessThan(num, numbersOnly[i])
+    }
+    sortedArr.push(num)
+    numbersOnly.splice(numbersOnly.indexOf(num), 1)
+  }
+
+  return sortedArr
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
