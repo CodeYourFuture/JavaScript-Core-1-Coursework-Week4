@@ -16,7 +16,8 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 import process from "process";
 
 function isNull(pairsByIndex) {
-  if (pairsByIndex === null){
+  let i = pairsByIndex[];
+  if (i === null){
     process.exitCode = 1;
   }
 }
