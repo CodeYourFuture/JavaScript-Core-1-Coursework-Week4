@@ -24,83 +24,66 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-// function validatePasswords(passwords) {
-//   return passwords.map(pass => pass.length >= 5 && containsUppercaseLetter(pass) &&
-//     containsLowercaseLetter(pass) &&
-//     containsNumber(pass) &&
-//     containsSymbol(pass) && findDuplicates(passwords))
-// }
-
-
-let passwords = [
-  "StUFf27%",
-  "Pl3nty!",
-  "Jai33",
-  "shajsaUA**&&",
-  "Pl3nty!",
-]
-
-function findDuplicates(value, index, passwords) {
-  for (item of passwords) {
-    if (passwords.indexOf(value) !== index) {
-      return true
-    } else {
-      return false
+function validatePasswords(passwordArray) {
+  return passwordArray.map((password, index, array) => {
+    // if it fails a single check => return false
+    if (
+      password.length < 5 ||
+      !containsUppercaseLetter(password) ||
+      !containsLowercaseLetter(password) ||
+      !containsNumber(password) ||
+      !containsSymbol(password) ||
+      array.findIndex((element) => element === password) !== index
+    ) {
+      return false;
     }
-  }
+    // if it passes _all_ checks, return true
+    return true;
+  });
 }
-console.log(findDuplicates("Pl3nty!", "Pl3nty!", [
-  "StUFf27%",
-  "Pl3nty!",
-  "Jai33",
-  "shajsaUA**&&",
-  "Pl3nty!",
-]));
 
+// Returns true if string contains at least one uppercase letter.
+function containsUppercaseLetter(string) {
+  return /[A-Z]/.test(string);
+}
 
+// Returns true if string contains at least one lowercase letter.
+function containsLowercaseLetter(string) {
+  return /[a-z]/.test(string);
+}
 
-// // Returns true if string contains at least one uppercase letter.
-// function containsUppercaseLetter(string) {
-//   return /[A-Z]/.test(string);
-// }
+// Returns true if string contains at least one number.
+function containsNumber(string) {
+  return /[0-9]/.test(string);
+}
 
-// // Returns true if string contains at least one lowercase letter.
-// function containsLowercaseLetter(string) {
-//   return /[a-z]/.test(string);
-// }
+// Returns true if string contains at least one symbol.
+function containsSymbol(string) {
+  return /[!#$%.*&]/.test(string);
+}
 
-// // Returns true if string contains at least one number.
-// function containsNumber(string) {
-//   return /[0-9]/.test(string);
-// }
+/* ======= TESTS - DO NOT MODIFY ===== */
 
-// // Returns true if string contains at least one symbol.
-// function containsSymbol(string) {
-//   return /[!#$%.*&]/.test(string);
-// }
+test("Example 1", () => {
+  expect(
+    validatePasswords([
+      "Se%5",
+      "TktE.TJTU",
+      "384#HsHF",
+      "dvyyeyy!5",
+      "tryT3729",
+    ])
+  ).toEqual([false, false, true, false, false]);
+});
 
-// /* ======= TESTS - DO NOT MODIFY ===== */
-
-// test("Example 1", () => {
-//   expect(
-//     validatePasswords([
-//       "Se%5",
-//       "TktE.TJTU",
-//       "384#HsHF",
-//       "dvyyeyy!5",
-//       "tryT3729",
-//     ])
-//   ).toEqual([false, false, true, false, false]);
-// });
-
-// test("Example 2", () => {
-//   expect(
-//     validatePasswords([
-//       "StUFf27%",
-//       "Pl3nty!",
-//       "Jai33",
-//       "shajsaUA**&&",
-//       "Pl3nty!",
-//     ])
-//   ).toEqual([true, true, false, false, false]);
-// });
+test("Example 2", () => {
+  expect(
+    validatePasswords([
+      "StUFf27%",
+      "Pl3nty!",
+      "Jai33",
+      "shajsaUA**&&",
+      "Pl3nty!",
+    ])
+  ).toEqual([true, true, false, false, false]);
+});
