@@ -1,3 +1,4 @@
+
 The `.forEach()` method is similar to `.map()` except it does not return a new array. Therefore `.forEach()` is only useful if you want to perform _side effects_.
 
 ### Side effects
