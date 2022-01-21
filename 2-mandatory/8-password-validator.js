@@ -25,12 +25,13 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(passwords) {
   return passwords.map(
-    (password) =>
+    (password, index, array) =>
       password.length > 5 &&
       containsSymbol(password) &&
       containsNumber(password) &&
       containsLowercaseLetter(password) &&
-      containsUppercaseLetter(password)
+      containsUppercaseLetter(password) &&
+      array.findIndex((element) => element === password) === index
   );
 }
 
