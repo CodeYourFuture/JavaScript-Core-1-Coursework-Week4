@@ -11,7 +11,25 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+let listOfPlanetsOxygen= ["200%", "-21.5%", "20", "apes", "21.1%"]
+function findSafeOxygenLevel(safeFirstPlanet) {
+  let toNumMap = safeFirstPlanet.map(function(e){
+  if(e.includes('%')) {
+    let replace = e.replace('%', ' ')
+    return Number(replace)
+  }
+  })
+  let oxygen = toNumMap.filter(function(level){
+    if(level>19.5 && level<23.5) {
+      return level
+    }
+  })
+  let safe = oxygen.sort().map(function(e){
+    return e + '%'
+  })
+  return safe[0]
+}
+console.log(findSafeOxygenLevel(listOfPlanetsOxygen))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

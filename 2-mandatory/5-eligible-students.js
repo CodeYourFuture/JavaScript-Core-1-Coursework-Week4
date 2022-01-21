@@ -6,9 +6,26 @@
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
-
-function getEligibleStudents() {}
-
+const attendance = [
+    ["Ahmed", 8],
+    ["Clement", 10],
+    ["Elamin", 6],
+    ["Adam", 7],
+    ["Tayoa", 11],
+    ["Nina", 10],
+  ];
+function getEligibleStudents(eligible) {
+  let list =[]
+  let student = eligible.filter(function(e){
+    if(e[1] >= 8) return e
+  })
+  student.map(function(e){
+    return list.push(e[0])
+  })
+  return list
+}
+let x = getEligibleStudents(attendance)
+console.log(x)
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getEligibleStudents function works", () => {
