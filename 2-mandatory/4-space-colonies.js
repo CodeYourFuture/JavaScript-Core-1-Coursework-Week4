@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arrOfFamilies) {
+ let newAlphaFamilies = arrOfFamilies.filter((family)=> family.charAt(0) === 'A' && family.includes('family'))
+ return newAlphaFamilies;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
