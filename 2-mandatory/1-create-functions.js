@@ -3,19 +3,14 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5(array) {
-  return array.slice(0, 5);
-}
+const first5 = (array) => array.slice(0, 5);
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray(array) {
-  let newArray = array.slice(0).sort();
-  return newArray;
-}
+const sortArray = (array) => array.slice(0).sort();
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -27,9 +22,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString(str) {
-  return str.map((elem) => elem.replace("/", "").trim().toLowerCase());
-}
+const tidyUpString = (str) =>
+  str.map((elem) => elem.replace("/", "").trim().toLowerCase());
 
 /*
 Write a function that:
@@ -37,11 +31,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(array, index) {
+const remove = (array, index) => {
   let newArray = array.slice(0);
-  newArray.splice(array[index - 1], 1);
+  newArray.splice(index, 1);
   return newArray;
-}
+};
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -50,19 +44,10 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage(arrayOfNumbers) {
-  let newArray = arrayOfNumbers.slice(0);
-
-  newArray.map((elem) => {
-    if (elem > 100) {
-      elem = "100%";
-    } else {
-      {
-        `elem.toFixed(2)%`;
-      }
-    }
-  });
-}
+const formatPercentage = (arrayOfNumbers) =>
+  arrayOfNumbers.map((elem) =>
+    elem > 100 ? "100%" : Math.round(elem * 100) / 100 + "%"
+  );
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
