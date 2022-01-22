@@ -21,8 +21,19 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+//function isBushSafe(berryArray) {
+ // if (berryArray.some('pink') === 'pink') {
+ //   return 'Toxic! Leave bush alone!'
+ // } else if (berryArray.every('pink')!=='pink'){
+ //   return 'Bush is safe to eat from'
+ // }
+//}
+
 function isBushSafe(berryArray) {
-  //Write your code here
+  if(berryArray.every((berry) => berry === "pink")){
+  return 'Toxic! Leave bush alone' 
+  } 
+  return 'Bush is safe to eat'
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
