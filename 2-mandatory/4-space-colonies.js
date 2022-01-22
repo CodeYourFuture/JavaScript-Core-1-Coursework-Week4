@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function isGoingToStay(str) { 
+  return (str[0] === "A" && str.includes("family"));
+}
+
+function getSettlers(arr) {
+  return arr.filter(isGoingToStay);    //it doesn't change arr; filter returns new array that contains only elements from old arr that return true after function isGoingToStay;
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
