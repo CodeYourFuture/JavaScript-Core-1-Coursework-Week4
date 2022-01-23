@@ -6,7 +6,7 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+let getLanes = (stNames) => stNames.filter((stName) => stName.includes("Lane"))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
