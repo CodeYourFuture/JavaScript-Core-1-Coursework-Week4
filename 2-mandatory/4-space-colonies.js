@@ -12,16 +12,13 @@
   
 */
 
-const getSettlers = (colonisers) =>
+// const getSettlers = (colonisers) =>
+//   colonisers.filter((item) => item.slice(-6) == "family" && item[0] == "A");
 
-  let settlersArray = [];
-  const checkForSettlers = (coloniser) =>
-    coloniser[0] == "A" && coloniser.slice(coloniser.length, -6) == "family";
-
-  if (colonisers.every(checkForSettlers)) {
-    settlersArray.push(coloniser);
-  }
-  return settlersArray;
+function getSettlers(colonisers) {
+  return colonisers.filter(
+    (item) => item.slice(-6) == "family" && item[0] == "A"
+  );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
