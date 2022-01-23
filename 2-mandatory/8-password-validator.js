@@ -23,7 +23,45 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwordsArr) {
+
+ 
+
+return passwordsArr.map((password, index, array) => {
+
+
+if (password.length <5 ){
+  return false;
+}
+
+if (containsUppercaseLetter(password) === false) {
+  return false;
+}
+if (containsLowercaseLetter(password) === false) {
+  return false;
+}
+if (containsNumber(password) === false) {
+  return false;
+}
+
+if (containsSymbol(password) === false) {
+  return false;
+}
+
+
+
+if (array.findIndex((element) => element === password) !== index){
+   return false;
+}
+
+
+return true
+});
+
+
+
+
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -44,6 +82,9 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
