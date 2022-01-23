@@ -21,7 +21,7 @@ To check that each name is longer than 3 characters, you'd have to run this func
 _Searches through an array and returns true if every item satisifies the predicate function you provided. Otherwise, it returns false_.
 
 ```js
-let studentNameLength = students.every(isAboveThreshold);
+let studentNameLength = students.every(name.length > 3);
 
-console.log(studentNameLength); // logs true
-```
+console.log(students.every(name.length > 3)); // logs true
+``

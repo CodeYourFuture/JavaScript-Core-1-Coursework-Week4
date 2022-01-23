@@ -3,8 +3,8 @@
   --------------------
 */
 
-let numbers = [3, 2, 1];
-let sortedNumbers; // complete this statement
+let numbers = ["A", 3, 2, 1, "a", 'B', 'b', "$"];
+let sortedNumbers = numbers.sort(); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
