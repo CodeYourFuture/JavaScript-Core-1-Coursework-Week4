@@ -11,13 +11,17 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel(oxygenArray) {
-  //strip away % from elem and convert to integer
-  let oxygenInNumbers = oxygenArray.map((elem) => elem.replace("%", ""));
+const findSafeOxygenLevel = (oxygenArray) =>
+  oxygenArray.find(
+    (elem) =>
+      elem[elem.length - 1] == "%" &&
+      parseFloat(elem) > 19.5 &&
+      parseFloat(elem) < 23.5
+  );
 
-  //find first value between 19.5 and 23.5
-  return `${oxygenInNumbers.find((item) => item >= 19.5 && item <= 23.5)}%`;
-}
+// [elem.length-1] gets the last element of the string "%"
+// parseFloat(elem) gets each element and transform in number.
+// at the end it will return only the string with "%"
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
