@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 At the start of the course, you worked in teams to sort your team members, labelled by
 numbers, in ascending or descending order.
@@ -13,21 +15,22 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
-
 function sortAges(arr) {
-  let filteredArr = [];
-  arr.forEach((e) => {
+  var filteredArr = [];
+  arr.forEach(function (e) {
     if (typeof e === "number") {
       filteredArr.push(e);
     }
   });
-  let done = false;
+  var done = false;
+
   while (!done) {
     done = true;
-    for (let i = 1; i < filteredArr.length; i += 1) {
+
+    for (var i = 1; i < filteredArr.length; i += 1) {
       if (filteredArr[i - 1] > filteredArr[i]) {
         done = false;
-        let item = filteredArr[i - 1];
+        var item = filteredArr[i - 1];
         console.log("item", item);
         filteredArr[i - 1] = filteredArr[i];
         console.log("filteredArr[i - 1]", filteredArr[i - 1]);
@@ -39,31 +42,14 @@ function sortAges(arr) {
 
   return filteredArr;
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const agesCase1 = [
-  "🎹",
-  100,
-  "💩",
-  55,
-  "🥵",
-  "🙈",
-  45,
-  "🍕",
-  "Sanyia",
-  66,
-  "James",
-  23,
-  "🎖",
-  "Ismeal",
-];
-const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
-test("sortAges function works - case 1", () => {
+var agesCase1 = ["🎹", 100, "💩", 55, "🥵", "🙈", 45, "🍕", "Sanyia", 66, "James", 23, "🎖", "Ismeal"];
+var agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
+test("sortAges function works - case 1", function () {
   expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
 });
-
-test("sortAges function works - case 2", () => {
+test("sortAges function works - case 2", function () {
   expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
 });
