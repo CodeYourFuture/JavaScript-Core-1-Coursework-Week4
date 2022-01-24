@@ -8,7 +8,16 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+let pairsByIndex = pairsByIndexRaw.filter(validPairs);
+
+function validPairs (element) {
+  let arr = [];
+  if (element === null || element === [1] || element === false || element === "whoops") {
+    arr.push(element);
+  }
+}
+
+// Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
