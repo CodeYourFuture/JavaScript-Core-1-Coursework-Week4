@@ -9,7 +9,7 @@
 let statement = "I do not like programming";
 
 let result = "";
-
+result = statement.substring(0, 5) + statement.substring(10, statement.length);
 console.log(result);
 
 /* EXPECTED OUTPUT 
