@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  return arr.filter((voyager) => voyager[0] === "A" && voyager.includes("family"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -37,10 +39,5 @@ test("getSettlers function works", () => {
     "A Great family",
   ];
 
-  expect(getSettlers(voyagers)).toEqual([
-    "Adam family",
-    "Avery family",
-    "Archer family",
-    "A Great family",
-  ]);
+  expect(getSettlers(voyagers)).toEqual(["Adam family", "Avery family", "Archer family", "A Great family"]);
 });
