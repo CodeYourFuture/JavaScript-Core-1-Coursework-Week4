@@ -14,7 +14,27 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  let arrWithOnlyNumbers = [];
+  arr.forEach(value => {
+    if (typeof value === "number") {
+      arrWithOnlyNumbers.push(value)
+    }
+  });
+  let sorted = false;
+  while (!sorted) {
+    sorted = true;
+    for (var i = 0; i < arrWithOnlyNumbers.length; i++) {
+      if (arrWithOnlyNumbers[i] > arrWithOnlyNumbers[i + 1]) {
+        sorted = false;
+        let storeNumber = arrWithOnlyNumbers[i];
+        arrWithOnlyNumbers[i] = arrWithOnlyNumbers[i + 1];
+        arrWithOnlyNumbers[i + 1] = storeNumber;
+      }
+    }
+  }
+  return arrWithOnlyNumbers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
