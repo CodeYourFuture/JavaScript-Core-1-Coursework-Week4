@@ -8,9 +8,10 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-function isItPair (index){
-  return index.length === 2 && Array.isArray(index);
-}
+// function isItPair (index){
+//   return index.length === 2 && Array.isArray(index);
+// }
+
 
 let pairsByIndex = pairsByIndexRaw.filter(isItPair); // Complete this statement
 
