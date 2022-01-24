@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  array = array.slice(0, 5);
+  return array;
 }
 
 /*
@@ -11,7 +13,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  return array.sort();
 }
 
 /*
@@ -24,7 +27,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  return array.toLowerCase().trim().replace("/", "");
 }
 
 /*
@@ -33,7 +37,13 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array) {
+  let newArr = []
+  for (let i = 0; i > array.length; i++) {
+    array.slice(array[i]);
+    newArr.push(array);
+  }
+  return newArr;
 }
 
 /*
@@ -44,7 +54,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+   for(element of array) {
+    if (element > 100) {
+      return 100 + "%";
+    }
+    Math.round(element * 100) / 100;
+  }
+  return array;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
