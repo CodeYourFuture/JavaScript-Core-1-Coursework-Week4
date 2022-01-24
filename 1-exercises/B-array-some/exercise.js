@@ -21,4 +21,10 @@ let pairs = pairsByIndex.map(function (indexes) {
   return [student, mentor];
 });
 
+function containsNull (pairs) {
+  if (pairs === null) {
+    return process.exit(1);
+  }
+}
+
 console.log(pairs);
