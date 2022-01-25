@@ -36,7 +36,7 @@ function validatePasswords(passwords) {
     }
      seenPasswords.push(password);
      return isValidPassword(password);
-  }
+  });
 
 function containsAtLeastFiveCharacters(string) {
   return string.length >= 5;
