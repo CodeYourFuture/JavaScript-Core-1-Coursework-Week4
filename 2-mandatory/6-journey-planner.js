@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationAndTransportModes) {
+  return locationAndTransportModes.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportModes, modeString) {
+  return transportModes.includes(modeString);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +96,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationAndTransportModes) {
+  return locationAndTransportModes.shift();
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -111,9 +117,7 @@ function getLocationName() {}
        e.g: "bus"
 
   - Returns an array of where I can go if I only want to use a specific mode of transport.
-
   NOTE: only the location names should be returned, not the name of transports.
-
   HINTS:
    - Use the function you implemented above.
    - Use array method to remove locations that are not accessible by the given transportMode.
@@ -121,8 +125,18 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
+
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+  let transportModes = locations.filter((elem) => elem.includes(transportMode));
+  //console.log(transportModes);
+
+  let locationsArray = [];
+
+  for (let element of transportModes) {
+    locationsArray.push(element[0]);
+  }
+  return locationsArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
