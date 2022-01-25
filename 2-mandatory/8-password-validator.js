@@ -23,7 +23,24 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function isValidPasswords(passwords) {
+    return (containsAtLeastFiveCharacters(password) && containsUppercaseLetter(password) && containsLowercaseLetter(password) && containsNumber(password) &&
+      containsSymbol(password));
+}
+
+function validatePasswords(passwords) {
+  let seenPasswords = [];
+  let validatedPasswords = passwords.map((password) => {
+    if (seenPasswords.includes(password)) {
+      return false;
+    }
+     seenPasswords.push(password);
+     return isValidPassword(password);
+  }
+
+function containsAtLeastFiveCharacters(string) {
+  return string.length >= 5;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
