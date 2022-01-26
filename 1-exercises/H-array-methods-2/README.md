@@ -27,7 +27,7 @@ function isAMentor(name) {
   return mentors.includes(name);
 }
 
-consooe.log("Is Rukmuni a mentor?");
+console.log("Is Rukmuni a mentor?");
 console.log(isAMentor("Rukmini")); // logs false
 ```
 
@@ -44,3 +44,4 @@ $ node
 ```
 
 There is a string method `.split()`. In an interactive console try using the string `.split()` method and the array `.join()`. How could they work together?
+They are each other's opposites. One joins, the other splits.
