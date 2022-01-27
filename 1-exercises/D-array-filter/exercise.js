@@ -8,7 +8,7 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex= pairsByIndexRaw.filter(item =>item ===Array && item.length===2); // Complete this statement
+let pairsByIndex= pairsByIndexRaw.filter(item =>Array.isArray(item) && item.length===2); // Complete this statement
 console.log(pairsByIndex)
  
 
