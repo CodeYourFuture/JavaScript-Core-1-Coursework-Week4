@@ -12,10 +12,13 @@
 */
 
 function findSafeOxygenLevel(arr) {
-  let array=arr.filter(num => num.includes('%'))
-  array=array.map(item => item.replace('%','')) //item.substring(0,4)
-  return array.find(num => num > 19.5 && num < 23.5)+'%'
+  let array= arr.filter(num => num.includes('%')).find(num => {
+    num = parseFloat(num.replace('%',''));
+    return num > 19.5 && num < 23.5;
+})
+return array
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

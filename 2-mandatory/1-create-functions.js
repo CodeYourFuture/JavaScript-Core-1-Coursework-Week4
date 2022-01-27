@@ -16,7 +16,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  return arr.sort();
+  return arr.slice().sort();
 }
 
 
@@ -43,8 +43,9 @@ Write a function that:
 */
 
 function remove(arr,index) {
-  arr.splice(index,1)
-  return arr
+  let newArr=arr.slice()
+  newArr.splice(index,1)
+  return newArr
 }
  
 /*
@@ -57,10 +58,12 @@ Write a function that:
 let numbers=[23, 18.103, 187.2, 0.372]
 
 
-function formatPercentage(num) { 
- let stringOfNumbers =num.map(number => Math.round(number*100)/100+'%').replace(num>100,100);
- console.log(stringOfNumbers)
-  return stringOfNumbers
+function formatPercentage(arr) { 
+  let newArr= arr.map(number => {
+  const cappedNumber = Math.min(number,100);
+  const roundNumber= Math.round(cappedNumber*100)/100+'%';
+  return roundNumber})
+  return newArr 
 }
 console.log(formatPercentage(numbers))
 
