@@ -13,13 +13,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 function findSafeOxygenLevel(array) {
-  return array.find(function (item) {
-    var num = item.replace("%", "");
-
-    if (item.includes("%") && num > 19.5 && num < 23.5) {
-      return item + "%";
-    }
-  })[0];
+  var safeLevel = oxygenLevels.filter(function (level) {
+    return level.endsWith("%");
+  }).find(function (level) {
+    level = parseFloat(level.replace("%", ""));
+    var lowerLimit = 19.5;
+    var upperLimit = 23.5;
+    return lowerLimit < level && level < upperLimit;
+  });
+  return safeLevel;
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 

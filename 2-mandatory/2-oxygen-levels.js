@@ -12,13 +12,17 @@
 */
 
 function findSafeOxygenLevel(array) {
-  return array.find((item) => {
-    let num = item.replace("%", "");
-    if (item.includes("%") && num > 19.5 && num < 23.5) {
-      return item + "%";
-    }
-  })[0];
+  const safeLevel = oxygenLevels
+    .filter((level) => level.endsWith("%"))
+    .find((level) => {
+      level = parseFloat(level.replace("%", ""));
+      const lowerLimit = 19.5;
+      const upperLimit = 23.5;
+      return lowerLimit < level && level < upperLimit;
+    });
+  return safeLevel;
 }
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

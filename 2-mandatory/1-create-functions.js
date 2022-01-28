@@ -28,6 +28,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
+  //  let newArray = arr.slice();
   return [...array].map((item) =>
     item
       .trim()
