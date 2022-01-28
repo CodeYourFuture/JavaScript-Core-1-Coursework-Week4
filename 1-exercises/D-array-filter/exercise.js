@@ -9,7 +9,7 @@
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
 let pairsByIndex = pairsByIndexRaw.filter(
-  (value) => value instanceof Array && value.length > 1
+  (value) => value instanceof Array && value.length === 2
 ); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];

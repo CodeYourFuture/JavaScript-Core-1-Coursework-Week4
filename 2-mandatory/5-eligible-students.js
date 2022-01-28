@@ -8,12 +8,9 @@
 */
 
 function getEligibleStudents(attendanceArr) {
-  let filteredArr = attendanceArr.filter((element) => element[1] >= 8);
-  let loopedArr = [];
-  for (let element of filteredArr) {
-    loopedArr.push(element[0]);
-  }
-  return loopedArr;
+  return attendanceArr
+    .filter((element) => element[1] >= 8)
+    .map((element) => element[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
