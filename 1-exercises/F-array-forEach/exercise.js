@@ -9,7 +9,54 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-arr.forEach();
+arr.forEach((element) => 
+          
+    
+    {{console.log(element)}
+
+      if (element % 3 == 0){
+        console.log("Fizz")
+      }
+       if (element % 5 == 0){
+        console.log("Buzz")
+      }
+      if (element % 3 == 0 && element % 5 == 0){
+        console.log("FizzBuzz")
+      }
+      
+    }
+
+);
+
+/*
+//printing all elements using for loop
+for (let element of arr){
+  console.log(element)
+}
+*/
+
+
+/*
+const a = ["a", "b", "c"];
+for (const element of a) { // You can use `let` instead of `const` if you like
+    console.log(element);
+}
+// a
+// b
+// c
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* EXPECTED OUTPUT */
