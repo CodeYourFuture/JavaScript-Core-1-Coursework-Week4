@@ -13,14 +13,6 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
 
-import process from "process";
-
-function isNull(pairsByIndex) {
-  let i = pairsByIndex[];
-  if (i === null){
-    process.exitCode = 1;
-  }
-}
 
 
 
@@ -31,7 +23,10 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
- 
+
+  
+  process.exit(1);
+
   return [student, mentor];
   
 });
