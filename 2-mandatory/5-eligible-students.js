@@ -5,9 +5,36 @@
   - Accepts an array which contains all the students' names and their attendance counts
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
+
+  LOGIC: only the names and their attendance counts - who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(attendance) {
+  //while loop more flexible especially if data changes
+  i = 0;
+  eligible = [];
+
+  while (i < attendance.length) {
+    //incrementing the sub arrays
+    if (attendance[i][1] >= 8) {
+      eligible.push(attendance[i][0]); // gathers the name and add the name to the empty array
+    }
+    i++;
+  }
+  //go through all of the element and return at the end
+  return eligible;
+}
+
+console.log(
+  getEligibleStudents([
+    ["Ahmed", 8],
+    ["Clement", 10],
+    ["Elamin", 6],
+    ["Adam", 7],
+    ["Tayoa", 11],
+    ["Nina", 10],
+  ])
+);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

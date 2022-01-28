@@ -3,16 +3,51 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+// make a new array of the first five
+function first5(arr) {
+  let arrFirstFive = [];
+  i = 0;
+  while (i < arr.length && i < 5) {
+    // stop at the end of the arrray or at the 5th element
+    arrFirstFive.push(arr[i++]); //++i ?
+  }
+  return arrFirstFive;
 }
+console.log(first5([2, 1, 4, 6, 7, 8, 9, 0, 5]));
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+//Option 1 .sort() is a fuction that does the sorting
+// function sortArray(arr1) {
+//   let arrSorted = arr1;
+//   return arrSorted.sort();
+// }
+// console.log(sortArray([2, 1, 4, 6, 7, 8, 9, 0, 5]));
+
+// Option 2
+// swaps element in an array by comparision of consecutive elements
+function sortArray(arr1) {
+  let sortedArr = false;
+  let arr = arr1;
+  while (!sortedArr) {
+    sortedArr = true; //assuming the array is sorted
+    for (i = 0; i < arr.length - 1; i++) {
+      // arr.length -1 is the number of paired comparrisions to be made in any array length except the last element
+      if (arr[i] > arr[i + 1]) {
+        // current one is greater that the next - assending order
+        temp = arr[i]; // temp varialbe which is aplace holder space for swapping elements
+        arr[i] = arr[i + 1]; // this moves the second eleent in the comparison to the first location
+        arr[i + 1] = temp; // moving temp into the second location
+        sortedArr = false;
+      }
+    }
+  }
+  return arr;
 }
+console.log(sortArray([2, 1, 4, 6, 7, 8, 9, 0, 5]));
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,18 +59,28 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(x) {
+  for (i = 0; i < x.length; i++) {
+    x[i] = x[i].trim(); // make a trimmed copy of the element
+    x[i] = x[i].replace(`/`, ``); // find and replace
+    x[i] = x[i].toLowerCase(); // convert to lower case
+  }
+  return x;
 }
+console.log(tidyUpString([`jude `, `ben`, `/`, `Georgie`]));
 
 /*
 Write a function that:
 - Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
+- Returns a new array conetaining the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(x, y) {
+  // x the array, y is the index
+  x.splice(y, 1);
+  return x;
 }
-
+console.log(remove([`jude `, `ben`, `/`, `Georgie`], 2));
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -44,8 +89,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  // let percent = [];
+  for (i = 0; i < arr.length; i++) {
+    num = arr[i];
+    num = num.toFixed(2) + `%`;
+    arr[i] = num;
+  }
+  return arr;
 }
+
+console.log(formatPercentage([2, 1, 4, 6, 7, 8, 9, 0, 5]));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

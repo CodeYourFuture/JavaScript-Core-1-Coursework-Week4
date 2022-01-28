@@ -4,6 +4,8 @@
   It is decided that if there is a null value the program should exit
   - Add a check for null values, and if one exists, exit the program
   - Do not edit any of the existing code
+
+  LOGIC: Add a check for null values, and if one exists, exit the program
 */
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];

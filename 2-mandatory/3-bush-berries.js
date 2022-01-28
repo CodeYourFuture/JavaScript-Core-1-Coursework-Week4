@@ -7,7 +7,7 @@
 
   If any other berries are present, it's best not to eat from the bush at all!
 
-  Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
+  *Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
   Use the tests to confirm which message to return
   
   This exercise can be solved in a few different ways. One way might include the array methods
@@ -15,15 +15,34 @@
   
   The .some() method tests to see if some of the values (at least 1) in an array 
   match what you're looking for and returns true or false. 
+
+  - while loop
   
-  The .every() method will only return true if all values match watch you're looking for. 
+  The .every() method will only return true if all values match what you're looking for. 
+
+  - for loop? (count controll when you know how many times the thing is going to run)   do while loop
   
   Let's first look at an example that will teach you how to use these methods.
-*/
 
+  - its worth doing both 
+  
+*/
 function isBushSafe(berryArray) {
-  //Write your code here
+  //ALL PINK berries and is safe for the astronauts to eat
+  //check all the berries for the first one that is not pink - then exit the loop
+  i = 0;
+  while (i < berryArray.length) {
+    if (berryArray[i] != `pink`) {
+      return `Toxic! Leave bush alone!`;
+    }
+    i++;
+  }
+  return "Bush is safe to eat from";
 }
+console.log(
+  isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
+);
+console.log(isBushSafe(["pink", "pink", "pink", "pink"]));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
