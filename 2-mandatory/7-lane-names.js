@@ -6,7 +6,15 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
+<<<<<<< Updated upstream
 function getLanes() {}
+=======
+function getLanes(streetNames) {
+  return streetNames.filter((name) => name.includes('Lane'));
+  
+}
+
+>>>>>>> Stashed changes
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

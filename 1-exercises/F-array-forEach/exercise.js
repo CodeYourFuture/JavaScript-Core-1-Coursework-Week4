@@ -9,6 +9,25 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+newArray = arr.forEach(function (e) {
+  if(e % 3 == 0) {
+  console.log('Fizz');
+} else if(e % 5 == 0) {
+  console.log('Buzz')
+} else if (e % 3 && e % 5 == 0)
+   console.log('FizzBuzz')
+});
+
+console.log(newArray)
+
+
+>>>>>>> Stashed changes
 /* EXPECTED OUTPUT */
 
 /*
