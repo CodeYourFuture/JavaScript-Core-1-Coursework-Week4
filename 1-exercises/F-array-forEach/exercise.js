@@ -9,6 +9,21 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+let multipleOf = arr.map((value) => {
+  if (value % 3 === 0 && value % 5 === 0) {
+    return "FizzBuzz";
+  }
+  if (value % 3 === 0) {
+    return "Fizz";
+  }
+  if (value % 5 === 0) {
+    return "Buzz";
+  }
+  return value;
+});
+
+let newArr = multipleOf.forEach((value) => console.log(value));
+
 /* EXPECTED OUTPUT */
 
 /*
