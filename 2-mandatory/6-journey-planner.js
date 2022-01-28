@@ -83,7 +83,7 @@ function getTransportModes(transportArr) {
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
 function isAccessibleByTransportMode(transportArr, transport) {
-  return transportArr.includes(transport) ? true : false;
+  return transportArr.includes(transport);
 }
 
 /*
