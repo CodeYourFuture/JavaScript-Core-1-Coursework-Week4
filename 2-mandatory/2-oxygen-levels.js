@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  for (let str of arr ) {
+    let indexOfPercent = str.indexOf('%')
+    let noPercentNum = str.slice(0, indexOfPercent)
+    if ( Number(noPercentNum) > 19.5 && Number(noPercentNum)<23.5 ) {
+      return str
+    }
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

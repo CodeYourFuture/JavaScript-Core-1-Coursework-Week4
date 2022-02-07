@@ -1,5 +1,4 @@
-let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
-
-if (Array.isArray(pairsByIndexRaw[0])) {
-  console.log('yes')
+function sortArray(arr) {
+  return arr.sort()
 }
+console.log(sortArray(["a", "n", "c", "e", "z", "f"]))
