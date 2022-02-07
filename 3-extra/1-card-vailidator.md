@@ -1,3 +1,29 @@
+function validateCreditCard(creditCardNumber) {
+  const characters = creditCardNumber.split("");
+
+  if (characters.length !== 16) return false;
+
+  const allNumerical = characters.every((character) => /[0-9]/.test(character));
+  if (!allNumerical) return false;
+
+  const allDigitsSame = characters.every(
+    (character) => character === characters[0]
+  );
+  if (allDigitsSame) return false;
+
+  const finalCharacter = +characters[characters.length - 1];
+  if (finalCharacter % 2 === 1) return false;
+
+  const digitSum = characters.reduce(
+    (total, digit) => total + parseInt(digit),
+    0
+  );
+  if (digitSum < 16) return false;
+
+  return true;
+}
+
+
 ## **PROJECT: Credit Card Validator**
 
 In this project you'll write a script that validates whether or not a credit card number is valid.
@@ -34,3 +60,4 @@ These are the requirements your project needs to fulfill:
 - Use `node` from the command line to test if your code works as expected.
 
 Good luck!
+

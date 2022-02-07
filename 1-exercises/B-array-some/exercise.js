@@ -8,9 +8,17 @@
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
+if (pairsByIndex.some(value => value === null)) process.exit(1);
+
+// function isNull(number) {
+//   return number === null;
+// }
+// if (pairsByIndex.some(isNull) === true) {
+//   process.exit(1);
+// }
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
-// process.exit(1);
+ //process.exit(1);
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
