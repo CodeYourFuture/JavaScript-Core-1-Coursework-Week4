@@ -29,17 +29,19 @@ Write a function that:
 
 function temporary(str) {
   str = str.trim();
-  str = str.replace(/\//g,"");
+  str = str.replace(/\//g,"");  
   str = str.toLowerCase();
   return str;
 }
 
 
 
-function tidyUpString(arr) {
+function tidyUpString(arr.
+) {
   return arr.map(temporary);
 
 }
+// return arr.map(e => {e.trim(); e.replace(/\//g, ""); e.toLowerCase()});
 
 /*
 Write a function that:
