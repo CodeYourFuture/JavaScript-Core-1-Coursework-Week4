@@ -7,7 +7,9 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(namesAndAttendanceCount) {
+return namesAndAttendanceCount.filter(element=> element === 8 && element > 8)
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
