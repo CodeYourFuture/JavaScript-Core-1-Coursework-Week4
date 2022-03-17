@@ -6,8 +6,15 @@
   For example, capitailise("hello") should return "Hello"
   Tip: use the string method .split() and the array method .join()
 */
+const str = 'captain Picard';
 
-function capitalise(str) {}
+const caps = str.charAt(0).toUpperCase() + str.slice(1);
+
+function capitalise(str) {
+const Str = [...str];
+return capsFirstLetter = str.charAt(0).toUpperCase()+ str.slice(1);
+
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE

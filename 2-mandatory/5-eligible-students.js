@@ -1,13 +1,34 @@
 /*
   Only students who have attended enough classes are eligible to sit an exam.
-
   Create a function which:
   - Accepts an array which contains all the students' names and their attendance counts
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(students) {
+  const eligibleStudents = [];
+  for(let names of students){
+    if (names[1] >= 8){
+      eligibleStudents.push(names[0]);
+    }
+
+  }
+return eligibleStudents;
+}
+
+/*
+function getEligibleStudents(students) {
+  const eligibleStudents = students.filter(function (student) {
+    const attendanceCount = student[1];
+    return attendanceCount >= 8;
+  });
+  const eligibleNames = eligibleStudents.map(function (student) {
+    return student[0];
+  });
+  return eligibleNames;
+}  */
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
