@@ -22,11 +22,11 @@ let names = [
 // declaration with a variable named longNameThatStartsWithA = findLongNameThatStartsWithA (which is th earray names )
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
-// option 1
-function findLongNameThatStartsWithA(x) {}
+// // option 1
+// function findLongNameThatStartsWithA(x) {}
 
-console.log(longNameThatStartsWithA);
-/* option 2
+// console.log(longNameThatStartsWithA);
+//option 2
 function findLongNameThatStartsWithA(x) {
   for (let element of x) {
     if (element.charAt(0) === `A` && element.length > 7) {
@@ -35,7 +35,6 @@ function findLongNameThatStartsWithA(x) {
   }
 }
 console.log(longNameThatStartsWithA);
-*/
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
