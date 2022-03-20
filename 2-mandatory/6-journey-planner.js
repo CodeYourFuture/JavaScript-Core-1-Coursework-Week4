@@ -109,6 +109,7 @@ console.log(getTransportModes(["London Bridge", "tube", "river boat"]));
                                   * Otherwise, returns false.
 
 */
+// includes?
 function isAccessibleByTransportMode(transportModes, str) {
   i = 0;
   while (i < transportModes.length) {
@@ -179,6 +180,7 @@ console.log(getLocationName(["Greenwich", "bus", "river boat"]));
           retuns an array  
           
 */
+
 function journeyPlanner(locations, transportMode) {
   j = 0;
   locationNames = []; //a new arra
@@ -190,8 +192,7 @@ function journeyPlanner(locations, transportMode) {
         transportMode
       )
     ) {
-      locationNames.push(getLocationName(locations[j])); // gets each element in the array
-    }
+      locationNames.push(getLocationName(locations[j])); // gets each element in the array 
     j++;
   }
   return locationNames;
