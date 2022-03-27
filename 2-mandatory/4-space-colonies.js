@@ -11,11 +11,44 @@
   HINT: Whenever you read the above the instructions, try to come up with the main input and output and logic
         Input: Is an array
         Output: Is an array
-        Logic: Only strings that start with A, and finish with family
-  
-*/
 
-function getSettlers() {}
+        Logic: Only strings that start with A, and finish with family  
+
+        
+*/
+function getSettlers(voyagers) {
+  //Logic: Only strings that start with A, and finish with family
+  i = 0;
+  fam = []; //an array of families
+  while (i < voyagers.length) {
+    if (
+      voyagers[i].includes("family") &&
+      voyagers[i].charAt(0).toUpperCase() === `A` //conversts to uppercase to standardise the text
+    ) {
+      fam.push(voyagers[i]);
+    }
+    i++;
+  }
+  return fam;
+}
+console.log(
+  getSettlers([
+    "Adam family",
+    "Potter family",
+    "Eric",
+    "Aldous",
+    "Button family",
+    "Jude",
+    "Carmichael",
+    "Bunny",
+    "Asimov",
+    "Oscar family",
+    "Avery family",
+    "Archer family",
+    "Just A. family",
+    "A Great family",
+  ])
+);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

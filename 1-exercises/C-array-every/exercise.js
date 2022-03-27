@@ -1,5 +1,9 @@
 /*
    This program should check if the array `group` contains only students
+   
+
+   LOGIC: check if the array contains only students
+
 */
 
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];

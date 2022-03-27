@@ -14,19 +14,25 @@
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
- Hint: search for string methods like Includes and IndexOf.
+ Hint: search for string methods like Includes and IndexOf.  // takes in an element and we will get the index of it 
+
+ LOGIC: if the word "code" exists in the string, return the index of it (charater by charater - no word by word), if not return "Not found"
 */
 
 function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  //let magicWord = "code"; // use this to make it less hard code, makes `code` repeated less
+  //if the word "code" exists in the string
+  if (stringText.includes("code")) {
+    //return the index of it
+    return stringText.indexOf("code");
   } else {
+    //if not return "Not found"
     return "Not found";
   }
 }
+console.log(checkCodeIsThere("I Love coding and perfect code makes me happy"));
 
+//---------------------------
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
   The input provided contains a list of locations in London. Each of locations is followed by a list
@@ -63,9 +69,24 @@ function checkCodeIsThere(stringText) {
      e.g: ["tube", "river boat"]
 
   Hint: Use the corresponding array method to split the array.
-*/
-function getTransportModes() {}
 
+
+  LOGIC: 
+   errase the first element fo the array which is a location 
+   Returns an array including the available transport modes to the given location
+
+*/
+function getTransportModes(transport) {
+  // transport.splice(0, 1); // at position zero erase 1 element
+  transportCopy = [...transport]; // this creates a copy of the array, leaveing the original unchanged
+  transportCopy.splice(0, 1);
+  return transportCopy;
+}
+
+console.log(getTransportModes(["London Bridge", "tube", "river boat"]));
+
+//numbersCopy = [...numbers];
+//---------------------------
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -80,9 +101,31 @@ function getTransportModes() {}
      * Otherwise, returns false
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
-*/
-function isAccessibleByTransportMode() {}
 
+
+  LOGIC: Accepts two parameters: 1) First parameter is an array
+                                 2) Second parameter is a string 
+                                    Returns: *True if the string apprars in the array.
+                                  * Otherwise, returns false.
+
+*/
+// includes?
+function isAccessibleByTransportMode(transportModes, str) {
+  i = 0;
+  while (i < transportModes.length) {
+    if (transportModes[i] === str) {
+      return true;
+    }
+    i++;
+  }
+  return false;
+}
+
+console.log(
+  isAccessibleByTransportMode(["Angel", "tube", "bus"], `river boat`)
+);
+
+//-------------------------------------
 /*
   Implement the function getLocationName that
 
@@ -91,8 +134,16 @@ function isAccessibleByTransportMode() {}
 
    - Returns the name of the location
       e.g: "Tower Bridge"
+
+      LOGIC: function getLocationNam : 1) an array 
+                                       2) Returns the first element in the arrray 
 */
-function getLocationName() {}
+function getLocationName(location) {
+  return location[0];
+}
+console.log(getLocationName(["Greenwich", "bus", "river boat"]));
+
+//---------------------------------------
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -120,10 +171,44 @@ function getLocationName() {}
    - Use array method to manipulate its elements.
 
   Advanced challange: try to use arrow function when invoking an array method.
+
+   LOGIC: Parameters 2 An array
+          Parameter 1 A string 
+          get transport modes with previouse - getTransportModes
+          see if string (bus) occurs in it.
+          if the string (bus) appears add the name to a new array
+          retuns an array  
+          
 */
+
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  j = 0;
+  locationNames = []; //a new arra
+  while (j < locations.length) {
+    // console.log(j);
+    if (
+      isAccessibleByTransportMode(
+        getTransportModes(locations[j]),
+        transportMode
+      )
+    ) {
+      locationNames.push(getLocationName(locations[j])); // gets each element in the array 
+    j++;
+  }
+  return locationNames;
 }
+
+console.log(
+  journeyPlanner(
+    [
+      ["Angel", "tube", "bus"],
+      ["London Bridge", "tube", "river boat"],
+      ["Tower Bridge", "tube", "bus"],
+      ["Greenwich", "bus", "river boat"],
+    ],
+    `bus`
+  )
+);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
