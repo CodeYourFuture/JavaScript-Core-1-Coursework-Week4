@@ -11,7 +11,22 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevel) {
+  const safe02Level = oxygenLevel.filter(levelOf02 => levelOf02.endsWith('%')).find(levelOf02 => {
+  /* ^ Variable filters through each element of the oxygenLevel array, looking for the ones that end with a % symbol. */
+
+    levelOf02 = parseFloat(levelOf02.replace("%", ""));
+    // ^ Replaces % sign with nothing, effectively removing it & then passes the float value(number with a decimal) of levelOf02 back into levelOf02.
+
+    const lowest02Level = 19.5; // Variable that stores value of the lowest level of oxygen allowed.
+    const highest02Level = 23.5; // Variable that stores value of the hightest level of oxygen allowed.
+    return lowest02Level < levelOf02 && levelOf02 < highest02Level;
+    /* ^ Compares lowest level of oxygen allowed with level of oxygen present, and checks if the former is less than the latter.
+    Also compares level of oxygen present with with highest level of oxygen allowed, and checks if the former is less than the latter.
+    The oxygen value is then returned ONLY if both prior sentences are true */
+  })
+  return safe02Level; // Returns value of the safe level of oxygen variable.
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
