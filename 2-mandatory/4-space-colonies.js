@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  //Creates a new array with voyagers whose last name begins with "A" and are part of a family.
+  const result = voyagers.filter(voyager => voyager.charAt(0) == "A" && voyager.includes("family"));
+
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
