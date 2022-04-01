@@ -66,7 +66,13 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(transportModes) {
+  return transportModes.slice(1);
+
+  // ===== Alternative Solution =====
+  // transportArray = transportModes.splice(1);
+  // return transportArray;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -83,7 +89,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportModes, eachMode) {
+  return transportModes.includes(eachMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -94,7 +102,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(array) {
+  return array[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -124,7 +134,10 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  let destination = locations
+    .filter((location) => location.includes(transportMode))
+    .map((location) => getLocationName(location));
+  return destination;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
