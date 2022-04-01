@@ -7,7 +7,7 @@
 */
 
 function getLanes(streets) {
-  return streets.filter(street => street.includes("Lane"));
+  return streets.filter((street) => street.includes("Lane"));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

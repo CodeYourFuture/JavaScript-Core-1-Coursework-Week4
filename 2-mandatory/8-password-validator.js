@@ -40,12 +40,15 @@ function validatePasswords(passwords) {
   // })
 
   // This solution checks if the conditions pass first.
-  return passwords.map((password, i) => password.length >= 5
-  && containsUppercaseLetter(password)
-  && containsLowercaseLetter(password)
-  && containsNumber(password)
-  && containsSymbol(password)
-  && i === passwords.indexOf(password))
+  return passwords.map(
+    (password, i) =>
+      password.length >= 5 &&
+      containsUppercaseLetter(password) &&
+      containsLowercaseLetter(password) &&
+      containsNumber(password) &&
+      containsSymbol(password) &&
+      i === passwords.indexOf(password)
+  );
 }
 
 // Returns true if string contains at least one uppercase letter.
