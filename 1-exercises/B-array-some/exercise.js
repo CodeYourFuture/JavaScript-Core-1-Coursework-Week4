@@ -12,6 +12,16 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
 
+function isNull(item) {
+  return item === null;
+}
+
+let containsNull = pairsByIndex.some(isNull);
+
+if (containsNull) {
+  process.exit(1);
+}
+
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 

@@ -7,7 +7,20 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+// Finds the attendance rate for each student and the returns the names of those who have attended 8 classes or more.
+function getEligibleStudents(attendance) {
+  const result = [];
+  // Loops each attendee.
+  attendance.forEach(function (attendee) {
+    // If attendance is greater than or equal to 8.
+    if (attendee[1] >= 8) {
+      // Adds to the result array.
+      result.push(attendee[0]);
+    }
+  });
+
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

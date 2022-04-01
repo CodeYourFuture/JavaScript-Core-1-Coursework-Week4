@@ -22,7 +22,16 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  // Creates a function that takes a value and checks if its a string that equals the text pink.
+  const isPink = (value) => value == "pink";
+
+  // Checks if all the values in the berryArray are equal to pink.
+  if (berryArray.every(isPink)) {
+    return "Bush is safe to eat from";
+  }
+
+  // If not all the berries were pink.
+  return "Toxic! Leave bush alone!";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
