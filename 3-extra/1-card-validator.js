@@ -28,7 +28,7 @@ function validateCreditCard(creditCardNum){
     }
   }
 
-  // The credit card number must be composed of at least two different digits (i.e. all of the digits cannot be the same)
+  // The credit card number must consist of at least two different digits (i.e. all of the digits cannot be the same)
   var obj = {};
   for(var i = 0; i < creditCardNum.length; i++){
     obj[creditCardNum[i]] = true;
@@ -55,29 +55,50 @@ function validateCreditCard(creditCardNum){
 };
 
 // /**** tests *****/
-console.log(validateCreditCard('9999777788880000')); //true
-console.log(validateCreditCard('6666666666661666')); //true
-console.log(validateCreditCard('a92332119c011112')); //false
-console.log(validateCreditCard('4444444444444444')); //false
-console.log(validateCreditCard('1211111111111112')); //true
+// console.log(validateCreditCard('9999777788880000')); //true
+// console.log(validateCreditCard('6666666666661666')); //true
+// console.log(validateCreditCard('a92332119c011112')); //false
+// console.log(validateCreditCard('4444444444444444')); //false
+// console.log(validateCreditCard('1211111111111112')); //true
 
 
-// The following credit card numbers are valid:
+// // The following credit card numbers are valid:
 
-console.log(validateCreditCardNumber("9999777788880000"));
-console.log(validateCreditCardNumber("6666666666661666"));
-console.log(validateCreditCardNumber("1234567890123456"));
-console.log(validateCreditCardNumber("9876543210123456"));
-console.log(validateCreditCardNumber("1111222233334444"));
+// console.log(validateCreditCardNumber("9999777788880000"));
+// console.log(validateCreditCardNumber("6666666666661666"));
+// console.log(validateCreditCardNumber("1234567890123456"));
+// console.log(validateCreditCardNumber("9876543210123456"));
+// console.log(validateCreditCardNumber("1111222233334444"));
 
-// And the following credit card numbers are invalid:
+// // And the following credit card numbers are invalid:
 
-console.log(validateCreditCardNumber("a92332119c011112")); // (invalid characters)
-console.log(validateCreditCardNumber("4444444444444444")); // (only one type of number)
-console.log(validateCreditCardNumber("1111111111111110")); // (sum less than 16)
-console.log(validateCreditCardNumber("6666666666666661")); // (odd final number)
-console.log(validateCreditCardNumber("4444333322221111")); // (odd final number)
-console.log(validateCreditCardNumber(""));                 // (null - too short)
-console.log(validateCreditCardNumber("11112222333344"));   // (too short)
-console.log(validateCreditCardNumber("11112$%^&*334444")); // (invalid characters)
-console.log(validateCreditCardNumber("0110011001100110")); //  (sum less than 16)
+// console.log(validateCreditCardNumber("a92332119c011112")); // (invalid characters)
+// console.log(validateCreditCardNumber("4444444444444444")); // (only one type of number)
+// console.log(validateCreditCardNumber("1111111111111110")); // (sum less than 16)
+// console.log(validateCreditCardNumber("6666666666666661")); // (odd final number)
+// console.log(validateCreditCardNumber("4444333322221111")); // (odd final number)
+// console.log(validateCreditCardNumber(""));                 // (null - too short)
+// console.log(validateCreditCardNumber("11112222333344"));   // (too short)
+// console.log(validateCreditCardNumber("11112$%^&*334444")); // (invalid characters)
+// console.log(validateCreditCardNumber("0110011001100110")); //  (sum less than 16)
+
+test("valid", () => {
+  expect(validateCreditCard("9999777788880000")).toBe(true);
+  expect(validateCreditCard("6666666666661666")).toBe(true);
+});
+
+test("invalid characters", () => {
+  expect(validateCreditCard("a92332119c011112")).toBe(false);
+});
+
+test("all same characters", () => {
+  expect(validateCreditCard("4444444444444444")).toBe(false);
+});
+
+test("sum less than 16", () => {
+  expect(validateCreditCard("1111111111111110")).toBe(false);
+});
+
+test("odd final number", () => {
+  expect(validateCreditCard("6666666666666661")).toBe(false);
+});
