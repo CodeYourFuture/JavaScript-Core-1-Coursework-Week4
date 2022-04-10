@@ -18,6 +18,10 @@ function sortArray(array) {
   return [...array].sort();
 }
 
+// function sortArray(arr) {
+//   return arr.slice().sort();
+// } 
+
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -64,9 +68,6 @@ function formatPercentage(arrayOfNumbers) {
       } else {
         return number;
       }
-
-      // ternary
-      // return number > 100 ? 100 : number;
     })
     .map((number) => Math.round(number * 100) / 100 + "%");
 }

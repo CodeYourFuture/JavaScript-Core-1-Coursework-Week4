@@ -11,14 +11,17 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function isLevelSafe(oxygen) {       
-        if (oxygen.includes("%") && oxygen > 19.5 && oxygen < 23.5){
-          return  parseFloat(oxygen);
-        }        
-}
 
 function findSafeOxygenLevel(oxygenLevels) {
-  return oxygenLevels.find(isLevelSafe);
+  const safeLevel = oxygenLevels
+    .filter(level => level.endsWith("%"))
+    .find(level => {
+      level = parseFloat(level.replace("%", ""));
+      const lowerLimit = 19.5;
+      const upperLimit = 23.5;
+      return lowerLimit < level && level < upperLimit;
+    });
+  return safeLevel;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

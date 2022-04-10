@@ -129,6 +129,15 @@ function getLocationName(locationAndAvailableTransports) {
   Advanced challenge: try to use arrow function when invoking an array method.
 */
 
+function journeyPlanner(locations, transportMode) {
+  return locations
+    .filter((location) => {
+      return isAccessibleByTransportMode(location, transportMode);
+    })
+    .map((accessibleLocation) => {
+      return getLocationName(accessibleLocation);
+    });
+}
 
 
 
