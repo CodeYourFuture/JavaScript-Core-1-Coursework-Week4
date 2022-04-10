@@ -8,7 +8,7 @@ function validateCreditCard(creditCardNum){
   // All of the digits must be numbers
   for(var i = 0; i < creditCardNum.length; i++){
     // store the current digit 
-    var currentNumber = creditCardNum[i];
+    let currentNumber = creditCardNum[i];
 
     // turn the digit from a string to an integer
     currentNumber = Number.parseInt(currentNumber);
@@ -20,7 +20,7 @@ function validateCreditCard(creditCardNum){
   }
 
   // The credit card number must consist of at least two different digits (i.e. all of the digits cannot be the same)
-  var obj = {};
+  let obj = {};
   for(var i = 0; i < creditCardNum.length; i++){
     obj[creditCardNum[i]] = true;
   }
@@ -34,7 +34,7 @@ function validateCreditCard(creditCardNum){
   }
 
   // The sum of all the digits must be greater than 16
-  var sum = 0;
+  let sum = 0;
   for(var i = 0; i < creditCardNum.length; i++){
     sum += Number(creditCardNum[i]);
   }
