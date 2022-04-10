@@ -17,24 +17,6 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const agesCase1 = [
-  "🎹",
-  100,
-  "💩",
-  55,
-  "🥵",
-  "🙈",
-  45,
-  "🍕",
-  "Sanyia",
-  66,
-  "James",
-  23,
-  "🎖",
-  "Ismeal",
-];
-const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
-
 function sortAges(arr) {
   return arr.filter((item) => typeof item === "number").sort((a, b) => a - b);
 }
@@ -63,6 +45,25 @@ function sortAgesHardMode(arr) {
   );
   return sortArray(arr.filter((item) => typeof item === "number"));
 }
+
+
+const agesCase1 = [
+  "🎹",
+  100,
+  "💩",
+  55,
+  "🥵",
+  "🙈",
+  45,
+  "🍕",
+  "Sanyia",
+  66,
+  "James",
+  23,
+  "🎖",
+  "Ismeal",
+];
+const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
   expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
