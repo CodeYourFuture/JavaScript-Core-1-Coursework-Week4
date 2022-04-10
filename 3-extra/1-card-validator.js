@@ -55,16 +55,14 @@ function validateCreditCard(creditCardNum){
 };
 
 // /**** tests *****/
-// console.log(validateCreditCard('9999777788880000')); //true
-// console.log(validateCreditCard('6666666666661666')); //true
-// console.log(validateCreditCard('a92332119c011112')); //false
-// console.log(validateCreditCard('4444444444444444')); //false
-// console.log(validateCreditCard('1211111111111112')); //true
+console.log(validateCreditCard('9999777788880000')); //true
+console.log(validateCreditCard('6666666666661666')); //true
+console.log(validateCreditCard('a92332119c011112')); //false
+console.log(validateCreditCard('4444444444444444')); //false
+console.log(validateCreditCard('1211111111111112')); //true
 
 
 // The following credit card numbers are valid:
-
-console.log("The following five ought to be true\n");
 
 console.log(validateCreditCardNumber("9999777788880000"));
 console.log(validateCreditCardNumber("6666666666661666"));
@@ -73,8 +71,6 @@ console.log(validateCreditCardNumber("9876543210123456"));
 console.log(validateCreditCardNumber("1111222233334444"));
 
 // And the following credit card numbers are invalid:
-
-console.log("\nThe following nine ought to be false\n");
 
 console.log(validateCreditCardNumber("a92332119c011112")); // (invalid characters)
 console.log(validateCreditCardNumber("4444444444444444")); // (only one type of number)
