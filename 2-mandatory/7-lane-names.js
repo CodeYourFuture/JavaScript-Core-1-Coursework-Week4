@@ -6,7 +6,14 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function containsLane(str) {
+  return str.includes("Lane");
+}
+
+function getLanes(arr) {
+  let newArr = arr.filter(containsLane);
+  return newArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
