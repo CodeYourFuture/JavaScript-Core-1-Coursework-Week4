@@ -16,6 +16,9 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+function findLongNameThatStartsWithA(n){
+  return n.find(value => value[0]===('A') && value.length>7) 
+}
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 

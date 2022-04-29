@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  let array= arr.filter(num => num.includes('%')).find(num => {
+    num = parseFloat(num.replace('%',''));
+    return num > 19.5 && num < 23.5;
+})
+return array
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

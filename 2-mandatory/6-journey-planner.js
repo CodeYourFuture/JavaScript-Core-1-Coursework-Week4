@@ -19,9 +19,8 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +63,10 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  let transport=array.slice(1);
+  return transport;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arr,str) {
+  return arr.includes(str)
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +96,10 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(array) {
+  let locationName = array.slice(0,1).toString();
+  return locationName;
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,8 +129,11 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+ return locations.filter(item => isAccessibleByTransportMode(item,transportMode)).map(item => getLocationName(item));
+
+
 }
+journeyPlanner(["London Bridge","Greenwich",],'river boat')
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
