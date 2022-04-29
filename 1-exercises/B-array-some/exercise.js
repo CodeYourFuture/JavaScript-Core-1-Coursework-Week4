@@ -11,6 +11,22 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
+// is there is null https://stackoverflow.com/questions/6003884/how-do-i-check-for-null-values-in-javascript
+
+function isThereNull (number) {
+   return number === null;
+} 
+if (pairsByIndex.some(isThereNull)){
+  return process.exit(1);
+}
+
+// pairsByIndex.some(x => x === null);
+
+
+// let isNullIsHere = pairs.some(isThereNull);
+// [pass,cpass,email,cemail,user].some(x=> x===null)
+
+
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

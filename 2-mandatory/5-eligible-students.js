@@ -5,9 +5,22 @@
   - Accepts an array which contains all the students' names and their attendance counts
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
+
+  function getSettlers(arr) {
+  return arr.filter((item) => {
+    return item[0] === "A" && item.includes("family");
+  });
+}
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(attendance) {
+  // let result = [];
+  // for (let number of attendance){
+  // }
+  let students;
+  students=attendance.filter(item => item[1]>=8).map(item => item[0]);       
+  return students
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

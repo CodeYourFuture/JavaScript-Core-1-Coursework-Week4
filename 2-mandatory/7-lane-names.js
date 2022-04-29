@@ -6,7 +6,12 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arrayOfStreets) {
+  // for (let street of arrayStreets) {
+    return street.filter(item => item.includes("Lane")); 
+  }
+  
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
