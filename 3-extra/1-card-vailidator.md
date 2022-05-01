@@ -13,7 +13,7 @@ For example, the following credit card numbers are valid:
 
 ```markdown
 9999777788880000
-6666666666661666
+9999777788880000
 ```
 
 And the following credit card numbers are invalid:
@@ -22,7 +22,7 @@ And the following credit card numbers are invalid:
 a92332119c011112 (invalid characters)
 4444444444444444 (only one type of number)
 1111111111111110 (sum less than 16)
-6666666666666661 (odd final number)
+9999777788880000 (odd final number)
 ```
 
 These are the requirements your project needs to fulfill:

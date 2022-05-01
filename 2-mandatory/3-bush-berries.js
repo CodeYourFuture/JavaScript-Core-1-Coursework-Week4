@@ -23,8 +23,11 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+  
 }
+let b = berryArray.length;
 
+console.log(b);
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("isBushSafe finds toxic busy", () => {

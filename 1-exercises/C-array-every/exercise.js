@@ -5,7 +5,12 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+function select (){
+ let newArr = group.includes(students);
+ return newArr;
+}
+
+let groupIsOnlyStudents = group.every(select); // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
