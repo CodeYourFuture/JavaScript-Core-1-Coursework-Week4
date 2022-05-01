@@ -1,3 +1,5 @@
+"use strict";
+
 /* 
 Password Validation
 
@@ -22,62 +24,37 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-
 function validatePasswords(passwords) {
-  return passwords.map((element, i) => {
-    return (
-      element.length > 5 &&
-      containsLowercaseLetter(element) &&
-      containsUppercaseLetter(element) &&
-      containsNumber(element) &&
-      containsSymbol(element) &&
-      !passwords.slice(0, i).includes(element)
-    );
+  return passwords.map(function (element, i) {
+    return element.length > 5 && containsLowercaseLetter(element) && containsUppercaseLetter(element) && containsNumber(element) && containsSymbol(element) && !passwords.slice(0, i).includes(element);
   });
-}
+} // Returns true if string contains at least one uppercase letter.
 
-// Returns true if string contains at least one uppercase letter.
+
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
-}
+} // Returns true if string contains at least one lowercase letter.
 
-// Returns true if string contains at least one lowercase letter.
+
 function containsLowercaseLetter(string) {
   return /[a-z]/.test(string);
-}
+} // Returns true if string contains at least one number.
 
-// Returns true if string contains at least one number.
+
 function containsNumber(string) {
   return /[0-9]/.test(string);
-}
+} // Returns true if string contains at least one symbol.
 
-// Returns true if string contains at least one symbol.
+
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("Example 1", () => {
-  expect(
-    validatePasswords([
-      "Se%5",
-      "TktE.TJTU",
-      "384#HsHF",
-      "dvyyeyy!5",
-      "tryT3729",
-    ])
-  ).toEqual([false, false, true, false, false]);
-});
 
-test("Example 2", () => {
-  expect(
-    validatePasswords([
-      "StUFf27%",
-      "Pl3nty!",
-      "Jai33",
-      "shajsaUA**&&",
-      "Pl3nty!",
-    ])
-  ).toEqual([true, true, false, false, false]);
+test("Example 1", function () {
+  expect(validatePasswords(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"])).toEqual([false, false, true, false, false]);
+});
+test("Example 2", function () {
+  expect(validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])).toEqual([true, true, false, false, false]);
 });
