@@ -13,7 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 const sortArray = (arrayOfLetters) => {
-  return arrayOfLetters.slice().sort();
+  return [...arrayOfLetters].slice().sort();
 };
 
 /*
@@ -39,9 +39,7 @@ Write a function that:
 */
 
 const remove = (arrayItems, index) => {
-  let clonedArray = arrayItems.splice("");
-  clonedArray.splice(index, 1);
-  return clonedArray;
+  return arrayItems.slice(0, index).concat(arrayItems.slice(index + 1));
 };
 
 /*

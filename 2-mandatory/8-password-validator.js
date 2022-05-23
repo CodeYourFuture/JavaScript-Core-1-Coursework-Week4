@@ -24,16 +24,30 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 const validatePasswords = (passwords) => {
-  return passwords.map((password) => {
-    return (
-      passwords.length >= 5 &&
-      containsUppercaseLetter(password) &&
-      containsLowercaseLetter(password) &&
-      containsNumber(password) &&
-      containsSymbol(password)
-    );
-  });
+
+  let validated = []
+  passwords.forEach((ele, index) => {
+    let isFive = containsAtLeastFiveCharacters(ele)
+    let isUpperCase = containsUppercaseLetter(ele)
+    let isLoweCase = containsLowercaseLetter(ele);
+    let hasNum = containsNumber(ele);
+    let hasSymbol = containsSymbol(ele);
+    let notSeen = passwords.indexOf(ele) === index;
+    
+    isFive && isUpperCase && isLoweCase && hasNum && hasSymbol && notSeen
+      ? validated.push(true)
+      : validated.push(false);
+  })
+  return validated;
+
 };
+
+
+
+// Return true if string contains at least five or more characters
+function containsAtLeastFiveCharacters(string) {
+  return string.length >= 5;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
