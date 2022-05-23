@@ -8,7 +8,13 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+const getArrayPairsOnly = (item) => {
+  if(Array.isArray(item)) {
+    return item.length > 1;
+  };
+};
+
+let pairsByIndex = pairsByIndexRaw.filter(getArrayPairsOnly) // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
