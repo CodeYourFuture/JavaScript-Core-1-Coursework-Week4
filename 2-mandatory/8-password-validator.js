@@ -22,18 +22,20 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]);
-const validatePasswords = (passwordArray) => passwordArray.map(isValidPassword);
 
-const isValidPassword = (password, index, array) =>
-  password.length >= 5 &&
-  containsUppercaseLetter(password) &&
-  containsLowercaseLetter(password) &&
-  containsNumber(password) &&
-  containsSymbol(password) &&
-  array.findIndex((element) => element === password) === index
-    ? true
-    : false;
+const isValidPassword = (password, index, array) => {
+  return (
+    password.length >= 5 &&
+    containsUppercaseLetter(password) &&
+    containsLowercaseLetter(password) &&
+    containsNumber(password) &&
+    containsSymbol(password) &&
+    //array.findIndex((element) => element === password) === index;
+    array.indexOf(password) === index
+  );
+};
+
+const validatePasswords = (passwordArray) => passwordArray.map(isValidPassword);
 
 // if it passes _all_ checks, return true
 

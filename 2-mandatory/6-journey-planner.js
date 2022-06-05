@@ -18,7 +18,7 @@
 */
 
 const checkCodeIsThere = (stringText) => {
-  let magicWord = "code";
+  const magicWord = "code";
   return stringText.includes(magicWord)
     ? stringText.indexOf(magicWord)
     : "Not found";

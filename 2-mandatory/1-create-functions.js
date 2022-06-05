@@ -32,7 +32,8 @@ Write a function that:
 */
 
 const remove = (arr, index) => arr.filter((element) => element !== arr[index]);
-/*onst remove = (array, index) => {
+
+/*const remove = (array, index) => {
   newArray = [...array];
   newArray.splice(index, 1);
   return newArray;
@@ -45,13 +46,16 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
-const formatPercentage = (arr) => arr.map(formatNumToStr);
+/*const formatPercentage = (arr) => arr.map(formatNumToStr);
 
 const formatNumToStr = (num) => {
-  if (num > 100) num = 100;
-  return `${Math.round(num * 100) / 100}%`;
-};
+  //if (num > 100) num = 100;
+  const cappedValue = Math.min(value, 100);
+  return `${Math.round(cappedValue * 100) / 100}%`;
+};*/
 
+const formatPercentage = (arr) =>
+  arr.map((e) => (e >= 100 ? "100%" : `${Math.round(e * 100) / 100}%`));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
