@@ -10,8 +10,41 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+/*const isAcceptedLevel = (level) => {
+  let newLevel;
+  if (level.substring(level.length - 1) === "%") {
+    newLevel = Number(level.replace("%", ""));
+  } else {
+    return false;
+  }
+  return newLevel > 19.5 && newLevel < 23.5;
+};*/
+const isAcceptedLevel = (level) => {
+  let newLevel = level.replace("%", "");
+  return level.includes("%") && newLevel > 19.5 && newLevel < 23.5;
+};
 
-function findSafeOxygenLevel() {}
+const findSafeOxygenLevel = (oxygenLevel) => oxygenLevel.find(isAcceptedLevel);
+
+/*function findSafeOxygenLevel(oxygenLevels) {
+  const safeLevel = oxygenLevels
+    .filter((level) => level.endsWith("%"))
+    .find((level) => {
+      level = parseFloat(level.replace("%", ""));
+      const lowerLimit = 19.5;
+      const upperLimit = 23.5;
+      return lowerLimit < level && level < upperLimit;
+    });
+  return safeLevel;
+}*/
+/*const findSafeOxygenLevel = (planets) =>
+  planets.find((planet) =>
+    planet[planet.length - 1] === "%" &&
+    parseFloat(planet) > 19.5 &&
+    parseFloat(planet) < 23.5
+      ? planet
+      : false
+  );*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

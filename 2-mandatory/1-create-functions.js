@@ -3,16 +3,13 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
-}
+const first5 = (arr) => arr.slice(0, 5);
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
-- Returns a new array containing the same elements, except sorted.
-*/
-function sortArray() {
-}
+- Returns a new array containing the same elements, except sorted.*/
+const sortArray = (arr) => arr.slice().sort();
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +21,9 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+const modifyStr = (names) => names.trim().replace("/", "").toLowerCase();
+
+const tidyUpString = (arrOfString) => arrOfString.map(modifyStr);
 
 /*
 Write a function that:
@@ -33,8 +31,13 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+const remove = (arr, index) => arr.filter((element) => element !== arr[index]);
+
+/*const remove = (array, index) => {
+  newArray = [...array];
+  newArray.splice(index, 1);
+  return newArray;
+};*/
 
 /*
 Write a function that:
@@ -43,10 +46,16 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+/*const formatPercentage = (arr) => arr.map(formatNumToStr);
 
-function formatPercentage() {
-}
+const formatNumToStr = (num) => {
+  //if (num > 100) num = 100;
+  const cappedValue = Math.min(value, 100);
+  return `${Math.round(cappedValue * 100) / 100}%`;
+};*/
 
+const formatPercentage = (arr) =>
+  arr.map((e) => (e >= 100 ? "100%" : `${Math.round(e * 100) / 100}%`));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

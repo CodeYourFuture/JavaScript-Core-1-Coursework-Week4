@@ -17,15 +17,12 @@
  Hint: search for string methods like Includes and IndexOf.
 */
 
-function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
-}
+const checkCodeIsThere = (stringText) => {
+  const magicWord = "code";
+  return stringText.includes(magicWord)
+    ? stringText.indexOf(magicWord)
+    : "Not found";
+};
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +61,8 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+const getTransportModes = (locationWithTransportMode) =>
+  locationWithTransportMode.slice(1);
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +79,8 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+const isAccessibleByTransportMode = (arrayOfTransportMode, transportMode) =>
+  arrayOfTransportMode.includes(transportMode);
 
 /*
   Implement the function getLocationName that
@@ -92,7 +91,8 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+const getLocationName = (locationWithTransportMode) =>
+  locationWithTransportMode[0];
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,9 +121,10 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(locations, transportMode) {
-  // Implement the function body
-}
+const journeyPlanner = (locations, transportMode) =>
+  locations
+    .filter((element) => isAccessibleByTransportMode(element, transportMode))
+    .map(getLocationName);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

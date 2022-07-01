@@ -14,7 +14,32 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  let newArr = [];
+  let asArr = [];
+  let smallest=0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (/[0-9]/.test(arr[i])) {
+      newArr.push(arr[i]);
+    }
+  }
+
+  for (let i = 0; i < newArr.length; i++) {
+    for (let j = 1; j < newArr.length + 1; j++) {
+      if (newArr[i] < newArr[j]) {
+        smallest = newArr[i];
+      } else {
+        smallest = newArr[j];
+      }
+    }
+  }
+}
+j: 4;
+smallest:1 
+[2, 0.5, 5, 4, 1];
+[1, 2, 5, 4, 0.5];
+[0.5, 2, 4, 5, 1];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
