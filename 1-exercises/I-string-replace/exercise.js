@@ -10,10 +10,9 @@
   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 */
 
-let story =
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+const story = "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+const result = story.replace(/dogs/g, "cats").replace("10", "100000").replace("great", "brilliant").replace(/day/g, "night");
 
 /* EXPECTED OUTPUT */
 
@@ -26,7 +25,7 @@ function test(test_name, actual, expected) {
     status = "PASSED";
   } else {
     status = `FAILED: \nexpected: ${util.inspect(
-      expected
+      expected,
     )} \nbut your function returned: ${util.inspect(actual)}`;
   }
 
@@ -36,11 +35,11 @@ function test(test_name, actual, expected) {
 test(
   "1. Original story has not been changed",
   story,
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
+  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.",
 );
 
 test(
   "2. The result of the replace is correct",
   result,
-  "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
+  "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night.",
 );

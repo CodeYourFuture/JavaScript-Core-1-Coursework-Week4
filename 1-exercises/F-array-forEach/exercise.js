@@ -7,7 +7,10 @@
   An array with numbers 1-15 has been provided.
 */
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+arr.forEach((e) => console.log(e % 5 === 0 && e % 3 === 0 ? "FizzBuzz" : e % 5 === 0 ? "Buzz" : e % 3 === 0 ? "Fizz" : e));
+
 
 /* EXPECTED OUTPUT */
 
