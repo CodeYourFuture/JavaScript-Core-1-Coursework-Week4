@@ -17,15 +17,14 @@
  Hint: search for string methods like Includes and IndexOf.
 */
 
-function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
+const checkCodeIsThere = (stringText) => {
+  const magicWord = "code";
+  // edit code below
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   }
-}
+  return "Not found";
+};
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.

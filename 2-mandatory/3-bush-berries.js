@@ -21,9 +21,8 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
-}
+const isBushSafe = (berryArray) => (berryArray.every((e) => e === "pink") ? "Bush is safe to eat from" : "Toxic! Leave bush alone!");
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

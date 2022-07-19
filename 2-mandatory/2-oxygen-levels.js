@@ -11,7 +11,7 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+const findSafeOxygenLevel = (planets) => planets.filter((e) => e[e.length - 1] === "%" && parseFloat(e) > 19.5 && parseFloat(e) < 23.5)[0];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
