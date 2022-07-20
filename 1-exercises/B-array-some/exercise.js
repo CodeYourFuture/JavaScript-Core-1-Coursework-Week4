@@ -17,14 +17,12 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
 
+  if(indexes === null) {
+    return process.exitCode = 1;
+  };
+
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
-
-  if(student === 0 && mentor === 0) {
-    
-    return process.exit();
-  }
-
   return [student, mentor];
 });
 
