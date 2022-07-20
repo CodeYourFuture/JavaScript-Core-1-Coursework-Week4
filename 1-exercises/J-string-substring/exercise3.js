@@ -7,8 +7,10 @@
 */
 
 let statement = "I do not like programming";
+let javscrpt = statement.substring(8);
+let like = statement.substring(0, 4);
 
-let result = "";
+let result = like + '' + javscrpt;
 
 console.log(result);
 
