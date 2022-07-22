@@ -4,7 +4,7 @@ Do you remember how strings have special functions called methods? Don't worry i
 $ node
 > let name = "Daniel"
 undefined
-> name.toLowerCase()
+> name.toLowerCase() 
 daniel
 ```
 

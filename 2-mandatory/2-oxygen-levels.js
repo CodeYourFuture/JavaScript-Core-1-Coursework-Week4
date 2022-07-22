@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(level) {
+  // let level.filter(item => item.includes("%")).map(x => x.replace(/%/g , " ")).find(function element(x){
+  //   if (x > 19.5 && x < 23.5)
+  //   { return x + "%";}}); 
+//   let h = level.filter(item => item.includes("%")).map(x => x.replace(/%/g , "")) //.find(x > x > 19.5 && x <= 23.5);
+// for( let no of h ){if (no >= 19.5 && no <= 23.5){ return no + "%";}}
+let h = level.filter(item => item.includes("%")).map(x => x.replace(/%/g , "")).find(x => x > 19.5 && x < 23.5 );
+if (h){return h + "%";} 
+ }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

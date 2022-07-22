@@ -1,5 +1,5 @@
 /*
-  The space travellers have safely landed and are foraging for food in the natural wildlife.
+  The space travelers have safely landed and are foraging for food in the natural wildlife.
 
   There are bushes with many different colour berries.
 
@@ -20,9 +20,15 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
-
+//pink only bush
+//use every()-- make sure everything is pink
+ //and some()-- if some are different return toxic
 function isBushSafe(berryArray) {
-  //Write your code here
+  if (berryArray.every(berries => berries === "pink")){
+    return "Bush is safe to eat from";
+  } else if(berryArray.some(berries => berries !== "pink")){
+    return "Toxic! Leave bush alone!";
+}
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
