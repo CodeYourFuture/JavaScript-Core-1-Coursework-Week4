@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+ return arr.slice(0,5);
+
 }
 
 /*
@@ -11,7 +13,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+
+ return [...arr].sort();
 }
 
 /*
@@ -24,7 +28,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  return  arr.map(x => x.trim().replace(/\//g, "").toLowerCase ());
 }
 
 /*
@@ -33,7 +38,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  return arr.slice(0, index).concat(arr.slice(index + 1))
+
 }
 
 /*
@@ -44,7 +51,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let percentages = arr.map(function element(number) {
+    if( number > 100){
+      return `${100}%`;
+    } else {
+      return Math.round(number * 100)/100 + "%";
+    }
+  });
+  return percentages;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -76,14 +91,14 @@ test("sortArray function returns a sorted version of the array", () => {
   ]);
 });
 
-test("sortArray function doesn't change the passed in array", () => {
+test("sortArray function doesn't change the passed in array", () => { 
   const before = ["a", "n", "c", "e", "z", "f"];
   const copy = before.slice();
   sortArray(before);
   expect(before).toEqual(copy);
 });
 
-test("tidyUpString function works", () => {
+test("tidyUpString function works", () => { 
   expect(
     tidyUpString([
       "/Daniel",
@@ -107,24 +122,24 @@ test("tidyUpString function works", () => {
   ]);
 });
 
-describe("remove function", () => {
+describe("remove function", () => { 
   test("removes index 0", () => {
     expect(remove([1, 2, 3], 0)).toEqual([2, 3]);
   });
 
-  test("removes middle index", () => {
+  test("removes middle index", () => {   
     expect(remove([1, 2, 3, 4, 5], 2)).toEqual([1, 2, 4, 5]);
   });
 
-  test("removes end index", () => {
+  test("removes end index", () => {   
     expect(remove([1, 2, 3, 4, 5], 4)).toEqual([1, 2, 3, 4]);
   });
 
   test("removes only index", () => {
-    expect(remove(["hi"], 0)).toEqual([]);
+    expect(remove(["hi"], 0)).toEqual([]);  
   });
 
-  test("ignores missing index", () => {
+  test("ignores missing index", () => {  
     expect(remove(["hi"], 10)).toEqual(["hi"]);
   });
 
