@@ -24,7 +24,23 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  let pass1 = passwords.filter(pass => length(pass) > 5)
+  let pass1 = passwords.filter(pass => pass.length > 5)
+  let pass2 = pass1.filter(containsUppercaseLetter)
+  let pass3 = pass2.filter(containsLowercaseLetter)
+  let pass4 = pass3.filter(containsNumber)
+  let pass5 = pass4.filter(containsSymbol)
+  let pass6 = pass5.map(pass => passwords.indexOf(pass))
+  // return passwords.map(pass => (pass5.forEach( filtered =>
+    // if (pass == fi)
+  pass6.forEach(index => passwords[index] = true);
+  passwords = passwords.map(pass => {
+    if (pass != true)
+      return false;
+    else 
+      return true
+  })
+  return passwords;
+  
 }
 
 // Returns true if string contains at least one uppercase letter.
