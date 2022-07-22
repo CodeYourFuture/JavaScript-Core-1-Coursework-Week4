@@ -8,6 +8,16 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const log = console.log();
+
+
+const multiplesOfNum = (num) => {
+  return num % 3 === 0 && num % 5 === 0 ? "FizzBuzz" :
+    num % 3 === 0 ? "Fizz" :
+    num % 5 === 0 ? "Buzz" : num;
+};
+
+arr.map(multiplesOfNum).forEach((num) => console.log(num));
 
 /* EXPECTED OUTPUT */
 
