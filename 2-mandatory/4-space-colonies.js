@@ -4,7 +4,7 @@
   They call the planet "Alpha" and they decide that the FAMILIES whose last names start with 'A' should stay,
   while the others go on in search of other planets to call home.
 
-  Create a function that returns an array of colonisers that will stay, according to the above rules.
+  Create a function that returns an array of colonizers that will stay, according to the above rules.
 
   NOTE: don't include any element that is not a "family".
 
@@ -14,9 +14,12 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
-
+function getSettlers(array) {
+  let name = array.filter(
+    (name) => name.includes("family") && name.startsWith("A")
+  );
+  return name;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
