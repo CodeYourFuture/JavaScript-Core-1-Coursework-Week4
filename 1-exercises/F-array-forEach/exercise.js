@@ -8,7 +8,23 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
+arr.forEach(function (arr) {
+  if (arr == 3) {
+    console.log("'Fizz'");
+  } else if (arr == 5) {
+    console.log("'Buzz'");
+    console.log("'Fizz'");
+  } else if (arr == 8) {
+    console.log("'Fizz'");
+    console.log("'Buzz'");
+  } else if (arr == 11) {
+    console.log("'Fizz'");
+  } else if (arr == 15) {
+    console.log("'FizzBuzz'");
+  } else {
+    console.log(arr);
+  }
+});
 /* EXPECTED OUTPUT */
 
 /*

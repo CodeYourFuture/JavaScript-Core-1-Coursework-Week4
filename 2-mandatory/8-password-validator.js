@@ -23,7 +23,19 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let pass = passwords.length >= 5;
+  let number = containsNumber(passwords);
+  let regex = containsSymbol(passwords);
+  let lowercase = containsLowercaseLetter(passwords);
+  let uppercase = containsUppercaseLetter(passwords);
+
+  if (pass && number && regex && lowercase && uppercase) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
