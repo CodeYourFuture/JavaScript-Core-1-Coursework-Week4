@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(colonizers) {
+  return colonizers.filter((alphaFam) => alphaFam.startsWith("A") && alphaFam.endsWith("family"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
