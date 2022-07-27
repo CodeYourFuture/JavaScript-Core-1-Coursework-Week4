@@ -15,7 +15,7 @@
   
 */
 
-function getSettlers() {}
+const getSettlers = arr => arr.filter(e => e.startsWith("A") && e.endsWith("family"));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

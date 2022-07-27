@@ -21,8 +21,12 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
+const isBushSafe = berryArray => {
+  if(berryArray.every(e => e === "pink")) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
