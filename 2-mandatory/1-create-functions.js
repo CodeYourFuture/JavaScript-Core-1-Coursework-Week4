@@ -38,7 +38,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(array, index) {}
+function remove(array, index) {
+  return array.slice().splice(element[index]);
+}
 
 /*
 Write a function that:
@@ -49,7 +51,10 @@ Write a function that:
 */
 
 function formatPercentage(array) {
-  
+  return array.map(function (element) {
+    if (element > "100") return "100" + "%";
+    return element.toFixed(2) * 1 + "%";
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
