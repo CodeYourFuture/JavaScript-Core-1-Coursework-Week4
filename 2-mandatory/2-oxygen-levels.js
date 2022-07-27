@@ -11,8 +11,12 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
 
+function findSafeOxygenLevel(planets) {
+  return planets.filter(planetOxy => planetOxy.includes("."))
+    .find(planetOxy => parseFloat(planetOxy) > 19.5 && parseFloat(planetOxy) < 23.5 ? planetOxy : undefined);
+
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
