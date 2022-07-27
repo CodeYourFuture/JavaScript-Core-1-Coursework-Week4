@@ -6,7 +6,7 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+const getLanes = arr => arr.filter(e => e.includes("Lane"));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
