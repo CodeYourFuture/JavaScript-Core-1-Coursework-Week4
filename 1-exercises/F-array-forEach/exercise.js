@@ -9,6 +9,14 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(function (item, index) {
+  if (item % 5 === 0 && item % 3 === 0) return (arr[index] = "Fizz-Buzz");
+  if (item % 5 === 0) return (arr[index] = "Buzz");
+  if (item % 3 === 0) return (arr[index] = "Fizz");
+});
+
+console.log(arr);
+
 /* EXPECTED OUTPUT */
 
 /*
