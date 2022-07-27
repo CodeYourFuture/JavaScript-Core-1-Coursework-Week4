@@ -11,7 +11,18 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  let arr1 = arr.filter(elem => elem.includes('%'));// only elements with %
+  let arr2 = arr1.map(elem => parseFloat(elem));// transform in numbers
+  let arr3 = arr2.find(elem => elem > 19.5 && elem < 23.5);// look for interval of numbers
+  if (arr3) {
+    return `${arr3}%`;//get string with %
+  } else {
+    return undefined;//no element in interval
+  }
+
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
