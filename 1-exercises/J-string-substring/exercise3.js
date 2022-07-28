@@ -10,8 +10,6 @@ let statement = "I do not like programming";
 
 let result = statement.substring(0, 5) + statement.substring(9, statement.length);
 
-let test
-
 console.log(result);
 
 /* EXPECTED OUTPUT 
