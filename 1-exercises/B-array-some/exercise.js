@@ -19,6 +19,23 @@ let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
+  // if (pairsByIndex === 0 || pairsByIndex === null) {
+  //   return process.exit(1)
+  // }
 });
 
-console.log(pairs);
+console.log(pairsByIndex.some(number));
+
+// function checkForNullValues(pairsByIndex) {
+//   return pairsByIndex.some(numbers , 0);
+//   console.log(checkForNullValues);
+// }
+
+// function checkForNullValues(pairsByIndex) {
+//   if (pairsByIndex === null && pairsByIndex === 0) {
+//     return process.exit(1);
+//   }
+//   console.log(checkForNullValues);
+// }
+
+// console.log(pairs.some(null && '0'));

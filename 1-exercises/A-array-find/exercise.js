@@ -4,6 +4,20 @@
 */
 
 // write your code here
+let findLongNameThatStartsWithA = "";
+answer = findLongNameThatStartsWithA(names);
+  for (let answer=0; answer < names.length; answer++) {
+      if (names[i].find === names) {
+          return inputArray[i];
+      }
+  }
+
+
+// let answer = findLongNameThatStartsWithA;
+// function findLongNameThatStartsWithA(names) {
+//   let answer = names.find(answer >= names.length && names < 7)
+//   return answer;
+// }
 
 let names = [
   "Rakesh",
@@ -17,9 +31,14 @@ let names = [
   "Ahmed",
 ];
 
+
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
+
 console.log(longNameThatStartsWithA);
+
+
+
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
