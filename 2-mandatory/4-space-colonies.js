@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(family) {
+   let firstFamily = family.filter(
+     (arrange) => arrange.startsWith("A") && arrange.includes("family")
+   );
+   return firstFamily;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
