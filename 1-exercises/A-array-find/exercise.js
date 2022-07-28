@@ -12,7 +12,7 @@ answer = findLongNameThatStartsWithA(names);
       }
   }
 
-
+let test = "this is a git test"
 // let answer = findLongNameThatStartsWithA;
 // function findLongNameThatStartsWithA(names) {
 //   let answer = names.find(answer >= names.length && names < 7)
