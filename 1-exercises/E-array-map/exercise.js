@@ -3,9 +3,28 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
+function multiplyBy100(num) {
+  return numbers.map((elem) => {
+    return elem * 100;
+  });
+}
+
+
+
+
+// /* option 2*/
+// let multiplyingBy100 = function (numbers) {
+//   return numbers.map((elem) => {
+//     return elem * 100;
+//   });
+// };
+
+
+
 let numbersMultipliedByOneHundred; // complete this statement
 
-console.log(numbersMultipliedByOneHundred);
+// console.log(numbersMultipliedByOneHundred);
+
 
 /* EXPECTED RESULT
 

@@ -7,7 +7,7 @@ function first5() {
 }
 
 /*
-Write a function that:
+Write a f unction that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
