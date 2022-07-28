@@ -7,8 +7,9 @@
 */
 
 let statement = "I do not like programming";
-
-let result = "";
+let removeNot = statement.substring(0, 5);
+let removeLast = statement.substring(9, statement.length);
+let result = removeNot + removeLast; 
 
 console.log(result);
 
