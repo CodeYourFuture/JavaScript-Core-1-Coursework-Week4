@@ -3,7 +3,11 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+const list = ["apple, banana", "orange", "strawberry", "pear", "mango"];
+const size = 5;
+const items = list.slice(0, size); //res: ["apple", "banana", "orange"]
+function first5(array) {
+return list();
 }
 
 /*
@@ -11,7 +15,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(list) {
+  return list.sort();
 }
 
 /*
@@ -24,16 +29,29 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(list) {
+  //loop through entire list
+  //What am I looping?; How long to loop for(Condition)?; After i loop how do i increase my starting number?
+  for(var i =0; i<list.length; i++){    
+    //taking out the white space
+    //https://regexr.com/
+    //remove the /
+    list[i] = list[i].replace("/", "");
+    list[i] = list[i].trim();
+  }
+  return list;
 }
+
 
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
-
-function remove() {
+function remove(removeArray, index) {
+  //remove element at index specified. then return remaining list
+  removeArray.splice(index, 1);
+  return removeArray;
 }
 
 /*
@@ -44,7 +62,18 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(percentages) {
+  for (var i = 0; i < percentages.length; i++) {
+    if (percentages[i] > 100) {
+      //if more than 100 just set to 100%
+      percentages[i] = 100 + "%";
+    } else {
+      // round to 1 decimal and add % to change to string
+      percentages[i] = Number(percentages[i].toFixed(1)) + "%";
+    }
+  }
+
+  return percentages;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
