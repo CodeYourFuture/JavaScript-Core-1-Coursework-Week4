@@ -1,40 +1,51 @@
 /*
-  The space travellers have safely landed and are foraging for food in the natural wildlife.
+    Many years into the future, a team of Space Voyagers find their ship is low on Oxygen and need to dock
+    somewhere safe while they call home for help.
 
-  There are bushes with many different colour berries.
+    Their computer detects a list of nearby planets that have Oxygen in their atmosphere.
 
-  The pink berries are the ONLY safe ones to eat.
+    To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
 
-  If any other berries are present, it's best not to eat from the bush at all!
+    Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
 
-  Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
-  Use the tests to confirm which message to return
-  
-  This exercise can be solved in a few different ways. One way might include the array methods
-  .some() and .every(). 
-  
-  The .some() method tests to see if some of the values (at least 1) in an array 
-  match what you're looking for and returns true or false. 
-  
-  The .every() method will only return true if all values match watch you're looking for. 
-  
-  Let's first look at an example that will teach you how to use these methods.
+    Some string methods that might help you here are .replace() and .substring().
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
+function findSafeOxygenLevel(oxygen) {
+  let value = 0;
+  for (var i = 0; i < oxygen.length; i++) {
+    if (oxygen[i].includes("%")) {
+      value = parseFloat(oxygen[i].replace("%", ""));
+      if (value >= 19.5 && value <= 23.5) {
+        console.log(value);
+        return value;
+      }
+    }
+  }
+
+  return undefined;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("isBushSafe finds toxic busy", () => {
+test("findSafeOxygenLevel function works - case 1", () => {
   expect(
-    isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
-  ).toEqual("Toxic! Leave bush alone!");
+    findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
+  ).toEqual("19.9%");
 });
 
-test("isBushSafe function finds safe bush", () => {
-  expect(isBushSafe(["pink", "pink", "pink", "pink"])).toEqual(
-    "Bush is safe to eat from"
-  );
+test("findSafeOxygenLevel function works - case 2", () => {
+  expect(
+    findSafeOxygenLevel(["30.8%", "23.5%", "18.8%", "19.5%", "20.2%", "31.6%"])
+  ).toEqual("20.2%");
+});
+
+test("findSafeOxygenLevel function filters out invalid percentages", () => {
+  expect(
+    findSafeOxygenLevel(["200%", "-21.5%", "20", "apes", "21.1%"])
+  ).toEqual("21.1%");
+});
+
+test("findSafeOxygenLevel function returns undefined if no valid planets found", () => {
+  expect(findSafeOxygenLevel(["50"])).toBeUndefined();
 });

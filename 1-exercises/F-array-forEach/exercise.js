@@ -9,6 +9,17 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(function (arr) {
+  if (arr is multiples of 3 => 15) {
+    console.log(`Fizz ${arr}`);
+  }else {
+  if (arr is multiples of 5 => 15) {  
+    console.log(`Buzz ${arr}`);
+  }else {
+  if (arr is multiples of 3+ 5 => 15) {  
+    console.log(`FizzBuzz ${arr}`);  
+  }
+})
 /* EXPECTED OUTPUT */
 
 /*
