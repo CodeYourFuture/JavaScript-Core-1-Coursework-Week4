@@ -10,10 +10,10 @@
   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 */
 
-let story =
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+let story =  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story.replace("dogs", "cats").replace("day", "night").replace(10, 100000)
+.replace("dogs", "cats").replace("great day", "brilliant night");
 
 /* EXPECTED OUTPUT */
 

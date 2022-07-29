@@ -9,6 +9,20 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function fizzBuzz(arr) {
+  if (arr % 3 == 0 && arr % 5 === 0) {
+    return "FizzBuzz";
+  } else if (arr % 3 == 0) {
+    return "Fizz";
+  } else if (arr % 5 === 0) {
+    return "Buzz";
+  } else {
+    return arr;
+  }
+}
+  console.log(arr.forEach(fizzBuzz));
+
+
 /* EXPECTED OUTPUT */
 
 /*
