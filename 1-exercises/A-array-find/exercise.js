@@ -16,8 +16,10 @@ let names = [
   "Karim",
   "Ahmed",
 ];
-
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+function isSevenLettersLong(names) {
+  return names.length > 7;
+}
+let longNameThatStartsWithA = names.find(isSevenLettersLong);
 
 console.log(longNameThatStartsWithA);
 
