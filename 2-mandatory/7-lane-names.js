@@ -6,7 +6,18 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arr) {
+const lanes = [];
+ arr.filter((st) =>{
+
+    if(st.includes("Lane")){
+
+       lanes.push(st);
+       return lanes;
+    }
+  })
+  return lanes;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
