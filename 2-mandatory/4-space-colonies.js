@@ -15,7 +15,23 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+const empty = [];
+const remain = arr.filter(name =>{
+ let staying = name.startsWith("A");
+ return staying;
+  });
+remain.map((elem) =>{
+  if(elem.includes("family")){
+    empty.push(elem);
+    return empty;
+  }
+})
+
+return empty;
+
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
