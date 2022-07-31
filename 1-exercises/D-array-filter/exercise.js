@@ -9,7 +9,7 @@
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
 let pairsByIndex = pairsByIndexRaw.filter((item) =>{
-if(!item === ([].length > 2)){
+if(item !== ([].length >= 2)){
   return item;
 }
 }); // Complete this statement
