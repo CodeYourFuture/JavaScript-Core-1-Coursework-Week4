@@ -1,5 +1,5 @@
 /*
-  The space travellers have safely landed and are foraging for food in the natural wildlife.
+  The space travelers have safely landed and are foraging for food in the natural wildlife.
 
   There are bushes with many different colour berries.
 

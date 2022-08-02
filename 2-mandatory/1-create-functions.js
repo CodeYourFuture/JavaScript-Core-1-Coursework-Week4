@@ -39,8 +39,8 @@ Write a function that:
 */
 
 function remove(array, index) {
-  return array.slice().splice(element[index]);
-}
+  return array.slice(0, index).concat(array.slice(index + 1));
+} // FOUND THIS SOLUTION ON STACK OVERFLOW & IT CONTAINED NO EXPLANATION SO I DON'T QUITE UNDERSTAND THE SOLUTION OR HOW IT WORKS, AS YET.
 
 /*
 Write a function that:
