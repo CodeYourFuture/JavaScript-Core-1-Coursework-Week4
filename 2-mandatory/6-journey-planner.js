@@ -10,7 +10,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -19,17 +19,13 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
+  if (stringText.includes(magicWord)) return stringText.indexOf(magicWord);
+  return "Not found";
 }
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
-  The input provided contains a list of locations in London. Each of locations is followed by a list
+  The input provided contains a list of locations in London. Each of location is followed by a list
   of transport modes that can be used to get there.
   Let's see an example:
 
@@ -64,7 +60,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  return array.slice([1]);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +79,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(array, string) {
+  return array.includes(string);
+}
 
 /*
   Implement the function getLocationName that
