@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0, 5);
 }
 
 /*
@@ -11,7 +12,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  let sortedArr = arr.sort();
+  return sortedArr;
 }
 
 /*
@@ -24,7 +27,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  let statement = arr.join("*");
+  statement = statement.trim().toLowerCase();
+  let newArr = statement.split("*");
+  return newArr;
 }
 
 /*
@@ -33,7 +40,13 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, ind) {
+  function isWanted(val) {
+    return val !== arr[ind];
+  }
+
+  let newArr = arr.filter(isWanted);
+  return newArr;
 }
 
 /*
@@ -44,7 +57,19 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+
+  function isMoreThan100(val) {
+    if (val > 100) {
+      val = 100;
+    } 
+    return val;
+  }
+  let morethan100 = arr.map(isMoreThan100);
+  let editArr = morethan100.map((el) => el.toFixed(2));
+
+  let cleanedArr = editArr.map((el) => `${el}%`);
+  return cleanedArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
