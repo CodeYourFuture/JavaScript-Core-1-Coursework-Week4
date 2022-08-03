@@ -11,8 +11,17 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+  array = array.filter((element) => element.includes("%"));
+  array = array.toString().replace(/%/g, "").split(",");
+  array = array.find((item) => item > 19.5 && item < 23.5);
+  for (let i in array) {
+    if (!undefined) return array + "%";
+  }
+  return array;
+}
 
+findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"]);
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
