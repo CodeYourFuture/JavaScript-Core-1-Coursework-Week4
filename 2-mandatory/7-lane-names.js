@@ -6,7 +6,28 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+// let streetNames = [];
+function getLanes(streetNames) {
+  if (streetNames = "Lane") {
+  return streetNames.indexOf("Lane");
+  }
+}
+streetNames.forEach(getLanes);
+// function getLanes(streetNames) {
+//   if (streetNames = "Lane") {
+//   return streetNames.indexOf("Lane");
+//   }
+// }
+// function getLanes(streetNames) {
+//   if (streetNames.indexOf("Lane", 0)) {
+//   return streetNames;
+//   }
+// }
+// function getLanes(streetNames) {
+//   if (streetNames.includes("Lane") = true) {
+//   return streetNames;
+//   }
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

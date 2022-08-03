@@ -14,8 +14,23 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+let voyagers = array;
+let array = voyagers;
+let newArray = [];
+function getSettlers(array) {
+  if ("A" in array && "family" in array)
+  newArray = array.push(newArray);
+  return newArray;
 
-function getSettlers() {}
+//  let newArray = [];
+//  function getSettlers(array) {
+//   newArray = array.from("some string") [0] = A + array.find("family");
+//   return newArray;
+
+//  function getSettlers(voyagers) {
+//  let newArray = voyagers.find(voyagers.charAt(0) = A) + voyagers.find("family");
+//  return newArray;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
