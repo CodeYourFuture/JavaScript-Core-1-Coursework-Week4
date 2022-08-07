@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  function isAlphaColonies(family) {
+    // return family.startsWith("A") && family.substring(family.length - 6, family.length) === "family"
+    return family.startsWith("A") && family.endsWith("family");
+  }
+
+  let alphaFamilyArr = voyagers.filter(isAlphaColonies);
+  return alphaFamilyArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

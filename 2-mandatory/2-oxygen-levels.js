@@ -11,7 +11,19 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  function isValid(el) {
+    return el.substring(el.length - 1, el.length) === "%";
+  }
+
+  function isSafeOxygen(num) {
+    let fixed = num.replace("%", "");
+    return fixed > 19.5 && fixed < 23.5;
+  }
+  let validArr = arr.filter(isValid);
+  let safeOxygen = validArr.find(isSafeOxygen);
+  return safeOxygen;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -6,7 +6,14 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  function isLane(street) {
+    return street.indexOf("Lane") !== -1;
+  }
+
+  let laneArr = streetNames.filter(isLane);
+  return laneArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -9,6 +9,28 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+
+
+function multiple(num){
+  if(num % 3 === 0 && num % 5 === 0) {
+    return "FizzBuzz";
+  } else if(num % 5 === 0){
+    return "Buzz";
+  } else if(num % 3 === 0){
+    return "Fizz";
+  } else {
+    return num;
+  }
+}
+
+// let multipleOfFive = arr.map(multiple5);
+// console.log(multipleOfFive);
+
+arr.map(multiple).forEach(output => console.log(output));
+
+
+// console.log(arr.map(fizzBuzzCaption));
+
 /* EXPECTED OUTPUT */
 
 /*

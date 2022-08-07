@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  let firstFiveArr = arr.slice(0, 5);
+  return firstFiveArr;
 }
 
 /*
@@ -11,7 +13,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  
+  let myArr = arr.slice(); //make a copy of arr before sorting;
+  return myArr.sort();
 }
 
 /*
@@ -24,7 +29,13 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  function tidyMyArr(element) {
+    return element.trim().replace(/\//g, "").toLowerCase();
+  }
+
+  let tidiedArr = arr.map(tidyMyArr);
+  return tidiedArr;
 }
 
 /*
@@ -33,7 +44,13 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  function isWithoutIndex(element) {
+    return element !== arr[index];
+  }
+
+  let myArr = arr.filter(isWithoutIndex);
+  return myArr;
 }
 
 /*
@@ -43,8 +60,33 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+function formatPercentage(arr) {
+  function isMoreThanHundred(num) {
+    if (num > 100) {
+      num = 100;
+    }
+    return num;
+  }
 
-function formatPercentage() {
+  //To my decimal solutions below/
+  //bobbyhadz.com/blog/javascript-round-number-to-1-decimal-place
+  //multiply by 100 instead of 10
+  //https://www.codingem.com/javascript-how-to-limit-decimal-places/
+
+  function toDecimals(num) {
+    return Math.round(num * 100) / 100;
+  }
+
+  function addPercentage(num) {
+    return num + "%";
+  }
+
+  let myFormattedArr = arr
+    .map(isMoreThanHundred)
+    .map(toDecimals)
+    .map(addPercentage);
+
+  return myFormattedArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
