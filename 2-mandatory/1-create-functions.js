@@ -4,9 +4,8 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(arr) {
-return arr.slice(0,5);
- 
-
+  let firstFiveArr = arr.slice(0, 5);
+  return firstFiveArr;
 }
 
 /*
@@ -15,7 +14,9 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  return arr.sort();
+  
+  let myArr = arr.slice(); //make a copy of arr before sorting;
+  return myArr.sort();
 }
 
 /*
@@ -29,10 +30,12 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arr) {
-  let statement = arr.join("*");
-  return statement.replace(/ /g, "").replace(/\//g, "").toLowercase();
-  let newArr = statement.split("*");
-  return newArr;
+  function tidyMyArr(element) {
+    return element.trim().replace(/\//g, "").toLowerCase();
+  }
+
+  let tidiedArr = arr.map(tidyMyArr);
+  return tidiedArr;
 }
 
 /*
@@ -42,16 +45,13 @@ Write a function that:
 */
 
 function remove(arr, index) {
-
-function isWithoutIndex(element) {
+  function isWithoutIndex(element) {
     return element !== arr[index];
-} 
+  }
 
-let myArr = arr.filter(isWithoutIndex);
- return myArr;
+  let myArr = arr.filter(isWithoutIndex);
+  return myArr;
 }
-
-
 
 /*
 Write a function that:
@@ -60,28 +60,34 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
-
 function formatPercentage(arr) {
-  
-  function isMoreThanHundred(num){
-    if(num > 100) {
-    return num.replace("100");
-  } 
-} 
+  function isMoreThanHundred(num) {
+    if (num > 100) {
+      num = 100;
+    }
+    return num;
+  }
 
-function toDecimals(num) {
-  return num.toFixed(2);
+  //To my decimal solutions below/
+  //bobbyhadz.com/blog/javascript-round-number-to-1-decimal-place
+  //multiply by 100 instead of 10
+  //https://www.codingem.com/javascript-how-to-limit-decimal-places/
+
+  function toDecimals(num) {
+    return Math.round(num * 100) / 100;
+  }
+
+  function addPercentage(num) {
+    return num + "%";
+  }
+
+  let myFormattedArr = arr
+    .map(isMoreThanHundred)
+    .map(toDecimals)
+    .map(addPercentage);
+
+  return myFormattedArr;
 }
-
-function addPercentage(num) {
-  return num + "%";
-} 
-}
-
-
-
-
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
