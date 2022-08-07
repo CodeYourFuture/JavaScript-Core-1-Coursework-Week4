@@ -11,7 +11,29 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxyArray) {
+  function isValid(oxyAmt) {
+    return (
+      oxyAmt.substring(oxyAmt.length - 1, oxyAmt.length) === "%" &&
+      oxyAmt.substring(0, 1) !== "-"
+    );
+  }
+
+  function isSafe(oxyAmt) {
+    return oxyAmt > 19.5 && oxyAmt < 23.5;
+  }
+
+  let validArray = oxyArray
+    .filter(isValid)
+    .map((oxyVal) => oxyVal.replace("%", ""));
+
+  let safeval = validArray.find(isSafe);
+  if (safeval != undefined) {
+    return safeval + "%";
+  } else {
+    return safeval;
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

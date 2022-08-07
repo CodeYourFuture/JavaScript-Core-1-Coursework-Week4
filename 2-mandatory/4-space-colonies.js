@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyArr) {
+  function isValidFam(voyager) {
+    return (
+      voyager.startsWith("A") &&
+      voyager.substring(voyager.length - 6, voyager.length) === "family"
+    );
+  }
+  let validSettlers = voyArr.filter(isValidFam);
+  return validSettlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

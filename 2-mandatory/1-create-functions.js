@@ -13,7 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  let sortedArr = arr.sort();
+  let sortedArr = arr.slice();
+  sortedArr.sort();
   return sortedArr;
 }
 
@@ -28,10 +29,15 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arr) {
-  let statement = arr.join("*");
-  statement = statement.trim().toLowerCase();
-  let newArr = statement.split("*");
-  return newArr;
+  
+  function cleanNames(name) {
+    let newName = name.toLowerCase().trim().replace(/\//, "");
+    return newName;
+  }
+
+  let cleanedArr = arr.map(cleanNames);
+  return cleanedArr;
+
 }
 
 /*
@@ -58,18 +64,25 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-
   function isMoreThan100(val) {
     if (val > 100) {
       val = 100;
-    } 
+    }
     return val;
   }
-  let morethan100 = arr.map(isMoreThan100);
-  let editArr = morethan100.map((el) => el.toFixed(2));
 
-  let cleanedArr = editArr.map((el) => `${el}%`);
-  return cleanedArr;
+  function formatDecimals(num) {
+    //toFixed messes with other values this solution from https://bobbyhadz.com/blog/javascript-round-number-to-1-decimal-place
+    //multiply by 100 instead of 10
+    //https://www.codingem.com/javascript-how-to-limit-decimal-places/
+    let result = Math.round(num * 100) / 100;
+    return result;
+  }
+
+  let morethan100 = arr.map(isMoreThan100);
+  let cleanedArr = morethan100.map(formatDecimals);
+  let finalArr = cleanedArr.map((el) => `${el}%`);
+  return finalArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
