@@ -139,6 +139,8 @@ function journeyPlanner(locations, transportMode) {
 
   return validArr.map((loctrans) => getLocationName(loctrans));
 }
+
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const string1 = "I Love coding and perfect code makes me happy";
