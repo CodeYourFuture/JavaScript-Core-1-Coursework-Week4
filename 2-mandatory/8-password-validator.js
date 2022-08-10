@@ -22,10 +22,60 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+function validatePasswords(passwords) {
+  let newArr = [];
+  let length = 0;
+  let upperLetter = false;
+  let lowerLetter = false;
+  let hasNum = false;
+  let hasSymbol = false;
+  let isPreviousPassword = true;
+  let newPassWord = [];
 
-function validatePasswords(passwords) {}
+  passwords.forEach((password) => {
+    length = containsFiveChar(password);
+    if (length) {
+      upperLetter = containsUppercaseLetter(password);
+      if (upperLetter) {
+        lowerLetter = containsLowercaseLetter(password);
+        if (lowerLetter) {
+          hasNum = containsNumber(password);
+          if (hasNum) {
+            hasSymbol = containsSymbol(password);
+            if (hasSymbol) {
+              isPreviousPassword = containsPreviousPassword(
+                newPassWord,
+                password
+              );
+              if (isPreviousPassword) {
+                newArr.push(false);
+              } else {
+                newPassWord.push(password);
+                newArr.push(true);
+              }
+            } else {
+              newArr.push(false);
+            }
+          } else {
+            newArr.push(false);
+          }
+        } else {
+          newArr.push(false);
+        }
+      } else {
+        newArr.push(false);
+      }
+    } else {
+      newArr.push(false);
+    }
+  });
+  return newArr;
+}
 
 // Returns true if string contains at least one uppercase letter.
+function containsFiveChar(string) {
+  return /.{5,}/.test(string);
+}
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
@@ -43,6 +93,14 @@ function containsNumber(string) {
 // Returns true if string contains at least one symbol.
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
+}
+
+function containsPreviousPassword(passwords, password) {
+  if (passwords.includes(password)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

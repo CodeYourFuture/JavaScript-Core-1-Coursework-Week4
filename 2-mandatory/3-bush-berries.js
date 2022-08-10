@@ -20,9 +20,18 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
+function getBerries(arr) {
+  return arr.includes("pink");
+}
 
 function isBushSafe(berryArray) {
   //Write your code here
+  let berries = berryArray.every(getBerries);
+  if (berries) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

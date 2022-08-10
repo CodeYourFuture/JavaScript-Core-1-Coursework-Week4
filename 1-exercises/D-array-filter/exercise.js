@@ -8,7 +8,12 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+let pairsByIndex = filterPairs(pairsByIndexRaw); // Complete this statement
+
+function filterPairs(pairs) {
+  let pairsList = pairs.filter((pair) => pair && pair.length === 2);
+  return pairsList;
+}
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

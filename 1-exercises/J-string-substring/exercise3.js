@@ -8,7 +8,17 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+function removeWord(str, word) {
+  var n = str.search(word);
+  while (str.search(word) > -1) {
+    n = str.search(word);
+    str = str.substring(0, n) + str.substring(n + word.length, str.length);
+    str = str.replace(/  /g, " ");
+  }
+  return str;
+}
+
+let result = removeWord(statement, "not");
 
 console.log(result);
 
