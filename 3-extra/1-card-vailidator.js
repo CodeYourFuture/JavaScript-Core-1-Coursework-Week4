@@ -17,7 +17,6 @@ function cardValidator(num) {
   let diffNum = 0;
   let x = 0;
   let i = 0;
-  //   let numOr0 = (n) => (isNaN(n) ? 0 : n);
   arr = numToNumArr(num);
   let onlyNum = onlyNumbers(arr);
   if (onlyNum) {
@@ -34,9 +33,7 @@ function cardValidator(num) {
           }
           if (x >= 15 && diffNum < 2) {
             diffNum = 2000;
-            // return x;
           }
-          //   return diffNum;
         } while (diffNum <= 1);
         if (diffNum > 1 && diffNum < 100) {
           if (arr[15] % 2 === 0) {
@@ -53,7 +50,7 @@ function cardValidator(num) {
   return "Credit card number is invalid";
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= MY TESTS ===== */
 
 test("cardValidator function works - case 1", () => {
   expect(cardValidator(9999777788880000)).toEqual(
