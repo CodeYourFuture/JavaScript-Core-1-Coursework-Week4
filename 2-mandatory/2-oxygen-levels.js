@@ -10,8 +10,32 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+function filterOxygen(min, max) {
+  return function (a) {
+    return a >= min && a <= max;
+  };
+}
 
-function findSafeOxygenLevel() {}
+function getValue(numbers) {
+  let newNumbers = [];
+  numbers.forEach((str) => {
+    if (str.includes("%")) {
+      str = str.replace(/%/g, "");
+      newNumbers.push(str);
+    }
+  });
+  return newNumbers;
+}
+
+function findSafeOxygenLevel(arr) {
+  let numbersArr = getValue(arr);
+  numbers = numbersArr.filter(filterOxygen(19.6, 23.4));
+  if (numbers[0]) {
+    return numbers[0] + "%";
+  } else {
+    return;
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
