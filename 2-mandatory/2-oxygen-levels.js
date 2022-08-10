@@ -29,9 +29,9 @@ function getValue(numbers) {
 
 function findSafeOxygenLevel(arr) {
   let numbersArr = getValue(arr);
-  numbers = numbersArr.filter(filterOxygen(19.6, 23.4));
-  if (numbers[0]) {
-    return numbers[0] + "%";
+  percentages = numbersArr.filter(filterOxygen(19.6, 23.4));
+  if (percentages[0]) {
+    return percentages[0] + "%";
   } else {
     return;
   }
