@@ -6,7 +6,15 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetArr) {
+  function isLane(street) {
+    return street.indexOf("Lane") !== -1;
+    // return street.includes("Lane");
+  }
+
+  let laneArray = streetArr.filter(isLane);
+  return laneArray;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
