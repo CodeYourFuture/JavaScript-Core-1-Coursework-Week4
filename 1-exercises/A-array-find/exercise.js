@@ -4,6 +4,10 @@
 */
 
 // write your code here
+function findLongNameThatStartsWithA(names) {
+  let name = names.find((name) => name.length > 7 && name[0] === "A");
+  return name;
+}
 
 let names = [
   "Rakesh",
