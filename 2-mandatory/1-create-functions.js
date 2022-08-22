@@ -26,9 +26,9 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
-  const cleanedArray = array.map(function (element) {
-    return element.trim().replace("/", "").toLowerCase();
-  });
+  const cleanedArray = array.map((element) =>
+    element.trim().replace("/", "").toLowerCase()
+  );
   return cleanedArray;
 }
 
