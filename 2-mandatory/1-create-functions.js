@@ -51,7 +51,7 @@ Write a function that:
 */
 
 function formatPercentage(array) {
-  return array.map(function (element) {
+  return array.map((element) => {
     if (element > "100") return "100" + "%";
     return element.toFixed(2) * 1 + "%";
   });
