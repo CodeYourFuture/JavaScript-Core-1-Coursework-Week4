@@ -15,7 +15,17 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  let voyegars = [];
+  arr.forEach((family) => {
+    if (family.includes("family")) {
+      if (family.startsWith("A")) {
+        voyegars.push(family);
+      }
+    }
+  });
+  return voyegars;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

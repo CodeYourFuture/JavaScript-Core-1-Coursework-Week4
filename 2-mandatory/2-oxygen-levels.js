@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygen) {
+  for (let i of oxygen) {
+    if(!i.endsWith("%")) continue
+    i = i.replace("%", "")
+    if (i > 19.5 && i < 23.5) {
+      return i + "%";
+    }
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
