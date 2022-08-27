@@ -5,7 +5,7 @@
 
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
 
-  Change the story using .replace() so that it says 
+  Change the story using .replace() so that it says .
 
   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 */
@@ -13,7 +13,7 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story.replace("dogs", "cats").replace("One day", "One night").replace("10 dogs", "100000 cats").replace("great day", "brilliant night");
 
 /* EXPECTED OUTPUT */
 
