@@ -6,7 +6,10 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(array) {
+  return array.filter((street) => street.endsWith('Lane'))
+  
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

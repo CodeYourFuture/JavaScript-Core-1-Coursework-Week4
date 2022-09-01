@@ -13,16 +13,14 @@
 
 function findSafeOxygenLevel(array) {
   let found = array.find((e) => {
-    if (Number(e.slice(0, -1)) !== NaN &&  e.slice(-1) === '%') {
+    if (Number(e.slice(0, -1)) !== NaN && e.slice(-1) === "%") {
       let number = Number(e.substring(0, e.length - 1));
       return number > 19.5 && number < 23.5;
     } else return undefined;
-
   });
 
-   return found;
+  return found;
 }
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
