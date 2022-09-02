@@ -23,22 +23,26 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(password) {
-  let isValidPasswords =  password((password) => containsUppercaseLetter)
+function validatePasswords(passwords) {
+  return passwords.map((password, index, array) => {
+    if (
+      password.length >= 5 &&
+      containsUppercaseLetter(password) &&
+      containsLowercaseLetter(password) &&
+      containsNumber(password) &&
+      containsSymbol(password) &&
+      array.indexOf(password) === index
+    ) {
+      return true;
+    } else return false;
+  });
 }
-console.log(validatePasswords([
-      "Se%5",
-      "TktE.TJTU",
-      "384#HsHF",
-      "dvyyeyy!5",
-      "tryT3729",
-    ]))
-
+ 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
-
+ 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
   return /[a-z]/.test(string);
@@ -56,26 +60,26 @@ function containsSymbol(string) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-// test("Example 1", () => {
-//   expect(
-//     validatePasswords([
-//       "Se%5",
-//       "TktE.TJTU",
-//       "384#HsHF",
-//       "dvyyeyy!5",
-//       "tryT3729",
-//     ])
-//   ).toEqual([false, false, true, false, false]);
-// });
+test("Example 1", () => {
+  expect(
+    validatePasswords([
+      "Se%5",
+      "TktE.TJTU",
+      "384#HsHF",
+      "dvyyeyy!5",
+      "tryT3729",
+    ])
+  ).toEqual([false, false, true, false, false]);
+});
 
-// test("Example 2", () => {
-//   expect(
-//     validatePasswords([
-//       "StUFf27%",
-//       "Pl3nty!",
-//       "Jai33",
-//       "shajsaUA**&&",
-//       "Pl3nty!",
-//     ])
-//   ).toEqual([true, true, false, false, false]);
-// });
+test("Example 2", () => {
+  expect(
+    validatePasswords([
+      "StUFf27%",
+      "Pl3nty!",
+      "Jai33",
+      "shajsaUA**&&",
+      "Pl3nty!",
+    ])
+  ).toEqual([true, true, false, false, false]);
+});
