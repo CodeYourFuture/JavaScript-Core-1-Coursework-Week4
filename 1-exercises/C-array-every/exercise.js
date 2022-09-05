@@ -5,7 +5,11 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+function includesEl() {
+  return students
+}
+
+let groupIsOnlyStudents = group.every(includesEl); // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
@@ -16,3 +20,5 @@ if (groupIsOnlyStudents) {
 /* EXPECTED RESULT */
 
 // The group does not contain only students
+
+console.log(includesEl());
