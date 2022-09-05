@@ -17,6 +17,10 @@ let names = [
   "Ahmed",
 ];
 
+function findLongNameThatStartsWithA(array) {
+  return array.find((element) => element.startsWith("A") && element.length > 7);
+}
+
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 console.log(longNameThatStartsWithA);
