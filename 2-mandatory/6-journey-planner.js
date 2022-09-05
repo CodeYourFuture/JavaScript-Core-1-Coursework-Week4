@@ -10,7 +10,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -19,17 +19,13 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
+  if (stringText.includes(magicWord)) return stringText.indexOf(magicWord);
+  return "Not found";
 }
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
-  The input provided contains a list of locations in London. Each of locations is followed by a list
+  The input provided contains a list of locations in London. Each of location is followed by a list
   of transport modes that can be used to get there.
   Let's see an example:
 
@@ -64,7 +60,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  return array.slice([1]);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +79,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(array, string) {
+  return array.includes(string);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +92,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(array) {
+  return array[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -119,10 +121,14 @@ function getLocationName() {}
    - Use array method to remove locations that are not accessible by the given transportMode.
    - Use array method to manipulate its elements.
 
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+function journeyPlanner(array, string) {
+  array = array.filter((element) => {
+    if (element.includes(string)) return element;
+  });
+  array = array.map((element) => getLocationName(element));
+  return array;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
