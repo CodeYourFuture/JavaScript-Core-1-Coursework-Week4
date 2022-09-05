@@ -71,18 +71,6 @@ function formatPercentage(array) {
     elt > 100 ? "100%" : parseFloat(elt.toFixed(2)) + "%"
   );
 }
-console.log(
-  tidyUpString([
-    "/Daniel",
-    " /Sanyia",
-    "AnTHonY",
-    "irina",
-    " Gordon",
-    "ashleigh   ",
-    "   Alastair  ",
-    " anne marie  ",
-  ])
-);
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
