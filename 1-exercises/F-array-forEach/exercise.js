@@ -18,18 +18,22 @@ function check(number)
         return "FizzBuzz";
     }
 
-    if (number % 3 == 0)
+    else if (number % 3 == 0)
     {
         return "Fizz";
     }    
     
-    if (number % 5 == 0)
+    else if (number % 5 == 0)
     {
         return "Buzz";
     }
 
+    else
+    {
     return number;
+    }
 }
+
 /* EXPECTED OUTPUT */
 
 /*
