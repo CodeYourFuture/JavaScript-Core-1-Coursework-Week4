@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array)
+{
+    return array.filter((NamesCheck) => NamesCheck.startsWith("A") && NamesCheck.includes("family"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

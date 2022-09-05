@@ -6,8 +6,9 @@
 
 let ukNations = ["Scotland", "Wales", "England", "Northern Ireland"];
 
-function isInUK(country) {
-  return; // complete this statement
+function isInUK(country)
+{
+    return ukNations.includes(country);
 }
 
 /* 
