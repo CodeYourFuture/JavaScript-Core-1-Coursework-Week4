@@ -25,7 +25,6 @@ names.forEach((name) => {
 });
 
 /* EXPECTED OUTPUT 
-
   "Tamzin"
   "Jessica"
   "Tony"
