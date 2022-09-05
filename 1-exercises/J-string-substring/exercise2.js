@@ -31,5 +31,4 @@ names.forEach((name) => {
   "Tony"
   "Shae"
   "Arron"
-  
 */
