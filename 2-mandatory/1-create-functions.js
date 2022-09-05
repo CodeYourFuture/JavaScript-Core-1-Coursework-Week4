@@ -16,9 +16,9 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  const sortedArray = [...array]
+  const sortedArray = [...array];
   return sortedArray.sort();
-   
+
   // const a = [...array];
   // for (let i = 0; i < a.length; i++) {
   //   const min = a
@@ -27,9 +27,8 @@ function sortArray(array) {
   //   if (min !== i) [a[i], a[min]] = [a[min], a[i]];
   // }
   //  return a;
-  
 }
- /*
+/*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
 
@@ -39,19 +38,19 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString(arr) { 
-  return arr.map(str => str.trim().replace('/', '').toLowerCase());
+function tidyUpString(arr) {
+  return arr.map((str) => str.trim().replace("/", "").toLowerCase());
 }
-  // console.log(tidyUpString([
-  //     "/Daniel",
-  //     " /Sanyia",
-  //     "AnTHonY",
-  //     "irina",
-  //     " Gordon",
-  //     "ashleigh   ",
-  //     "   Alastair  ",
-  //     " anne marie  ",
-  //   ]))
+// console.log(tidyUpString([
+//     "/Daniel",
+//     " /Sanyia",
+//     "AnTHonY",
+//     "irina",
+//     " Gordon",
+//     "ashleigh   ",
+//     "   Alastair  ",
+//     " anne marie  ",
+//   ]))
 /*
 Write a function that:
 - Takes an array and an index as input.
@@ -59,7 +58,7 @@ Write a function that:
 */
 
 function remove(arr, index) {
-  return arr.filter((v) => arr.indexOf(v) !== index)
+  return arr.filter((v) => arr.indexOf(v) !== index);
 }
 // console.log(remove([1, 2, 3], 0));
 // console.log(remove([1, 2, 3, 4, 5], 2));
@@ -72,10 +71,10 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  let formattedPercentage = arr.map(value => {
-    if (value > 100) return '100%'
+  let formattedPercentage = arr.map((value) => {
+    if (value > 100) return "100%";
     else return Math.round((value + Number.EPSILON) * 100) / 100 + "%";
-  })
+  });
   return formattedPercentage;
 }
 // console.log(formatPercentage([23, 18.103, 187.2, 0.372]));

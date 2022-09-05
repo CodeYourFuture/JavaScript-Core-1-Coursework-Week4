@@ -23,7 +23,7 @@ function fizzBuzz(ar) {
   //   return num;
   //  })
 
-  return ar.forEach(function(num) {
+  return ar.forEach(function (num) {
     if (num % 3 === 0 && num % 5 === 0) {
       num = "FizzBuzz";
     } else if (num % 5 === 0) {
@@ -36,7 +36,7 @@ function fizzBuzz(ar) {
 }
 
 console.log(fizzBuzz(arr));
-  /* EXPECTED OUTPUT */
+/* EXPECTED OUTPUT */
 
 /*
 1

@@ -86,8 +86,6 @@ function isAccessibleByTransportMode(traArray, str) {
   return traArray.includes(str);
 }
 
- 
-
 /*
   Implement the function getLocationName that
 
@@ -101,7 +99,7 @@ function getLocationName(array) {
   let locations = array[0];
   return locations;
 }
- 
+
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
 
@@ -130,9 +128,9 @@ function getLocationName(array) {
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  let accessibleLocations = locations.filter(
-    (location) => isAccessibleByTransportMode
-      (location, transportMode));
+  let accessibleLocations = locations.filter((location) =>
+    isAccessibleByTransportMode(location, transportMode)
+  );
   return accessibleLocations.map(getLocationName);
 }
 
@@ -148,7 +146,7 @@ const londonLocations = [
   ["Tower Bridge", "tube", "bus"],
   ["Greenwich", "bus", "river boat"],
 ];
- describe("checkCodeIsThere", () => {
+describe("checkCodeIsThere", () => {
   test("finds code", () => {
     expect(checkCodeIsThere(string1)).toEqual(26);
   });

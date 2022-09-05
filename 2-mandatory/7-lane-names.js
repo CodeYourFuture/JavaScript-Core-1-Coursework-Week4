@@ -7,8 +7,7 @@
 */
 
 function getLanes(array) {
-  return array.filter((street) => street.endsWith('Lane'))
-  
+  return array.filter((street) => street.endsWith("Lane"));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

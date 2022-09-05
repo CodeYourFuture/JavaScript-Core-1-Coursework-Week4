@@ -8,9 +8,9 @@
 */
 
 function getEligibleStudents(students) {
-  let attendantStudents = students.filter(attendance => attendance[1] >= 8);
-  return attendantStudents.map(student => student[0]);
- }
+  let attendantStudents = students.filter((attendance) => attendance[1] >= 8);
+  return attendantStudents.map((student) => student[0]);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

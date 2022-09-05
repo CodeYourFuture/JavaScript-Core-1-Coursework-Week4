@@ -15,13 +15,12 @@ let story =
 
 // let result = story.replace(/dogs/gi, "cats").replace(/day/gi, "night").replace("10", "100000").replace("great", "brilliant");
 
-let toBeReplaced = ['dogs', 'day', '10', 'dogs', 'great', 'day'];
-let replacer = ['cats', 'night', '100000', 'cats', 'brilliant', 'night'];
+let toBeReplaced = ["dogs", "day", "10", "dogs", "great", "day"];
+let replacer = ["cats", "night", "100000", "cats", "brilliant", "night"];
 let result = story;
-for (let i = 0; i < toBeReplaced.length; i++){
+for (let i = 0; i < toBeReplaced.length; i++) {
   result = result.replace(toBeReplaced[i], replacer[i]);
 }
-
 
 /* EXPECTED OUTPUT */
 
