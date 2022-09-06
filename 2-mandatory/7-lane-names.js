@@ -8,11 +8,11 @@
 
 // let streetNames = [];
 function getLanes(streetNames) {
-  if (streetNames = "Lane") {
-  return streetNames.indexOf("Lane");
+  if (streetNames.includes("Lane") == true) {
+  return streetNames;
   }
 }
-streetNames.forEach(getLanes);
+// streetNames.forEach(getLanes);
 // function getLanes(streetNames) {
 //   if (streetNames = "Lane") {
 //   return streetNames.indexOf("Lane");

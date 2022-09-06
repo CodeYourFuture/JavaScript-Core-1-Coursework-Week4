@@ -4,7 +4,7 @@
 */
 
 // write your code here
-let findLongNameThatStartsWithA = "";
+// let findLongNameThatStartsWithA = "";
 answer = findLongNameThatStartsWithA(names);
   for (let answer=0; answer < names.length; answer++) {
       if (names[i].find === names) {
@@ -15,12 +15,12 @@ answer = findLongNameThatStartsWithA(names);
 // function findLongNameThatStartsWithA(names) {
 //   let answer = names.find(answer >= names.length && names < 7)
 //   return answer;
-// }
+// }qq
 
 let names = [
   "Rakesh",
   "Antonio",
-  "Alexandra",
+  "Alexandra",f.
   "Andronicus",
   "Annam",
   "Mikey",

@@ -12,15 +12,26 @@
         Input: Is an array
         Output: Is an array
         Logic: Only strings that start with A, and finish with family
-  
 */
-let voyagers = array;
-let array = voyagers;
-let newArray = [];
-function getSettlers(array) {
-  if ("A" in array && "family" in array)
-  newArray = array.push(newArray);
-  return newArray;
+
+function getSettlers(voyagers) {
+  // let newArray = []
+  for (let i = 0; i < voyagers.length; i++) {
+    const newArray = [voyagers[i]];
+    if (voyagers.includes("A") == true && voyagers.includes("family") == true) {
+      return newArray = voyagers[i]
+    }
+  }
+  
+
+
+// let voyagers = array;
+// let array = voyagers;
+// let newArray = [];
+// function getSettlers(array) {
+//   if ("A" in array && "family" in array)
+//   newArray = array.push(newArray);
+//   return newArray;
 
 //  let newArray = [];
 //  function getSettlers(array) {
