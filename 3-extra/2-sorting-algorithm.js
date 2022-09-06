@@ -56,7 +56,7 @@ const agesCase1 = [
   "🎖",
   "Ismeal",
 ];
-console.log(sortAges(agesCase1));
+
 const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
