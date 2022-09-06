@@ -23,7 +23,35 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+// Validate characters of password , output array of booleans values
+function isValid(passwords) {
+  let regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!#\$%\&*.]).{5,}$/;
+  let validationArr = passwords.map((password) => regex.test(password));
+  return validationArr;
+}
+
+// Check occurrence of password , output array of boolean values
+function checkOccurrence(passwords) {
+  let validationArr = passwords.map(
+    (item, index) => passwords.indexOf(item) === index
+  );
+  return validationArr;
+}
+
+// Combine two arrays of boolean values and output an array of boolean values
+function combineTwoArrays(array1, array2) {
+  return array1.map((elt, i) => elt && array2[i]);
+}
+
+function validatePasswords(passwords) {
+  let characterValidation = isValid(passwords);
+  let occurrenceValidation = checkOccurrence(passwords);
+  let PasswordValidationResult = combineTwoArrays(
+    characterValidation,
+    occurrenceValidation
+  );
+  return PasswordValidationResult;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
