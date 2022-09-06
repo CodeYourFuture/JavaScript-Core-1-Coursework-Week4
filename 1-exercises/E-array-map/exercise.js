@@ -6,7 +6,8 @@ function multiplyBy100(num) {
   return num*100
 }
 
-let numbersMultipliedByOneHundred = numbers.map(multiplyBy100) 
+
+let numbersMultipliedByOneHundred = numbers.map(multiplyBy100)
 // numbersMultipliedByOneHundred = numbers.map(num => num*100)
 
 console.log(numbersMultipliedByOneHundred);
