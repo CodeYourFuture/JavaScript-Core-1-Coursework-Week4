@@ -5,6 +5,11 @@
 
 // write your code here
 
+function findLongNameThatStartsWithA(arr){
+  let result = arr.find(element => element.startsWith("A") && element.length > 7)
+  return result
+}
+
 let names = [
   "Rakesh",
   "Antonio",
@@ -16,6 +21,7 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
