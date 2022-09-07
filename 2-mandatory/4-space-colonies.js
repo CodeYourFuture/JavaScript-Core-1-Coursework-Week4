@@ -12,7 +12,7 @@
         Input: Is an array
         Output: Is an array
         Logic: Only strings that start with A, and finish with family
-  
+  npx jest --testRegex='4-space-colonies.js'
 */
 
 function getSettlers(array) {
