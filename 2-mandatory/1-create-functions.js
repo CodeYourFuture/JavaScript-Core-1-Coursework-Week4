@@ -12,8 +12,11 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
+
 function sortArray(arr) {
-  return arr.sort();
+ var newArray=  [...arr.sort()];
+ console.log(newArray)
+  return newArray;
 }
 
 /*
@@ -51,8 +54,8 @@ Write a function that:
 
 function formatPercentage(array) {
   for (let i=0; i<array.length; i++){
- let elemTemp=  array[i].toFixed(2);
-     if (elemTemp >100) { elemTem=100}
+ let elemTemp=  parseFloat(array[i].toFixed(2));
+     if (elemTemp >100) { elemTemp=100}
      array[i]=elemTemp+"%";
   }
 return array

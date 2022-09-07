@@ -17,7 +17,11 @@ function findSafeOxygenLevel(arrayOxygen) {
   let boo=true;
   while (index <arrayOxygen.length && boo) {
      tempNum=parseFloat( arrayOxygen[index].replace("%",""));
-    if ( tempNum >=19.5 && tempNum <= 23.5 ) {
+
+    if ( tempNum >19.5 
+      && tempNum < 23.5  
+      && arrayOxygen[index].slice(-1)==="%"
+      ) {
       console.log("first nearest planet is planet number "
       + index 
       + " which is " +  arrayOxygen[index]);
@@ -27,6 +31,7 @@ function findSafeOxygenLevel(arrayOxygen) {
       index++;
     }
   };
+  return arrayOxygen[index]
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+
+ return array.filter(str => 
+    str.split(' ').pop()==="family"
+    &&
+    str[0]==="A")
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
