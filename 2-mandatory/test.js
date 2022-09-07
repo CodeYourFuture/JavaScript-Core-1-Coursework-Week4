@@ -1,7 +1,51 @@
-["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
 
 
+function findSafeOxygenLevel(oxygenLevels) {
+  let oxygenLevel = oxygenLevels
+    .filter((e) => /^\d/.test(e))
+    .filter((e) => /%$/.test(e))
+    .map((e) => e.replace("%", ""))
+    .find((n) => n > 19.5 && n < 23.5)
+    .toString()
+    .concat("%");
+  return oxygenLevel;
+}
+let arr = ["200%", "-21.5%", "20", "apes", "21.1%"];
 
+console.log(findSafeOxygenLevel(arr));
+
+//------------------------
+
+// // let arr = ["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
+
+// function findSafeOxygenLevel(oxygenLevels) {
+// //   //   return oxygenLevels.filter(oxygenLevel => /^[0-9]%/g.test(oxygenLevel));
+// //   let numbers = oxygenLevels.filter((oxygenLevel) => /^\d/.test(oxygenLevel));
+// //   let percents = numbers.filter(o => /%$/.test(o));
+// //     let doubleNumber = percents.map(n => Number(n.replace(/[^0-9\.]+/g, "")));
+// //   // return percents;
+// //   return doubleNumber;
+
+// // //   let doubleNumber = Number(.replace(/[0-9\.]+/g, ""));
+// // //   return doubleNumber;
+
+// let oxygenLevel = oxygenLevels
+//   .filter((e) => /^\d\%$/g.test(e))
+//   .map((n) => n.replace("%", ""))
+//   //   .map((n) => Number(n.replace(/^[^0-9\.]+/g, "")))
+//   .find((n) => n > 19.5 && n < 23.5)
+// //   .toString()
+// //   .concat("%");
+// return oxygenLevel;
+// }
+
+// let arr = ["200%", "-21.5%", "20", "apes", "21.1%"];
+
+// console.log(findSafeOxygenLevel(arr));
+
+//-------------------
+
+// .filter(oxygenLevel => oxygenLevel.includes(/\d/ && "%"));
 
 // function formatPercentage(arr) {
 //   return arr.map((e) => e.toFixed(2).concat("%"));
