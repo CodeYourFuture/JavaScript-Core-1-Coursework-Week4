@@ -8,9 +8,10 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+let pairsByIndex = pairsByIndexRaw.filter((arr) => Array.isArray(arr) && arr.length === 2 && arr.every(n => typeof n === "number")); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
+
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
