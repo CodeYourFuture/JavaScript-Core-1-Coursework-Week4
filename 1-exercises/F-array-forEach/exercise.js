@@ -9,6 +9,25 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(num => {
+  if (num % 3 === 0 && num % 5 === 0) {
+    num = "FizzBuzz";
+  } else if (num % 5 === 0) {
+    num = "Buzz";
+  } else if (num % 3  === 0) {
+    num = "Fizz";
+  } 
+  console.log(num)
+})
+
+// let double = [];
+
+// let array = arr.forEach(number => {
+//   double.push(number * 2) 
+//   return number * 2
+// })
+
+// console.log (array)
 /* EXPECTED OUTPUT */
 
 /*
