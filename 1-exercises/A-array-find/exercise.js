@@ -2,8 +2,16 @@
   You are given an array of names.
   Using .find(), we'd like to find the first name which starts with A and is longer than 7 letters.
 */
-
+ 
+ 
 // write your code here
+function findLongNameThatStartsWithA(n) {
+  return n.find((name, index) => {
+    // console.log(name, index)
+    return  name.startsWith("A") && name.length > 7;
+  })
+}
+ 
 
 let names = [
   "Rakesh",
@@ -20,6 +28,9 @@ let names = [
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 console.log(longNameThatStartsWithA);
+
+// let longName = names.find(name => name.startsWith('A') && name.length > 7);
+// console.log(longName);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"

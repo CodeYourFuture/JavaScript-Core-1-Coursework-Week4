@@ -3,17 +3,31 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(numbers) {
+  let firstFiveNumbers = numbers.slice(0, 5);
+  return firstFiveNumbers;
 }
-
+//   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// console.log(first5(numbers))
+//  console.log(numbers.indexOf(6), 'Find index')
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
-}
+function sortArray(array) {
+  const sortedArray = [...array];
+  return sortedArray.sort();
 
+  // const a = [...array];
+  // for (let i = 0; i < a.length; i++) {
+  //   const min = a
+  //     .slice(i + 1)
+  //     .reduce((acc, val, j) => (val < a[acc] ? j + i + 1 : acc), i);
+  //   if (min !== i) [a[i], a[min]] = [a[min], a[i]];
+  // }
+  //  return a;
+}
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,18 +38,30 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  return arr.map((str) => str.trim().replace("/", "").toLowerCase());
 }
-
+// console.log(tidyUpString([
+//     "/Daniel",
+//     " /Sanyia",
+//     "AnTHonY",
+//     "irina",
+//     " Gordon",
+//     "ashleigh   ",
+//     "   Alastair  ",
+//     " anne marie  ",
+//   ]))
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  return arr.filter((v) => arr.indexOf(v) !== index);
 }
-
+// console.log(remove([1, 2, 3], 0));
+// console.log(remove([1, 2, 3, 4, 5], 2));
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -44,9 +70,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let formattedPercentage = arr.map((value) => {
+    if (value > 100) return "100%";
+    else return Math.round((value + Number.EPSILON) * 100) / 100 + "%";
+  });
+  return formattedPercentage;
 }
-
+// console.log(formatPercentage([23, 18.103, 187.2, 0.372]));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
