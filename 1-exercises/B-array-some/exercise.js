@@ -17,7 +17,7 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
   if (indexes===null){
-    process.exit(1)
+   return process.exit(1)
   }
 
   
