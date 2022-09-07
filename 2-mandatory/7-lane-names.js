@@ -5,8 +5,10 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
+function getLanes(array) {
+  return array.filter((item) => item.includes("Lane"));
+}
 
-function getLanes() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

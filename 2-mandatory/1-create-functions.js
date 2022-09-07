@@ -13,8 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  let newArr = arr.splice(arr)
-  return newArr.sort(arr)
+ return arr
 }
 
 /*
@@ -54,8 +53,8 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-  return numbers.map((number) => {
+function formatPercentage(number) {
+  return number.map((number) => {
     if (number > 100) {
       return "100%";
     }
