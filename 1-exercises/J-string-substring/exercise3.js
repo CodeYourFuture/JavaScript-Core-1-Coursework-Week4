@@ -8,9 +8,10 @@
 
 let statement = "I do not like programming";
 
-let result = "";
-
+console.log(statement.substr(0, 5));
+console.log(statement.substr(9, 25))
 console.log(result);
+
 
 /* EXPECTED OUTPUT 
 
