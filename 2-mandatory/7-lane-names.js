@@ -8,7 +8,6 @@
 
 function getLanes(streetArray) {
  return streetArray.filter(street =>street.includes(" Lane") )
-    
  }
 
 
