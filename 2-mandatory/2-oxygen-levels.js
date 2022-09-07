@@ -11,8 +11,23 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
-
+function findSafeOxygenLevel(arrayOxygen) {
+  let tempNum=0;
+  let index=0;
+  let boo=true;
+  while (index <arrayOxygen.length && boo) {
+     tempNum=parseFloat( arrayOxygen[index].replace("%",""));
+    if ( tempNum >=19.5 && tempNum <= 23.5 ) {
+      console.log("first nearest planet is planet number "
+      + index 
+      + " which is " +  arrayOxygen[index]);
+      boo=false;
+    }
+    else{
+      index++;
+    }
+  };
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
