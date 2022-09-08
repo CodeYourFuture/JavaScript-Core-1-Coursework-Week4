@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arrFamily) {
+  let AlphaFamily = arrFamily.filter((family)=>family.charAt(0)==='A' && family.endsWith('family'))
+  return arrFamily;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
