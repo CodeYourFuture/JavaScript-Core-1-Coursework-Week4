@@ -13,21 +13,14 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-/*let story1 = story.replace('10', '100000');
-let result = story1.replaceAll("dogs", "cats");
-let result1 = result.replace("day", "night");
-let result2 = result1.replace('great', 'brilliant');
-
-console.log(result2);*/
-
-// not working can i use for?
+// find out why i couldnt use three replaces but when I changed one to replace all it worked??
 
 /* EXPECTED OUTPUT */
 
 let result = story
 .replace('10', '100000')
 .replaceAll("dogs", "cats")
-.replace("day", "night")
+.replaceAll("day", "night")
 .replace("great", "brilliant")
 console.log(result)
 
