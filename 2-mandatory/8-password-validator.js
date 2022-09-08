@@ -23,7 +23,29 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+// PreviousPassword = ["fhD8!yrjj", "ttkTu.wer3", "dvyyeyY!5", "qwbfj76%", "tytT3729."];
+
+function validatePasswords(passwords) {
+  let   validity=[];
+  for ( let index=0; index < passwords.length; index++)
+  {
+    element=passwords[index];
+    validity.push( 
+    element.length >= 5 
+    &&
+    containsUppercaseLetter(element)
+    && 
+    containsLowercaseLetter(element) 
+    &&
+    containsNumber(element)
+    &&
+    containsSymbol(element)
+    &&
+    ! passwords.slice(0,index).includes(element)
+ )
+  }
+return validity;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -70,3 +92,5 @@ test("Example 2", () => {
     ])
   ).toEqual([true, true, false, false, false]);
 });
+
+

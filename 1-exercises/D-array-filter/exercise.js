@@ -8,8 +8,7 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
-
+ let pairsByIndex=pairsByIndexRaw.filter(n => n!=null && n.length===2); // Complete this statement
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
@@ -21,7 +20,7 @@ let pairs = pairsByIndex.map(function (indexes) {
 
 console.log(pairs);
 
-/* EXPECTED RESULT
+// /* EXPECTED RESULT
 
-  [ [ 'Islam', 'Luke' ], [ 'Lesley', 'Mozafar' ], [ 'Harun', 'Irina' ] ]
-*/
+//   [ [ 'Islam', 'Luke' ], [ 'Lesley', 'Mozafar' ], [ 'Harun', 'Irina' ] ]
+// */

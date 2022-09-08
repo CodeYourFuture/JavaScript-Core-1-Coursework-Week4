@@ -5,8 +5,11 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+let groupIsOnlyStudents= (group.filter(name => students.includes(name))).length===group.length ?  true: false;  // complete this statement
+  // console.log(temp)
 
+
+console.log(groupIsOnlyStudents)
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
 } else {

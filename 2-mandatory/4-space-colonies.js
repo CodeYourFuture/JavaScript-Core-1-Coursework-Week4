@@ -12,10 +12,17 @@
         Input: Is an array
         Output: Is an array
         Logic: Only strings that start with A, and finish with family
-  
+  npx jest --testRegex='4-space-colonies.js'
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+
+ return array.filter(str => 
+    str.split(' ').pop()==="family"
+    &&
+    str[0]==="A")
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
