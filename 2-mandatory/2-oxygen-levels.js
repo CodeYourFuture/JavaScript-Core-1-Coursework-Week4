@@ -10,9 +10,16 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
-
-function findSafeOxygenLevel() {}
-
+function percentageToFloat(percentage) {
+  return parseFloat(percentage.replace("%", ""));
+}
+function findSafeOxygenLevel(array) {
+  let filteredArray = array.filter((elt) => elt.includes("%"));
+  let newArray = filteredArray.find(
+    (elt) => percentageToFloat(elt) < 23.5 && percentageToFloat(elt) > 19.5
+  );
+  return newArray;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

@@ -15,8 +15,9 @@
   
 */
 
-function getSettlers() {}
-
+function getSettlers(array) {
+  return array.filter((elt) => elt.startsWith("A") && elt.includes("family"));
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

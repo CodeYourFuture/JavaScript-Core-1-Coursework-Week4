@@ -20,13 +20,12 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
 }
-
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
   The input provided contains a list of locations in London. Each of locations is followed by a list
@@ -64,8 +63,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
-
+function getTransportModes(array) {
+  return array.splice(1);
+}
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -81,8 +81,10 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
-
+function isAccessibleByTransportMode(arrayOfTransport, transportMode) {
+  let newArr = [...arrayOfTransport];
+  return newArr.includes(transportMode) ? true : false;
+}
 /*
   Implement the function getLocationName that
 
@@ -92,8 +94,10 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
-
+function getLocationName(array) {
+  let newArr = [...array];
+  return newArr.splice(0, 1).toString();
+}
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
 
@@ -119,10 +123,13 @@ function getLocationName() {}
    - Use array method to remove locations that are not accessible by the given transportMode.
    - Use array method to manipulate its elements.
 
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  let arrayOfLocations = [...locations];
+  return arrayOfLocations
+    .filter((array) => isAccessibleByTransportMode(array, transportMode))
+    .map((array) => getLocationName(array));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -137,7 +144,7 @@ const londonLocations = [
   ["Tower Bridge", "tube", "bus"],
   ["Greenwich", "bus", "river boat"],
 ];
-
+console.log(journeyPlanner(londonLocations, "bus"));
 describe("checkCodeIsThere", () => {
   test("finds code", () => {
     expect(checkCodeIsThere(string1)).toEqual(26);
