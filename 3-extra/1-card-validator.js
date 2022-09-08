@@ -8,39 +8,37 @@ function getSumOfDigits(num) {
 }
 
 function cardValidator(number){
-   if (parseInt(number)!==NaN && parseInt(number)!==undefined ){
-    const sum=getSumOfDigits(number)
-    const even= number % 2===0;
+  let sum=0;
+  let even=false;
+  let strUniqueChar="0";
+   if ( /^[0-9]+$/.test(number) ){
+       sum = getSumOfDigits(number)
+       even= /^[0,2, 4, 6, 8]+$/.test(number[number.length-1]);
+       strUniqueChar=number
+          .split('')
+          .filter(function(item, pos, self) {
+            return self.indexOf(item) == pos;
+          })
+          .join('');
+          console.log( /^[0-9]+$/.test(number))
+        }
+       const check=
+        number.length === 16
+        &&
+        sum > 16 
+        && 
+        even
+        && 
+        strUniqueChar.length >=2;
+       
+  if (check){
+    return "The card number is valid"
+  }
+  else{
+        return "The card number is invalid"
+
+  }
    }
-     
-    }
-//     const str=number.toString();
-// str.length > 16;
-//  let strUniqueChar=str
-//     .split('')
-//     .filter(function(item, pos, self) {
-//       return self.indexOf(item) == pos;
-//     })
-//     .join('');
-
-//     const check=
-//         str.length === 16
-//     &&
-//         /^[0-9]+$/.test(str)
-//     &&
-//         sum > 16 
-//     && 
-//         even
-//     && 
-//         strUniqueChar.length >=2
-//   if (check){
-//     return "The card number is valid"
-//   }
-//   else{
-//         return "The card number is invalid"
-
-//   }
 
 
-
-console.log(cardValidator('a92332119c011112'))
+console.log(cardValidator('1111111111111110'))
