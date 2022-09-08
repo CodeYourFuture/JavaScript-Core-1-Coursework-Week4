@@ -14,9 +14,9 @@ let everyone = [
   "Austine",
   "Swathi",
 ];
-
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+// use slice not splice 
+let firstFive = everyone.slice(0,5); // complete this statement
+let lastFive = everyone.slice(2, 7); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
