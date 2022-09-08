@@ -6,8 +6,10 @@
 
 let ukNations = ["Scotland", "Wales", "England", "Northern Ireland"];
 
-function isInUK(country) {
-  return; // complete this statement
+function isInUK(country){ 
+  if (country === "Scotland" || country === "Wales" || country === "England" || country ==="Northern Ireland")
+  {return true} 
+  return false// complete this statement
 }
 
 /* 
