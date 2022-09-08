@@ -13,12 +13,14 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replaceAll("dogs", "cats");
-let result1 =result.replace("day", "night");
-let result2 = result1.replace("100000", "10");
-let result3 = result2.replace('great', 'brilliant');
+/*let story1 = story.replace('10', '100000');
+let result = story1.replaceAll("dogs", "cats");
+let result1 = result.replace("day", "night");
+let result2 = result1.replace('great', 'brilliant');
 
-console.log(result3);
+console.log(result2);*/
+
+// not working can i use for?
 
 /* EXPECTED OUTPUT */
 
