@@ -5,9 +5,25 @@
   - For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
   An array with numbers 1-15 has been provided.
+
+
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+function checkAndPrint(value){
+  if (value % 3===0 && value % 5===0) {
+    console.log("FizzBuzz");
+  } else if (value % 5===0) {
+    console.log("Buzz");
+  } else if (value % 3===0) {
+    console.log("Fizz");
+  } else {
+    console.log(value);
+  }
+}
+
+arr.forEach(checkAndPrint);
 
 /* EXPECTED OUTPUT */
 
