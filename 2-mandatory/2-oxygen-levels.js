@@ -10,8 +10,36 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+let index = "";
+function findSafeOxygenLevel() {
+    if (index < "19.5%" && index > "23.5%") {
+      return index;
+   }
+  }
 
-function findSafeOxygenLevel() {}
+  // function findSafeOxygenLevel() {
+  //   for (let index = 0; index < array.length; index++) {
+  //     if (index < "19.5%" && index > "23.5%") {
+  //       return index;
+  //     }
+  //    }
+  //   }
+
+// function findSafeOxygenLevel(array) {
+  // return array.substring(0, 17);
+
+  // function findSafeOxygenLevel(array) {
+  //   array.replace(Number).find(index < 19.5 , index > 23.5)
+  //   return Number + "%";
+
+//   let oxygen = "";
+// function findSafeOxygenLevel(oxygen) {
+//   return oxygen.substring(16, 20);
+  
+  // function findSafeOxygenLevel(oxygen) {
+  //   if (oxygen < 19.5% + oxygen > 23.5%);
+  //   return oxygen;
+console.log(findSafeOxygenLevel);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

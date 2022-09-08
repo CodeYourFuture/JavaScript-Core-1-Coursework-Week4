@@ -21,8 +21,14 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+// let berryArray = [];
 function isBushSafe(berryArray) {
-  //Write your code here
+  // / return isBushSafe.some(pink)
+ if (berryArray === "pink") {
+  return "Bush is safe to eat from"
+   } else {
+  return "Toxic! Leave bush alone!"; //Write your code here
+ }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

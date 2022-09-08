@@ -23,7 +23,12 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  validatePasswords = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])([0-9a-zA-Z]{8,32})$/
+  if (passwords === true) {
+    newPasswords =  PreviousPassword.map(passwords)
+    return newPasswords}
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

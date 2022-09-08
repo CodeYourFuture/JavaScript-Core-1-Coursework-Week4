@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  return array.slice(0, 5);
 }
 
 /*
@@ -11,8 +12,12 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  let newArray = array.slice().sort();
+  return newArray;
 }
+
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +29,10 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  array.trimStart().trimEnd().replace("/", "").toLowerCase();    
 }
+// must come back to
 
 /*
 Write a function that:
@@ -33,7 +40,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+  if (index != array) {
+  return array;
+  }
 }
 
 /*
@@ -44,8 +54,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  if (numbers < 100) {
+    return 100;
+  } else {
+  return `${numbers.replace(Math.round((number/100) * 100))} + % `;
+  }
 }
+// return numbers.replace(numbers => numbers + %) ;
+// must come back to
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
