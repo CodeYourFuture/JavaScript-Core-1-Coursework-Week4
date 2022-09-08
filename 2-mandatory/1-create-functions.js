@@ -12,10 +12,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray(arr) {
- return arr
+function sortArray(array) {
+   const original = array.slice();
+   return original.sort();
 }
-
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -53,16 +53,16 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage(number) {
-  return number.map((number) => {
-    if (number > 100) {
-      return "100%";
+function formatPercentage(arr) {
+  const newArr = [];
+  arr.forEach(num => {
+    if (num > 100) {
+      newArr.push(`100%`)
+    } else {
+      newArr.push(`${Math.round(num * 100) / 100}%`)
     }
-    else {
-      return Number(number.toFixed(2)) + "%";
-    }
-
   })
+  return newArr
 }
 
   
