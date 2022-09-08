@@ -13,6 +13,7 @@ let pairsByIndex = pairsByIndexRaw.filter((sets) => isNaN(sets) && sets.length =
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+add
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
