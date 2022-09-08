@@ -6,8 +6,9 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
-
+function getLanes(arr) {
+  return arr.filter(names => names.includes('Lane'))
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getLanes function works", () => {
