@@ -8,7 +8,8 @@
 */
 
 function capitalise(str) {
-  return([initial, ... rest]) =>[initial.toUpperCase(), ...rest].join("")
+ let newString = str.split("")
+ return newString[0].toUpperCase() + newString.slice(1).join("")
 }
 
 /* 
