@@ -24,6 +24,13 @@ console.log(result2);*/
 
 /* EXPECTED OUTPUT */
 
+let result = story
+.replace('10', '100000')
+.replaceAll("dogs", "cats")
+.replace("day", "night")
+.replace("great", "brilliant")
+console.log(result)
+
 const util = require("util");
 
 function test(test_name, actual, expected) {

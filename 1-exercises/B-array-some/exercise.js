@@ -17,7 +17,7 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
 // need to put special statements before the return or they dont work
-  import process from 'node:process'; 
+  //import process from 'node:process'; dont need 
   if (indexes === null){
   process.exit(1);
   }
