@@ -8,11 +8,11 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let result = statement.substring(0,4) +" "+  statement.substring(9,25) 
 
 console.log(result);
 
-/* EXPECTED OUTPUT 
+/* EXPECTED OUTPUT  
 
   "I do like programming"
   
