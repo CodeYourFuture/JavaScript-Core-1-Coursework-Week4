@@ -13,6 +13,7 @@ console.log(statement.substr(9, 25))
 console.log(result);
 
 
+
 /* EXPECTED OUTPUT 
 
   "I do like programming"

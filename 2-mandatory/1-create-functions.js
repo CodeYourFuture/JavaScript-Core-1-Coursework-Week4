@@ -4,15 +4,20 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5() {
-}
+const arr = [1,2,3,4,5]
+} console.log(first5)
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  arr.sort(() => Math.random() - 0.5);
 }
+let arr = [1, 2, 3, 4, 5];
+sortArray(arr);
+console.log(arr); 
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -25,7 +30,8 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString() {
-}
+let array = ("ONE", "TWO", "THREE")
+} //I'll have to come back to this - GR//
 
 /*
 Write a function that:
@@ -34,7 +40,9 @@ Write a function that:
 */
 
 function remove() {
-}
+} let array = ["one", "two", "three"]
+//I don't think this question makes sense - GR//
+
 
 /*
 Write a function that:
@@ -45,7 +53,8 @@ Write a function that:
 */
 
 function formatPercentage() {
-}
+} const numbers = [20, 40, 60, 80, 100, 120]
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
