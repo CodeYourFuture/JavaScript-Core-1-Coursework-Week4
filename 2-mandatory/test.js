@@ -1,18 +1,57 @@
 
 
-function findSafeOxygenLevel(oxygenLevels) {
-  let oxygenLevel = oxygenLevels
-    .filter((e) => /^\d/.test(e))
-    .filter((e) => /%$/.test(e))
-    .map((e) => e.replace("%", ""))
-    .find((n) => n > 19.5 && n < 23.5)
-    .toString()
-    .concat("%");
-  return oxygenLevel;
-}
-let arr = ["200%", "-21.5%", "20", "apes", "21.1%"];
 
-console.log(findSafeOxygenLevel(arr));
+// function getSettlers(families) {
+//   const settlers = families.filter((n) => n.includes("family") && n[0] === "A");
+//   return settlers;
+// }
+
+//   const voyagers = [
+//     "Adam family",
+//     "Potter family",
+//     "Eric",
+//     "Aldous",
+//     "Button family",
+//     "Jude",
+//     "Carmichael",
+//     "Bunny",
+//     "Asimov",
+//     "Oscar family",
+//     "Avery family",
+//     "Archer family",
+//     "Just A. family",
+//     "A Great family",
+//   ];
+
+//   console.log(getSettlers(voyagers));
+
+//-----------------------------
+
+// function isBushSafe(berryArray) {
+//     safeBerry = "pink";
+//     if (berryArray.every((e) => e === safeBerry)) {
+//         return "Bush is safe to eat from";
+//     } else {
+//         return "Toxic! Leave bush alone!";
+//     }
+// }
+
+// arr = ["pink", "pink", "pink", "neon", "pink", "transparent"];
+// console.log(isBushSafe(arr));
+
+// function findSafeOxygenLevel(oxygenLevels) {
+//   let oxygenLevel = oxygenLevels
+//     .filter((e) => /^\d/.test(e))
+//     .filter((e) => /%$/.test(e))
+//     .map((e) => e.replace("%", ""))
+//     .find((n) => n > 19.5 && n < 23.5)
+//     .toString()
+//     .concat("%");
+//   return oxygenLevel;
+// }
+// let arr = ["200%", "-21.5%", "20", "apes", "21.1%"];
+
+// console.log(findSafeOxygenLevel(arr));
 
 //------------------------
 

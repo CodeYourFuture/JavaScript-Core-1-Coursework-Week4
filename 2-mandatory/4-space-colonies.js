@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  const settlers = families.filter((n) => n.includes("family") && n[0] === "A");
+  return settlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
