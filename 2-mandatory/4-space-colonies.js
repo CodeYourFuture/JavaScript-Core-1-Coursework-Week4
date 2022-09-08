@@ -24,6 +24,7 @@ function getSettlers(voyagers) {
   return voyagers.filter(colonizersWithNameA)
 }
 
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
