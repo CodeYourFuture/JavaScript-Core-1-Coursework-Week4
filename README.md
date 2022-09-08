@@ -1,4 +1,4 @@
-Like learning a musical instrument, programming requires daily practise.
+clLike learning a musical instrument, programming requires daily practise.
 
 The exercises are split into three folders: `exercises`, `mandatory` and `extra`. All homework in the `exercise` and `mandatory` section **must** be completed for homework by the following lesson. 
 
