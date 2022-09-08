@@ -22,14 +22,25 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+const passes = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"];
+const validatePasswords = (passwords) => {
+  return passwords.map(
+    (password, i) =>
+      password.length >= 5 &&
+      containsUppercaseLetter(password) &&
+      containsUppercaseLetter(password) &&
+      containsNumber(password) &&
+      containsSymbol(password) &&
+      i === passwords.indexOf(password)
+  );
+};
 
-function validatePasswords(passwords) {}
-
+const res = validatePasswords(passes);
+console.log(res);
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
-
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
   return /[a-z]/.test(string);

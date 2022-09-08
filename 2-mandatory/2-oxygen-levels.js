@@ -10,9 +10,15 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
-
-function findSafeOxygenLevel() {}
-
+function findSafeOxygenLevel(arrayOfOxygenLevels) {
+  const cleanOxygenLevels = arrayOfOxygenLevels.map((level) =>
+    parseFloat(level.substring(0, level.length - 1).replace())
+  );
+  for (let i = 0; i < cleanOxygenLevels.length; i++)
+    if (cleanOxygenLevels[i] > 19.5 && cleanOxygenLevels[i] < 23.5) {
+      return cleanOxygenLevels[i] + "%";
+    }
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

@@ -13,9 +13,39 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+const isNumber = (input) => {
+  return typeof input === "number";
+};
 
-function sortAges(arr) {}
+console.log(isNumber(89));
+const sortArray = (arr) => {
+  const sortedArray = [];
+  let min = 0;
+  for (let i = 0; i <= arr.length; i++) {
+    i = 0;
+    min = arr[i];
+    for (let j = 1; j <= arr.length; j++) {
+      if (min > arr[j]) {
+        min = arr[j];
+      }
+    }
+    sortedArray.push(min);
+    arr.splice(arr.indexOf(min), 1);``
+  }
+  return sortedArray;
+};
 
+function sortAges(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (isNumber(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return sortArray(result);
+}
+const agesCase = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
+console.log(sortAges(agesCase));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [

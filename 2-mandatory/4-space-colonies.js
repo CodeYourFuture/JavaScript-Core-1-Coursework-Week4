@@ -14,9 +14,16 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
-
+function getSettlers(voyagersArray) {
+const familyVoyagersStartsWithA =  voyagersArray.filter(voyager => {
+  if(voyager.startsWith('A'))
+  {
+    if(voyager.includes('family'))
+    return voyager;
+  }
+})
+return familyVoyagersStartsWithA;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
