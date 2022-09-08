@@ -11,6 +11,7 @@ function ConditionCheck(names){
     return students.includes(names);
 }
 
+
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
 } else {
