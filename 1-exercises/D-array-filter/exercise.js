@@ -13,6 +13,7 @@ let pairsByIndex = pairsByIndexRaw.filter(arr => Array.isArray(arr) && arr.lengt
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
