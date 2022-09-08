@@ -7,11 +7,7 @@ let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
 let groupIsOnlyStudents; // complete this statement
 
-if (groupIsOnlyStudents) {
-  console.log("The group contains only students");
-} else {
-  console.log("The group does not contain only students");
-}
+
 
 /* EXPECTED RESULT */
 

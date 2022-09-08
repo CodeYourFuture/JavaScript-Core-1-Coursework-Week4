@@ -16,9 +16,16 @@ let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
+// need to put special statements before the return or they dont work
+  import process from 'node:process'; 
+  if (indexes === null){
+   printUsageToStdout();
+   process.exitCode = 1;
+  }
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
+
 });
 
 console.log(pairs);
