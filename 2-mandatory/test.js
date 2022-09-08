@@ -1,5 +1,60 @@
 
+let arr = [
+         ["Angel", "tube", "bus"],
+         ["London Bridge", "tube", "river boat"]
+       ]
 
+
+function getTransportModes(location) {
+  return location.slice(1);
+}
+
+function isAccessibleByTransportMode(transportModes, transportMode) {
+  return transportModes.includes(transportMode);
+}
+
+function getLocationName(location) {
+  return location.slice(0, 1).toString();
+}
+
+function journeyPlanner(locations, transportMode) {
+  const accessibleLocations = locations
+    .filter((e) => isAccessibleByTransportMode(e, transportMode))
+    .map((e) => getLocationName(e));
+  return accessibleLocations;
+}
+
+
+console.log(journeyPlanner(arr, "tube"));
+
+
+//===========================================
+
+
+// function getTransportModes(location) {
+// //   return location.split("", 1);
+//   return location.slice(0, 1).toString();
+// }
+
+// let arr = ["Tower Bridge", "tube", "river boat"];
+// console.log(getTransportModes(arr));
+
+
+
+// function getEligibleStudents(students) {
+//   return students.filter(e => e[1] >= 8).map(n => n = n[0]);
+// }
+
+//   const attendance = [
+//     ["Ahmed", 8],
+//     ["Clement", 10],
+//     ["Elamin", 6],
+//     ["Adam", 7],
+//     ["Tayoa", 11],
+//     ["Nina", 10],
+//   ];
+
+//   console.log(getEligibleStudents(attendance));
 
 // function getSettlers(families) {
 //   const settlers = families.filter((n) => n.includes("family") && n[0] === "A");

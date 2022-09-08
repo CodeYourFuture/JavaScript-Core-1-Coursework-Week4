@@ -19,9 +19,8 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +63,7 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+const getTransportModes = (location) => location.slice(1);
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +80,7 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+const isAccessibleByTransportMode = (transportModes, transportMode) => transportModes.includes(transportMode);
 
 /*
   Implement the function getLocationName that
@@ -92,7 +91,7 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+const getLocationName = (location) => location.slice(0, 1).toString();
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,9 +120,22 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+
+const journeyPlanner = (locations, transportMode) => {
+  const accessibleLocations = locations
+    .filter((e) => isAccessibleByTransportMode(getTransportModes(e), transportMode))
+    .map((e) => getLocationName(e));
+  return accessibleLocations;
 }
+
+//-------------- or without getTransportModes(): ---------------
+
+// const journeyPlanner = (locations, transportMode) => {
+//   const accessibleLocations = locations
+//     .filter((e) => isAccessibleByTransportMode(e, transportMode))
+//     .map((e) => getLocationName(e));
+//   return accessibleLocations;
+// };
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
