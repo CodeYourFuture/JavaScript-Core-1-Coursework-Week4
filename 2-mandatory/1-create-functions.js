@@ -54,8 +54,8 @@ Write a function that:
 
 function formatPercentage() {
 } const numbers = [20, 40, 60, 80, 100, 120]
-
-
+console.log(Math.floor((numbers) * 100));
+//bit stuck on this one - GR//
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
