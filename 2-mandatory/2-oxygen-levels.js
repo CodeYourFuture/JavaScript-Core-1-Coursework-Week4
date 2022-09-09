@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+
+  let BestChoice= arr.filter(item =>
+    item.includes('%') &&
+    item.includes('.') &&
+    item > '19.5%' &&
+    item < '23.5%');
+  return BestChoice[0];
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
