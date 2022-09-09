@@ -17,12 +17,8 @@ function findSafeOxygenLevel(oxygenLevels) {
     .filter((e) => /%$/g.test(e))
     .map((e) => e.replace("%", ""))
     .find((n) => n > 19.5 && n < 23.5)
-    
-  if (typeof oxygenLevel !== "undefined") {
-    return oxygenLevel + "%";
-  }
-  return oxygenLevel;
-  
+
+  return typeof oxygenLevel !== "undefined" ? oxygenLevel + "%" : oxygenLevel;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

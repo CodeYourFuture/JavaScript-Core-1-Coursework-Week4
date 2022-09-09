@@ -6,9 +6,14 @@
   - Do not edit any of the existing code
 */
 
+const isPairOfNum = (arr) => 
+Array.isArray(arr) && 
+arr.length === 2 && 
+arr.every(n => typeof n === "number");
+
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex = pairsByIndexRaw.filter((arr) => Array.isArray(arr) && arr.length === 2 && arr.every(n => typeof n === "number")); // Complete this statement
+let pairsByIndex = pairsByIndexRaw.filter(isPairOfNum); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 

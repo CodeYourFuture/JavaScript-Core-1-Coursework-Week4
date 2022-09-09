@@ -29,7 +29,7 @@ function validatePasswords(passwords) {
       containsLowercaseLetter(password) &&
       containsNumber(password) &&
       containsSymbol(password) &&
-      passwords.length > 5 &&
+      password.length > 5 &&
       !passwords.slice(0, i).includes(password)
   );
   return validPasswords;

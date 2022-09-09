@@ -5,7 +5,6 @@ Write a function that:
 */
 function first5(arr) {
   return arr.slice(0, 5);
-
 }
 
 /*

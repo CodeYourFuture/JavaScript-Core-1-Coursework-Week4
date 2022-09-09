@@ -9,21 +9,19 @@
 
 const checkMultiplesOf3or5 = (number) => {
   if (number % 3 === 0 && number % 5 === 0) {
-    return "FizzBuzz";
+    console.log("FizzBuzz");
   } else if (number % 3 === 0) {
-    return "Fizz";
+    console.log("Fizz");
   } else if (number % 5 === 0) {
-    return "Buzz";
+    console.log("Buzz");
   } else {
-    return number;
+    console.log(number);
   }
 }
 
-const log = (val) => console.log(val);
-
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-arr.map(checkMultiplesOf3or5).forEach(log);
+arr.forEach(n => checkMultiplesOf3or5(n));
 
 
 /* EXPECTED OUTPUT */
