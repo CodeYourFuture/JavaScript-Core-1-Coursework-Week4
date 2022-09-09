@@ -121,21 +121,17 @@ const getLocationName = (location) => location.slice(0, 1).toString();
   Advanced challange: try to use arrow function when invoking an array method.
 */
 
-const journeyPlanner = (locations, transportMode) => {
-  const accessibleLocations = locations
+const journeyPlanner = (locations, transportMode) =>
+  locations
     .filter((e) => isAccessibleByTransportMode(getTransportModes(e), transportMode))
     .map((e) => getLocationName(e));
-  return accessibleLocations;
-}
 
-//-------------- or without getTransportModes(): ---------------
+//-------------- or without func getTransportModes(): ---------------
 
-// const journeyPlanner = (locations, transportMode) => {
-//   const accessibleLocations = locations
+// const journeyPlanner = (locations, transportMode) =>
+//   locations
 //     .filter((e) => isAccessibleByTransportMode(e, transportMode))
 //     .map((e) => getLocationName(e));
-//   return accessibleLocations;
-// };
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

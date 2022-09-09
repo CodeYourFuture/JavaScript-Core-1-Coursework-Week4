@@ -14,12 +14,15 @@
 function findSafeOxygenLevel(oxygenLevels) {
   let oxygenLevel = oxygenLevels
     .filter((e) => /^\d/.test(e))
-    .filter((e) => /%$/.test(e))
+    .filter((e) => /%$/g.test(e))
     .map((e) => e.replace("%", ""))
     .find((n) => n > 19.5 && n < 23.5)
-    .toString()
-    .concat("%");
-return oxygenLevel;
+    
+  if (typeof oxygenLevel !== "undefined") {
+    return oxygenLevel + "%";
+  }
+  return oxygenLevel;
+  
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
