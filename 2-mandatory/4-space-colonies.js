@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arrayP) {
+  return arrayP.filter(
+    (string) => string.startsWith("A") && string.endsWith("family")
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

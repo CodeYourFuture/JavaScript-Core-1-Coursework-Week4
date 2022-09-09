@@ -5,14 +5,17 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
-
-if (groupIsOnlyStudents) {
-  console.log("The group contains only students");
-} else {
-  console.log("The group does not contain only students");
-}
-
+let groupIsOnlyStudents = group.every(
+  (
+    students // complete this statement
+  ) => {
+    if (group.includes(students) === false) {
+      console.log("The group contains only students");
+    } else {
+      console.log("The group does not contain only students");
+    }
+  }
+);
 /* EXPECTED RESULT */
 
 // The group does not contain only students
