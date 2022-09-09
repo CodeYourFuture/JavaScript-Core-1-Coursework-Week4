@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  let colonisers=[];
+  for(let i=0; i<array.length; i++){
+    let splittedArray=array[i].split(" ");
+    if(splittedArray[splittedArray.length-1]==="family" && splittedArray[0].startsWith("A")){
+      colonisers.push(array[i])
+    }
+  }
+  return colonisers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

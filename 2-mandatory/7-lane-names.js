@@ -6,7 +6,15 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(array) {
+  let lane=[];
+  array.map(street=>{
+    if(street.indexOf("Lane")!=-1){
+      lane.push(street)
+    }
+  });
+  return lane;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
