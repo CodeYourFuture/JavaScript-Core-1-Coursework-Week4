@@ -13,9 +13,16 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+// find out why i couldnt use three replaces but when I changed one to replace all it worked??
 
 /* EXPECTED OUTPUT */
+
+let result = story
+.replace('10', '100000')
+.replaceAll("dogs", "cats")
+.replaceAll("day", "night")
+.replace("great", "brilliant")
+console.log(result)
 
 const util = require("util");
 
