@@ -9,7 +9,8 @@
 let statement = "I do not like programming";
 
 let result = "";
-
+//result = statement.replace("not ", "");
+ result = statement.substring(0, 5) + statement.substring(8).trim();
 console.log(result);
 
 /* EXPECTED OUTPUT 
