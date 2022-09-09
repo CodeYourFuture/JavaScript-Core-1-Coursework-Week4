@@ -7,9 +7,16 @@
   An array with numbers 1-15 has been provided.
 */
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];  
 
-/* EXPECTED OUTPUT */
+let fizzBuzzFun = arr.forEach(function printFizBuz(array) {
+   if (array % 15 == 0) {
+     console.log("FizzBuzz");
+   } else if (array % 3 == 0) console.log("Fizz");
+   else if (array % 5 == 0) console.log("Buzz");
+   else console.log(array);
+});
+/* EXPECTED OUTPUT */    //Done ✔️
 
 /*
 1
