@@ -8,6 +8,20 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+function checkNumbers(numbers) {
+  if (numbers % 3 === 0 && numbers % 5 === 0) {
+    return "FizzBuzz"
+  }
+  if (numbers % 3 === 0) {
+    return "Fizz"
+  }
+  if (numbers % 5 === 0) {
+    return "Buzz"
+  }
+  return numbers
+}
+arr.map(checkNumbers).forEach((numbers) => console.log(numbers))
+
 
 /* EXPECTED OUTPUT */
 
