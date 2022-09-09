@@ -20,11 +20,13 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
+    if (stringText) {
+      return stringText;
+    if (stringText.includes(magicWord)) {
+      return stringText.indexOf(magicWord);
+    } else {
+      return "Not found";
+    }
 }
 
 /*
@@ -64,7 +66,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  return array.splice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -92,7 +96,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function isAccessibleByTransportMode(array, location) {
+  return array.includes(location)
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
