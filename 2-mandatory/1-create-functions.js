@@ -3,17 +3,24 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+function first5(arrayNumber) {
+  return arrayNumber.slice(0, 5);
 }
-
+console.log(first5(numbers));
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
-}
+function sortArray(array) {
+  const newArray = array.slice().sort();
 
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== newArray[i]) return newArray;
+  }
+  return array;
+}
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,18 +31,21 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(strings) {
+  return strings.map((string) => string.toLowerCase().trim().replace("/", ""));
 }
-
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, removedIndex) {
+  const slice1 = array.slice(0, removedIndex);
+  const slice2 = array.slice(removedIndex+1, array.length);
+  return slice1.concat(slice2);
 }
-
+console.log(remove(numbers,3));
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -44,9 +54,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+  return array.map((item) => {
+    if (item > 100) {
+      item = 100;
+    }
+    return item.toFixed(2).concat("%");
+  });
 }
-
+console.log(formatPercentage(numbers));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

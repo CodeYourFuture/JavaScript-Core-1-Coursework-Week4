@@ -14,7 +14,53 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+// to check if the type of the input
+const isNumber = (input) => {
+  return typeof input === "number";
+};
+
+//this function work same as splice() method to remove the element from an array.
+const rmvArrayElement = (arr, elem) => {
+  const result = [];
+  let isFirstOccurrenceAdded = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== elem || isFirstOccurrenceAdded) {
+      result.push(arr[i]);
+    } else isFirstOccurrenceAdded = true;
+  }
+  return result;
+};
+const sortArray = (arr) => {
+  const sortedArray = [];
+  let min = 0;
+
+  /* sorting algorithm I have used: get the value of index 0 and compare
+  it with the rest of the array elements if */
+  for (let i = 0; i <= arr.length; i++) {
+    i = 0;
+    min = arr[i];
+    for (let j = 1; j <= arr.length; j++) {
+      if (min > arr[j]) {
+        min = arr[j];
+      }
+    }
+    // push the result to the new array and remove it from unsorted array
+    sortedArray.push(min);
+    //arr.splice(arr.indexOf(min), 1);
+    arr = rmvArrayElement(arr, min);
+  }
+  return sortedArray;
+};
+
+function sortAges(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (isNumber(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return sortArray(result);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

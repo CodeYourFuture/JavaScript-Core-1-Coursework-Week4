@@ -5,8 +5,13 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
-
-function getLanes() {}
+ 
+function getLanes(streetName) {
+  return streetName.filter(element => {
+    if (element.indexOf("Lane")>=0)
+    return element
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
