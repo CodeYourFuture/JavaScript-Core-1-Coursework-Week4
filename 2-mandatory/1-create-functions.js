@@ -38,8 +38,9 @@ Write a function that:
 */
 
 function remove(array, index) {
-
-
+ let removeArray = array.slice()
+ removeArray.splice(index, 1)
+ return removeArray
 }
 
 /*
