@@ -3,15 +3,31 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+
+function first5(arr) {
+  let myArr = [];
+  let length =  arr.length > 5  ? 5 : arr.length;
+  for (let index = 0; index < length; index++) {
+      myArr.push(arr[index]);
+    
+    
+  }
+  return myArr;
+
 }
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(arr) {
+
+  
+  return arr.slice().sort() ;
+
 }
 
 /*
@@ -24,7 +40,12 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  for (let index = 0; index < arr.length; index++) {
+     arr[index] = arr[index].trim().replace("/", "").toLowerCase();
+    
+  }
+  return arr;
 }
 
 /*
@@ -33,7 +54,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, i) {
+  let newArr = arr.slice();
+  
+  newArr.splice(i, 1)
+  return newArr;
 }
 
 /*
@@ -44,7 +69,21 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+
+function formatPercentage(arr) {
+  
+  for (let index = 0; index < arr.length; index++) {
+    
+     if (arr[index] > 100) {
+       arr[index] = 100;
+     }
+      arr[index]= parseFloat((Math.round(arr[index] * 100) / 100).toFixed(2)) + "%";
+      
+    
+  }
+   
+
+  return arr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

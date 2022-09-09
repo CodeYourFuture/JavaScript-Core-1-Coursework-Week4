@@ -13,7 +13,13 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+
+let toBeReplaced = ["dogs", "day", "10", "dogs", "great", "day"];
+let replacer = ["cats", "night", "100000", "cats", "brilliant", "night"];
+let result = story;
+for (let i = 0; i < toBeReplaced.length; i++) {
+  result = result.replace(toBeReplaced[i], replacer[i]);
+}
 
 /* EXPECTED OUTPUT */
 
