@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  return arr
+    .filter((str) => str.includes("%"))
+    .find((oxygenLevel) => {
+     oxygenLevel = parseFloat(oxygenLevel);
+      return (
+        oxygenLevel > parseFloat("19.5%") && oxygenLevel < parseFloat("23.5%")
+      );
+    });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
