@@ -11,7 +11,13 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  //i need to remove the percentage sign from the elements
+ 
+ let returnLevels = arr.find(element => element >= 19.5 && element <= 23.5)
+// add the percentage sign back
+return `${returnLevels}%`
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

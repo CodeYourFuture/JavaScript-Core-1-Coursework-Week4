@@ -13,7 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-   return array.sort();
+  let sortedArray = [...array].sort();
+  return sortedArray;
 }
 
 /*
@@ -26,7 +27,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  return array.map((str) => str.toLowerCase().trim().replace("/",""))
 }
 
 /*
@@ -35,7 +37,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+
+
 }
 
 /*
@@ -46,17 +50,20 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
+// dont need to log need to push //
+
 function formatPercentage(arr) {
-  let newArray = arr.forEach(num =>{
+  let newArray = []
+  arr.forEach(num =>{
     if(num > 100){
-      console.log("100%")
+      newArray.push("100%")
     }
     else
     {
-      console.log(`${Math.round(num * 100)/100}%`)
+      newArray.push(`${Math.round(num * 100)/100}%`)
     }
   }
-
+    
   )
   return newArray
 }
