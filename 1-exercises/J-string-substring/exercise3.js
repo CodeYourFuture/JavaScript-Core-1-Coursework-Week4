@@ -8,7 +8,11 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let result =
+  statement.substring(0, "i do".length) +
+  statement.substring(8, statement.length);
+
+console.log();
 
 console.log(result);
 

@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  const firstFive = arr.filter(element => arr.indexOf(element) <= 4)
+  return firstFive
 }
 
 /*
@@ -11,20 +13,24 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(arr) {
+  return arr
 }
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
-
 Write a function that:
 - Takes an array of strings as input.
 - Removes any spaces in the beginning or end each string.
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+
+function tidyUpString(array)
+{
+    return array.map((edit) => edit.trim().replace(/\//g, "").toLowerCase());
 }
 
 /*
@@ -33,7 +39,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, myindex) {
+ newArray = arr.filter((element, index) => myindex !== index)
+ return newArray
 }
 
 /*
@@ -44,9 +52,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let newArray = arr.map(element => 
+    {
+      let temp = (element > 100)? "100%" : (parseFloat(element.toFixed(2))) + "%"
+      return temp
+    }
+    )
+return newArray
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
