@@ -46,7 +46,19 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let newArray = arr.forEach(num =>{
+    if(num > 100){
+      console.log("100%")
+    }
+    else
+    {
+      console.log(`${Math.round(num * 100)/100}%`)
+    }
+  }
+
+  )
+  return newArray
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
