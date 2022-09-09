@@ -12,6 +12,17 @@
 */
 
 function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+
+ let validPercentages = arr.filter(element => element.includes("%"))
+
+ validPercentages = validPercentages.map(element => parseFloat(element)) 
+
+ let safeLevel = validPercentages.find(element => element > 19.5 && element < 23.5)
+
+ return safeLevel && `${safeLevel}%`
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
