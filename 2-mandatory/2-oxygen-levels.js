@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(level) {
+  let height = level
+    .filter((element) => element.includes("%"))
+    .map((x) => x.replace(/%/g, ""))
+    .find((x) => x > 19.5 && x < 23.5);
+  if (height) {
+    return height + "%";
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
