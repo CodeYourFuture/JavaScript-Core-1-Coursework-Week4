@@ -1,50 +1,81 @@
-/*
-Write a function that:
-- Accepts an array as a parameter.
-- Returns a new array containing the first five elements of the passed array.
-*/
-function first5() {
+// /*
+// Write a function that:
+// - Accepts an array as a parameter.
+// - Returns a new array containing the first five elements of the passed array.
+// */
+function first5(arr) {
+  let fiveArray = arr;
+  return fiveArray.slice(0,5);
 }
 
-/*
-Write a function that:
-- Accepts an array as a parameter.
-- Returns a new array containing the same elements, except sorted.
-*/
-function sortArray() {
+// /*
+// Write a function that:
+// - Accepts an array as a parameter.
+// - Returns a new array containing the same elements, except sorted.
+// */
+function sortArray(arr) {
+  let sortedArray = [];
+  arr.forEach(element => sortedArray.push(element));
+  return sortedArray.sort();
 }
 
-/*
-NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
-Think about what is better about this solution than your one last week, and what is worse.
+// /*
+// NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
+// Think about what is better about this solution than your one last week, and what is worse.
 
-Write a function that:
-- Takes an array of strings as input.
-- Removes any spaces in the beginning or end each string.
-- Removes any forward slashes (/) in the strings.
-- Makes the strings all lowercase.
-*/
-function tidyUpString() {
+// Write a function that:
+// - Takes an array of strings as input.
+// - Removes any spaces in the beginning or end each string.
+// - Removes any forward slashes (/) in the strings.
+// - Makes the strings all lowercase.
+// */
+function tidyUpString(arr) {
+  return arr.map(element => element.trim().replace("/", "").toLowerCase());
 }
 
-/*
-Write a function that:
-- Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
-*/
+// /*
+// Write a function that:
+// - Takes an array and an index as input.
+// - Returns a new array containing the same elements, but without the element at the passed index.
+// */
 
-function remove() {
+function remove(arr, id) {
+  if (id > arr.length) {
+    let newArray = arr;
+    return newArray;
+  } else {
+    let newArray = [];
+    for (i = 0; i < arr.length; i++) {
+      if (i != id) {
+        newArray.push(arr[i]);
+      } 
+    }
+    return newArray;
+  }
 }
 
-/*
-Write a function that:
-- Takes an array of numbers as input.
-- Returns an array of strings formatted as percentages (e.g. 10 => "10%").
-- The numbers must be rounded to 2 decimal places.
-- Numbers greater 100 must be replaced with 100.
-*/
+// /*
+// Write a function that:
+// - Takes an array of numbers as input.
+// - Returns an array of strings formatted as percentages (e.g. 10 => "10%").
+// - The numbers must be rounded to 2 decimal places.
+// - Numbers greater 100 must be replaced with 100.
+// */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let stringArray = arr;
+  for (i = 0; i < stringArray.length; i++) {
+    if (stringArray[i] > 100) {
+      stringArray[i] = 100;
+      stringArray[i] = Math.round(stringArray[i] * 100) / 100;
+      stringArray.toString();
+    } else {
+      stringArray[i] = Math.round(stringArray[i] * 100) / 100;
+      stringArray.toString();
+    }
+  }
+  stringArray = stringArray.map(element => `${element}%`);
+  return stringArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
