@@ -13,7 +13,9 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  return arr.sort();
+  let sortedArray = [];
+  arr.forEach(element => sortedArray.push(element));
+  return sortedArray;
 }
 
 /*
@@ -26,7 +28,10 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString(str) {
+function tidyUpString(arr) {
+  return arr.map(name => name.trim()
+  .replace("/", "")
+  .toLowerCase());
 }
 
 /*
@@ -36,6 +41,11 @@ Write a function that:
 */
 
 function remove(arr, id) {
+  let newArray = [];
+  for (i = 0; i < arr.length; i++) {
+    newArray.push(arr[i]);
+  }
+  return newArray.splice(id, 1);
 }
 
 /*
@@ -46,7 +56,8 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  const stringArray = arr.map(num => num.toString)
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
