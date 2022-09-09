@@ -1,13 +1,20 @@
 /*
-  Only students who have attended enough classes are eligible to sit an exam.
+  Only students who have attended enough classes are eligible to 
+  sit an exam.
 
   Create a function which:
-  - Accepts an array which contains all the students' names and their attendance counts
+  - Accepts an array which contains all the students' 
+  names and their attendance counts
     (see tests to confirm how this data will be structured)
-  - Returns an array containing only the names of the who have attended AT LEAST 8 classes
+  - Returns an array containing only the names of the who 
+  have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(array) {
+  let attendanceStu = array.filter((attendance) => attendance[1] >= 8)
+  return attendanceStu.map((array) => array[0]) 
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
