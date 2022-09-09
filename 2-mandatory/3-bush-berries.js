@@ -1,7 +1,7 @@
 /*
-  The space travellers have safely landed and are foraging for food in the natural wildlife.
+  The space travelers have safely landed and are foraging for food in the natural wildlife.
 
-  There are bushes with many different colour berries.
+  There are bushes with many different color berries.
 
   The pink berries are the ONLY safe ones to eat.
 
@@ -23,6 +23,12 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+  const checkBerries= berryArray.every(color => color=== "pink" )
+  if (checkBerries){
+    return "Bush is safe to eat from"
+  }else {
+    return "Toxic! Leave bush alone!"
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
