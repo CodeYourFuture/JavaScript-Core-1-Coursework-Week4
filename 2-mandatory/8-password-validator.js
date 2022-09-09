@@ -23,7 +23,19 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let previousPassword = ["fhD8!yrjj", "ttkTu.wer3", "dvyyeyY!5", "qwbfj76%", "tytT3729."];
+  let passwordValidationResult=[];
+  passwords.map(password=>{
+    if(password.length>=5 && containsUppercaseLetter(password)===true && containsLowercaseLetter(password)===true && containsNumber(password)===true
+      && containsSymbol(password)===true && previousPassword.includes(password)===false ) {
+        passwordValidationResult.push(true);
+        previousPassword.push(password);
+      }else 
+      passwordValidationResult.push(false);
+  });
+  return passwordValidationResult;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
