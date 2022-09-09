@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+  let found = array.find((e) => {
+    if (Number(e.slice(0, -1)) !== NaN && e.slice(-1) === "%") {
+      let number = Number(e.substring(0, e.length - 1));
+      return number > 19.5 && number < 23.5;
+    } else return undefined;
+  });
+
+  return found;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
