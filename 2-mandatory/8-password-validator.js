@@ -23,7 +23,54 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+
+  return passwords.map((element, index, array) => {
+    return element.length >= 5 &&
+            containsUppercaseLetter(element) &&
+            containsLowercaseLetter(element) &&
+            containsNumber(element) &&
+            containsSymbol(element) &&
+            array.indexOf(element) === index
+          });
+
+//   function characterChecks(password) {
+//     // welcome to the "i refuse to use regex" helper function
+//     const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+//     const numbers = "0123456789";
+//     const symbols = "!#$%.*&";
+ 
+//     let upperCaseLetterFlag = false;
+//     let lowerCaseLetterFlag = false;
+//     let numberFlag = false;
+//     let symbolFlag = false;
+
+//     for (let character of password) {
+//       if (upperCaseLetters.includes(password[character])) {
+//         upperCaseLetterFlag = true;
+//       } else if (lowerCaseLetters.includes(password[character])) {
+//         lowerCaseLetterFlag = true;
+//       } else if (numbers.includes(password[character])) {
+//         numberFlag = true;
+//       } else if (symbols.includes(password[character])) {
+//         symbolFlag = true;
+//       }
+//     }
+
+//     return upperCaseLetterFlag && lowerCaseLetterFlag && numberFlag && symbolFlag;
+
+//   }
+
+//   // return passwords.map((element, index, array) => element.length >= 5 && characterChecks(element) && array.indexOf(element) === index);
+
+}
+
+// console.log(validatePasswords(["Se%5","TktE.TJTU","384#HsHF","dvyyeyy!5","tryT3729"]));
+// [false, false, true, false, false]
+
+// console.log(validatePasswords(["StUFf27%","Pl3nty!","Jai33","shajsaUA**&&","Pl3nty!"]));
+// [true, true, false, false, false]
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

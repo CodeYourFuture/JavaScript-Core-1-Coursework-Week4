@@ -3,16 +3,32 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  return array.slice(0,5);
 }
+
+// console.log(first5([1,2,3,4,5,6,7,8,9]));
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  // this doesn't handle 10 etc well
+  return array.slice().sort();
+  
+  // specifically for Numbers:
+  // return array.slice().sort((elementOne, elementTwo) => elementOne - elementTwo);
+  
+  // specifically for Strings:
+  // return array.slice().sort((elementOne, elementTwo) => elementOne.localeCompare(elementTwo));
 }
+
+// console.log(sortArray(["a", "n", "c", "e", "z", "f"]));
+// "a", "n", "c", "e", "z", "f"
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +40,13 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  return array.map(element => element.trim().split("/").join("").toLowerCase()); 
 }
+
+// console.log(tidyUpString(["/Daniel"," /Sanyia","AnTHonY","irina"," Gordon","ashleigh   ","   Alastair  "," anne marie  "]));
+// ["daniel","sanyia","anthony","irina","gordon","ashleigh","alastair","anne marie",]
+
 
 /*
 Write a function that:
@@ -33,8 +54,19 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, indexToRemove) {
+  // MUTATING original array
+  // array.splice(indexToRemove, 1);
+  // return arr;
+
+  // without mutating original array
+  return array.slice(0, indexToRemove).concat(array.slice(indexToRemove + 1, array.length));
 }
+
+// console.log(remove([1,2,3,4,5], 3));
+// console.log(remove([1,2,3,4,5], 0));
+// console.log(remove([1,2,3,4,5], 4));
+
 
 /*
 Write a function that:
@@ -44,8 +76,13 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+  return array.map(element => `${element > 100 ? "100" : parseFloat(element.toFixed(2))}%`);
 }
+
+console.log(formatPercentage([23, 18.103, 187.2, 0.372]));
+// ["23%","18.1%","100%","0.37%"]
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

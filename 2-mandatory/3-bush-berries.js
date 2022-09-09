@@ -22,8 +22,25 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  // for (let i = 0; i < berryArray.length; i++) {
+  //   if (berryArray[i] !== "pink") {
+  //     return `Toxic! Leave bush alone!`;
+  //   }
+  // }
+  // return `Bush is safe to eat from`;
+
+  return berryArray.every(element => element === "pink") ? `Bush is safe to eat from` : `Toxic! Leave bush alone!`;
+  // return berryArray.some(element => element !== "pink") ? `Toxic! Leave bush alone!` : `Bush is safe to eat from`;
+  // return berryArray.reduce((acc, cv) => cv === "pink" ? 0 : 1, 0) ? `Toxic! Leave bush alone!` : `Bush is safe to eat from`;
+  // return [...new Set(berryArray)].length === 1 ? `Bush is safe to eat from` : `Toxic! Leave bush alone!`;
 }
+
+// console.log(isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"]));
+// "Toxic! Leave bush alone!"
+
+// console.log(isBushSafe(["pink", "pink", "pink", "pink"]));
+// "Bush is safe to eat from"
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

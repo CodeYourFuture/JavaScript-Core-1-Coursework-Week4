@@ -6,7 +6,13 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(array) {
+  return array.filter(element => element.includes("Lane"));
+}
+
+// console.log(getLanes(["Abchurch Lane","Adam's Court","Addle Hill","Addle Lane","Alban Highwalk"]));
+// ["Abchurch Lane", "Addle Lane"]
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
