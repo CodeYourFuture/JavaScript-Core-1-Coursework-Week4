@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygen) {
+  let oxyPlanet = oxygen.find((planet) => {
+    if (Number(planet.slice(0, -1)) !== NaN && planet.slice(-1) === "%") {
+      let number = Number(planet.substring(0, planet.length - 1));
+      return number > 19.5 && number < 23.5;
+    } else return undefined;
+  });
+  return oxyPlanet;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

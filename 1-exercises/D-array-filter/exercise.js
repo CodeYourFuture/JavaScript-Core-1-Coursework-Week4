@@ -8,7 +8,11 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+function onlyIndexes(a) {
+  return isNaN(a !== Number);
+}
+
+let pairsByIndex = pairsByIndexRaw.filter(onlyIndexes); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

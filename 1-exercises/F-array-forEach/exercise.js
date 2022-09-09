@@ -9,6 +9,16 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function letFizz(number) {
+  return number % 3 === 0;
+}
+let Fizzy = arr.forEach(letFizz);
+
+if (Fizzy) {
+  console.log("Fizz");
+} else {
+  console.log(num);
+}
 /* EXPECTED OUTPUT */
 
 /*
