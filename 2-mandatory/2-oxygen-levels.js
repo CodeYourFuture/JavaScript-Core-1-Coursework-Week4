@@ -11,7 +11,20 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function forFind(str) {
+  if (!str.includes("%")) {
+    return false;
+  } else {
+    let newNum = str.replace("%", ""); 
+    newNum = Number(newNum);
+    return (newNum > 19.5 && newNum < 23.5);
+  }
+}
+
+function findSafeOxygenLevel(arr) {
+  return arr.find(forFind); //finds first value in array for which forFind(value) = true; argument of "find" should be function that returns true or false;
+ 
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
