@@ -7,7 +7,10 @@
 */
 
 function getLanes() {}
-
+function getLanes(arr) {
+  let streetLanes = arr.filter(street => street.includes("Lane"));
+  return streetLanes;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getLanes function works", () => {

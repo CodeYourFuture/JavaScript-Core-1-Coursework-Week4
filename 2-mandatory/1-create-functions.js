@@ -3,17 +3,18 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  const firstFive = arr.filter(element => arr.indexOf(element) <= 4)
+  return firstFive
 }
-
-/*
+/*7
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return arr
 }
-
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,8 +25,23 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+
+function formatPercentage() {
+  function formatPercentage(arr) {
+    let newArray = arr.map(element => 
+      {
+        let temp = (element > 100)? "100%" : (parseFloat(element.toFixed(2))) + "%"
+        return temp
+      }
+      )
+  return newArray
+  }
+
+
+  function remove(arr, myindex) {
+    newArray = arr.filter((element, index) => myindex !== index)
+    return newArray
+
 
 /*
 Write a function that:
@@ -34,8 +50,10 @@ Write a function that:
 */
 
 function remove() {
-}
-
+  function remove(arr, myindex) {
+   newArray = arr.filter((element, index) => myindex !== index)
+   return newArray
+  }
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -45,8 +63,15 @@ Write a function that:
 */
 
 function formatPercentage() {
-}
-
+  function formatPercentage(arr) {
+    let newArray = arr.map(element => 
+      {
+        let temp = (element > 100)? "100%" : (parseFloat(element.toFixed(2))) + "%"
+        return temp
+      }
+      )
+  return newArray
+  }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
