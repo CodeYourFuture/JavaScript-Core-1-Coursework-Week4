@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+   return arr.filter(names => names.includes('family') && names[0] === 'A');
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
