@@ -13,14 +13,29 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+
+// to check if the type of the input
 const isNumber = (input) => {
   return typeof input === "number";
 };
 
-console.log(isNumber(89));
+//this function work same as splice() method to remove the element from an array.
+const rmvArrayElement = (arr, elem) => {
+  const result = [];
+  let isFirstOccurrenceAdded = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== elem || isFirstOccurrenceAdded) {
+      result.push(arr[i]);
+    } else isFirstOccurrenceAdded = true;
+  }
+  return result;
+};
 const sortArray = (arr) => {
   const sortedArray = [];
   let min = 0;
+
+  /* sorting algorithm I have used: get the value of index 0 and compare
+  it with the rest of the array elements if */
   for (let i = 0; i <= arr.length; i++) {
     i = 0;
     min = arr[i];
@@ -29,8 +44,10 @@ const sortArray = (arr) => {
         min = arr[j];
       }
     }
+    // push the result to the new array and remove it from unsorted array
     sortedArray.push(min);
-    arr.splice(arr.indexOf(min), 1);``
+    //arr.splice(arr.indexOf(min), 1);
+    arr = rmvArrayElement(arr, min);
   }
   return sortedArray;
 };
@@ -44,8 +61,7 @@ function sortAges(arr) {
   }
   return sortArray(result);
 }
-const agesCase = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
-console.log(sortAges(agesCase));
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [
