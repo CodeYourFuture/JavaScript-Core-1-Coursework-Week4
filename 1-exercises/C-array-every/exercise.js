@@ -8,9 +8,9 @@ let group = ["Austine", "Dany", "Swathi", "Daniel"];
 let groupIsOnlyStudents; // complete this statement
 
 if (groupIsOnlyStudents) {
-  console.log("The group contains only students");
+  console.log(students.every("The group contains only students"));
 } else {
-  console.log("The group does not contain only students");
+  console.log(group.every("The group does not contain only students"));
 }
 
 /* EXPECTED RESULT */

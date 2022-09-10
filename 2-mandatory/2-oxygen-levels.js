@@ -11,7 +11,11 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel() {
+for (let i = 0; i < 100; i++) 
+let result = findSafeOxygenLevel.substring(19.5, 23.5)
+console.log(findSafeOxygenLevel)
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

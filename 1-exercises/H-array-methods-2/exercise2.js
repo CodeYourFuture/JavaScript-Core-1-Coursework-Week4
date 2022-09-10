@@ -7,7 +7,11 @@
   Tip: use the string method .split() and the array method .join()
 */
 
-function capitalise(str) {}
+function capitalise(str) {
+let array = str.split("h");
+array[0] = str.join("H");
+} return array.join()
+//GR - bit stuck on this one - will come back to it
 
 /* 
   DO NOT EDIT BELOW THIS LINE
