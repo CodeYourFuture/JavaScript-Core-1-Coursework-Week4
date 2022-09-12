@@ -1,9 +1,13 @@
 /*
 Write a function that:
 - Accepts an array as a parameter.
-- Returns a new array containing the first five elements of the passed array.
+- Returns a new array containing the first five elements 
+of the passed array.
 */
-function first5() {
+function first5(numbers) {
+  let firstFiveNumbers = numbers.slice(0, 5);
+  return firstFiveNumbers;
+
 }
 
 /*
@@ -11,12 +15,16 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(letters) {
+  let newElementsArr = [...letters]
+  return newElementsArr.sort()
 }
 
 /*
-NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
-Think about what is better about this solution than your one last week, and what is worse.
+NOTE: This exercise is the same as one you did last week - try 
+to do it again using things you learnt this week.
+Think about what is better about this solution than
+ your one last week, and what is worse.
 
 Write a function that:
 - Takes an array of strings as input.
@@ -24,27 +32,39 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+return arr.map(string => string.trim().replace("/", "").toLowerCase())
+
 }
 
 /*
 Write a function that:
 - Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
+- Returns a new array containing the same elements, 
+but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  return arr.filter((elementA) => arr.indexOf(elementA) !== index)
+  
 }
-
 /*
 Write a function that:
 - Takes an array of numbers as input.
-- Returns an array of strings formatted as percentages (e.g. 10 => "10%").
+- Returns an array of strings formatted as percentages 
+(e.g. 10 => "10%").
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  let numPercentages = numbers.map(percentage => {
+    if (percentage > 100) return "100%"
+    else 
+     return Math.round((percentage + Number.EPSILON) * 100) / 100 + "%"
+    
+  })
+  return numPercentages;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
