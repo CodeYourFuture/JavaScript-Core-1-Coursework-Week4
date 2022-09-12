@@ -129,9 +129,11 @@ function getLocationName(arr) {
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
-  let planner = locations.filter(arr => isAccessibleByTransportMode.includes(arr, mode) );
-  planner = planner.map(arr => getLocationName(arr))
-  return planner
+  let planner = locations.filter((arr) =>
+    isAccessibleByTransportMode(arr, transportMode)
+  );
+  planner = planner.map((arr) => getLocationName(arr));
+  return planner;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
