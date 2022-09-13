@@ -37,7 +37,7 @@ Write a function that:
 */
 
 function remove(arr, i) {
-  return arr.filter(e => e != arr[i]);
+  return arr.slice(0, i).concat(arr.slice(i + 1));
 }
 
 /*
@@ -49,7 +49,7 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  return arr.map((n) => n > 100 ? (n = 100 + "%") : Math.round(n * 100) / 100 + "%");
+  return arr.map((n) => n > 100 ? (100 + "%") : Math.round(n * 100) / 100 + "%");
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

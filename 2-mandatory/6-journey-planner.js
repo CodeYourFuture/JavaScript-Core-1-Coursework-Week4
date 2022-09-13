@@ -123,8 +123,8 @@ const getLocationName = (location) => location.slice(0, 1).toString();
 
 const journeyPlanner = (locations, transportMode) =>
   locations
-    .filter((e) => isAccessibleByTransportMode(getTransportModes(e), transportMode))
-    .map((e) => getLocationName(e));
+    .filter((location) => isAccessibleByTransportMode(getTransportModes(location), transportMode))
+    .map((location) => getLocationName(location));
 
 //-------------- or without func getTransportModes(): ---------------
 
