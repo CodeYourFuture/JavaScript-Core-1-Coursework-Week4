@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  const settlers = families.filter((n) => n.startsWith("A") && n.endsWith("family"));
+  return settlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
