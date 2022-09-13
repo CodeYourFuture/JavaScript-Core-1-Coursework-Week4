@@ -14,7 +14,17 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+
+
+function sortAges(arr) {
+  let newArr = [];
+  for (const element of arr) {
+      if (!isNaN(element) && Number.isInteger(element))     
+      newArr.push(element);    
+  }
+  
+  return newArr.sort((a,b)=>a-b);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
