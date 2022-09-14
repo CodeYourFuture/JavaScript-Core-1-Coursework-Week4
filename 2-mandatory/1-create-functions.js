@@ -29,8 +29,8 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arrOfStrings) {
-  let newArr  =arrOfStrings.map(string)=> 
-    string.trim().replace("/","").toLowerCase()
+  let newArr  =arrOfStrings.map(string=> 
+    string.trim().replace("/","").toLowerCase())
     return newArr;
 
 }
@@ -41,7 +41,7 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(arr.index) {
+function remove(index) {
   let newArr =[...arr];
   newArr.splice(index,1)
   return newArr
@@ -64,7 +64,7 @@ function formatPercentage(num) {
       return num
     }
   })(num)
-  .map((num)=> Math.round(num*100)/100 .(parseFloat(num.toFixed(2)))+ "%")
+  .map((num)=> Math.round(num*100)/100 .parseFloat(num.toFixed(2)))+ "%"
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

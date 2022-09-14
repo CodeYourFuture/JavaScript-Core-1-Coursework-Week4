@@ -8,7 +8,7 @@
 */
 
 function getEligibleStudents(attendance) {
-    let attendingStudents=attendance.forEach((studentDetail ) =>studentDetail[1]>=8).map ((studentDetail)=> studentDetail[0])
+    let attendingStudents = attendance.forEach((studentDetail ) =>studentDetail[1]>=8).map ((studentDetail)=> studentDetail[0])
     return attendingStudents;
 }
 

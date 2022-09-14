@@ -23,9 +23,9 @@
 
 function isBushSafe(berryArray) {
 if(berryArray.every ((berry)=> berry==="pink")){
-  return "it is safe for the astronauts to eat from the bush."
+  return "Bush is safe to eat from"
 }
-return "it's best not to eat from the bush at all !";
+return "Toxic! Leave bush alone!";
 
 }
 

@@ -36,7 +36,7 @@ function validatePasswords(passwords) {
       return false;
     }
     return true;
-}
+  })}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
