@@ -10,8 +10,22 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+// let arr = ["200%", "-21.5%", "20", "apes", "21.1%"];
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  return arr
+    .filter((str) => str.includes("%")) // check string with'%' and return an array
+    .find((oxygenLevel) => {
+      // search array for the 1st string that meets the condition
+
+      oxygenLevel = parseFloat(oxygenLevel);
+
+      return (
+        oxygenLevel > parseFloat("19.5%") && oxygenLevel < parseFloat("23.5%")
+      );
+    });
+}
+// console.log(findSafeOxygenLevel(arr));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

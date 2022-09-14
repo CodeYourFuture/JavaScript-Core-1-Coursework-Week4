@@ -13,7 +13,14 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story
+  .replaceAll("dogs", "cats") //replaces all instances of dogs with cats
+  .replace(/day/g, "night") //using regexpression method
+  .replace(10, 100000)
+
+  .replace("great", "brilliant");
+
+//console.log(result);
 
 /* EXPECTED OUTPUT */
 
