@@ -4,8 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(array) {
-  const firstFive = array.filter(element => array.indexOf(element) <= 4)
-  return firstFive
+  return array.slice(0, 5);
 }
 
 /*
@@ -27,11 +26,9 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpArr(element) {
-  return element.trim().replace("/", "");
-}
+
 function tidyUpString(array) {
-    return array.map(tidyUpArr);
+    return array.map(element => element.trim().replaceAll("/", "").toLowerCase());
 }
 
 /*
@@ -41,8 +38,7 @@ Write a function that:
 */
 
 function remove(array, indexA) {
- newArray = array.filter((element, index) => indexA !== index)
- return newArray
+ return array.filter(element => element != array[indexA]);
 }
 
 /*
@@ -53,7 +49,8 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+  return array.map((e) => (e >= 100 ? "100%" : `${Math.round(e * 100) / 100}%`));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

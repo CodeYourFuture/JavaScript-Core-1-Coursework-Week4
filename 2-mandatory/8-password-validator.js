@@ -20,23 +20,21 @@ PreviousPassword = ["fhD8!yrjj", "ttkTu.wer3", "dvyyeyY!5", "qwbfj76%", "tytT372
 
 Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
-
+"Se%5"
 */
 
 function validatePasswords(passwords) {
-   let validArray = passwords.map((element, index) => {
-    return (
-      containsUppercaseLetter(element) &&
-      containsLowercaseLetter(element) &&
-      containsNumber(element) &&
-      containsSymbol(element) &&
-      element.length >= 5 &&
-      passwords.indexOf(element) === index
-    );
-  });
-  return validArray;
+   let validPasswords = passwords.map((password, index) =>
+      containsUppercaseLetter(password) &&
+      containsLowercaseLetter(password) &&
+      containsNumber(password) &&
+      containsSymbol(password) &&
+      password.length > 4 &&
+      !passwords.slice(0, index).includes(password)
+  );
+  return validPasswords;
 }
-}
+
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
