@@ -4,7 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(arr) {
-  return arr.slice(0,5);
+  return arr.slice(0, 5);
 }
 
 /*
@@ -13,7 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  let result= [...arr].sort();
+  let result = [...arr].sort();
   return result;
 }
 
@@ -28,8 +28,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arr) {
-   return arr.map(items =>
-    items.replace('/', '').trim().toLowerCase())
+  return arr.map((items) => items.replace("/", "").trim().toLowerCase());
 }
 
 /*
@@ -38,9 +37,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(arr , myIndex) {
-   newArray = arr.filter((element, index) => myIndex !== index)
- return newArray
+function remove(arr, myIndex) {
+  newArray = arr.filter((element, index) => myIndex !== index);
+  return newArray;
 }
 
 /*
@@ -52,13 +51,11 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-    let newArray = arr.map(element => 
-    {
-      let temp = (element > 100)? "100%" : (parseFloat(element.toFixed(2))) + "%"
-      return temp
-    }
-    )
-return newArray
+  let newArray = arr.map((element) => {
+    let temp = element > 100 ? "100%" : parseFloat(element.toFixed(2)) + "%";
+    return temp;
+  });
+  return newArray;
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 

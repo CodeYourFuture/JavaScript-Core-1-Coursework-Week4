@@ -16,7 +16,9 @@
 */
 
 function getSettlers(arr) {
- const willStay= arr.filter(string => string.includes("family") && string[0]==="A" );
+  const willStay = arr.filter(
+    (string) => string.includes("family") && string[0] === "A"
+  );
   return willStay;
 }
 

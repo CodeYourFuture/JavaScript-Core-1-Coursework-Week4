@@ -14,7 +14,10 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  return arr.filter((item) => typeof item === "number").sort((a, b) => a - b);
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -43,3 +46,10 @@ test("sortAges function works - case 1", () => {
 test("sortAges function works - case 2", () => {
   expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
 });
+function validateCardNumber(cardNumber) {
+  const isLongEnough = cardNumber.length === 16;
+  const isNumber = Number.isIntiger(cardnumber);
+
+  if (cardNumber.length === 16 && cardNumber === Number) {
+  }
+}

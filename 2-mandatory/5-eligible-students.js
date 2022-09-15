@@ -8,9 +8,10 @@
 */
 
 function getEligibleStudents(arr) {
-
- const eligibleStudents = arr.filter( info => info[1]>= 8).map (info => info[0]);
- return eligibleStudents;
+  const eligibleStudents = arr
+    .filter((info) => info[1] >= 8)
+    .map((info) => info[0]);
+  return eligibleStudents;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
