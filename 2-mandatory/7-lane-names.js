@@ -7,8 +7,8 @@
 */
 
 function getLanes(arr) {
-  let result= arr.filter(str => str.includes("Lane"));
- return result;
+  let result = arr.filter((str) => str.includes("Lane"));
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -12,14 +12,14 @@
 */
 
 function findSafeOxygenLevel(arr) {
-
-  let BestChoice= arr.filter(item =>
-    item.includes('%') &&
-    item.includes('.') &&
-    item > '19.5%' &&
-    item < '23.5%');
+  let BestChoice = arr.filter(
+    (item) =>
+      item.includes("%") &&
+      item.includes(".") &&
+      item > "19.5%" &&
+      item < "23.5%"
+  );
   return BestChoice[0];
-
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

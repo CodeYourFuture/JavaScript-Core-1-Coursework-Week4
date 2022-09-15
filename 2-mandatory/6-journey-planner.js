@@ -65,7 +65,7 @@ function checkCodeIsThere(stringText) {
   Hint: Use the corresponding array method to split the array.
 */
 function getTransportModes(arr) {
-  return arr.slice(1,arr.length);
+  return arr.slice(1, arr.length);
 }
 
 /*
@@ -83,9 +83,8 @@ function getTransportModes(arr) {
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode(arr,str) {
+function isAccessibleByTransportMode(arr, str) {
   return arr.includes(str);
-  
 }
 
 /*
@@ -130,8 +129,8 @@ function getLocationName(arr) {
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
-  let check = locations.filter(item => item.includes(transportMode))
-  return check.map(location => location[0])
+  let check = locations.filter((item) => item.includes(transportMode));
+  return check.map((location) => location[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
