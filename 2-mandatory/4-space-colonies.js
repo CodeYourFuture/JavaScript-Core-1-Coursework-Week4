@@ -15,7 +15,17 @@
   
 */
 
-function getSettlers() {}
+function isFamilyAndStartWithA(name){
+  if (name.includes("family") && name.startsWith("A")){
+    return true;
+  }else{
+    return false;
+  }  
+}
+
+function getSettlers(names) {
+  return names.filter(isFamilyAndStartWithA);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
