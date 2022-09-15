@@ -8,7 +8,27 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+arr.map(check).forEach((num) => console.log(num));
 
+function check(num)
+{
+    if (num % 15 == 0)
+    {
+        return "FizzBuzz";
+    }
+
+    if (num % 3 == 0)
+    {
+        return "Fizz";
+    }    
+
+    if (num % 5 == 0)
+    {
+        return "Buzz";
+    }
+
+    return num;
+}
 /* EXPECTED OUTPUT */
 
 /*
