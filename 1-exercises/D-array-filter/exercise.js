@@ -8,11 +8,11 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-function filterOut(pair){
-  if(pair.length !== 2){
-    console.log(pair)
-  }     
-} 
+function filterOut(pair) {
+  if (pair.length !== 2) {
+    console.log(pair);
+  }
+}
 
 let pairsByIndex = pairsByIndexRaw.filter(filterOut); // Complete this statement
 

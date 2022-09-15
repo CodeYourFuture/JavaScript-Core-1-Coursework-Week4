@@ -8,14 +8,13 @@
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
-
 function isNullValue(item) {
   return item === null;
 }
 
 let containsNull = pairsByIndex.some(isNullValue);
 
-if(containsNull){
+if (containsNull) {
   process.exit(1);
 }
 
