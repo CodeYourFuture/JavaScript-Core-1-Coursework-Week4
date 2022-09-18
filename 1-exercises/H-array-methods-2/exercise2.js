@@ -8,7 +8,7 @@
 */
 
 function capitalise(str) {
-  return `The `; 
+  return str.charAt(0).toUpperCase() + str.slice(1); //Done✔️
 }
 
 /* 
