@@ -14,7 +14,14 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
-
+function isElementNull(pair) {
+  return pair === null
+}
+ let exitNull = pairsByIndex.some(isElementNull);
+ if(exitNull) {
+  return process.exit(1)
+ }
+  // if(pairsByIndex.some(isElementNull)) { 
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
@@ -22,3 +29,4 @@ let pairs = pairsByIndex.map(function (indexes) {
 });
 
 console.log(pairs);
+  
