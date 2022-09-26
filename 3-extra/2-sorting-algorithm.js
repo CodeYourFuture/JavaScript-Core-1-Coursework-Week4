@@ -14,32 +14,79 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+	const numbersOnly = getOnlyNumbers(arr);
+
+	return sortArray(numbersOnly);
+}
+
+function getOnlyNumbers(arr) {
+	const numbersOnly = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (typeof arr[i] === "number") numbersOnly.push(arr[i]);
+	}
+
+	return numbersOnly;
+}
+
+function sortArray(arr) {
+	const sorted = [];
+
+	while (arr.length > 0) {
+		const smallestElement = Math.min(...arr);
+		sorted.push(smallestElement);
+		const index = arr.indexOf(smallestElement);
+		arr.splice(index, 1);
+	}
+
+	return sorted;
+}
+
+console.log(
+	sortAges([
+		"🎹",
+		100,
+		"💩",
+		55,
+		"🥵",
+		"🙈",
+		45,
+		"🍕",
+		"Sanyia",
+		66,
+		"James",
+		23,
+		"🎖",
+		"Ismeal",
+	])
+);
+console.log(sortAges(["28", 100, 60, 55, "75", "🍕", "Elamin"]));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [
-  "🎹",
-  100,
-  "💩",
-  55,
-  "🥵",
-  "🙈",
-  45,
-  "🍕",
-  "Sanyia",
-  66,
-  "James",
-  23,
-  "🎖",
-  "Ismeal",
+	"🎹",
+	100,
+	"💩",
+	55,
+	"🥵",
+	"🙈",
+	45,
+	"🍕",
+	"Sanyia",
+	66,
+	"James",
+	23,
+	"🎖",
+	"Ismeal",
 ];
 const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
-  expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
+	expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
 });
 
 test("sortAges function works - case 2", () => {
-  expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
+	expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
 });
