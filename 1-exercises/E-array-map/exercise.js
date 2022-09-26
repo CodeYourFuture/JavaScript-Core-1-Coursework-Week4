@@ -2,10 +2,16 @@
 // Write multiple solutions using different syntax (as shown in the README)
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
+function multipliedByhundred(number) {
+  return number * 100;
+}
 
-let numbersMultipliedByOneHundred; // complete this statement
+let numbersMultipliedByOneHundred = numbers.map(multipliedByhundred); // complete this statement
 
 console.log(numbersMultipliedByOneHundred);
+
+numbersMultipliedByOneHundredsecond = numbers.map((number) => number * 100);
+console.log(numbersMultipliedByOneHundredsecond);
 
 /* EXPECTED RESULT
 

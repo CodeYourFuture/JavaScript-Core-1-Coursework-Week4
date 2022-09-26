@@ -9,6 +9,17 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(myFunction);
+
+function myFunction(number) {
+  number % 3 === 0
+    ? console.log("Fuzz")
+    : number % 5 === 0
+    ? console.log("Buzz")
+    : number % 15 === 0
+    ? console.log("FizzBuzz")
+    : number;
+}
 /* EXPECTED OUTPUT */
 
 /*
