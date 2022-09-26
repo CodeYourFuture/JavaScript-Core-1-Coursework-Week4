@@ -24,15 +24,24 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-	return passwords.map((password) => {
+	return passwords.map((password, i) => {
 		return password.length >= 5 &&
 			containsUppercaseLetter(password) &&
 			containsLowercaseLetter(password) &&
 			containsNumber(password) &&
-			containsSymbol(password)
+			containsSymbol(password) &&
+			isNotRepeated(password, i, passwords)
 			? true
 			: false;
 	});
+}
+
+function isNotRepeated(password, i, passwords) {
+	const sliced = passwords.slice(0, i);
+
+	// console.log(password, passwords, sliced);
+
+	return sliced.includes(password) ? false : true;
 }
 
 console.log(
@@ -42,6 +51,10 @@ console.log(
 console.log(
 	validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])
 );
+
+// const array = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"];
+// const sliced = array.slice(0, 4);
+// console.log(sliced);
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
