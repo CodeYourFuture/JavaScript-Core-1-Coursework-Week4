@@ -14,9 +14,6 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 const createDeepCopy = (input) => {
-  if (input instanceof Date) {
-    return new Date(input.getTime()); // BASE CASE when input is of instance Date
-  }
   if (typeof input !== "object") {
     return input;
   }
