@@ -14,7 +14,24 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  let arr2 = [];
+  for (let item of arr) {
+    if (typeof item === "number") {
+      arr2.push(item);
+    }
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    for (let j = i + 1; j < arr2.length; j++) {
+      if (arr2[i] > arr2[j]) {
+        temp = arr2[i];
+        arr2[i] = arr2[j];
+        arr2[j] = temp;
+      }
+    }
+  }
+  return arr2;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
