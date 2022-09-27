@@ -9,9 +9,7 @@
 
 function getEligibleStudents(arr) {
   let studentsAttendedOk = [];
-  const result = arr.filter((el) =>
-    el[1] >= 8 ? studentsAttendedOk.push(el[0]) : null
-  );
+  arr.forEach((el) => (el[1] >= 8 ? studentsAttendedOk.push(el[0]) : null));
   return studentsAttendedOk;
 }
 
