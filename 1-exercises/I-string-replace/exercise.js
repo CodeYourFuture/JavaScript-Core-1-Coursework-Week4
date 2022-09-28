@@ -13,7 +13,12 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result= story.replace(/dogs/gi, "cats");
+story= story.replace(/day/gi, "night");
+story= story.replace(/10/gi,"100000");
+story = story.replace(/dogs/gi,"cats");
+story = story.replace(/great/gi,"brilliant");
+story = story.replace(/day/gi,"night");
 
 /* EXPECTED OUTPUT */
 
