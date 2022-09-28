@@ -22,9 +22,9 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-function hasDuplicates(arr) {
-  return new Set(arr).size === arr.length;
-}
+// function hasDuplicates(arr) {
+//   return new Set(arr).size === arr.length;
+// }
 
 function validatePasswords(passwords) {
   let check = passwords.map(
@@ -35,12 +35,28 @@ function validatePasswords(passwords) {
       containsNumber(el) &&
       containsSymbol(el) &&
       index === passwords.indexOf(el)
+    // console.log(
+    //   index,
+    //   "....",
+    //   el,
+    //   "-----",
+    //   passwords.indexOf(el),
+    //   "--",
+    //   passwords[index]
+    // )
   );
   return check;
 }
 
 console.log(
-  validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])
+  validatePasswords([
+    "StUFf27%",
+    "Pl3nty!",
+    "Jai33",
+    "shajsaUA**&&",
+    "Pl3nty!",
+    "StUFf27%",
+  ])
 );
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
