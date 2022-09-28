@@ -1,7 +1,7 @@
-/* 
+/*
 Password Validation
 
-Write a program that should check if each password in an array 
+Write a program that should check if each password in an array
 contains a valid password (see below for password criteria) and return a
 new array with true or false booleans for whether that password was valid or not.
 
@@ -11,7 +11,7 @@ To be valid, a password must:
 - Have at least one English lowercase letter (a-z)
 - Have at least one number (0-9)
 - Have at least one non-alphanumeric symbol ("!", "#", "$", "%", ".", "*", "&")
-- Must not be any previous password in the passwords array. 
+- Must not be any previous password in the passwords array.
 
 We have supplied functions which will help you with some of these checks.
 
@@ -22,9 +22,26 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+function hasDuplicates(arr) {
+  return new Set(arr).size === arr.length;
+}
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let check = passwords.map(
+    (el, index) =>
+      el.length >= 5 &&
+      containsUppercaseLetter(el) &&
+      containsLowercaseLetter(el) &&
+      containsNumber(el) &&
+      containsSymbol(el) &&
+      index === passwords.indexOf(el)
+  );
+  return check;
+}
 
+console.log(
+  validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])
+);
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
@@ -45,7 +62,7 @@ function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Example 1", () => {
   expect(
