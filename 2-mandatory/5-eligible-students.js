@@ -10,7 +10,7 @@
 function getEligibleStudents(arr) {
   let arrattended = [];
   arr.forEach((x) => {
-    if (x[1] > 8) {
+    if (x[1] >= 8) {
       arrattended.push(x[0]);
     }
   });
