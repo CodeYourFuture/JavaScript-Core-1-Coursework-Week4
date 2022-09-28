@@ -21,8 +21,11 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
+function isBushSafe(berryArray){
+  if(berryArray.every((berry) => berry === "pink")) {
+      return "Bush is safe to eat from";
+  }
+      return "Toxic! Leave bush alone!";    
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
