@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(peopleNameArr) {
+  let eligiblePersonsArr = []
+  for (let peopleName of peopleNameArr) {
+    let name = peopleName.split(" ")
+    if (name[name.length-1] === 'family' && peopleName[0]==='A') {
+      eligiblePersonsArr.push(peopleName)
+    }
+  }
+  return eligiblePersonsArr
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
