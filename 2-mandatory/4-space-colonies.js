@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  let colonisers=[];
+  voyagers.forEach((name)=>{
+    if(name.includes("family")&& name[0]==="A"){
+      colonisers.push(name);
+    }
+  });
+  return colonisers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
