@@ -13,8 +13,37 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+//**********************************************************
+//         *** Sort number array in an ascending order
+//**********************************************************
+function sortNumAscend(numArray) {
+  let done = false;
+  while (!done) {
+     done = true;
+     let temp = numArray[0];
+     for (let i = 0; i < numArray.length; ++i) {
+        if (numArray[i] > numArray[i + 1]) {
+           done = false;
+           temp = numArray[i];
+           numArray[i] = numArray[i + 1];
+           numArray[i + 1] = temp;
+        }
+     }
+  }
+  return numArray;
+}
+//************************************************************** */
+function sortAges(myArray) {
+  const integerNums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let onlyNumArray =[];
+  for (let i = 0; i < myArray.length; ++i) {
+     if (typeof (myArray[i]) === "number") {
+      onlyNumArray.push(myArray[i]);
+     }
+  }
+  return sortNumAscend(onlyNumArray);
+}
 
-function sortAges(arr) {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

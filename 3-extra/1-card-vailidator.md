@@ -1,6 +1,6 @@
 ## **PROJECT: Credit Card Validator**
 
-In this project you'll write a script that validates whether or not a credit card number is valid.
+In this project you'll write a script that validates whether or not a credit card numberis valid. 
 
 Here are the rules for a valid number:
 
