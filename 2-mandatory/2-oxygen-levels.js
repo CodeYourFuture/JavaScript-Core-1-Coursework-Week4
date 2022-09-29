@@ -11,8 +11,20 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arrOfO2Level) {
 
+  let firstSafePlanet = arrOfO2Level.filter((level)=> level.includes("%"))
+                                  
+                        .map((level)=> Number(level.replace("%","")))
+                        .find((level)=>19.5 <level && level<23.5);
+             
+     if(firstSafePlanet>0){
+      return firstSafePlanet +"%";
+     }
+     else{
+      return undefined;
+     }
+    }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
