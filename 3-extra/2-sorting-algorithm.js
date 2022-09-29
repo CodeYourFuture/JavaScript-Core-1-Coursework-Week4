@@ -13,9 +13,33 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+function quicksort(array) {
+  if (array.length <= 1) {
+    return array;
+  }
 
-function sortAges(arr) {}
+  let pivot = array[0];
 
+  let left = [];
+  let right = [];
+
+  for (let i = 1; i < array.length; i++) {
+    array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+  }
+
+  return quicksort(left).concat(pivot, quicksort(right));
+}
+
+function sortAges(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return quicksort(arr);
+}
+sortAges(["A", 1]);
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [

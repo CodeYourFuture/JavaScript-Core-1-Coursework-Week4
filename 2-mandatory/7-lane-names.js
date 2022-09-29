@@ -6,7 +6,10 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(array) {
+  let resultArr = array.filter((x) => x.indexOf("Lane") !== -1);
+  return resultArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
