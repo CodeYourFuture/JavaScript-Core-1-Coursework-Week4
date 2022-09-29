@@ -8,15 +8,15 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  arr.forEach(num => {
-  if (num % 3 === 0 && num % 5 === 0) {
-    num = "FizzBuzz";
-  } else if (num % 5 === 0) {
-    num = "Buzz";
-  } else if (num % 3  === 0) {
-    num = "Fizz";
-  } 
-  console.log(num)
+  arr.forEach(function( val ,index ){
+    if (val % 3 === 0 && val % 5 === 0){ 
+      val = "FizzBuzz";
+    }else if (val % 5 === 0) {
+      val = "Buzz";
+    }else if (val % 3  === 0) {
+      val = "Fizz";
+    } 
+    console.log( val );
 })
 
 
