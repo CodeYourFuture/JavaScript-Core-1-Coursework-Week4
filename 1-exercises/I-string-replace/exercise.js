@@ -14,6 +14,17 @@ let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
 let result = story.replace("", "");
+let result = story.replace(/dogs|cats|day|night|10|great/g, (x) =>
+  x == "dogs"
+    ? "cats"
+    : x == "cats"
+    ? "dogs"
+    : x == "day"
+    ? "night"
+    : x == "10"
+    ? "100000"
+    : "brilliant"
+);
 
 /* EXPECTED OUTPUT */
 
