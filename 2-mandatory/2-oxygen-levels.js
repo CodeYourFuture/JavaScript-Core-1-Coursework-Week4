@@ -11,7 +11,10 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(planet) {
+  return planet.find((oxygen) => oxygen.slice(0,-1) > 19.5 && oxygen.slice(0,-1) <23.5);
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
