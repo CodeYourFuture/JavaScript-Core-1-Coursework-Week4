@@ -22,7 +22,7 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-function alidatePasswords(passwordArray) {
+function validatePasswords(passwordArray) {
   return passwordArray.map((password, index) => 
                                            passMoreThan4Char(password)
                                         && containsSymbol(password)
@@ -35,7 +35,7 @@ function alidatePasswords(passwordArray) {
 
 // Returns true if string contains >= 5 charracters.
 function passMoreThan4Char(inputString) {
-  return inputString.map(password => password.length > 4);
+  return inputString.length > 4;
 }
 
 // Returns true if string contains at least one uppercase letter.
