@@ -8,7 +8,9 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let indexN = statement.indexOf("n")
+
+let result = statement.substring(indexN,indexN+3);
 
 console.log(result);
 
