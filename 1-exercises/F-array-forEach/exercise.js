@@ -6,8 +6,29 @@
 
   An array with numbers 1-15 has been provided.
 */
+const checkMultiplesOf3or5 = (number) => {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return "FizzBuzz";
+  } else if (number % 3 === 0) {
+    return "Fizz";
+  } else if (number % 5 === 0) {
+    return "Buzz";
+  } else {
+    return number;
+  }
+}
+
+const log = (val) => console.log(val);
+
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+arr.map(checkMultiplesOf3or5).forEach(log);
+
+let result = arr.forEach(item => {
+  return item;
+});
+console.log(result);
 
 /* EXPECTED OUTPUT */
 
