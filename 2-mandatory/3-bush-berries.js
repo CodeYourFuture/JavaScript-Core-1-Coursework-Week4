@@ -22,7 +22,7 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
