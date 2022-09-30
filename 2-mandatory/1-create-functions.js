@@ -4,6 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(arr) {
+  return find()
 }
 
 /*
