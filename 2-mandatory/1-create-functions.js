@@ -4,9 +4,9 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-function first5(number) {
-  let newArray = number.slice(0, 5);
-  return newArray;
+function sortArray(num) {
+  let sortedArray = num.map((x) => x);
+  return sortedArray.sort();
 }
 
 /*
