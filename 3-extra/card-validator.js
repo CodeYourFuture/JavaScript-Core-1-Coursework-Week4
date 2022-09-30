@@ -16,5 +16,5 @@ function sumNumbers(numbers){
     }
 }
 function validatorNumbers(numbers){
-    if(containsNumber(numbers) && lengthOfArray(numbera) && sumNumbers(numbera) >16 &&  ) 
+    if(containsNumber(numbers) && lengthOfArray(numbera) && sumNumbers(numbera) >16 && reapedItem(number) ) 
 }
