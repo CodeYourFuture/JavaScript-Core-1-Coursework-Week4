@@ -8,9 +8,10 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let result = statement.substring(0, 4).concat(" ",statement.substring(statement.length -16));
 
 console.log(result);
+// console.log(result2)
 
 /* EXPECTED OUTPUT 
 
