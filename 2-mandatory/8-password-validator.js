@@ -23,14 +23,14 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {
-  return passwords.map(
-  (element,index) => element.length >= 5 &&  
-  upperCase(element) &&
-  lowerCase(element) &&
-  number(element) &&
-  symbol(element) &&
-  index == passwords.indexOf(element)
+function validatePasswords(password) {
+  return password.map(
+    (element,index) => element.length >= 5 &&
+  containsUppercaseLetter(element) &&
+  containsLowercaseLetter(element) &&
+  containsNumber(element) &&
+  containsSymbol(element) &&
+  index == password.indexOf(element)
   );
 };
 
@@ -39,6 +39,7 @@ function validatePasswords(passwords) {
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
+
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
