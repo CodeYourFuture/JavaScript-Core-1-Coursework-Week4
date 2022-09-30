@@ -11,7 +11,19 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(levels) {
+  const acceptableRange = levels
+    .map((number) => parseFloat(number.substring(0, 4)))
+    .filter(
+      (number) =>
+        number > 19.5 &&
+        number < 23.5 &&
+        typeof number === "number" &&
+        !Number.isInteger(number)
+    )
+    .sort();
+  return acceptableRange.length >= 1 ? `${acceptableRange[0]}%` : undefined;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
