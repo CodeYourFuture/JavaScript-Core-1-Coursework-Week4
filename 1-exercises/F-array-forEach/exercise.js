@@ -9,6 +9,20 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+let fizzBuzz = arr.forEach((item, index, array) => {
+  if(array[index]%3 == 0 && array[index]%5 == 0){
+   console.log("FizzBuzz")
+  }else if(array[index]%3 == 0){
+    console.log("Fizz")
+  }else if(array[index]%5 == 0){
+    console.log("Buzz")
+  }else{
+    console.log(item)
+  }
+})
+
+
+
 /* EXPECTED OUTPUT */
 
 /*
