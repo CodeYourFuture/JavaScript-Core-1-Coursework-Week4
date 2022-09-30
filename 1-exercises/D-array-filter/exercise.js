@@ -1,5 +1,6 @@
 /*
-  You are given a program that logs pairings between mentors and students
+ 
+You are given a program that logs pairings between mentors and students
   It fails because the array `pairsById` can contain different values that break the program
   It is decided that array items which are not pairs should be filtered out
   - Finish the statement on line 11 to produce an array with valid content
@@ -8,7 +9,12 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+
+
+let pairsByIndex =pairsByIndexRaw.filter((element) => Array.isArray(element) && element.length ===2) 
+// array.isarray determines whether the passed value is an array
+
+// Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
