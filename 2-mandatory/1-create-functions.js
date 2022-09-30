@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  const firstFiveElement = array.slice(0, 5);
+  return firstFiveElement;
 }
 
 /*
@@ -11,7 +13,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  const sortedArray = [...array].sort();
+  return sortedArray;
 }
 
 /*
@@ -24,7 +28,16 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  let tidyArray = [];
+  array.forEach((item) => {
+    const trimmedString = item.trim();
+    const removedSlash = trimmedString.replace("/", "");
+    const loweredCase = removedSlash.toLowerCase();
+    tidyArray.push(loweredCase);
+  });
+
+  return tidyArray;
 }
 
 /*
@@ -33,7 +46,26 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+  let newarray = array.slice();
+
+  if (index === null || index === undefined || index > array.length)
+    return array;
+  else {
+    // console.log(newarray.splice(index, 1), "<--------------------------------");
+    newarray.splice(index, 1);
+    return newarray;
+  }
+  // if ((index = newarray.length || index === null)) return newarray;
+  // else if (index >= 0) {
+  //   const firstPart = newarray.slice(0, index);
+  //   console.log(firstPart, "<------------------- First Part");
+  //   const secondPart = newarray.slice(index + 1);
+  //   console.log(secondPart, "<------------------- Second Part");
+  //   return firstPart.concat(secondPart);
+  // } else {
+  //   return [];
+  // }
 }
 
 /*
@@ -44,7 +76,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  let formattedNumbers = [];
+  numbers.forEach((number) => {
+    if (number >= 100) formattedNumbers.push("100%");
+    else {
+      formattedNumbers.push(Math.round(number * 100) / 100 + "%");
+    }
+  });
+  return formattedNumbers;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

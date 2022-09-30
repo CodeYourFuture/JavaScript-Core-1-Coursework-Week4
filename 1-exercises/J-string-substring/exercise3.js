@@ -7,8 +7,11 @@
 */
 
 let statement = "I do not like programming";
-
-let result = "";
+const removeWord = "not";
+const oneSpace = 1;
+let result =
+  statement.substring(0, statement.indexOf(removeWord) - oneSpace) +
+  statement.substring(statement.indexOf(removeWord) + removeWord.length);
 
 console.log(result);
 

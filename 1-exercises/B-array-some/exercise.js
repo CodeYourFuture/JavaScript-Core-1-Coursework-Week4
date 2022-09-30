@@ -15,6 +15,13 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+const isNullExists = (item) => item === null;
+
+if (pairsByIndex.some(isNullExists)) {
+  console.log("Error:Array contains null items");
+  process.exit(1);
+}
+
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
