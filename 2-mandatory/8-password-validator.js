@@ -23,18 +23,29 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {
+function validatePasswords(passwords, pass) {
   return passwords.map((password) => {
     return password.length >= 5 &&
       containsUppercaseLetter(password) &&
       containsLowercaseLetter(password) &&
       containsNumber(password) &&
-      containsSymbol(password)
+      containsSymbol(password) &&
+      unique(passwords, pass)
       ? trur
       : false;
   });
 }
-function unique(passwords, i) {}
+function unique(passwords, pass) {
+  for (let i = 0; i < passwords.length; i++) {
+    let arr = passwords.slice(0, i);
+    if (arr.includes(pass)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);

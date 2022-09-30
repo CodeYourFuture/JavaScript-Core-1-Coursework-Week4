@@ -15,35 +15,35 @@
 // let arr = ["tt", "yy"];
 // let str = "tt";
 // console.log(arr[0]);
-function journeyPlanner(locations, transportMode) {
-  let loca = [];
-  for (let location of locations) {
-    if (location.includes(transportMode)) {
-      loca.push(location[0]);
-    }
-  }
-  return loca;
-  // Implement the function body
-}
-const londonLocations = [
-  ["Angel", "tube", "bus"],
-  ["London Bridge", "tube", "river boat"],
-  ["Tower Bridge", "tube", "bus"],
-  ["Greenwich", "bus", "river boat"],
-];
+// function journeyPlanner(locations, transportMode) {
+//   let loca = [];
+//   for (let location of locations) {
+//     if (location.includes(transportMode)) {
+//       loca.push(location[0]);
+//     }
+//   }
+//   return loca;
+//   // Implement the function body
+// }
+// const londonLocations = [
+//   ["Angel", "tube", "bus"],
+//   ["London Bridge", "tube", "river boat"],
+//   ["Tower Bridge", "tube", "bus"],
+//   ["Greenwich", "bus", "river boat"],
+// ];
 
-const streetNames = [
-  "Abchurch Lane",
-  "Adam's Court",
-  "Addle Hill",
-  "Addle Lane",
-  "Alban Highwalk",
-];
-// console.log(streetNames.filter((Name) => Name.includes("Lane")));
-function getLanes(arr) {
-  const streetWithLane = arr.filter((Name) => Name.includes("Lane"));
-  return streetWithLane;
-}
+// const streetNames = [
+//   "Abchurch Lane",
+//   "Adam's Court",
+//   "Addle Hill",
+//   "Addle Lane",
+//   "Alban Highwalk",
+// ];
+// // console.log(streetNames.filter((Name) => Name.includes("Lane")));
+// function getLanes(arr) {
+//   const streetWithLane = arr.filter((Name) => Name.includes("Lane"));
+//   return streetWithLane;
+// }
 // console.log(getLanes(streetNames));
 PreviousPassword = [
   "fhD8!yrjj",
@@ -52,6 +52,27 @@ PreviousPassword = [
   "qwbfj76%",
   "tytT3729.",
 ];
-for (let i = 0; i < PreviousPassword.length; i++) {
-  console.log(PreviousPassword.slice(0, i).includes(PreviousPassword[i]));
+function unique(PreviousPassword, pass) {
+  for (let i = 0; i < PreviousPassword.length; i++) {
+    let arr = PreviousPassword.slice(0, i);
+    if (arr.includes(pass)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
+// console.log(unique(PreviousPassword, "jj"));
+function validatePasswords(passwords) {
+  return passwords.map((password) => {
+    return password.length >= 5 &&
+      containsUppercaseLetter(password) &&
+      containsLowercaseLetter(password) &&
+      containsNumber(password) &&
+      containsSymbol(password) &&
+      unique(passwords, password)
+      ? trur
+      : false;
+  });
+}
+console.log(validatePasswords(PreviousPassword));
