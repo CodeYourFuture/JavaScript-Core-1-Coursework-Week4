@@ -23,7 +23,9 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let pass1 = passwords.filter(pass => length(pass) > 5);
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
