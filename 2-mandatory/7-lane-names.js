@@ -5,8 +5,11 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
+function getLanes(listOfStreetNames) {
+  return listOfStreetNames.filter((word) => word.includes("Lane"));
+  
+}
 
-function getLanes() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
