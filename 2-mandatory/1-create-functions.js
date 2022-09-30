@@ -43,8 +43,13 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
-
-function formatPercentage() {
+function formatPercentage(arrayOfNumbers) {
+  return arrayOfNumbers.map((number) => {
+    if(number > 100){
+      return "100%"
+    }
+    return Number(number.toFixed(2)) + "%";
+  })
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
