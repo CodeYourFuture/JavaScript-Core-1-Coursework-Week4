@@ -6,9 +6,15 @@
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
-
-function getEligibleStudents() {}
-
+function getEligibleStudents(studentsData) {
+  let canDoExam = [];
+  for(let i = 0; i < studentsData.length; i++){
+    if(studentsData[i][1] >= 8){
+      canDoExam.push(studentsData[i][0]);
+    }
+  }
+  return canDoExam;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getEligibleStudents function works", () => {
