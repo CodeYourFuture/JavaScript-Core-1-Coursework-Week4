@@ -1,4 +1,5 @@
 /*
+
   You are given a program that logs pairings between mentors and students
   It fails because the array `pairsById` can contain null values
   It is decided that if there is a null value the program should exit
@@ -16,9 +17,13 @@ let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
-  let student = students[indexes[0]];
-  let mentor = mentors[indexes[1]];
-  return [student, mentor];
+  if (indexes === null){
+    process.exit(1);
+  }
+    let student = students[indexes[0]];
+    let mentor = mentors[indexes[1]];
+    return [student, mentor];
+  
 });
 
 console.log(pairs);
