@@ -18,7 +18,7 @@
 function getSettlers(arr) {
   let newArr = [];
   for( let i = 0; i < arr.length; i++){
-    if(familiesArray[i].startsWith("A") && arr[i].includes("family")){
+    if(arr[i].startsWith("A") && arr[i].includes("family")){
       newArr.push(arr[i]);
     }
   }
