@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  let startAFinishFamily = array.filter(
+    (aFamily) => aFamily.startsWith("A") && aFamily.endsWith("family")
+  );
+  return startAFinishFamily;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
