@@ -20,11 +20,12 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
+let isMagicWord = stringText.includes(magicWord);
+if (isMagicWord) {
+  return stringText.indexOf(magicWord);
+} else {
+  return "Not found";
+}
 }
 
 /*

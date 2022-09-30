@@ -14,7 +14,24 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) { 
+  let num = [];
+  arr.forEach((element) => {
+    typeof element === "number" ? num.push(element) : null;
+  });
+
+  for (let i = 0; i < num.length; i++) {
+    for (let index = i + 1; index < num.length; index++) {
+      if (num[i] > num[index]) {
+        let templet = num[i];
+        num[i] = num[index];
+        num[index] = templet;
+      }
+    }
+  }
+  return num;  
+}
+ 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -43,3 +60,4 @@ test("sortAges function works - case 1", () => {
 test("sortAges function works - case 2", () => {
   expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
 });
+ 

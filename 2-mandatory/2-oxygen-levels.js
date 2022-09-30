@@ -13,6 +13,17 @@
 
 function findSafeOxygenLevel() {}
 
+function findSafeOxygenLevel(arr) {
+  return arr
+    .filter((str) => str.includes("%"))
+    .find((oxygenLevel) => {
+     oxygenLevel = parseFloat(oxygenLevel);
+      return (
+        oxygenLevel > parseFloat("19.5%") && oxygenLevel < parseFloat("23.5%")
+      );
+    });
+}
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

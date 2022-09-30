@@ -8,6 +8,17 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  arr.forEach(function( val ,index ){
+    if (val % 3 === 0 && val % 5 === 0){ 
+      val = "FizzBuzz";
+    }else if (val % 5 === 0) {
+      val = "Buzz";
+    }else if (val % 3  === 0) {
+      val = "Fizz";
+    } 
+    console.log( val );
+})
+
 
 /* EXPECTED OUTPUT */
 
