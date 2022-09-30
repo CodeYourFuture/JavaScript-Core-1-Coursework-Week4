@@ -11,7 +11,14 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  return arr.find((item) => {
+    return (
+      Number(item.replace("%", "")) > 19.5 &&
+      Number(item.replace("%", "")) < 23.5
+    );
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
