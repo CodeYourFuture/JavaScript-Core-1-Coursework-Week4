@@ -21,8 +21,16 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+function toCheckAllBerriesSafe(num) {
+  return num.includes("pink");
+}
+
 function isBushSafe(berryArray) {
-  //Write your code here
+  if (berryArray.every(toCheckAllBerriesSafe)) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

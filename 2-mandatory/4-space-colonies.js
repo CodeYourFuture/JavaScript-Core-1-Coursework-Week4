@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  let result = array.filter((num) => {
+    return num.includes("family") && num[0].startsWith("A");
+  });
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

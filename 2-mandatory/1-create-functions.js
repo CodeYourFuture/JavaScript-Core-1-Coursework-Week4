@@ -1,13 +1,11 @@
-/*
-Write a function that:
-- Accepts an array as a parameter.
+/*- Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-function sortArray(num) {
-  let sortedArray = num.map((x) => x);
-  return sortedArray.sort();
+
+function first5(array) {
+  return array.slice(0, 5);
 }
+
 
 /*
 Write a function that:
