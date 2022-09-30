@@ -12,9 +12,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray(array) {
-  let newArray=[...array];
-  return newArray.sortArray();
+function sortArray(inputArray) {
+  return inputArray.slice().sort();
 }
 
 /*

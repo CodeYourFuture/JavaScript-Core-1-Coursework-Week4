@@ -8,7 +8,8 @@
 */
 
 function getEligibleStudents(inputArray) {
-  return inputArray.map(element => element[1] > 7);
+  let eligibleStudents = inputArray.filter((element, value) => (element[1] > 7));
+  return eligibleStudents.map((element) => element[0]);
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
