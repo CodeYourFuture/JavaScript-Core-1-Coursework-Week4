@@ -14,7 +14,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  return array.sort();
+  const sortedArray = [...array].sort();
+  return sortedArray;
 }
 
 /*
@@ -35,9 +36,7 @@ function tidyUpString(array) {
     const loweredCase = removedSlash.toLowerCase();
     tidyArray.push(loweredCase);
   });
-  console.log(
-    tidyArray || "<-------tidyArray--------------------------------->"
-  );
+
   return tidyArray;
 }
 
@@ -48,14 +47,25 @@ Write a function that:
 */
 
 function remove(array, index) {
-  if ((index = 0 || index === null)) return array;
-  else if (index > 0) {
-    const firstPart = array.slice(0, index);
-    const secondPart = array.slice(index + 1);
-    return firstPart.concat(secondPart);
-  } else {
-    return [];
+  let newarray = array.slice();
+
+  if (index === null || index === undefined || index > array.length)
+    return array;
+  else {
+    // console.log(newarray.splice(index, 1), "<--------------------------------");
+    newarray.splice(index, 1);
+    return newarray;
   }
+  // if ((index = newarray.length || index === null)) return newarray;
+  // else if (index >= 0) {
+  //   const firstPart = newarray.slice(0, index);
+  //   console.log(firstPart, "<------------------- First Part");
+  //   const secondPart = newarray.slice(index + 1);
+  //   console.log(secondPart, "<------------------- Second Part");
+  //   return firstPart.concat(secondPart);
+  // } else {
+  //   return [];
+  // }
 }
 
 /*
@@ -71,10 +81,9 @@ function formatPercentage(numbers) {
   numbers.forEach((number) => {
     if (number >= 100) formattedNumbers.push("100%");
     else {
-      formattedNumbers.push(Math.round(number) + "%");
+      formattedNumbers.push(Math.round(number * 100) / 100 + "%");
     }
   });
-  console.log(formattedNumbers, "<------------formated Numbers");
   return formattedNumbers;
 }
 

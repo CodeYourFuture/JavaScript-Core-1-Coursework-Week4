@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevels) {
+  let nearestPlanet = undefined;
+  nearestPlanet = oxygenLevels.find(
+    (oxygenLevel) =>
+      parseFloat(oxygenLevel) > 19.5 &&
+      parseFloat(oxygenLevel) < 23.5 &&
+      oxygenLevel.includes("%")
+  );
+  return nearestPlanet;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -18,7 +18,7 @@
 function getSettlers(allFamilies) {
   let cocoloniserToStay = [];
   allFamilies.forEach((name) => {
-    if (name.CharAt(0) === "A" && name.includes("family"))
+    if (name.charAt(0) === "A" && name.includes("family"))
       cocoloniserToStay.push(name);
   });
   return cocoloniserToStay;
