@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  const firstFiveElement = array.slice(0, 5);
+  return firstFiveElement;
 }
 
 /*
@@ -11,7 +13,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  return array.sort();
 }
 
 /*
@@ -24,7 +27,18 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  let tidyArray = [];
+  array.forEach((item) => {
+    const trimmedString = item.trim();
+    const removedSlash = trimmedString.replace("/", "");
+    const loweredCase = removedSlash.toLowerCase();
+    tidyArray.push(loweredCase);
+  });
+  console.log(
+    tidyArray || "<-------tidyArray--------------------------------->"
+  );
+  return tidyArray;
 }
 
 /*
@@ -33,7 +47,15 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+  if ((index = 0 || index === null)) return array;
+  else if (index > 0) {
+    const firstPart = array.slice(0, index);
+    const secondPart = array.slice(index + 1);
+    return firstPart.concat(secondPart);
+  } else {
+    return [];
+  }
 }
 
 /*
@@ -44,7 +66,16 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  let formattedNumbers = [];
+  numbers.forEach((number) => {
+    if (number >= 100) formattedNumbers.push("100%");
+    else {
+      formattedNumbers.push(Math.round(number) + "%");
+    }
+  });
+  console.log(formattedNumbers, "<------------formated Numbers");
+  return formattedNumbers;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
