@@ -19,6 +19,13 @@ let names = [
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
+function findLongNameThatStartsWithA(name) { 
+
+  name.find((n) => n == "A");
+
+  return name
+}
+
 console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
