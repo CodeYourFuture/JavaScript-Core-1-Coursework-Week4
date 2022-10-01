@@ -65,11 +65,12 @@ function checkCodeIsThere(stringText) {
   Hint: Use the corresponding array method to split the array.
 */
 function getTransportModes(arr) {
-  let transportModes = [];
-  for (let i = 1; i < arr.length; i++) {
-    transportModes.push(arr[i]);
-  }
-  return transportModes;
+  // let transportModes = [];
+  // for (let i = 1; i < arr.length; i++) {
+  //   transportModes.push(arr[i]);
+  // }
+  // return transportModes;
+  return arr.slice(1);
 }
 
 /*
@@ -133,7 +134,7 @@ function getLocationName(arr) {
 */
 function journeyPlanner(locations, transportMode) {
   let locationsStr = [];
-  locations.forEach((element) => {
+  locations.forEach(element => {
     element.includes(transportMode) ? locationsStr.push(element[0]) : null;
   });
   return locationsStr;
