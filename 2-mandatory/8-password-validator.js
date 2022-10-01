@@ -25,7 +25,7 @@ PasswordValidationResult=  [false, false, false, false, true]
 // function hasDuplicates(arr) {
 //   return new Set(arr).size === arr.length;
 // }
-
+//I like you use of index to check that the password is not a duplicate.
 function validatePasswords(passwords) {
   let check = passwords.map(
     (el, index) =>

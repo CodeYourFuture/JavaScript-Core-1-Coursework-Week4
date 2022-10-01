@@ -34,7 +34,7 @@ These are the requirements your project needs to fulfill:
 
 Good luck!
 */
-function lastDigit(n) {
+function isLastDigitEven(n) {
   let str = n.toString().slice(-1);
   return +str % 2 === 0;
 }
@@ -55,7 +55,7 @@ function validatesCard(num) {
     str[0].repeat(16) !== str &&
     isNumber(num) &&
     str.length === 16 &&
-    lastDigit(num) &&
+    isLastDigitEven(num) &&
     sum(num) > 16
   );
 }
