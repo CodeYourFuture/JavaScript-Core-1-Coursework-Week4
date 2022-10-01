@@ -3,15 +3,31 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+const arr = [1, 9, 7, 8, 4, 2, 8];
+function first5(arr) {
+  return arr.slice(0, 5);
 }
-
+// console.log(first5(arr));
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+const createDeepCopy = (input) => {
+  if (typeof input !== "object") {
+    return input;
+  }
+  let copy = Array.isArray(input) ? [] : {};
+  for (let key in input) {
+    const value = input[key];
+    copy[key] = createDeepCopy(value);
+  }
+
+  return copy;
+};
+function sortArray(arr) {
+  let newArr = createDeepCopy(arr);
+  return newArr.sort();
 }
 
 /*
@@ -24,16 +40,35 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
 
+let removeSlash = [
+  "/Daniel",
+  " /Sanyia",
+  "AnTHonY",
+  "irina",
+  " Gordon",
+  "ashleigh   ",
+  "   Alastair  ",
+  " anne marie  ",
+];
+// element.trim().replace(/\//g, "").toLowerCase();
+function tidyUpString(arr) {
+  let trmArr = arr.map((el) => el.trim().replace(/\//g, "").toLowerCase());
+  return trmArr;
+}
+// console.log(tidyUpString(removeSlash));
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(value, index) {
+  let newArr = createDeepCopy(value);
+  let cloneArray = newArr.slice();
+
+  newArr.splice(index, 1);
+  return newArr;
 }
 
 /*
@@ -44,7 +79,12 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let toFix = arr.map((el) => el.toFixed(2));
+
+  let result = toFix.map((el) => (el > 100 ? "100%" : `${parseFloat(el)}%`));
+
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
