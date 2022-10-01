@@ -15,17 +15,18 @@ let story =
 
 // let result = story.replace("", "");
 //💫
-let result = story.replace(/dogs|cats|day|night|10|great/gi, (str) =>
+let result = story.replace(/dogs|cats|day|night|10|great/gi, str =>
   str === "dogs"
     ? "cats"
-    : str === "cats"
-    ? "dogs"
     : str === "day"
     ? "night"
     : str === "10"
     ? "100000"
     : "brilliant"
 );
+
+//This works well. You don't need the second condition
+//:str==="cats". You could also use multiple, chained replace() methods, but your method is fine.
 /* EXPECTED OUTPUT */
 
 const util = require("util");
