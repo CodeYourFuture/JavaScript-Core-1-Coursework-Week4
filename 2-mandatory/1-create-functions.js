@@ -1,6 +1,6 @@
 /*
 Write a function that:
-- Accepts an array as a parameter.
+- Accept an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(array) {
