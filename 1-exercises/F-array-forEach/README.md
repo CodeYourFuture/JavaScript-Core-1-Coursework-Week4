@@ -40,7 +40,7 @@ function formatName(name) {
 }
 
 names.map(formatName).forEach(function(name, index) {
-  console.log(index + ": " + name);
+  console.log(index + ": " + name); 
 });
 ```
 
