@@ -17,42 +17,26 @@ function fuzzFucntion(num) {
       num[i] = "Buzz";
     } else if (num[i] % 3 === 0) {
       num[i] = "Fuzz";
-    } else (
-      num[i]
-    )
+    } else num[i];
   }
   return num;
 }
 
 // console.log(fuzzFucntion(arr));
 const fuzzBuz = [];
- arr.forEach(element => {
+arr.forEach((element) => {
   if (element % 15 === 0) {
-   fuzzBuz.push("FuzzBuzz");
+    fuzzBuz.push("FuzzBuzz");
   } else if (element % 5 === 0) {
     fuzzBuz.push("Buzz");
   } else if (element % 3 === 0) {
     fuzzBuz.push("Fuzz");
-  } else { 
+  } else {
     return fuzzBuz.push(element);
-}
-})
+  }
+});
 
-console.log(fuzzBuz)
-
-/*
- arr.forEach((element, index, array) => {
-  if (array[element] % 15 === 0) {
-    array[element] = "FuzzBuz";
-  } else if (array[element] % 5 === 0) {
-    array[element] = "Buzz";
-  } else if (array[element] % 3 === 0) {
-    array[element] = "Fuzz";
-  } else { 
-  array[element]
-}
-})
-*/
+console.log(fuzzBuz);
 
 /* EXPECTED OUTPUT */
 
