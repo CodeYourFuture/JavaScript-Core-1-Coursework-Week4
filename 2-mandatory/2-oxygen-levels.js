@@ -11,7 +11,23 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(planets) {
+
+return planets.find((x)=> x > 19.5 + '%' && x < '23.5' + '%');
+
+ 
+   
+
+
+  
+}
+
+// return arr.find((x) => x.slice(0, -1) > 19.5 && x.slice(0, -1) < 23.5);
+
+
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -23,7 +23,32 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+      let allpinks =  berryArray.every((x) => x === 'pink')
+      
+      if (allpinks === true) {
+          return 'Bush is safe to eat from';
+
+      }else {
+        return 'Toxic! Leave bush alone!' 
+      } 
 }
+
+
+// trying  'if else' arrow style but does not work!
+
+// function isBushSafe(berryArray) {
+  
+//       let allpinks =  berryArray.every((x) => x === 'pink') 
+//       (allpinks === true)? 'Bush is safe to eat from' : 'Toxic! Leave bush alone!'
+
+       
+// }
+
+
+
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

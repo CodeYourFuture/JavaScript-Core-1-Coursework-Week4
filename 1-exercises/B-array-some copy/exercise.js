@@ -13,7 +13,7 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // process.exit(1);
 
 // const NoNull = pairsByIndex.some(x => x === null); if (NoNull) process.exit(1); 
-const NoNull = pairsByIndex.some(x=> x.length == 2); if (NoNull) process.exit(1); 
+const NoNull = pairsByIndex.some(x => x === null || x.length == 2); if (NoNull) process.exit(1); 
 
 
 
