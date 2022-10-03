@@ -12,8 +12,11 @@
 */
 
 function findSafeOxygenLevel(array) {
-  return array.find((oxygen) => oxygen >= '19.5%' && oxygen <= '23.5%')
+const filteredArray =array.filter(element => element.includes('%'))
+  const sortedArray = filteredArray.sort();
+  return sortedArray.find((oxygen) => oxygen > '19.5%' && oxygen < '23.5%')
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
