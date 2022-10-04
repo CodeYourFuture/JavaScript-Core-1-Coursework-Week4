@@ -23,8 +23,32 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  passwords.includes(/[^A-Za-z0-9!#$%.*&]/g) && passwords.length >= 5 ? true : false;
 
+}
+
+
+
+
+/*
+passwords.map(element => element.length >= 5 && element.includes())
+
+  const fiveCharacters = passwords.length >= 5;
+  const atLeastOneUppercaseLetter =fiveCharacters;
+  const atLeastOneLowerCaseLetter =;
+  const includsNumber1To9 =;
+  const includesSymbol =;
+  */
+
+
+// var string = '123abcABC-_*(!@#$%^&*()_-={}[]:\"<>,.?/~`';
+// var stripped = string.replace(/[^A-Za-z0-9!#$%.*&]/g);
+// console.log(stripped);
+
+
+
+/**/
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
