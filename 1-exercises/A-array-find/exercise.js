@@ -14,10 +14,15 @@ let names = [
   "Mikey",
   "Anastasia",
   "Karim",
-  "Ahmed",
+  "Ahmed"
 ];
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+function isLongNameThatStartsWithA(name) {
+return name.length > 7 && name.charAt(0) === "A";
+// I tried both (return name.length > 7) alone and with the expression after && and they returned the same result
+}
+
+let longNameThatStartsWithA = names.find(isLongNameThatStartsWithA);
 
 console.log(longNameThatStartsWithA);
 
