@@ -5,7 +5,30 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+
+function checkGroupMember(group,students)) {
+  // let isStudents = true;
+   for (let i = 0; i < group.length; i++) {
+    for (let i = 0; j < students.length; i++) {
+      if (group[i] === students[i]) {
+      
+      }
+    }
+    return false;
+  }
+  return true;
+}
+
+let groupIsOnlyStudents = checkGroupMembers(group, studentss);
+
+if (groupIsOnlyStudents) {
+  console.log("The group contains only students");
+} else {
+  console.log("The group does not contain only students");
+}
+  
+
+let groupIsOnlyStudents = GroupMembers(group,students); // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");

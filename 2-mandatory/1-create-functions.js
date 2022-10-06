@@ -3,7 +3,12 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  const name = []
+  for(let i = 0; i < 5; i++) {
+    name.push(arr[i]);
+  } 
+return name;
 }
 
 /*
