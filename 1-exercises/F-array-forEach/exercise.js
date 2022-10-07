@@ -9,9 +9,9 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 let result = arr.forEach(item => {
-  return item;
+  console.log((item % 15 === 0)? "FizzBuzz":(item % 3 === 0)?"Fizz":(item % 5 === 0)?"Buzz":item);
 });
-console.log(result);
+// console.log(result);
 
 /* EXPECTED OUTPUT */
 
