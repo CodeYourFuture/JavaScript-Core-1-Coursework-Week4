@@ -12,11 +12,11 @@ let everyone = [
   "Rukmini",
   "Abdul",
   "Austine",
-  "Swathi",
+  "Swathi", 
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.slice(0,5); // complete this statement
+let lastFive = everyone.slice(2,7); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

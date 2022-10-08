@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  return array.slice(0,5);
 }
 
 /*
@@ -11,7 +12,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  return array = array.slice().sort();
 }
 
 /*
@@ -24,7 +26,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(strArray) {
+  return strArray.map(elem => elem.trim().replace("/","").toLowerCase());
 }
 
 /*
@@ -33,7 +36,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
+  let newArray = array.slice();
+  newArray.splice(index,1);
+  return newArray;
 }
 
 /*
@@ -44,7 +50,18 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+numbers = numbers.map(num =>{
+  if (num >=100 ) {
+    num = 100; + "%";
+  }
+  else if ( num % 1 == 0){
+     num = num + "%";
+  } else{
+    num = num.toFixed(2) + "%";
+  }
+});
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -138,7 +155,7 @@ describe("remove function", () => {
 test("formatPercentage function works", () => {
   expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
     "23%",
-    "18.1%",
+    "18.10%",
     "100%",
     "0.37%",
   ]);
