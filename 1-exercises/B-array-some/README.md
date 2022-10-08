@@ -1,4 +1,5 @@
-Imagine you have an array of numbers:
+
+            Imagine you have an array of numbers:
 
 ```js
 let numbers = [1, 3, -1, 5, 9];

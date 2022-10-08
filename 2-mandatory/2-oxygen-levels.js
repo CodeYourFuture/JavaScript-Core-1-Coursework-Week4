@@ -11,7 +11,12 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(planetOxygen) {
+  let safeLevel = planetOxygen.find(level => { 
+    level = level.replace("%","");
+    return level > 19.5 && level < 23.5;
+  })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
