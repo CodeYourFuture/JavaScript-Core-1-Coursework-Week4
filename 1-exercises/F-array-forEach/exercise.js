@@ -9,6 +9,8 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(element => console.log(element % 5 === 0 && element % 3 === 0 ? "FizzBuzz" : element % 5 === 0 ? "Buzz" : element % 3 === 0 ? "Fizz" : element));
+
 /* EXPECTED OUTPUT */
 
 /*
