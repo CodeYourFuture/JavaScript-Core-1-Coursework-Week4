@@ -22,9 +22,14 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  if (berryArray.every((values) => values==="pink")){
+   return "Bush is safe to eat from";
+                                                       //Write your code here
+}else {
+  return "Toxic! Leave bush alone!";
 }
 
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("isBushSafe finds toxic busy", () => {
