@@ -9,6 +9,17 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.map((val) => val % 3 === 0 && val % 5 === 0
+      ? "FizzBuzz"
+      : val % 3 === 0
+      ? "Fizz"
+      : val % 5 === 0
+      ? "Buzz"
+      : val
+  )
+  .forEach((val) => {
+    console.log(val);
+  });
 /* EXPECTED OUTPUT */
 
 /*
