@@ -5,9 +5,9 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+let groupIsOnlyStudents = students.length; // complete this statement
 
-if (groupIsOnlyStudents) {
+if (groupIsOnlyStudents  === group.lenght) {
   console.log("The group contains only students");
 } else {
   console.log("The group does not contain only students");
