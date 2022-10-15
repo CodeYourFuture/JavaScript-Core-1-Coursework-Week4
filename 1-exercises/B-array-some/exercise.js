@@ -7,6 +7,8 @@
 */
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
+let checkNall = pairsByIndex.some(ele => ele == null)
+console.log(checkNall);
 
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
