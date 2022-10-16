@@ -8,6 +8,7 @@ function findLongNameThatStartsWithA(name){
 return name.length > 7;
 };
 
+
 let names = [
   "Rakesh",
   "Antonio",
