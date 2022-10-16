@@ -61,6 +61,11 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
+  return arr.map(value => {
+    const cappedValue = Math.min(value, 100);
+    const roundedValue = Math.round(100 * cappedValue) / 100;
+    return `${roundedValue}%`;
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
