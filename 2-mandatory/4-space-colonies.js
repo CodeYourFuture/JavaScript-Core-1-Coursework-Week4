@@ -14,8 +14,31 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+const voyagers = [
+  "Adam family",
+  "Potter family",
+  "Eric",
+  "Aldous",
+  "Button family",
+  "Jude",
+  "Carmichael",
+  "Bunny",
+  "Asimov",
+  "Oscar family",
+  "Avery family",
+  "Archer family",
+  "Just A. family",
+  "A Great family",
+];
+function getSettlers(settlers) {
+  const findFamilies = settlers.filter(
+    (element) => element.includes("family") && element.startsWith("A")
+  );
+  return findFamilies;
+}
 
-function getSettlers() {}
+console.log(getSettlers(voyagers));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

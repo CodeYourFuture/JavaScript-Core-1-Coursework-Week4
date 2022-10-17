@@ -11,7 +11,13 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+const filteredArray =array.filter(element => element.includes('%'))
+  const sortedArray = filteredArray.sort();
+  return sortedArray.find((oxygen) => oxygen > '19.5%' && oxygen < '23.5%')
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

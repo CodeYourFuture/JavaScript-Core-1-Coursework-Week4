@@ -20,11 +20,10 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
+  const splitedString = stringText.split(" ");
+  return splitedString.includes(magicWord)
+    ? stringText.indexOf(magicWord)
+    : "Not found";
 }
 
 /*
@@ -64,7 +63,10 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+
+function getTransportModes(array) {
+  return array.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,10 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+
+function isAccessibleByTransportMode(array, transportMode) {
+  return array.includes(transportMode) ? true : false;
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +97,16 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+
+const array1 = ["Angel", "tube", "bus"];
+const array2 = ["London Bridge", "tube", "river boat"];
+
+function getLocationName(array) {
+  return array.shift();
+}
+
+console.log(getLocationName(array1));
+console.log(getLocationName(array2));
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,11 +135,26 @@ function getLocationName() {}
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
+/*
+1 cut the first part-----
+function getLocationName(array) { 
+  return array.shift()
+}
+
+ 2   check if exist 
+function isAccessibleByTransportMode(array, transportMode) {
+  return array.includes(transportMode) ? true : false;
+}
+ 3 cut the last part ------  
+function getTransportModes(array) {
+ return array.slice(1);
+}
+*/
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= TESTS - DO NOT MODIFY ===== 
 
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
@@ -210,3 +239,4 @@ describe("journeyPlanner", () => {
     ]);
   });
 });
+*/

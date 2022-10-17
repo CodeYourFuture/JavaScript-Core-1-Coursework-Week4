@@ -9,6 +9,35 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function fuzzFucntion(num) {
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] % 15 === 0) {
+      num[i] = "FuzzBuz";
+    } else if (num[i] % 5 === 0) {
+      num[i] = "Buzz";
+    } else if (num[i] % 3 === 0) {
+      num[i] = "Fuzz";
+    } else num[i];
+  }
+  return num;
+}
+
+// console.log(fuzzFucntion(arr));
+const fuzzBuz = [];
+arr.forEach((element) => {
+  if (element % 15 === 0) {
+    fuzzBuz.push("FuzzBuzz");
+  } else if (element % 5 === 0) {
+    fuzzBuz.push("Buzz");
+  } else if (element % 3 === 0) {
+    fuzzBuz.push("Fuzz");
+  } else {
+    return fuzzBuz.push(element);
+  }
+});
+
+console.log(fuzzBuz);
+
 /* EXPECTED OUTPUT */
 
 /*

@@ -17,9 +17,27 @@ let names = [
   "Ahmed",
 ];
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+let longNameThatStartsWithA = names.find(element => element.startsWith('A') && element.length > 7);
 
 console.log(longNameThatStartsWithA);
+
+const arr = [1,2,3,4,5,6]
+// function smallEnough(a, limit) {
+//   return a.every((element) => (element < limit ? true : false));
+// }
+
+function smallEnough(a, limit) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] < limit) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+console.log(smallEnough(arr, 0))
+
 
 /* EXPECTED OUTPUT */
 // "Alexandra"

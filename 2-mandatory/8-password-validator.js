@@ -23,12 +23,11 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  passwords.includes(/[^A-Za-z0-9!#$%.*&]/g) && passwords.length >= 5 ? true : false;
 
-// Returns true if string contains at least one uppercase letter.
-function containsUppercaseLetter(string) {
-  return /[A-Z]/.test(string);
 }
+
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
