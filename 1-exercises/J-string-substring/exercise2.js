@@ -20,9 +20,9 @@ names[2] = names[2].substring();
 names[3] = names[3].substring();
 names[4] = names[4].substring();
 
-names.forEach((name) => {
+names.forEach((name) => console.log(item.indexof("");
   console.log(name);
-});
+
 
 /* EXPECTED OUTPUT 
 

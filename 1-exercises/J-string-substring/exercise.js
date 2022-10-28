@@ -5,8 +5,10 @@
 */
 
 let statement = "I like programming and dogs";
+let index = statement.indexOf("and dogs");
+console.log(index);
 
-statement = statement.substring();
+statement = statement.substring(0,index- 1);
 
 console.log(statement);
 

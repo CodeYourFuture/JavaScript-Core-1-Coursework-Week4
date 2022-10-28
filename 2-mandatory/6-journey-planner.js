@@ -20,6 +20,7 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
+  let index = stringText.indexOf(magicWord);
   if (stringText) {
     return stringText;
   } else {
