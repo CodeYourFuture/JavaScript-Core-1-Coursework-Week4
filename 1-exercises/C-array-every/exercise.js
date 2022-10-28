@@ -19,7 +19,7 @@ function checkGroupMember(group,students)) {
   return true;
 }
 
-let groupIsOnlyStudents = checkGroupMembers(group, studentss);
+let groupIsOnlyStudents = checkGroupMembers(group, students);
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
@@ -29,6 +29,7 @@ if (groupIsOnlyStudents) {
   
 
 let groupIsOnlyStudents = GroupMembers(group,students); // complete this statement
+  else return "The group contains only students";
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
