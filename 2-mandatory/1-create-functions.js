@@ -16,7 +16,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return arr.slice().sort(o.5);
 }
 
 /*
@@ -29,7 +30,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  return arr.map((item) => item.trim().replace("/").tolowerCase());
 }
 
 /*

@@ -13,13 +13,12 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
-const replacements = {
-  "dogs": "cats",
-  "day": "nights",
-  "10": "100000"
-  ""
-}
+let result = story
+
+  .replaceAll("dogs", "cats",)
+  .replaceAll("day", "nights",)
+  .replaceAll("10", "100000")
+  .replaceAll("great","brilliant");
 
 /* EXPECTED OUTPUT */
 

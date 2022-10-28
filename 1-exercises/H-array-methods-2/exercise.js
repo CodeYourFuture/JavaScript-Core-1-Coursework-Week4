@@ -16,7 +16,7 @@ let everyone = [
 ];
 
 let firstFive = everyone.slice(0.5); // complete this statement
-let lastFive = .slice(-5); // complete this statement
+let lastFive = everyone.slice(-5); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
