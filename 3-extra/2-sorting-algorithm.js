@@ -14,7 +14,30 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+    const ageArray = [],
+      sortedAgeArray = [];
+
+    arr.forEach((item) => {
+      if (typeof item === "number") ageArray.push(item);
+    });
+    for (let i = 0; i < ageArray.length; i++) {
+      let leastAge = ageArray[0];
+      for (let j = 1; j < ageArray.length; j++) {
+        let currentNumber = ageArray[j];
+        if (
+          currentNumber < leastAge &&
+          !sortedAgeArray.includes(currentNumber)
+        ) {
+          leastAge = currentNumber;
+        }
+      }
+      sortedAgeArray.push(leastAge);
+    }
+    return sortedAgeArray;
+  }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
