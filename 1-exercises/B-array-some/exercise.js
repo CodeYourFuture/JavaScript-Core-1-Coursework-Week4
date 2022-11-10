@@ -6,6 +6,9 @@
   - Do not edit any of the existing code
 */
 
+import { exit } from "node:process";
+
+
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 // If there is a null value in the array exit the program with the error code

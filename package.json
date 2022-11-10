@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Exercises for JS1 Week 4",
   "license": "CC-BY-SA-4.0",
+  "type":"module",
   "scripts": {
     "test": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
     "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'"
@@ -24,4 +25,5 @@
   "devDependencies": {
     "jest": "^26.6.3"
   }
+  
 }
