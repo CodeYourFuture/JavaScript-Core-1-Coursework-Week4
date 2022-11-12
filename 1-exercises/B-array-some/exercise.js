@@ -5,6 +5,7 @@
   - Add a check for null values, and if one exists, exit the program
   - Do not edit any of the existing code
 */
+// Checking someone else's code now
 
 import { exit } from "node:process";
 
