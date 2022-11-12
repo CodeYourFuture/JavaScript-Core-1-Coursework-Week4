@@ -11,7 +11,18 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function isLevelOK(oxygenLevel) {
+	if (!/^[+-]?\d+(.?\d+)?%$/.test(oxygenLevel)) return false; // Not a valid percentage
+
+	let level = parseFloat(oxygenLevel);
+
+	// Apparently, 'between' in this scenario is exclusive! That is, 19.5% is not considered valid!
+	return level > 19.5 && level < 23.5;
+}
+
+function findSafeOxygenLevel(planetOxygenLevels) {
+	return planetOxygenLevels.find(isLevelOK);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
