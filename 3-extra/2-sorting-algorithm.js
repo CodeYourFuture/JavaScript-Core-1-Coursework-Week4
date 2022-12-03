@@ -14,7 +14,36 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  // return arr.filter(element => typeof element === "number")
+  //           .sort((elementOne, elementTwo) => elementOne - elementTwo);
+
+  let sortArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") (
+      sortArray.push(arr[i])
+    )
+  }
+
+  for (let i = 0; i < sortArray.length; i++) {
+    for (let j = 0; j < sortArray.length; j++) {
+      if (sortArray[j] > sortArray[j+1]) {
+        let temporary = sortArray[j]
+        sortArray[j] = sortArray[j+1];
+        sortArray[j + 1] = temporary;
+      }
+    }
+  }
+  
+  return sortArray;
+
+}
+
+// console.log(sortAges(["🎹",100,"💩",55,"🥵","🙈",45,"🍕","Sanyia",66,"James",23,"🎖","Ismeal"]));
+// [23, 45, 55, 66, 100]
+// console.log(sortAges(["28", 100, 60, 55, "75", "🍕", "Elamin"]));
+// [55, 60, 100]
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

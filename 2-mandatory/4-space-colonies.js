@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter(element => element.slice(0,1) === "A" && element.slice(-6,element.length) === "family");
+}
+
+// console.log(getSettlers(["Adam family", "Potter family", "Eric", "Aldous", "Button family", "Jude", "Carmichael", "Bunny", "Asimov", "Oscar family", "Avery family", "Archer family", "Just A. family", "A Great family"]));
+// ["Adam family", "Avery family", "Archer family", "A Great family"]
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -7,7 +7,21 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(array) {
+  return array.filter(element => element[1] >= 8)
+              .map(element => element[0]);
+
+  // return array.filter(element => {
+  //   if (element[1] >= 8) {
+  //     return element[0];
+  //   } else
+  // })
+  // ^ i want to be able to do this ALL within filter... HELP ???
+}
+
+// console.log(getEligibleStudents([["Ahmed", 8],["Clement", 10],["Elamin", 6],["Adam", 7],["Tayoa", 11],["Nina", 10]]));
+// ["Ahmed","Clement","Tayoa","Nina"]
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

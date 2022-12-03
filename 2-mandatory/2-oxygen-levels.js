@@ -11,7 +11,29 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+  
+  function checkInputAndConvertPercentageStringToFloat(element) {
+    return element.includes("%") ? parseFloat(element.slice(0,(element.length))) : undefined;
+  }
+
+  return array.find(element => checkInputAndConvertPercentageStringToFloat(element) > 19.5 && checkInputAndConvertPercentageStringToFloat(element) < 23.5);
+
+}
+
+// console.log(findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"]));
+// "19.9%"
+
+// console.log(findSafeOxygenLevel(["30.8%", "23.5%", "18.8%", "19.5%", "20.2%", "31.6%"]));
+// "20.2%"
+
+// console.log(findSafeOxygenLevel(["200%", "-21.5%", "20", "apes", "21.1%"]));
+// "21.1%"
+// function filters out invalid percentages
+
+// console.log(findSafeOxygenLevel(["50"]));
+// undefined
+// function returns undefined if no valid planets found
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -19,13 +19,19 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.indexOf(magicWord) > -1) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
 }
+
+// console.log(checkCodeIsThere("I Love coding and perfect code makes me happy"));
+// 26
+// console.log(checkCodeIsThere("I don't like to do coding"));
+// Not found
+// console.log(checkCodeIsThere("Can you scan the barcode for me"));
+// 20
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +70,13 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  return array.filter((element, index) => index > 0)
+}
+
+// console.log(getTransportModes(["Angel", "tube", "bus"]));
+// ["tube","bus"]
+
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +93,17 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(array, string) {
+  return array.some(element => element === string)
+}
+
+// console.log(isAccessibleByTransportMode(["tube", "bus"], "tube"));
+// true
+// console.log(isAccessibleByTransportMode(["tube", "bus"], "river boat"));
+// false
+// console.log(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat"));
+// false
+
 
 /*
   Implement the function getLocationName that
@@ -92,7 +114,16 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(array) {
+  return array[0];
+}
+
+// console.log(getLocationName(["London Bridge", "tube", "river boat"]));
+// "London Bridge"
+
+// console.log(getLocationName(["Angel", "tube", "bus"]));
+// "Angel"
+
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,8 +153,33 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+ 
+  // SUBARRAY METHOD from above
+  // function isAccessibleByTransportMode(array, string) {
+  //   return array.some(element => element === string)
+  // }
+
+  // SUBARRAY METHOD from above
+  // function getLocationName(array) {
+  //   return array[0];
+  // }
+
+  // return locations.filter(element => isAccessibleByTransportMode(element, transportMode))
+  //                 .map(element => getLocationName(element))
+
+  return locations.filter(element => element.indexOf(transportMode) > -1)
+                  .map(element => element[0]);
+  // ^ but why bother with all of that when you can just do this?
 }
+
+
+// console.log(journeyPlanner([["Angel", "tube", "bus"],["London Bridge", "tube", "river boat"],["Tower Bridge", "tube", "bus"],["Greenwich", "bus", "river boat"]], "river boat"))
+// ["London Bridge","Greenwich"]
+// console.log(journeyPlanner([["Angel", "tube", "bus"], ["London Bridge", "tube", "river boat"], ["Tower Bridge", "tube", "bus"], ["Greenwich", "bus", "river boat"]], "bus"))
+// ["Angel","Tower Bridge","Greenwich"]
+// console.log(journeyPlanner([["Angel", "tube", "bus"], ["London Bridge", "tube", "river boat"], ["Tower Bridge", "tube", "bus"], ["Greenwich", "bus", "river boat"]], "tube"))
+// ["Angel", "London Bridge", "Tower Bridge"]
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
