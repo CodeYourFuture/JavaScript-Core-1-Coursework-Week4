@@ -15,22 +15,22 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 
 
-let pairs = pairsByIndex.map(function (indexes) {
-  let student = students[indexes[0]];
-  let mentor = mentors[indexes[1]];
-  return [student, mentor];
-});
+// let pairs = pairsByIndex.map(function (indexes) {
+//   let student = students[indexes[0]];
+//   let mentor = mentors[indexes[1]];
+//   return [student, mentor];
+// });
 
 
 function isNull(pairs) {
-  if (pairs === null) {           // check if it is null, if yes >                exit
+  if (pairs.some(x=> x===null)) {           // check if it is null, if yes >                exit
     process.exit(1) 
     
     //   console.log(`About to exit with code: ${pairs}`);
     // }
   }
   else {                          // if not, print pairs
-  console.log(pairs);
+  console.log("Theres no null value");
   }
   }
 
