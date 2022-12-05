@@ -22,19 +22,21 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  return berryArray.every((x) => x === 'pink')
+    ? 'Bush is safe to eat from'
+    : 'Toxic! Leave bush alone!';
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("isBushSafe finds toxic busy", () => {
+test('isBushSafe finds toxic busy', () => {
   expect(
-    isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
-  ).toEqual("Toxic! Leave bush alone!");
+    isBushSafe(['pink', 'pink', 'pink', 'neon', 'pink', 'transparent'])
+  ).toEqual('Toxic! Leave bush alone!');
 });
 
-test("isBushSafe function finds safe bush", () => {
-  expect(isBushSafe(["pink", "pink", "pink", "pink"])).toEqual(
-    "Bush is safe to eat from"
+test('isBushSafe function finds safe bush', () => {
+  expect(isBushSafe(['pink', 'pink', 'pink', 'pink'])).toEqual(
+    'Bush is safe to eat from'
   );
 });
