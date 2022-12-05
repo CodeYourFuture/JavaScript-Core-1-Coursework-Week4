@@ -6,7 +6,13 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNameArray) {
+  let filteredStreetName = streetNameArray.filter(name => {
+    if (name.includes("Lane"){
+      return filteredStreetName.push(name);
+    })
+  })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

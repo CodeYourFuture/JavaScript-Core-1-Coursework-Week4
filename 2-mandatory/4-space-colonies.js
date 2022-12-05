@@ -15,7 +15,13 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arrayOfNames) {
+  arrayOfNames.filter ( (name => {
+    if (name.includes("family") && name.startsWith("A")) {
+      return name;
+    }
+  }))
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

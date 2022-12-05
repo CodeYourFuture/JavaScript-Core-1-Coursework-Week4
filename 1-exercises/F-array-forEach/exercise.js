@@ -9,6 +9,21 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+let formatedArr = function(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return console.log("FizzBuzz");
+  }
+  else if (number % 3 === 0 ) {
+    return console.log("Fizz");
+  }
+  else if (number % 5 === 0 ) {
+    return console.log("Buzz");
+  }
+  else {return number;}
+};
+
+arr.forEach(formatedArr);
+
 /* EXPECTED OUTPUT */
 
 /*

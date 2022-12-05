@@ -11,7 +11,13 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevel) {
+  return oxygenLevel.find( percentage => {
+    if (percentage < 23.5 && percentage > 19.5) {
+      return oxygenLevel.replace("%", "");
+    }
+  })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
