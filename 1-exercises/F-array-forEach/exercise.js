@@ -9,6 +9,16 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(function (name, index) {
+  if (name % 3 == 0 && name % 5 == 0) {
+    console.log("FizzBuzz " + name);
+  } else if (name % 5 == 0) {
+    console.log("Fizz " + name);
+  } else if (name % 3 == 0) {
+    console.log("Buzz " + name);
+  }
+});
+
 /* EXPECTED OUTPUT */
 
 /*
