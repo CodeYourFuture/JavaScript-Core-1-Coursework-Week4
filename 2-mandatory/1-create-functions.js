@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arrayVal) {
+  let newArray = arrayVal.slice(0, 5);
+  return newArray;
 }
 
 /*
@@ -11,7 +13,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(oldArray) {
+  let newArray = oldArray.sort();
+  return newArray;
 }
 
 /*
