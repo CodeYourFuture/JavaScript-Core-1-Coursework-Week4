@@ -35,6 +35,6 @@ function isNull(pairs) {
   }
 
 
-let isNotNull = pairs.some(isNull) // is applying the above function to each pair.
+let isNotNull = pairsByIndex.some(isNull) // is applying the above function to each pair.
 
-console.log(pairs);
+console.log(isNotNull);
