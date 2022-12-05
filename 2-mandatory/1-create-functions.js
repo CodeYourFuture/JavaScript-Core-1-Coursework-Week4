@@ -4,7 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(array) {
-  return array[0][1][2][3][4][5];
+  return array.slice(0, 5);
 }
 
 /*
@@ -13,7 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  return array.sort()
+  return array.slice().sort();
 }
 
 /*
@@ -27,7 +27,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
-  return array.map( (newArr) => newArr.trim().replace("/", "").toLowerCase())
+  return array.map((newArr) => newArr.trim().replace("/", "").toLowerCase());
 }
 
 /*
@@ -37,7 +37,10 @@ Write a function that:
 */
 
 function remove(arr, index) {
-  return arr.splice(index, 1);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
 }
 
 /*
@@ -49,16 +52,20 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  arr.map( (number => {
+  arr.forEach((number) => {
     if (number >= 100) {
-      return "100%";
+      const index = arr.indexOf(number);
+      if (index !== -1) {
+        arr[index] = "100%";
+      }
+    } else {
+      const twoDecimalPLaces = number.toFixed(2);
+      const string = twoDecimalPLaces.toString();
+      console.log(typeof string);
+      const percentage = `${string}%`;
     }
-    else {
-      return number(number.fixed(2)) + "%";
-    }
-  }))
-} 
-
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
