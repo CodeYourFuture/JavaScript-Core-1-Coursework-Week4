@@ -5,7 +5,12 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+let groupIsOnlyStudents = true; // complete this statement
+for(let person of group){
+if(!students.includes(person)){
+  groupIsOnlyStudents = false;
+}
+}
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
