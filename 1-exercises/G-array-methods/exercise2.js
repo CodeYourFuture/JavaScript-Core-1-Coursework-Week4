@@ -7,8 +7,10 @@
 let mentors = ["Daniel", "Irina", "Rares"];
 let students = ["Rukmini", "Abdul", "Austine", "Swathi"];
 
-let everyone; // complete this statement
-
+//let everyone = mentors.map(element => mentors.concat(students)); // complete this statement
+  let everyone = mentors.concat(students);
+//let everyone = mentors.push(students)                  // 4
+//let everyone = mentors.push(mentors.concat(students)); // 4
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */

@@ -8,7 +8,16 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+let pairsByIndex = pairsByIndexRaw.filter(isValid); // Complete this statement
+  function isValid(pairsByIndexRaw){
+      let list = [];
+     for (let i = 0; i < pairsByIndexRaw.length;i++){
+       if (Array.isArray(pairsByIndexRaw)){
+          list.push(pairsByIndexRaw)
+       }
+       return list;
+     }  
+  }
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
