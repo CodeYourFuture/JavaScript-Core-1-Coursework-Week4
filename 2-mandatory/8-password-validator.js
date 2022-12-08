@@ -23,7 +23,17 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  return passwords.map(
+    (x, i, arr) =>
+      x.length >= 5 &&
+      containsUppercaseLetter(x) &&
+      containsLowercaseLetter(x) &&
+      containsNumber(x) &&
+      containsSymbol(x) &&
+      arr.indexOf(x) === i
+  );
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -47,26 +57,26 @@ function containsSymbol(string) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("Example 1", () => {
+test('Example 1', () => {
   expect(
     validatePasswords([
-      "Se%5",
-      "TktE.TJTU",
-      "384#HsHF",
-      "dvyyeyy!5",
-      "tryT3729",
+      'Se%5',
+      'TktE.TJTU',
+      '384#HsHF',
+      'dvyyeyy!5',
+      'tryT3729'
     ])
   ).toEqual([false, false, true, false, false]);
 });
 
-test("Example 2", () => {
+test('Example 2', () => {
   expect(
     validatePasswords([
-      "StUFf27%",
-      "Pl3nty!",
-      "Jai33",
-      "shajsaUA**&&",
-      "Pl3nty!",
+      'StUFf27%',
+      'Pl3nty!',
+      'Jai33',
+      'shajsaUA**&&',
+      'Pl3nty!'
     ])
   ).toEqual([true, true, false, false, false]);
 });

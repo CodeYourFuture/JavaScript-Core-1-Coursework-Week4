@@ -6,9 +6,11 @@
   HINT: You will need to use .substring() twice
 */
 
-let statement = "I do not like programming";
+let statement = 'I do not like programming';
 
-let result = "";
+let result = `${statement.substring(0, 5)}${statement.substring(
+  statement.search('like')
+)}`;
 
 console.log(result);
 
