@@ -1,8 +1,10 @@
 /*
   Array methods - .slice()
   ------------------------
-  The variable `firstFive` should contain the first five items of `everyone`
-  The variable `lastFive` should contain the last five items of `everyone`
+  The variable `firstFive` should contain the first 
+  five items of `everyone`
+  The variable `lastFive` should contain the last 
+  five items of `everyone`
 */
 
 let everyone = [
@@ -15,8 +17,8 @@ let everyone = [
   "Swathi",
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.slice(0, 5);
+let lastFive = everyone.slice(everyone.length - 5);
 
 /* 
   DO NOT EDIT BELOW THIS LINE

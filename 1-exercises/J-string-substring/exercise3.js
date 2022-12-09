@@ -8,8 +8,10 @@
 
 let statement = "I do not like programming";
 
-let result = "";
-
+// let result = '${statement.substring(0, 5)}${statement.substring(statement.search('like')}';
+let s1 = statement.substring(0, 4);
+let s2 = statement.substring(8, statement.length);
+let result =s1.concat(s2);
 console.log(result);
 
 /* EXPECTED OUTPUT 
