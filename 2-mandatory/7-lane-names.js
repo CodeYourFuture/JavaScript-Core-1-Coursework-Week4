@@ -6,7 +6,14 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arr) {
+  let result = arr.filter((value)=>{
+    if(value.includes("Lane")){
+      return true
+    }
+  })
+  return result
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
