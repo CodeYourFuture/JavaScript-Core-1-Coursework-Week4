@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+let result =  arr.filter((name)=>{
+if(name.startsWith("A") && name.endsWith("family")){
+  return true
+}
+  })
+  return result 
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

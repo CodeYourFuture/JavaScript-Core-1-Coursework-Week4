@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygens) {
+  let result = oxygens.find((oxygen)=>{
+let number = +oxygen.substring(0,oxygen.length-1)
+if(number > 19.5 && number < 23.5) {
+  return true
+}
+  })
+
+  return result
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
