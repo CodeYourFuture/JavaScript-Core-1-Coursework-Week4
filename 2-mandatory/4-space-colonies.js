@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  let A = arr.filter(x=>x[0]=='A')
+  return A.filter(i=>i.includes('family'))
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

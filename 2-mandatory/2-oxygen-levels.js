@@ -10,8 +10,14 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+function findSafeOxygenLevel(arr) {
 
-function findSafeOxygenLevel() {}
+  for(let i of arr){
+    if(i.includes('%') && 19.5< i.replace("%","" ) && i.replace("%","" ) < 23.5){
+        return i
+    }
+}
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
