@@ -16,8 +16,12 @@ let names = [
   "Karim",
   "Ahmed",
 ];
-
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+// This function return true if the arry item has the name chareacter mor then 7 
+function findLongNameThatStartsWithA(allName){
+  return allName.length > 7 ;
+}
+// Use .find to check that first  itme in arry 
+let longNameThatStartsWithA = names.find(findLongNameThatStartsWithA);
 
 console.log(longNameThatStartsWithA);
 
