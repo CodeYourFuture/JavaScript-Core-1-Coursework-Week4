@@ -16,15 +16,16 @@ function isNull(input) {
 
 }
 
-
+if (pairsByIndex.some(isNull)) {
+  console.log('Exiting...')
+  process.exit(1);
+}
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
-  if (pairsByIndex.some(isNull)) {
-    process.exit(1);
-  }
+  
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
