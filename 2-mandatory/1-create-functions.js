@@ -13,7 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  return arr.sort();
+  return arr.slice().sort();
 }
 
 /*
@@ -55,7 +55,7 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  return
+  return arr.map((x) => (x > 100 ? "100" : x.toFixed(2))).map((y) => `${+y}%`);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
