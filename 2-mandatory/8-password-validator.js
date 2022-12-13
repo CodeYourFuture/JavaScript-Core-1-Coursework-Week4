@@ -27,15 +27,16 @@ function validatePasswords(passwords) {
   let duplicatesArray = passwords.map((e, i, a) => a.indexOf(e) === i)
   let otherArray = passwords.map(i=>containsUppercaseLetter(i) && containsNumber(i) && containsLowercaseLetter(i)
   && containsSymbol(i) && i.length>=5)
-  let resultArray=[]
-  for (let j =0; j<passwords.length; j++){
-      if(duplicatesArray[j]===otherArray[j]){
-          resultArray.push(true)
-      }
-      else{
-      resultArray.push(false)}
-  }
-  return resultArray
+  // let resultArray=[]
+  // for (let j =0; j<passwords.length; j++){
+  //     if(duplicatesArray[j]===otherArray[j]){
+  //         resultArray.push(true)
+  //     }
+  //     else{
+  //     resultArray.push(false)}
+  // }
+  // return resultArray
+  return duplicatesArray.map((e, i, a) => e == otherArray[i])
 }
 
 

@@ -36,12 +36,12 @@
 // Good luck!
 
 function cardValidator (cardNumber){
-    let sixDigits = cardNumber.length == 16
-    let allDigits = /^\d+$/.test(cardNumber)
-    let sumOfDigits = cardNumber.split("").reduce((a,b)=>a+parseInt(b),0)>16
-    let lastEven = parseInt(cardNumber.slice(-1))%2 == 0
-    let allSame = cardNumber.split("").some( v => v !== cardNumber.split("")[0] )
-    let resultArr = [sixDigits, allDigits, sumOfDigits, lastEven, allSame]
+    let isSixteenDigits = cardNumber.length == 16
+    let isAllDigits = /^\d+$/.test(cardNumber)
+    let IsSumOfDigitsMoreThenSixteem = cardNumber.split("").reduce((a,b)=>a+parseInt(b),0)>16
+    let isLastEven = parseInt(cardNumber.slice(-1))%2 == 0
+    let isAllSame = cardNumber.split("").some( v => v !== cardNumber.split("")[0] )
+    let resultArr = [isAllDigits,isAllSame,isLastEven,isSixteenDigits,IsSumOfDigitsMoreThenSixteem]
     return resultArr.every(value => value === true)
 
 }

@@ -16,8 +16,8 @@
 */
 
 function getSettlers(arr) {
-  let A = arr.filter(x=>x[0]=='A')
-  return A.filter(i=>i.includes('family'))
+  let namesStartingWithA = arr.filter(x=>x[0]=='A')
+  return namesStartingWithA.filter(i=>i.includes('family'))
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

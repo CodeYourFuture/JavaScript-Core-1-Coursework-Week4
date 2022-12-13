@@ -8,7 +8,8 @@
 */
 
 function getEligibleStudents(arr) {
-  let eight = arr.filter(x=>x[1]>=8)
+  let numberOfClasses = 8;
+  let eight = arr.filter(x=>x[1]>=numberOfClasses)
   return eight.map(i=>i[0])
 }
 

@@ -11,9 +11,10 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 function findSafeOxygenLevel(arr) {
-
+  let minOxygenLevel = 19.5
+  let maxOxygenLevel = 23.5
   for(let i of arr){
-    if(i.includes('%') && 19.5< i.replace("%","" ) && i.replace("%","" ) < 23.5){
+    if(i[4]==="%" && minOxygenLevel< i.replace("%","" ) && i.replace("%","" ) < maxOxygenLevel){
         return i
     }
 }

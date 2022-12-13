@@ -13,8 +13,9 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  let numbersCopy = [...arr]
-  return numbersCopy.sort()
+  // let numbersCopy = [...arr]
+  // return numbersCopy.sort()
+  return arr.slice().sort()
 }
 
 /*
@@ -28,11 +29,12 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arr) {
-  let newArray = [];
-  for (i in arr) {
-      newArray.push(arr[i].trim().replace('/',"").toLowerCase(0))
-  }
-  return newArray;
+  // let newArray = [];
+  // for (i in arr) {
+  //     newArray.push(arr[i].trim().replace('/',"").toLowerCase(0))
+  // }
+  // return newArray;
+  return arr.map(i=>i.trim().replace('/',"").toLowerCase(0))
 }
 
 /*
@@ -42,13 +44,17 @@ Write a function that:
 */
 
 function remove(arr, ind) {
-  let newarr = []
-  for(let i=0; i<arr.length; i++){
-    if(i!=ind){
-      newarr.push(arr[i])
-    }
-  }
-  return newarr
+  // let newarr = []
+  // for(let i=0; i<arr.length; i++){
+  //   if(i!=ind){
+  //     newarr.push(arr[i])
+  //   }
+  // }
+  // return newarr
+let newArr = arr.slice()
+let removed = newArr.splice(ind,1)
+return newArr
+
 }
 
 /*
