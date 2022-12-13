@@ -8,6 +8,13 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+arr.forEach(el => el % 3 === 0 && )
+// Check for multiples of 3 : el % 3 === 0
+// Check for multiples of 5 : el % 5 === 0
+// Check for multiples of 3 & 5 : el % 3 === 0 && el % 5 === 0
+// becareful of the order checks (order matters)
+
+
 
 /* EXPECTED OUTPUT */
 
