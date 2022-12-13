@@ -7,9 +7,9 @@ let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
 // let groupIsOnlyStudents = group.every((name) => students.includes(name));
 
-let groupIsOnlyStudents = group.every((name) =>
-  students === group ? (name = true) : (name = false)
-);
+let groupIsOnlyStudents = group.every((name) => {
+  return students.includes(name) ? true : false;
+});
 
 // let groupIsOnlyStudents = group.filter((name) => students.includes(name)); // expected true
 // console.log(groupIsOnlyStudents);
