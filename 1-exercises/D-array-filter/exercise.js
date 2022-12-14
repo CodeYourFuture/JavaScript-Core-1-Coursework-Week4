@@ -19,8 +19,8 @@ let pairs = pairsByIndex.map(function (indexes) {
   return [student, mentor];
 });
 
-
-console.log(JSON.stringify(pairs));
+console.log(pairs);
+// console.log(JSON.stringify(pairs));
 /* EXPECTED RESULT
 
   [ [ 'Islam', 'Luke' ], [ 'Lesley', 'Mozafar' ], [ 'Harun', 'Irina' ] ]
