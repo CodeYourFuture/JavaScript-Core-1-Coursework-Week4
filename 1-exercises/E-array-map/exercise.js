@@ -3,7 +3,13 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
-let numbersMultipliedByOneHundred; // complete this statement
+let numbersMultipliedByOneHundred = numbers.map((num) => num * 100); // complete this statement
+
+// function multipliedByHundred(number) {
+//   return number * 100;
+// }
+
+// let numbersMultipliedByOneHundred = numbers.map(multipliedByHundred);
 
 console.log(numbersMultipliedByOneHundred);
 
