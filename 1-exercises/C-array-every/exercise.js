@@ -24,3 +24,5 @@ if (groupIsOnlyStudents) {
 /* EXPECTED RESULT */
 
 // The group does not contain only students
+
+//don't understand how it works but it works :)
