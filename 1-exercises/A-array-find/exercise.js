@@ -8,11 +8,14 @@
 
 function findLongNameThatStartsWithA(lists){
    
-   for (let list of lists){
-    if(list.length > 7 && list[0] === "A" ) {
-        return list;
-      }
-    }
+  //  for (let list of lists){
+  //   if(list.length > 7 && list[0] === "A" ) {
+  //       return list;
+  //     }
+  //   }
+    
+   return lists.find(x => x.length >7 && x[0]==="A")
+   
 }
 
 let names = [

@@ -12,7 +12,6 @@ let groupIsOnlyStudents = group.every(isIncluded ) // complete this statement
           }
    }
 
-
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
 } else {

@@ -1,17 +1,26 @@
 /*
-    Many years into the future, a team of Space Voyagers find their ship is low on Oxygen and need to dock
-    somewhere safe while they call home for help.
+    Many years into the future, a team of Space Voyagers find their ship is 
+    low on Oxygen and need to dock somewhere safe while they call home for help.
 
-    Their computer detects a list of nearby planets that have Oxygen in their atmosphere.
+    Their computer detects a list of nearby planets that have Oxygen in their 
+    atmosphere.
 
-    To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
+    To be safe, they need to land on the first unnamed planet that has Oxygen 
+    levels between 19.5% and 23.5%.
 
-    Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
+    Write a function that finds the oxygen level of the first safe planet -
+    Oxygen between 19.5% and 23.5%
 
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevel) {
+     if (oxygenLevel>(19.5/100) && oxygenLevel < (23.5/100)){
+        return `It's safe to land`
+     }else{
+        return`Find other planet to land`
+     }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
