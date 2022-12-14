@@ -9,6 +9,22 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function multiplesByThreeOrFive(number){
+    if (number % 3 === 0 && number % 5 === 0) {
+     return "'FizzBuzz'"
+   }
+  if (number%3===0){
+    return "'fizz'"
+  }
+  if (number % 5 === 0) {
+    return "'Buzz'";
+  }
+  return number
+}
+
+let newArray=arr.map(multiplesByThreeOrFive).forEach(element =>console.log(element.toString()))
+
+
 /* EXPECTED OUTPUT */
 
 /*

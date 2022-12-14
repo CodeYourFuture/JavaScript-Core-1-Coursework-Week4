@@ -6,9 +6,15 @@
   - Do not edit any of the existing code
 */
 
-let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
+let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1],null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+
+
+function isItValidContent(array){
+  return  array && array.length===2
+}
+
+let pairsByIndex = pairsByIndexRaw.filter(isItValidContent)
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

@@ -23,11 +23,27 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+   return passwords
+     .map((item,index,password) => {
+       return (
+         item.length >= 5 &&
+         containsLowercaseLetter(item) &&
+         containsUppercaseLetter(item) &&
+         containsNumber(item) &&
+         containsSymbol(item)&&
+         password.indexOf(item) === index
 
+       );
+     });
+}
+/*console.log(
+  validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])
+);*/
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
+
 }
 
 // Returns true if string contains at least one lowercase letter.
