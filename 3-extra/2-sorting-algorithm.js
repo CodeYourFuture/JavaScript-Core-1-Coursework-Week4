@@ -15,23 +15,14 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 */
 function sortAges(arr) {
   let resultArr = [];
- 
-   for (let i = 0; i < arr.length; i++) {
-     if (/[0-9]/.test(arr[i])) {
-       resultArr.push(arr[i]);
-     }
-   }
-   for (let i = 0; i < resultArr.length; i++) {
-     for (let j = i+1; j < resultArr.length; j++) {
-       if (resultArr[j] < resultArr[i]) {
-         let x = resultArr[i];
-         resultArr[i] = resultArr[j];
-         resultArr[j] = x;
-       }
-     }
-   }
-   return resultArr;
- }
+  arr.forEach((value, index, array) =>{
+    if (typeof value === "number") {
+      newArray.push(value);
+    }
+  });
+  newArray.sort((a,z) => a -z );
+  return newArray;
+}
  /* ======= TESTS - DO NOT MODIFY ===== */
  
  const agesCase1 = [
