@@ -11,28 +11,37 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+
+    let newArr = arr
+        .map((x) => (x.includes("%") ? parseFloat(x) : undefined))
+        .find((y) => y > 19.5 && y < 23.5);
+    return newArr ? newArr + "%" : undefined;
+
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
-  expect(
-    findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
-  ).toEqual("19.9%");
+    expect(
+        findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
+    ).toEqual("19.9%");
 });
 
 test("findSafeOxygenLevel function works - case 2", () => {
-  expect(
-    findSafeOxygenLevel(["30.8%", "23.5%", "18.8%", "19.5%", "20.2%", "31.6%"])
-  ).toEqual("20.2%");
+    expect(
+        findSafeOxygenLevel(["30.8%", "23.5%", "18.8%", "19.5%", "20.2%", "31.6%"])
+    ).toEqual("20.2%");
 });
 
 test("findSafeOxygenLevel function filters out invalid percentages", () => {
-  expect(
-    findSafeOxygenLevel(["200%", "-21.5%", "20", "apes", "21.1%"])
-  ).toEqual("21.1%");
+    expect(
+        findSafeOxygenLevel(["200%", "-21.5%", "20", "apes", "21.1%"])
+    ).toEqual("21.1%");
 });
 
 test("findSafeOxygenLevel function returns undefined if no valid planets found", () => {
-  expect(findSafeOxygenLevel(["50"])).toBeUndefined();
+    expect(findSafeOxygenLevel(["50"])).toBeUndefined();
 });
