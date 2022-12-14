@@ -9,6 +9,28 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function formatNumber(number) {
+  if (number % 3 == 0 && number % 5 === 0) {
+    return "FizzBuzz";
+  }
+  if (number % 3 == 0) {
+    return "Fizz";
+  }
+  if (number % 5 == 0) {
+    return "Buzz";
+  }
+  return number;
+}
+
+arr.map(formatNumber).forEach(function (number) {
+  if (typeof number === "string") {console.log("'" + number + "'")}
+ else  {console.log(number)}});
+// function log (number) {
+//   console.log(number)
+// }
+// let numberFormatted = arr.map(formatNumber);
+// numberFormatted.forEach(log);
+
 /* EXPECTED OUTPUT */
 
 /*
