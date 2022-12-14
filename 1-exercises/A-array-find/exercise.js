@@ -19,7 +19,7 @@ let names = [
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
-console.log(longNameThatStartsWithA);
+console.log(longNameThatStartsWithA.find());
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
