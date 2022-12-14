@@ -14,8 +14,14 @@ function capitalise(str) {}
   --------------------------- */
 let name = "daniel";
 
-console.log(capitalise(name));
-console.log(capitalise("hello"));
+let splitStr = name.split();
+console.log(splitStr);
+
+let uppercaseFirstLetter = splitStr[0][0].toUpperCase();
+console.log(uppercaseFirstLetter);
+
+// console.log(capitalise(name));
+// console.log(capitalise("hello"));
 
 /* 
   EXPECTED RESULT
