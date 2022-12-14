@@ -4,7 +4,7 @@
 */
 
 let numbers = [3, 2, 1];
-let sortedNumbers; // complete this statement
+let sortedNumbers = numbers.sort(); // complete this statement  Done✔️
 
 /* 
   DO NOT EDIT BELOW THIS LINE

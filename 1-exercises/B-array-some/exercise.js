@@ -21,4 +21,5 @@ let pairs = pairsByIndex.map(function (indexes) {
   return [student, mentor];
 });
 
+process.exit(pairs === null); 
 console.log(pairs);
