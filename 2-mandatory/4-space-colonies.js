@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers() {
+  let colonisersFams = colonisers.filter(member => member.includes("family"));
+   return colonisersFams.filter(member => member[0] == "A");
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
