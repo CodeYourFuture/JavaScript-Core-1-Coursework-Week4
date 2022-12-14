@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  let settlersFamily = arr.filter((familyNames) => familyNames.charAt(0) === "A" && familyNames.includes("family"));
+  return settlersFamily;
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
