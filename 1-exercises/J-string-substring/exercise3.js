@@ -8,7 +8,13 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let removedWords = statement.substring(0, 5);
+console.log(removedWords);
+
+let secondRemovedWords = statement.substring(9, statement.length);
+console.log(secondRemovedWords);
+
+let result = removedWords.concat(secondRemovedWords);
 
 console.log(result);
 
