@@ -9,6 +9,26 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+        function multiplesThreeFive (Element) {
+          
+          if (Element % 3 === 0 && Element % 5 === 0 ){
+              return "`FizzBuzz`" ;
+
+          }else if (  Element % 5 === 0 ) {
+              return "`Buzz`" ;
+
+          }else if( Element % 3 === 0 ){
+              return "`Fizz`" ;
+              
+          }else 
+            return Element;
+          
+        }
+            arr.map(multiplesThreeFive).forEach((Element) => console.log(Element) );
+          
+
+
+
 /* EXPECTED OUTPUT */
 
 /*
