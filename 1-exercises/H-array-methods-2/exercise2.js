@@ -8,11 +8,13 @@
 */
 
 function capitalize(str) {
-    let newStr = str.split();
-   // return newStr.join(newStr[0].toUpperCase()) ; //daniel
-    return newStr[0].toUpperCase();                //DANIEL
-}
+    
+ // return str.split('')[0].toUpperCase()+str.slice(1);  
 
+ // or another expression:
+    return str[0].toUpperCase()+str.slice(1)
+
+}
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */

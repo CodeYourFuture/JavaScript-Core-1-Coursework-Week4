@@ -13,11 +13,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray(lists) {
-  let newList = lists.sort();
-  return newList;
+function sortArray(arr) {
+    let newArr = arr.slice();
+     return newArr.sort();
 }
-
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -45,8 +44,14 @@ Write a function that:
   at the passed index.
 */
 
-function remove(lists,index) {
+function remove(arr,index) {
    
+  // Create a copy of the original array using the slice() method
+  let newArr = arr.slice();
+  // Use the splice() method to remove the element at the passed index
+  newArr.splice(index, 1);
+  
+  return newArr;
 }
 
 /*
@@ -57,9 +62,10 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+   return numbers.map(number => Math.round(number*100)/100 > 100 ? 100+"%": Math.round(number*100)/100+"%");
+  
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

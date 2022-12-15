@@ -15,11 +15,12 @@
 */
 
 function findSafeOxygenLevel(oxygenLevel) {
-     if (oxygenLevel>(19.5/100) && oxygenLevel < (23.5/100)){
-        return `It's safe to land`
-     }else{
-        return`Find other planet to land`
-     }
+   let safeLevel = oxygenLevel
+                   .filter ((a)=>a.at(-1)==='%')
+                   .map((b)=> + b.replace('%',''))
+                   .sort((a,b) => a-b)
+                   .find((c) => c> 19.5 && c<23.5);
+    if (safeLevel) return safeLevel +"%";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

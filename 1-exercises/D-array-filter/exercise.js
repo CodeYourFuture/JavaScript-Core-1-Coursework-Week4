@@ -8,17 +8,17 @@
 */
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
-
-let pairsByIndex = pairsByIndexRaw.filter(isValid); // Complete this statement
-  function isValid(pairsByIndexRaw){
-      let list = [];
-     for (let i = 0; i < pairsByIndexRaw.length;i++){
-       if (Array.isArray(pairsByIndexRaw)){
-          list.push(pairsByIndexRaw)
-       }
-       return list;
-     }  
-  }
+let pairsByIndex = pairsByIndexRaw.filter(pair=>Array.isArray(pair) && pair.length===2); // Complete this statement
+  
+  // function isValid(pairsByIndexRaw){
+  //     let list = [];
+  //    for (let i = 0; i<pairsByIndexRaw.length; i++){
+  //      if (Array.isArray(pairsByIndexRaw)){
+  //         list.push(pairsByIndexRaw)
+  //      }
+  //      return list;
+  //    }  
+  // }
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

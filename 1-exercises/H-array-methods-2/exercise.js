@@ -18,6 +18,8 @@ let everyone = [
 let firstFive = everyone.slice(0,5); // complete this statement
 let lastFive = everyone.slice(-5); // complete this statement
 
+//or another expression:
+ //let lastFive = everyone.slice(2) 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */

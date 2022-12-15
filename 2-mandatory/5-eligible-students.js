@@ -9,7 +9,20 @@
     AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(arrays) {
+    //create an empty array to store the arr who will sit an exam
+     const sitExamName = [];
+     //loop through the array of arrays
+     for ( arr of arrays ){
+    // check if the array includes a name with 8 attendance counts
+       if(arr[1] >= 8){
+        //add the arr to the sitExamName array
+        sitExamName.push(arr)
+       }
+     }
+     //pick up the name from the new array with map()method.
+      return sitExamName.map(x=>x[0]);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

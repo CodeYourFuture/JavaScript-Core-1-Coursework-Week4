@@ -19,7 +19,23 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(names) {
+  // create an empty array to store the names of the settlers who will stay
+  const settlers = [];
+
+  // loop through the names array
+  for (const name of names) {
+    // check if the name is a family (ends with "family") and the last name starts with "A"
+    if (name.endsWith("family") && name[0] === "A") {
+      // add the name to the settlers array
+      settlers.push(name);
+    }
+  }
+  // return the array of settlers
+  return settlers;
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

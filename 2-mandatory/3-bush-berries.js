@@ -25,6 +25,13 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+  // Loop through the array of berries
+  for (const berry of berryArray) {
+    // If any berry is not pink, return "Toxic! Leave bush alone!"
+    if (berry !== "pink") return "Toxic! Leave bush alone!";
+  }
+  // If all berries are pink, return "Bush is safe to eat from"
+  return "Bush is safe to eat from";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
