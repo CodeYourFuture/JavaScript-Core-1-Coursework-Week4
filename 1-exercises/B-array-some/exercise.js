@@ -7,6 +7,15 @@
 */
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
+function itIsNull(arr) {
+  return arr === null;
+
+}
+
+if (pairsByIndex.some(itIsNull)) {
+  console.log('Exiting...')
+   process.exit(1);
+}
 
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code

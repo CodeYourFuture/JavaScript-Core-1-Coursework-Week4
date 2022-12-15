@@ -15,7 +15,18 @@
   
 */
 
-function getSettlers() {}
+function getSettlers() {
+  function getSettlers(arr) {
+    let newArr =  [];
+  for(let el of arr){
+if (el.startsWith("A") && el.includes("family")){
+  newArr.push(el)
+  }
+}
+
+  return newArr
+}
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
