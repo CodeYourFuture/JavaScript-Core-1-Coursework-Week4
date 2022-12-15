@@ -6,7 +6,10 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arr1) {
+  let newArr = arr1.filter(x => x.includes("Lane"));
+  return newArr
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
