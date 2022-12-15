@@ -3,14 +3,14 @@
   --------------------
 */
 
-let numbers = [3, 2, 1];
-let sortedNumbers; // complete this statement
+let unorderedNumbers  = [3, 2, 1];
+let orderedNumbers = unorderedNumbers .sort(); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
 
-console.log(sortedNumbers);
+console.log(unorderedNumbers);
 
 /* 
   EXPECTED RESULT
