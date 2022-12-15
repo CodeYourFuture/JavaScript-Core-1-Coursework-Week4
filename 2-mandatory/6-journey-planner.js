@@ -133,7 +133,7 @@ function journeyPlanner(locations, transportMode) {
     let transportArr = getTransportModes(value);
     return isAccessibleByTransportMode(transportArr, transportMode);
   })
-    .map(value => value[0]);
+    .map(value => getLocationName(value));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
