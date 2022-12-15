@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagersArray) {
+  // voyagersArray.split().split(" ");
+  return voyagersArray
+    .map((name) => name.split(" "))
+    .filter(
+      (name) => name[0].startsWith("A") && name[name.length - 1] === "family"
+    )
+    .map((name) => name.join(" "));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
