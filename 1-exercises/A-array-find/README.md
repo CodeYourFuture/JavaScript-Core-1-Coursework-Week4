@@ -25,3 +25,4 @@ let longName = names.find(isLongName);
 
 console.log(longName); // logs Mozafar
 ```
+
