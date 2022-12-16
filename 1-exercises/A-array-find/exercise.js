@@ -4,11 +4,8 @@
 */
 
 // write your code here
-function findLongNameThatStartsWithA(diffName) {
-  let firstName = diffName.find((element) => element.length > 7);
-  if (firstName.startsWith("A")) {
-    return firstName;
-  }
+function findLongNameThatStartsWithA(name) {
+  return name[0]==='A' && name.length>7;
 }
 
 let names = [
