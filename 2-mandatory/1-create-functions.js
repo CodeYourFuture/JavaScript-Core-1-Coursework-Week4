@@ -37,7 +37,7 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(array, i), {
+function remove(array, i) {
   let newArr = array.slice();
   newArr.splice(i, 1);
   return newArr;
