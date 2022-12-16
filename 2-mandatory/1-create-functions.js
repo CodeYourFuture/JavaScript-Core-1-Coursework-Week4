@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+export function first5(arr) {
+  return arr.slice(0, 5);
 }
 
 /*
@@ -11,8 +12,7 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
-}
+function sortArray() {}
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +24,7 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+function tidyUpString() {}
 
 /*
 Write a function that:
@@ -33,8 +32,7 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+function remove() {}
 
 /*
 Write a function that:
@@ -44,10 +42,11 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
+
+let test;
 
 test("first5 function works for more than five elements", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -66,14 +65,7 @@ test("first5 function returns a a smaller array for fewer than five elements", (
 });
 
 test("sortArray function returns a sorted version of the array", () => {
-  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual([
-    "a",
-    "c",
-    "e",
-    "f",
-    "n",
-    "z",
-  ]);
+  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual(["a", "c", "e", "f", "n", "z"]);
 });
 
 test("sortArray function doesn't change the passed in array", () => {
@@ -136,10 +128,5 @@ describe("remove function", () => {
 });
 
 test("formatPercentage function works", () => {
-  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
-    "23%",
-    "18.1%",
-    "100%",
-    "0.37%",
-  ]);
+  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual(["23%", "18.1%", "100%", "0.37%"]);
 });

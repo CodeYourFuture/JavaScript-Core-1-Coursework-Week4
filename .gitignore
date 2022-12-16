@@ -2,3 +2,5 @@ node_modules
 .DS_Store
 
 /package-lock.json
+/wk8-lesson-jswk4/
+/functionToExport.js
