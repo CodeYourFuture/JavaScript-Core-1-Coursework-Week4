@@ -22,6 +22,7 @@
 */
 
 function isBushSafe(berryArray) {
+  return berryArray.every("pink");
   //Write your code here
 }
 
