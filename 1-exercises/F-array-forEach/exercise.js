@@ -9,6 +9,17 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function insertWord(value) {
+  if (value%3===0 && value%5===0) return "FizzBuzz";
+  else if (value%3===0) return "Fizz";
+  else if (value%5===0) return "Buzz";
+  else return value;
+}
+arr.map(insertWord).forEach(function(arr) {
+  console.log(arr);
+});
+
+
 /* EXPECTED OUTPUT */
 
 /*
