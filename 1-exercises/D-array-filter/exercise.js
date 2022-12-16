@@ -8,7 +8,15 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+function filterNumbers(arr){
+  for(let n in arr){
+      if(typeof(arr[n]) == "number"){
+        return arr;
+      }
+  }
+}
+
+let pairsByIndex = pairsByIndexRaw.filter(filterNumbers);// Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
