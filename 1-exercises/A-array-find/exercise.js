@@ -20,11 +20,8 @@ let names = [
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 function findLongNameThatStartsWithA(names) {
-  for (let i = 0; i < names.length; i++) {
-    if (names[i].length > 7 && names[i].startsWith("A")) {
-      return names[i];
-    }
-  }
+  let longName = names.find((name) => name.length > 7 && name.startsWith("A"));
+  return longName;
 }
 
 console.log(longNameThatStartsWithA);
