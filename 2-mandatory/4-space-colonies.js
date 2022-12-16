@@ -16,10 +16,11 @@
 */
 
 function getSettlers(arr) {
-  return arr
-    .map((item) => item.split(" "))
-    .filter((item) => item[0][0][0] === "A" && item[item.length - 1] === "family")    
-    .map((item) => item.join(" "));
+  return arr.filter(
+    (item) =>
+      item[0][0][0] === "A" &&
+      (item.split(" ")[1] === "family" || item.split(" ")[2] === "family")
+  );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
