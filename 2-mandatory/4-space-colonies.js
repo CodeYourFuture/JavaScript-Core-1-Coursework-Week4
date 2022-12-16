@@ -24,7 +24,7 @@ function getSettlers(array) {
   }
   return newArray;
 }
-
+//array.filter() map()
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

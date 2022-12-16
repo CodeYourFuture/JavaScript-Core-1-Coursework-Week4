@@ -8,11 +8,12 @@
 */
 
 function getEligibleStudents(studentsAttendances) {
-  let listOfStudents=[];
-  for(let i=0;i<studentsAttendances.length;i++)
-  {
-    if (studentsAttendances[studentsAttendances.length-1] >= 8) {
-      listOfStudents.push(studentsAttendances[i]);
+  let listOfStudents = [];
+  for (let i = 0; i < studentsAttendances.length; i++) {
+    for (let j = 0; j < studentsAttendances[i].length; j++) {
+      if (j === 1 && studentsAttendances[i][1] >= 8) {
+        listOfStudents.push(studentsAttendances[i][0]);
+      }
     }
   }
   return listOfStudents;
