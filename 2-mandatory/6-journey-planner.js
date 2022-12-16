@@ -20,12 +20,17 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    for (let i = 0; i < stringText.length; i++) {
+      if (stringText[i] === "c") {
+        return i;
+      }
+    }
   } else {
     return "Not found";
   }
 }
+
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +69,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
