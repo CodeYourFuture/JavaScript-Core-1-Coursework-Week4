@@ -51,9 +51,8 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  return arr.map(value => {
-    return value > 100 ? "100%" : `${+(value.toFixed(2))}%`;
-  });
+  // return arr.map(value => value > 100 ? "100%" : `${+(value.toFixed(2))}%`);
+  return arr.map(element => `${element > 100 ? "100" : +(element.toFixed(2))}%`);
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
