@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+
+
+function getSettlers(families) {
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

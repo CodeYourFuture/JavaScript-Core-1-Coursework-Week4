@@ -31,3 +31,19 @@ console.log(pairs);
 
   [ [ 'Islam', 'Luke' ], [ 'Lesley', 'Mozafar' ], [ 'Harun', 'Irina' ] ]
 */
+
+let test = ["Ann", "Bob", "Carl"];
+
+function remove(array, index) {
+  for (item of array) {
+    if (array[index] !== array.indexOf(item))
+      {
+        return item;
+      }
+ }
+}
+  
+let newArray = test.filter(remove(test, 0));
+
+
+console.log(newArray);

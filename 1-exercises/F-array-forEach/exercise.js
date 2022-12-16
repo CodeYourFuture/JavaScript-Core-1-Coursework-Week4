@@ -22,6 +22,19 @@ arr.forEach(function format(element) {
   } else console.log(element);
 })
 
+//Below is me testing mandatory exercise 1 part 4
+
+//let percent = [10.05, 15, 20.678]
+
+//function formatPercentage(arr) {
+//    arr.forEach(function formatted(item) {
+//    console.log(item.toFixed(2).concat("%").toString())
+//    })
+// }
+ 
+
+//formatPercentage(percent);
+
 
 
 

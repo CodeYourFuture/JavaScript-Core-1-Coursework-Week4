@@ -27,3 +27,11 @@ let pairs = pairsByIndex.map(function (indexes) {
 });
 
 console.log(pairs);
+
+const mappedArray = numbers.map((name) => {
+  return number * 2;
+}
+)
+}
+
+const multiplier = (number) => number / 2;

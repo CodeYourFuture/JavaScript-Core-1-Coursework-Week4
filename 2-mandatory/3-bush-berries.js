@@ -21,9 +21,15 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
+
+function isBushSafe(berries) {
   //Write your code here
-}
+
+
+ 
+
+isBushSafe("pink", "pink", "pink", "neon", "pink", "transparent");
+isBushSafe("pink", "pink", "pink", "pink");
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
