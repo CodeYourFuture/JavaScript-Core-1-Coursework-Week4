@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0,5)
 }
 
 /*
@@ -11,7 +12,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+      return arr.sort() ;
 }
 
 /*
@@ -20,11 +22,13 @@ Think about what is better about this solution than your one last week, and what
 
 Write a function that:
 - Takes an array of strings as input.
-- Removes any spaces in the beginning or end each string.
-- Removes any forward slashes (/) in the strings.
-- Makes the strings all lowercase.
+- Removes any spaces in the beginning or end each string. trim()
+- Removes any forward slashes (/) in the strings.replaceAll()
+- Makes the strings all lowercase.tolowercase
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+    arr.map(element => element.trim().replaceAll("/"," ").tolowerCase()) ;
+
 }
 
 /*
@@ -33,18 +37,20 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr,index) {
+
 }
 
 /*
 Write a function that:
 - Takes an array of numbers as input.
-- Returns an array of strings formatted as percentages (e.g. 10 => "10%").
+- Returns an array of strings formatted as percentages (e.g. 10 => "10%"
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+    return arr.map((number) => (number > 100 ? "100" : number.toFixed(2))).map((number) => `${+number}%`);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
