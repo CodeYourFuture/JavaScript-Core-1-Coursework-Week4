@@ -8,8 +8,9 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+ let result = statement.substring(0, 4) + statement.substring(8, 26);
 
+//  let result = `${statement.substring(0, 4)}${statement.substring(8, 26)}`;
 console.log(result);
 
 /* EXPECTED OUTPUT 
