@@ -12,13 +12,12 @@
 */
 
 function findSafeOxygenLevel(arr) {
-  let value = arr
-    .filter((item) => item[item.length - 1] === "%")
-    .map((item) => parseFloat(item))
-    .find((item) => item > 19.5 && item < 23.5);
-  if (value !== undefined) {
-    return value + "%";
-  }
+  let value = arr.find(
+    (item) =>
+      parseFloat(item) > 19.5 &&
+      parseFloat(item) < 23.5 &&
+      item[item.length - 1] === "%"
+  );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

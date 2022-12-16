@@ -13,11 +13,19 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story
+/*let result = story
               .replaceAll("dog", "cat")
               .replaceAll("day", "night")
               .replaceAll("10", "100000")
-              .replaceAll("great", "brilliant");
+              .replaceAll("great", "brilliant");*/
+
+let result = story
+  .split("dog")
+  .join("cat")
+  .replaceAll("day", "night")
+  .replaceAll("10", "100000")
+  .replaceAll("great", "brilliant");
+
 /* EXPECTED OUTPUT */
 const util = require("util");
 
@@ -46,4 +54,3 @@ test(
   result,
   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 );
-

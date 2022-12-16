@@ -40,7 +40,6 @@ function remove(arr, index) {
   const newArr = arr.slice();
   newArr.splice(index, 1);
   return newArr;
-  
 }
 
 /*
