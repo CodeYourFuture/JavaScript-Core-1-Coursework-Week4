@@ -18,195 +18,195 @@
 */
 
 function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
-}
+    let magicWord = "code";
+    //edit code below
+    if (stringText.includes(magicWord)) {
+        return stringText.indexOf(magicWord);
+    } else {
+        return "Not found";
+    }
 
-/*
-  I am new to London and would like to know what transport I can take to different famous locations.
-  The input provided contains a list of locations in London. Each of locations is followed by a list
-  of transport modes that can be used to get there.
-  Let's see an example:
 
-  To take to Tower Bridge, you can use tube or river boat. This information will represented as
-    ["Tower Bridge", "tube", "river boat"]
+    /*
+      I am new to London and would like to know what transport I can take to different famous locations.
+      The input provided contains a list of locations in London. Each of locations is followed by a list
+      of transport modes that can be used to get there.
+      Let's see an example:
 
-  Where
-    the 1st element says the name of the location,
-    and rest of them say the transport modes.
+      To take to Tower Bridge, you can use tube or river boat. This information will represented as
+        ["Tower Bridge", "tube", "river boat"]
 
-  You will then get a list of this information, e.g:
-  [
-    ["Tower Bridge", "tube", "river boat"],
-    ["Abbey road", "double decker"],
-    ["London Eye", "tube", "river boat", "bus"]
-  ]
+      Where
+        the 1st element says the name of the location,
+        and rest of them say the transport modes.
 
-  You have to finish up the body of journeyPlanner function that should tell me where I can go if I only
-  want to use a specific mode of transport. But before jumping straight to the main function, we will
-  break down the whole task into smaller steps that make our job easier.
+      You will then get a list of this information, e.g:
+      [
+        ["Tower Bridge", "tube", "river boat"],
+        ["Abbey road", "double decker"],
+        ["London Eye", "tube", "river boat", "bus"]
+      ]
 
-  This technique is also referred to as "problem decomposition". It helps you to reduce the scope of the problem
-  by only focusing on a small chunk of the whole problem at a time.
-*/
+      You have to finish up the body of journeyPlanner function that should tell me where I can go if I only
+      want to use a specific mode of transport. But before jumping straight to the main function, we will
+      break down the whole task into smaller steps that make our job easier.
 
-/*
-  Implement the function getTransportModes that
-   - Accepts an array containing the location and available transport modes
-     e.g: ["Tower Bridge", "tube", "river boat"]
-   - Returns an array including the available transport modes to the given location
-     e.g: ["tube", "river boat"]
+      This technique is also referred to as "problem decomposition". It helps you to reduce the scope of the problem
+      by only focusing on a small chunk of the whole problem at a time.
+    */
 
-  Hint: Use the corresponding array method to split the array.
-*/
-function getTransportModes() {}
+    /*
+      Implement the function getTransportModes that
+       - Accepts an array containing the location and available transport modes
+         e.g: ["Tower Bridge", "tube", "river boat"]
+       - Returns an array including the available transport modes to the given location
+         e.g: ["tube", "river boat"]
 
-/*
-  Implement the function isAccessibleByTransportMode that
+      Hint: Use the corresponding array method to split the array.
+    */
+    function getTransportModes() {}
 
-   - Accepts two parameters:
-     1) First parameter is an array of transport modes
-        e.g: ["tube", "river boat"]
-     2) Second parameter is a string containing a transport mode
-        e.g: "river boat"
+    /*
+      Implement the function isAccessibleByTransportMode that
 
-   - Returns
-     * True if the location in the first parameter is accessible by the transport mode given in second parameter
-     * Otherwise, returns false
+       - Accepts two parameters:
+         1) First parameter is an array of transport modes
+            e.g: ["tube", "river boat"]
+         2) Second parameter is a string containing a transport mode
+            e.g: "river boat"
 
-  Hint: Use the corresponding array method to decide if an element is included in an array.
-*/
-function isAccessibleByTransportMode() {}
+       - Returns
+         * True if the location in the first parameter is accessible by the transport mode given in second parameter
+         * Otherwise, returns false
 
-/*
-  Implement the function getLocationName that
+      Hint: Use the corresponding array method to decide if an element is included in an array.
+    */
+    function isAccessibleByTransportMode() {}
 
-   - Accepts a location and available transports in an array
-      e.g:["Tower Bridge", "tube", "river boat"]
+    /*
+      Implement the function getLocationName that
 
-   - Returns the name of the location
-      e.g: "Tower Bridge"
-*/
-function getLocationName() {}
+       - Accepts a location and available transports in an array
+          e.g:["Tower Bridge", "tube", "river boat"]
 
-/*
- We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
+       - Returns the name of the location
+          e.g: "Tower Bridge"
+    */
+    function getLocationName() {}
 
- Finish up the implementation of the function journeyPlanner that
+    /*
+     We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
 
-  - Accepts two parameters:
-    1) An array with a list of locations' and their transports
-       e.g:
-       [
-         ["Angel", "tube", "bus"],
-         ["London Bridge", "tube", "river boat"]
-       ]
+     Finish up the implementation of the function journeyPlanner that
 
-    2) A string containing a transport mode
-       e.g: "bus"
+      - Accepts two parameters:
+        1) An array with a list of locations' and their transports
+           e.g:
+           [
+             ["Angel", "tube", "bus"],
+             ["London Bridge", "tube", "river boat"]
+           ]
 
-  - Returns an array of where I can go if I only want to use a specific mode of transport.
+        2) A string containing a transport mode
+           e.g: "bus"
 
-  NOTE: only the location names should be returned, not the name of transports.
+      - Returns an array of where I can go if I only want to use a specific mode of transport.
 
-  HINTS:
-   - Use the function you implemented above.
-   - Use array method to remove locations that are not accessible by the given transportMode.
-   - Use array method to manipulate its elements.
+      NOTE: only the location names should be returned, not the name of transports.
 
-  Advanced challange: try to use arrow function when invoking an array method.
-*/
-function journeyPlanner(locations, transportMode) {
-  // Implement the function body
-}
+      HINTS:
+       - Use the function you implemented above.
+       - Use array method to remove locations that are not accessible by the given transportMode.
+       - Use array method to manipulate its elements.
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+      Advanced challange: try to use arrow function when invoking an array method.
+    */
+    function journeyPlanner(locations, transportMode) {
+        // Implement the function body
+    }
 
-const string1 = "I Love coding and perfect code makes me happy";
-const string2 = "I don't like to do coding";
-const string3 = "Can you scan the barcode for me";
+    /* ======= TESTS - DO NOT MODIFY ===== */
 
-const londonLocations = [
-  ["Angel", "tube", "bus"],
-  ["London Bridge", "tube", "river boat"],
-  ["Tower Bridge", "tube", "bus"],
-  ["Greenwich", "bus", "river boat"],
-];
+    const string1 = "I Love coding and perfect code makes me happy";
+    const string2 = "I don't like to do coding";
+    const string3 = "Can you scan the barcode for me";
 
-describe("checkCodeIsThere", () => {
-  test("finds code", () => {
-    expect(checkCodeIsThere(string1)).toEqual(26);
-  });
+    const londonLocations = [
+        ["Angel", "tube", "bus"],
+        ["London Bridge", "tube", "river boat"],
+        ["Tower Bridge", "tube", "bus"],
+        ["Greenwich", "bus", "river boat"],
+    ];
 
-  test("returns `Not found` if no code", () => {
-    expect(checkCodeIsThere(string2)).toEqual("Not found");
-  });
+    describe("checkCodeIsThere", () => {
+        test("finds code", () => {
+            expect(checkCodeIsThere(string1)).toEqual(26);
+        });
 
-  test("finds code as part of a word", () => {
-    expect(checkCodeIsThere(string3)).toEqual(20);
-  });
-});
+        test("returns `Not found` if no code", () => {
+            expect(checkCodeIsThere(string2)).toEqual("Not found");
+        });
 
-test("getTransportModes function works", () => {
-  expect(getTransportModes(["Angel", "tube", "bus"])).toEqual(["tube", "bus"]);
-});
+        test("finds code as part of a word", () => {
+            expect(checkCodeIsThere(string3)).toEqual(20);
+        });
+    });
 
-describe("isAccessibleByTransportMode", () => {
-  test("positive case", () => {
-    expect(isAccessibleByTransportMode(["tube", "bus"], "tube")).toEqual(true);
-  });
+    test("getTransportModes function works", () => {
+        expect(getTransportModes(["Angel", "tube", "bus"])).toEqual(["tube", "bus"]);
+    });
 
-  test("negative case", () => {
-    expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(
-      false
-    );
-  });
+    describe("isAccessibleByTransportMode", () => {
+        test("positive case", () => {
+            expect(isAccessibleByTransportMode(["tube", "bus"], "tube")).toEqual(true);
+        });
 
-  test("ignores substring matches", () => {
-    expect(
-      isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")
-    ).toEqual(false);
-  });
-});
+        test("negative case", () => {
+            expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(
+                false
+            );
+        });
 
-describe("getLocationName", () => {
-  test("example 1", () => {
-    expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual(
-      "London Bridge"
-    );
-  });
+        test("ignores substring matches", () => {
+            expect(
+                isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")
+            ).toEqual(false);
+        });
+    });
 
-  test("example 1", () => {
-    expect(getLocationName(["Angel", "tube", "bus"])).toEqual("Angel");
-  });
-});
+    describe("getLocationName", () => {
+        test("example 1", () => {
+            expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual(
+                "London Bridge"
+            );
+        });
 
-describe("journeyPlanner", () => {
-  test("river boat", () => {
-    expect(journeyPlanner(londonLocations, "river boat")).toEqual([
-      "London Bridge",
-      "Greenwich",
-    ]);
-  });
+        test("example 1", () => {
+            expect(getLocationName(["Angel", "tube", "bus"])).toEqual("Angel");
+        });
+    });
 
-  test("bus", () => {
-    expect(journeyPlanner(londonLocations, "bus")).toEqual([
-      "Angel",
-      "Tower Bridge",
-      "Greenwich",
-    ]);
-  });
+    describe("journeyPlanner", () => {
+        test("river boat", () => {
+            expect(journeyPlanner(londonLocations, "river boat")).toEqual([
+                "London Bridge",
+                "Greenwich",
+            ]);
+        });
 
-  test("tube", () => {
-    expect(journeyPlanner(londonLocations, "tube")).toEqual([
-      "Angel",
-      "London Bridge",
-      "Tower Bridge",
-    ]);
-  });
-});
+        test("bus", () => {
+            expect(journeyPlanner(londonLocations, "bus")).toEqual([
+                "Angel",
+                "Tower Bridge",
+                "Greenwich",
+            ]);
+        });
+
+        test("tube", () => {
+            expect(journeyPlanner(londonLocations, "tube")).toEqual([
+                "Angel",
+                "London Bridge",
+                "Tower Bridge",
+            ]);
+        });
+    });

@@ -11,36 +11,40 @@
 */
 
 let story =
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+    "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+let result = story
+    .replaceAll("dog", "cat")
+    .replaceAll("day", "night")
+    .replaceAll("10", "100000")
+    .replaceAll("great", "brilliant");
 
-let result = story.replace("", "");
 
 /* EXPECTED OUTPUT */
 
 const util = require("util");
 
 function test(test_name, actual, expected) {
-  console.log("");
-  let status;
-  if (actual === expected) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: \nexpected: ${util.inspect(
+    console.log("");
+    let status;
+    if (actual === expected) {
+        status = "PASSED";
+    } else {
+        status = `FAILED: \nexpected: ${util.inspect(
       expected
     )} \nbut your function returned: ${util.inspect(actual)}`;
-  }
+    }
 
-  console.log(`${test_name}: ${status}`);
+    console.log(`${test_name}: ${status}`);
 }
 
 test(
-  "1. Original story has not been changed",
-  story,
-  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
+    "1. Original story has not been changed",
+    story,
+    "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
 );
 
 test(
-  "2. The result of the replace is correct",
-  result,
-  "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
+    "2. The result of the replace is correct",
+    result,
+    "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
 );
