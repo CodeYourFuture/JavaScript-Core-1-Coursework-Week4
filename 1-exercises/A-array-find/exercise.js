@@ -5,7 +5,7 @@
 
 // write your code here
 function longNameThatStartsWithA(names){
-  
+
 }
 let names = [
   "Rakesh",
@@ -25,3 +25,4 @@ console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
+//BLAH BLAH
