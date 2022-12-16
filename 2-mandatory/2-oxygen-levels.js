@@ -12,19 +12,20 @@
 */
 
 function findSafeOxygenLevel(array) {
+  const MIN_OXYGEN_LEVEL = 19.5;
+  const MAX_OXYGEN_LEVEL = 23.5;
   let newArray = [];
-  let numberArray = [];
 
   for (let i = 0; i < array.length; i++) {
     if (array[i].includes("%")) {
-      numberArray.push(Number(array[i].replace("%", "")));
+      const oxygenLevel = Number(array[i].replace("%", ""));
+      if (oxygenLevel > MIN_OXYGEN_LEVEL && oxygenLevel < MAX_OXYGEN_LEVEL) {
+        newArray.push(oxygenLevel);
+      }
     }
   }
-  for (let i = 0; i < numberArray.length; i++) {
-    if (numberArray[i] > 19.5 && numberArray[i] < 23.5) {
-      newArray.push(numberArray[i]);
-    }
-  }
+  if (newArray.length === 0) return undefined;
+
   return `${Math.min(...newArray)}%`;
 }
 
