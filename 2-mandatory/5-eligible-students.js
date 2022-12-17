@@ -7,7 +7,17 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(array) {
+  // input = complex array
+  return array
+    .filter((el) => {
+      return el[1] >= 8;
+      // input = array
+      //retrun true
+    })
+    .map((el) => el[0]);
+  //retun an array of names
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -20,12 +30,7 @@ test("getEligibleStudents function works", () => {
     ["Tayoa", 11],
     ["Nina", 10],
   ];
-  expect(getEligibleStudents(attendance)).toEqual([
-    "Ahmed",
-    "Clement",
-    "Tayoa",
-    "Nina",
-  ]);
+  expect(getEligibleStudents(attendance)).toEqual(["Ahmed", "Clement", "Tayoa", "Nina"]);
 });
 
 test("getEligibleStudents function can return empty array", () => {
