@@ -54,7 +54,7 @@ Consider this code:
 
 ```js
 let namesFormatted = names.map(format);
-namesFormatted.forEach(log);
+namesFormatted.forEach();
 ```
 
 It can be written more simply (without assigning the array returned from `.map()` to a variable):

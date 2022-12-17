@@ -13,10 +13,27 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+/*let result = story
+              .replaceAll("dog", "cat")
+              .replaceAll("day", "night")
+              .replaceAll("10", "100000")
+              .replaceAll("great", "brilliant");*/
+              let result =story.split(" ").map((value) => {
+                if (value.includes("dog")) {
+                  return value.replace("dog", "cat");
+                } else if (value.includes("day")) {
+                  return value.replace("day", "night");
+                } else if (value.includes("10")) {
+                  return value.replace("10", "100000");
+                } else if (value.includes("great")) {
+                  return value.replace("great", "brilliant");
+                } else {
+                  return value;
+                }
+              }).join(" ");
+
 
 /* EXPECTED OUTPUT */
-
 const util = require("util");
 
 function test(test_name, actual, expected) {
