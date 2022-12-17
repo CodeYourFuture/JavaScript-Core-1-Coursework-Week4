@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0, 5)
 }
 
 /*
@@ -11,7 +12,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  const newArr = arr.slice();
+  return newArr.sort();
 }
 
 /*
@@ -24,7 +27,9 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  const regex = /\//g;
+  return arr.map(value => value.trim(" ").replace(regex, "").toLowerCase());
 }
 
 /*
@@ -33,7 +38,8 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  return index === 0 ? arr.slice(1, arr.length) : arr.slice(0, index).concat(arr.slice(index + 1, arr.length));
 }
 
 /*
@@ -44,9 +50,9 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  return arr.map(value => value > 100 ? "100%" : `${+(value.toFixed(2))}%`);
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
