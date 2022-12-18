@@ -14,7 +14,20 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  let numArray = [];
+  arr.forEach((element) => {
+    if (typeof element === "number") {
+      numArray.push(element);
+    }
+  });
+  let sortArray = [];
+  while (numArray.length > 0) {
+    sortArray.push(Math.min(...numArray));
+    numArray.splice(numArray.indexOf(Math.min(...numArray)), 1);
+  }
+  return sortArray;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
