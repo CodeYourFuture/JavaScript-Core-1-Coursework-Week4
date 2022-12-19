@@ -3,7 +3,11 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+// export function first5(arr) {
+//   return arr.slice(0, 5);
+// }
+function first5(arr) {
+  return arr.slice(0, 5);
 }
 
 /*
@@ -11,9 +15,16 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
-}
 
+// below sort may only be best for numbers
+// function sortArray(arr) {
+//   let newArr = [...arr].sort((a, b) => a - b);
+//   return newArr;
+// }
+function sortArray(arr) {
+  let newArr = [...arr].sort();
+  return newArr;
+}
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,7 +35,17 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  let newArr = arr.map((el) => {
+    //el.trim();
+
+    let regex = /\//g;
+    let line = el.trim().replace(regex, "");
+    console.log(line);
+    return line.toLowerCase();
+  });
+
+  return newArr;
 }
 
 /*
@@ -33,9 +54,14 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+function remove(array, index) {
+  //console.log(array[index]);
+  let test = array.filter((el) => {
+    return array[index] !== el;
+  });
 
+  return test;
+}
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -44,7 +70,13 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+  let test = array.map((el) => {
+    let numb = Math.round(el * 100) / 100;
+    return el > 100 ? `${100}%` : `${numb}%`;
+  });
+
+  return test;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -66,14 +98,7 @@ test("first5 function returns a a smaller array for fewer than five elements", (
 });
 
 test("sortArray function returns a sorted version of the array", () => {
-  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual([
-    "a",
-    "c",
-    "e",
-    "f",
-    "n",
-    "z",
-  ]);
+  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual(["a", "c", "e", "f", "n", "z"]);
 });
 
 test("sortArray function doesn't change the passed in array", () => {
@@ -136,10 +161,5 @@ describe("remove function", () => {
 });
 
 test("formatPercentage function works", () => {
-  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
-    "23%",
-    "18.1%",
-    "100%",
-    "0.37%",
-  ]);
+  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual(["23%", "18.1%", "100%", "0.37%"]);
 });

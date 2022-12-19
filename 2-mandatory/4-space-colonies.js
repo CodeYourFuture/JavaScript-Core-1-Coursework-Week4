@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter((el) => {
+    let regex = /family/;
+    return el.charAt(0) === "A" && regex.test(el);
+    //return hasFamily && firstletterA;
+  });
+  //  Input: Is an array
+  //         Output: Is an array
+  //         Logic: Only strings that start with A, and finish with family
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
