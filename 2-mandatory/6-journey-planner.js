@@ -102,7 +102,7 @@ if (arrayOfTransModes.includes(stringOfTransportMode)){
       e.g: "Tower Bridge"
 */
 function getLocationName(locationAndTransportModes) {
-  return locationAndTransportModes[i = 0];
+  return locationAndTransportModes[0];
 }
 
 /*
@@ -133,11 +133,13 @@ function getLocationName(locationAndTransportModes) {
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
+  console.log(`locations: ${locations}, \ntransportMode: ${transportMode}`);
   // Implement the function body
-  let placesIcanGo = locations.filter((locations));
-  if (locations.includes(transportMode.map(items) === getLocationName(items))){
-      return placesIcanGo;
-  }
+  let placesIcanGo = locations.filter((element) => { 
+    return isAccessibleByTransportMode(element , transportMode)
+  });
+  return placesIcanGo.map(getLocationName);
+  
   };
 
 /* ======= TESTS - DO NOT MODIFY ===== */
