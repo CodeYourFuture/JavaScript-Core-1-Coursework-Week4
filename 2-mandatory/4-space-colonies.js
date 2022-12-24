@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arrayOfAlphaFamilies) {
+let firstAlphaSettlers = arrayOfAlphaFamilies.filter((family) => family.charAt(0)==="A" && family.includes("family"));
+  return firstAlphaSettlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

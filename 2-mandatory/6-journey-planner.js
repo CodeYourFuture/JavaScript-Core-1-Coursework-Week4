@@ -20,12 +20,12 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf("code");
   } else {
     return "Not found";
   }
-}
+};
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +64,10 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationAndTransportModes) {
+  let newLocationAndAvailableTransportModes = locationAndTransportModes.slice(1);
+  return newLocationAndAvailableTransportModes;
+};
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +84,13 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arrayOfTransModes, stringOfTransportMode) {
+if (arrayOfTransModes.includes(stringOfTransportMode)){
+  return arrayOfTransModes.includes(stringOfTransportMode);
+}else {
+  return false;
+}
+};
 
 /*
   Implement the function getLocationName that
@@ -92,7 +101,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationAndTransportModes) {
+  return locationAndTransportModes[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,8 +133,14 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
+  console.log(`locations: ${locations}, \ntransportMode: ${transportMode}`);
   // Implement the function body
-}
+  let placesIcanGo = locations.filter((element) => { 
+    return isAccessibleByTransportMode(element , transportMode)
+  });
+  return placesIcanGo.map(getLocationName);
+  
+  };
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
