@@ -25,8 +25,11 @@ function getSettlers(names) {
 
   // loop through the names array
   for (const name of names) {
+  
     // check if the name is a family (ends with "family") and the last name starts with "A"
-    if (name.endsWith("family") && name[0] === "A") {
+      if (name.endsWith("family") && name[0] === "A") {
+  //or: if(name.startWith('A') && name.endsWith('family'));
+
       // add the name to the settlers array
       settlers.push(name);
     }
@@ -34,6 +37,10 @@ function getSettlers(names) {
   // return the array of settlers
   return settlers;
 }
+// Another solution:
+//  function getSettlers(families){
+//     return families.filter(family=>family.startsWith('A') && family.endsWith('family'));
+//  }
 
 
 

@@ -9,10 +9,10 @@
 
 function capitalize(str) {
     
- // return str.split('')[0].toUpperCase()+str.slice(1);  
+  return str.split('')[0].toUpperCase()+str.slice(1);  
 
  // or another expression:
-    return str[0].toUpperCase()+str.slice(1)
+   // return str[0].toUpperCase()+str.slice(1)
 
 }
 /* 

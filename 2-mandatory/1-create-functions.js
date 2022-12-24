@@ -3,10 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5(lists) {
-  let newList = lists.slice(0,5);
-  return newList;
-}
+function first5(arr) {
+   return arr.slice(0,5);
+  }
 
 /*
 Write a function that:
@@ -14,8 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-    let newArr = arr.slice();
-     return newArr.sort();
+     return arr.slice().sort();
+      
 }
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -28,14 +27,20 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(arrayStrings) {
-   const tidiedString = [];
-   for(let i=0; i< arrayStrings.length; i++){
-    const item = arrayStrings[i];
-    const formattedItem = item.trim().replace('/','').toLowerCase()
-    tidiedString.push(formattedItem);
-   }
-   return tidiedString
+    //official solution:
+    return arrayStrings.map(element=>element.trim().replace('/','').toLowerCase());
 }
+   //another solution:
+
+//    {
+//    const tidiedString = [];
+//    for(let i=0; i< arrayStrings.length; i++){
+//     const item = arrayStrings[i];
+//     const formattedItem = item.trim().replace('/','').toLowerCase()
+//     tidiedString.push(formattedItem);
+//    }
+//    return tidiedString
+// }
 
 /*
 Write a function that:
@@ -46,7 +51,7 @@ Write a function that:
 
 function remove(arr,index) {
    
-  // Create a copy of the original array using the slice() method
+  // Create a copy of the original array using the slice() method - copy the original array
   let newArr = arr.slice();
   // Use the splice() method to remove the element at the passed index
   newArr.splice(index, 1);

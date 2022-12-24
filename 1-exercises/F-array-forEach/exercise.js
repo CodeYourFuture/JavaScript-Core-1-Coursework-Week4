@@ -12,10 +12,10 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   arr.forEach(function(name,index){
         for(let index=1; index<=5;index++){
           arr.splice((index*3-1),1,`'Fizz'`);
-        } 
+        } ;
         for(let index=2; index<=3;index++){
           arr.splice((index*index),1,`'Buzz'`);
-       }
+       };
           arr.splice((arr.length-1),1,`'FizzBuzz'`);
         
        console.log(name)
