@@ -23,7 +23,43 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let validation = [];
+
+  for (let i = 0; i < passwords.length; i++) {
+    let element = passwords[i];
+    if (i > 0) {
+      for (let k = i - 1; k >= 0; k--) {
+        if (element === passwords[k]) {
+          validation.push(false);
+          break;
+        } else {
+          if (k === 0) validation.push(validateOnePassword(element));
+        }
+      }
+    } else {
+      validation.push(validateOnePassword(element));
+    }
+  }
+  return validation;
+}
+
+function validateOnePassword(password) {
+  if (
+    containsUppercaseLetter(password) &&
+    containsLowercaseLetter(password) &&
+    containsNumber(password) &&
+    containsSymbol(password) &&
+    checkLength(password)
+  ) {
+    return true;
+  }
+  return false;
+}
+
+console.log(
+  validatePasswords(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"])
+);
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -43,6 +79,10 @@ function containsNumber(string) {
 // Returns true if string contains at least one symbol.
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
+}
+
+function checkLength(string) {
+  return string.length >= 5;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
