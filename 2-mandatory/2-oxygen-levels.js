@@ -11,8 +11,19 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+  return array.find((element) => {
+    if (element.includes("%")) {
+      const num = Number(element.replace("%", ""));
 
+      if (num > 19.5 && num < 23.5) {
+        return element;
+      }
+    }
+  });
+}
+
+console.log(findSafeOxygenLevel(["200%", "-21.5%", "20", "apes", "21.1%"]));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

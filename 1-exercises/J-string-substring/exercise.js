@@ -6,8 +6,15 @@
 
 let statement = "I like programming and dogs";
 
-statement = statement.substring();
+statement = statement.substring(0, 18);
 
+//alternative solution
+// const newStatement = statement.split(" ");
+// newStatement.pop();
+// newStatement.pop();
+// const newNewStat = newStatement.join(" ");
+
+// console.log(newNewStat);
 console.log(statement);
 
 /* EXPECTED OUTPUT 

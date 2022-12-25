@@ -9,6 +9,16 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach((elem) => {
+  elem % 3 === 0 && elem % 5 === 0
+    ? console.log("FizzBuzz")
+    : elem % 3 === 0
+    ? console.log("Fizz")
+    : elem % 5 === 0
+    ? console.log("Buzz")
+    : console.log(elem);
+});
+
 /* EXPECTED OUTPUT */
 
 /*
