@@ -8,7 +8,15 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
+arr.forEach(function format(e) {
+  if(e % 3 === 0) {
+    console.log("Fizz");
+  }else if (e % 5 === 0) {
+    console.log((e.toString()).replace(e, "Buzz"));
+  }else if (e % 3 === 0 && e % 5 === 0 ) {
+    console.log("FizzBuzz");
+  }else console.log(e);
+})
 /* EXPECTED OUTPUT */
 
 /*
