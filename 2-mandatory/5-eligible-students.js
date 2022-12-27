@@ -8,11 +8,10 @@
 */
 
 function getEligibleStudents(studentArray) {
-  studentArray.map( student => {
-    if (studentArray[1] >= 8) {
-      return studentArray[0];
-    }
-  })
+  const ifStudentAttendanceOver8 = studentArray.filter(
+    (student) => student[1] >= 8
+  );
+  return ifStudentAttendanceOver8.map((student) => student[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

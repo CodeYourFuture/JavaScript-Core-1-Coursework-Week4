@@ -12,11 +12,10 @@
 */
 
 function findSafeOxygenLevel(oxygenLevel) {
-  return oxygenLevel.find( percentage => {
-    if (percentage < 23.5 && percentage > 19.5) {
-      return oxygenLevel.replace("%", "");
-    }
-  })
+  return oxygenLevel.find((percentage) => {
+    const betterPercentage = Number(percentage.replace("%", ""));
+    return betterPercentage < 23.5 && betterPercentage > 19.5;
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

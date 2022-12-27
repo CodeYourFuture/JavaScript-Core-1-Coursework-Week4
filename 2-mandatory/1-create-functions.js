@@ -38,9 +38,10 @@ Write a function that:
 
 function remove(arr, index) {
   if (index > -1) {
-    arr.splice(index, 1);
+    return arr.slice(index, 1);
+  } else {
+    return arr.slice();
   }
-  return arr;
 }
 
 /*
@@ -52,18 +53,12 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  arr.forEach((number) => {
-    if (number >= 100) {
-      const index = arr.indexOf(number);
-      if (index !== -1) {
-        arr[index] = "100%";
-      }
-    } else {
-      const twoDecimalPLaces = number.toFixed(2);
-      const string = twoDecimalPLaces.toString();
-      console.log(typeof string);
-      const percentage = `${string}%`;
-    }
+  return arr.map((number) => {
+    const betterNumber = Math.min(number, 100);
+    const twoDecimalPLaces = betterNumber.toFixed(2);
+    const string = twoDecimalPLaces.toString();
+    const percentage = `${string}%`;
+    return percentage;
   });
 }
 
