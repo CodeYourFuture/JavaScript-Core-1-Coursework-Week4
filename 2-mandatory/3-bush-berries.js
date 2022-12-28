@@ -1,7 +1,8 @@
 /*
-  The space travellers have safely landed and are foraging for food in the natural wildlife.
+  The space travelers have safely landed and are foraging for food in the
+  natural wildlife.
 
-  There are bushes with many different colour berries.
+  There are bushes with many different color berries.
 
   The pink berries are the ONLY safe ones to eat.
 
@@ -10,19 +11,27 @@
   Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
   Use the tests to confirm which message to return
   
-  This exercise can be solved in a few different ways. One way might include the array methods
-  .some() and .every(). 
+  This exercise can be solved in a few different ways. One way might include 
+  the array methods .some() and .every(). 
   
-  The .some() method tests to see if some of the values (at least 1) in an array 
-  match what you're looking for and returns true or false. 
+  The .some() method tests to see if some of the values (at least 1) in an 
+  array match what you're looking for and returns true or false. 
   
-  The .every() method will only return true if all values match watch you're looking for. 
+  The .every() method will only return true if all values match watch you're
+  looking for. 
   
   Let's first look at an example that will teach you how to use these methods.
 */
 
 function isBushSafe(berryArray) {
   //Write your code here
+  // Loop through the array of berries
+  for (const berry of berryArray) {
+    // If any berry is not pink, return "Toxic! Leave bush alone!"
+    if (berry !== "pink") return "Toxic! Leave bush alone!";
+  }
+  // If all berries are pink, return "Bush is safe to eat from"
+  return "Bush is safe to eat from";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

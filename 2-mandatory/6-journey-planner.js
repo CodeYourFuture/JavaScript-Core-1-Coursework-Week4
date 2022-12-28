@@ -1,6 +1,7 @@
 /*
  Before we go to the big story, we will introduce some more string methods.
- Some of the methods you're using on arrays are similar to ones you can use on strings.
+ Some of the methods you're using on arrays are similar to ones you can 
+ use on strings.
  Methods like: IndexOf, Include, Search, Slice , Spilt and more.
 
  You can always Google how a method of a string works!
@@ -10,7 +11,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -20,8 +21,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+   if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -59,12 +60,20 @@ function checkCodeIsThere(stringText) {
   Implement the function getTransportModes that
    - Accepts an array containing the location and available transport modes
      e.g: ["Tower Bridge", "tube", "river boat"]
-   - Returns an array including the available transport modes to the given location
+   - Returns an array including the available transport modes to the given
+     location
      e.g: ["tube", "river boat"]
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationInfo) {
+  // split the locationInfo array into two separate variables: 
+  // location and transport modes
+  const [location, ...transportModes] = locationInfo;
+
+  // return the array of transport modes
+  return transportModes;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -76,12 +85,17 @@ function getTransportModes() {}
         e.g: "river boat"
 
    - Returns
-     * True if the location in the first parameter is accessible by the transport mode given in second parameter
+     * True if the location in the first parameter is accessible by the
+        transport mode given in second parameter
      * Otherwise, returns false
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportModes,transportMode) {
+  // check if the transportMode is included in the transportModes array
+  // using the Array.prototype.includes() method
+  return transportModes.includes(transportMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,10 +106,15 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationInfo) {
+  // return the first element of the locationInfo array,
+  // which is the name of the location
+  return locationInfo[0];
+}
 
 /*
- We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
+ We arrived at the final method. it won't take long if you use the previously 
+ implemented functions wisely.
 
  Finish up the implementation of the function journeyPlanner that
 
@@ -110,19 +129,59 @@ function getLocationName() {}
     2) A string containing a transport mode
        e.g: "bus"
 
-  - Returns an array of where I can go if I only want to use a specific mode of transport.
+  - Returns an array of where I can go if I only want to use a specific mode
+    of transport.
 
   NOTE: only the location names should be returned, not the name of transports.
 
   HINTS:
    - Use the function you implemented above.
-   - Use array method to remove locations that are not accessible by the given transportMode.
+   - Use array method to remove locations that are not accessible by the given 
+     transportMode.
    - Use array method to manipulate its elements.
 
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+
+  //solution 1:
+
+  // // create an empty array to store the names of the accessible locations
+  // const accessibleLocations = [];
+  // // loop through the locations array
+  // for (const locationInfo of locations) {
+  //   // get the name of the location and the available transport modes
+  //   const locationName = getLocationName(locationInfo);
+  //   const transportModes = getTransportModes(locationInfo);
+  //   // check if the location is accessible by the given transport mode
+  //   if (isAccessibleByTransportMode(transportModes, transportMode)) {
+  //     // add the location name to the accessibleLocations array
+  //     accessibleLocations.push(locationName);
+  //   }
+  // }
+  // // return the array of accessible locations
+  // return accessibleLocations;
+
+  //solution 2 :
+  //using arrow function when invoking an array method:
+  // create an empty array to store the names of the accessible locations
+  const accessibleLocations = [];
+  // loop through the locations array
+  locations.forEach((locationInfo) => {
+    // get the name of the location and the available transport modes
+    const locationName = getLocationName(locationInfo);
+    const transportModes = getTransportModes(locationInfo);
+
+    // check if the location is accessible by the given transport mode
+    if (isAccessibleByTransportMode(transportModes, transportMode)) {
+      // add the location name to the accessibleLocations array
+      accessibleLocations.push(locationName);
+    }
+  });
+
+  // return the array of accessible locations
+  return accessibleLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -1,8 +1,8 @@
 Imagine you have an array of students' test scores:
 
-```js
-let testScores = [90, 50, 100, 66, 25, 80, 81];
-```
+```js                                            
+let testScores = [90, 50, 100, 66, 25, 80, 81]; 
+```                                              
 
 You want to show only the test scores that are higher than 80. How do you do that for every value in the array?
 

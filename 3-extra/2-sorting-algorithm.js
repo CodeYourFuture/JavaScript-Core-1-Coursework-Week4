@@ -14,7 +14,41 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges (arr) {
+  return arr.filter((item)=> typeof item === 'number').sort((a,b)=>a-b);
+}
+
+
+// HARD MODE:
+function sortAges(arr) {
+  // Create a new array to store the ages
+  const ages = [];
+
+  // Loop through the input array and add any number data types to the ages array
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      ages.push(arr[i]);
+    }
+  }
+
+  // Sort the ages array in ascending order using the selection sort algorithm
+  for (let i = 0; i < ages.length - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < ages.length; j++) {
+      if (ages[j] < ages[minIndex]) {
+        minIndex = j;
+      }
+    }
+    if (minIndex !== i) {
+      const temp = ages[i];
+      ages[i] = ages[minIndex];
+      ages[minIndex] = temp;
+    }
+  }
+
+  // Return the sorted ages array
+  return ages;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

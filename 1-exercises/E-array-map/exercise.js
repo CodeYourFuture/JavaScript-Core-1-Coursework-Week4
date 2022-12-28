@@ -3,7 +3,31 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
-let numbersMultipliedByOneHundred; // complete this statement
+//solution 1:
+//  function oneHundredTimes (number){
+//   return number * 100;
+//  }
+// let numbersMultipliedByOneHundred = numbers.map(oneHundredTimes); // complete this statement
+
+// /*solution 2:
+//  let numbersMultipliedByOneHundred = numbers.map(function oneHundredTimes(number){
+//    return number * 100;
+//  })
+// 
+/*solution 3:
+let numbersMultipliedByOneHundred = numbers.map(function(number){
+  return number * 100;
+})
+*/
+
+//solution 4:
+// let numbersMultipliedByOneHundred = numbers.map(number =>{
+//   return number * 100;
+// })
+
+
+//solution 5:
+ let numbersMultipliedByOneHundred = numbers.map(x => x * 100);
 
 console.log(numbersMultipliedByOneHundred);
 
