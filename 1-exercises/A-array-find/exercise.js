@@ -17,9 +17,31 @@ let names = [
   "Ahmed",
 ];
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+let longNameThatStartsWithA = names.find(n => n.startsWith('A') && n.length > 7);
 
 console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
+
+girlsName = ["Becca", "Risa", "Amy", "Carla", "Andrea"];
+
+
+function nameStartsWith(name) {
+  for (let item of name){
+    if(item.startsWith('A')){
+    console.log(item, item.startsWith('A'))
+    }
+  }
+  // return item.startsWith('A');
+}
+
+const filteredArray = girlsName.filter((item)=>{
+  return item.startsWith('A')
+})
+
+console.log('filtered: ', filteredArray);
+
+
+
+console.log(nameStartsWith(girlsName));

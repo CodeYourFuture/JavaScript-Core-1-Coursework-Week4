@@ -6,9 +6,14 @@
 
 let statement = "I like programming and dogs";
 
-statement = statement.substring();
+statement = statement.substring(0, 18);
 
 console.log(statement);
+
+let percent = [10, 15, 20, 30];
+
+
+formatPercentage(percent);
 
 /* EXPECTED OUTPUT 
 

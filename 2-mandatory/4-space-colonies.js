@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  let nameWithWordFamily = families.filter((item) => item.includes("family"));
+  console.log(`nameWithWordFamily: ${nameWithWordFamily}`);
+
+  let stringsThatStartsWithA = nameWithWordFamily.filter((string) =>
+    string.startsWith("A")
+  );
+  console.log(`stringsThatStartsWithA: ${stringsThatStartsWithA}`);
+  return stringsThatStartsWithA;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

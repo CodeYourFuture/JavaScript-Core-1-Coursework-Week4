@@ -12,13 +12,26 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
 
+if (pairsByIndex.some(element => element === null))
+  process.exit(1)
+
+
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
+  
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
 });
 
 console.log(pairs);
+
+const mappedArray = numbers.map((name) => {
+  return number * 2;
+}
+)
+}
+
+const multiplier = (number) => number / 2;

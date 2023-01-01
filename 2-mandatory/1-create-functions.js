@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  let newArr = arr.slice(0, 5);
+  return newArr;
 }
 
 /*
@@ -11,8 +13,16 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  let sortedArr = arr.map((x) => x).sort();
+  return sortedArr;
 }
+
+// function sortArray(arr) {
+//   // NOTE: The slice is really important, the original array shouldn't be mutated, which sort does.
+//   return arr.slice().sort();
+// }
+// Using .slice() copies the array without mutating it
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,17 +34,30 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(strings) {
+  const trimmedArray = strings.map((string) =>
+    string.toString().toLowerCase().replaceAll("/", "").trim()
+  );
+  return trimmedArray;
 }
 
-/*
-Write a function that:
-- Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
-*/
+// Write a function that:
+// - Takes an array and an index as input.
+// - Returns a new array containing the same elements, but without the element at the passed index.
+// */
 
-function remove() {
+function remove(arr, index){
+  let newArray = arr.filter((num,i)=> index !== i);
+  return newArray;
 }
+
+// function remove(arr, index) {
+//   // NOTE: The slice is really important, the original array shouldn't be mutated, which splice does.
+//   let newArray = arr.slice();
+//   newArray.splice(index, 1);
+//   return newArray;
+// }
+
 
 /*
 Write a function that:
@@ -44,7 +67,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  const newArray = arr.map((item) => {
+    if (item > 100) {
+      return "100%";
+    }
+    return `${Math.round(item * 100) / 100}%`;
+  });
+  return newArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
