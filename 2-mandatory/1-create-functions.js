@@ -36,7 +36,7 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-// let modifiedArray = [];
+let modifiedArray = [];
 
 function tidyUpString(arrayOfStrings) {
   let modifiedArray = [];
@@ -59,22 +59,12 @@ Write a function that:
 */
 
 function remove(arr, index) {
-  let newArray = [];
+  let newArray = arr.slice();
 
-  for (let eachIndex of arr) {
-    if (arr.indexOf(index)) {
-      newArray.push(eachIndex - index);
-    }
-  }
+  newArray.splice(index, 1);
+
   return newArray;
 }
-
-// for (eachIngredient in recipe.ingredients) {
-//   newShoppingList.items = recipe.ingredients.filter(
-//     (eachIngredient) => !pantryList.includes(eachIngredient)
-//   );
-// }
-// return newShoppingList;
 
 /*
 Write a function that:
@@ -104,63 +94,63 @@ function roundedNumber(number) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-// test("first5 function works for more than five elements", () => {
-//   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-//   const copyOfOriginal = numbers.slice();
-//   expect(first5(numbers)).toEqual([1, 2, 3, 4, 5]);
-//   // Make sure first5 didn't change its input array.
-//   expect(numbers).toEqual(copyOfOriginal);
-// });
+test("first5 function works for more than five elements", () => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+  const copyOfOriginal = numbers.slice();
+  expect(first5(numbers)).toEqual([1, 2, 3, 4, 5]);
+  // Make sure first5 didn't change its input array.
+  expect(numbers).toEqual(copyOfOriginal);
+});
 
-// test("first5 function returns a a smaller array for fewer than five elements", () => {
-//   const letters = ["z", "y", "x"];
-//   const copyOfOriginal = letters.slice();
-//   expect(first5(letters)).toEqual(["z", "y", "x"]);
-//   // Make sure first5 didn't change its input array.
-//   expect(letters).toEqual(copyOfOriginal);
-// });
+test("first5 function returns a a smaller array for fewer than five elements", () => {
+  const letters = ["z", "y", "x"];
+  const copyOfOriginal = letters.slice();
+  expect(first5(letters)).toEqual(["z", "y", "x"]);
+  // Make sure first5 didn't change its input array.
+  expect(letters).toEqual(copyOfOriginal);
+});
 
-// test("sortArray function returns a sorted version of the array", () => {
-//   expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual([
-//     "a",
-//     "c",
-//     "e",
-//     "f",
-//     "n",
-//     "z",
-//   ]);
-// });
+test("sortArray function returns a sorted version of the array", () => {
+  expect(sortArray(["a", "n", "c", "e", "z", "f"])).toEqual([
+    "a",
+    "c",
+    "e",
+    "f",
+    "n",
+    "z",
+  ]);
+});
 
-// test("sortArray function doesn't change the passed in array", () => {
-//   const before = ["a", "n", "c", "e", "z", "f"];
-//   const copy = before.slice();
-//   sortArray(before);
-//   expect(before).toEqual(copy);
-// });
+test("sortArray function doesn't change the passed in array", () => {
+  const before = ["a", "n", "c", "e", "z", "f"];
+  const copy = before.slice();
+  sortArray(before);
+  expect(before).toEqual(copy);
+});
 
-// test("tidyUpString function works", () => {
-//   expect(
-//     tidyUpString([
-//       "/Daniel",
-//       " /Sanyia",
-//       "AnTHonY",
-//       "irina",
-//       " Gordon",
-//       "ashleigh   ",
-//       "   Alastair  ",
-//       " anne marie  ",
-//     ])
-//   ).toEqual([
-//     "daniel",
-//     "sanyia",
-//     "anthony",
-//     "irina",
-//     "gordon",
-//     "ashleigh",
-//     "alastair",
-//     "anne marie",
-//   ]);
-// });
+test("tidyUpString function works", () => {
+  expect(
+    tidyUpString([
+      "/Daniel",
+      " /Sanyia",
+      "AnTHonY",
+      "irina",
+      " Gordon",
+      "ashleigh   ",
+      "   Alastair  ",
+      " anne marie  ",
+    ])
+  ).toEqual([
+    "daniel",
+    "sanyia",
+    "anthony",
+    "irina",
+    "gordon",
+    "ashleigh",
+    "alastair",
+    "anne marie",
+  ]);
+});
 
 describe("remove function", () => {
   test("removes index 0", () => {
@@ -190,11 +180,11 @@ describe("remove function", () => {
   });
 });
 
-// test("formatPercentage function works", () => {
-//   expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
-//     "23%",
-//     "18.1%",
-//     "100%",
-//     "0.37%",
-//   ]);
-// });
+test("formatPercentage function works", () => {
+  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
+    "23%",
+    "18.1%",
+    "100%",
+    "0.37%",
+  ]);
+});
