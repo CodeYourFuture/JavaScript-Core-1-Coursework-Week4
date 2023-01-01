@@ -6,7 +6,22 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+// function getLanes(streetName) {
+//   let newArray = [];
+//   for (let street of streetName) {
+//     if (street.endsWith("Lane")) {
+//       newArray.push(street);
+//     }
+//   }
+//   return newArray;
+// }
+
+function getLanes(streetName) {
+  // for (let street of streetName) {
+  let street = streetName.filter((name) => name.includes("Lane"));
+  return street;
+  // }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
