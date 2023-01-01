@@ -1,10 +1,12 @@
 /*
-    Many years into the future, a team of Space Voyagers find their ship is low on Oxygen and need to dock
+    Many years into the future, a team of Space Voyagers find their ship is low
+     on Oxygen and need to dock
     somewhere safe while they call home for help.
 
     Their computer detects a list of nearby planets that have Oxygen in their atmosphere.
 
-    To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
+    To be safe, they need to land on the first unnamed planet that has Oxygen
+     levels between 19.5% and 23.5%.
 
     Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
 
@@ -12,10 +14,32 @@
 */
 
 function findSafeOxygenLevel(oxygenLevels) {
+  console.log(`the list: ${oxygenLevels}`);
 
-  return oxygenLevels.find(n => n >= "19.5" && n <= "23.5");
- }
+  const strWithPercentSign = oxygenLevels.filter((item) => item.includes("%"));
+  console.log(`strWithPercentSign: ${strWithPercentSign}`);
 
+  const strWithoutPercentSign = strWithPercentSign.map((item) =>
+    Number(item.replace("%", ""))
+  );
+  console.log(`strWithoutPercentSign: ${strWithoutPercentSign}`);
+
+  const findSafe = strWithoutPercentSign.find(
+    (safeLevel) => safeLevel > 19.5 && safeLevel < 23.5
+  );
+  console.log(`findSafe: ${findSafe}`);
+
+  return findSafe ? `${findSafe}%` : undefined;
+}
+
+// function findSafeOxygenLevel(oxygenLevels) {
+//   const filteredLevels = oxygenLevels.filter((item) => item.includes("%"));
+//   const numericLevels = filteredLevels.map((item) =>
+//     Number(item.replace("%", ""))
+//   );
+//   const safeLevel = numericLevels.find((n) => n > 19.5 && n < 23.5);
+//   return safeLevel ? `${safeLevel}%` : undefined;
+// }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

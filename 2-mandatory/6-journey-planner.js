@@ -20,8 +20,10 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+
+  if (stringText.includes(magicWord)) {
+    console.log(`test1: ${stringText.indexOf(magicWord)}`);
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +66,13 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+
+function getTransportModes(locationAndTransport) {
+  let transportModes = locationAndTransport.filter(
+    (index) => locationAndTransport.indexOf(index) > 0
+  );
+  return transportModes;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +89,14 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arrOfTransModes, singleTransMode) {
+  console.log(`test: ${arrOfTransModes.includes(singleTransMode)}`);
+  if (arrOfTransModes.includes(singleTransMode)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +107,10 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+
+function getLocationName(locationAndAvailableTransport) {
+  return locationAndAvailableTransport[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -123,7 +141,19 @@ function getLocationName() {}
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+  let newArray = locations.filter((arr) => arr.includes(transportMode));
+  console.log(newArray);
+  return newArray.map((nestedArray) => nestedArray[0]);
 }
+
+// function journeyPlanner(locations, transportMode) {
+//   // Implement the function body
+
+//   const filteredLocations = locations.filter((Arr) =>
+//     Arr.includes(transportMode)
+//   );
+//   return Arr[0];
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -21,15 +21,16 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-
-function isBushSafe(berries) {
+function isBushSafe(arrOfBerries) {
   //Write your code here
 
-
- 
-
-isBushSafe("pink", "pink", "pink", "neon", "pink", "transparent");
-isBushSafe("pink", "pink", "pink", "pink");
+  const berriesArray = arrOfBerries.every((string) => string === "pink");
+  if (berriesArray) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
