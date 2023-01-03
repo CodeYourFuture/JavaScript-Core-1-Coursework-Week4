@@ -11,7 +11,12 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevel) {
+  return oxygenLevel.find((percentage) => {
+    const betterPercentage = Number(percentage.replace("%", ""));
+    return betterPercentage < 23.5 && betterPercentage > 19.5;
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
