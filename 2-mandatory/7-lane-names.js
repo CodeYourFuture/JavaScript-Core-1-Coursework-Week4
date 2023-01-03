@@ -6,12 +6,10 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes(streetNameArray) {
-  let filteredStreetName = streetNameArray.filter(name => {
-    if (name.includes("Lane"){
-      return filteredStreetName.push(name);
-    })
-  })
+function getLanes(street) {
+  return street.filter((name) => {
+    return name.includes("Lane");
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

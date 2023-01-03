@@ -21,7 +21,7 @@ function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
   if (stringText.includes(magicWord)) {
-    return stringText;
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -65,7 +65,7 @@ function checkCodeIsThere(stringText) {
   Hint: Use the corresponding array method to split the array.
 */
 function getTransportModes(fullArray) {
-  return fullArray.shift();
+  return fullArray.slice(1);
 }
 
 /*
@@ -84,13 +84,7 @@ function getTransportModes(fullArray) {
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
 function isAccessibleByTransportMode(transportArray, chosenTransportMethod) {
-  transportArray.map( transport => {
-    if (transport === chosenTransportMethod) {
-      return true;
-    }
-    return false;
-  })
-
+  return transportArray.includes(chosenTransportMethod);
 }
 
 /*
@@ -135,7 +129,8 @@ function getLocationName(array) {
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
-  
+  let result = locations.filter((place) => place.includes(transportMode));
+  return result.map((location) => location[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

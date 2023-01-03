@@ -37,11 +37,7 @@ Write a function that:
 */
 
 function remove(arr, index) {
-  if (index > -1) {
-    return arr.slice(index, 1);
-  } else {
-    return arr.slice();
-  }
+  return arr.filter((x, i) => i !== index);
 }
 
 /*
@@ -54,11 +50,11 @@ Write a function that:
 
 function formatPercentage(arr) {
   return arr.map((number) => {
-    const betterNumber = Math.min(number, 100);
-    const twoDecimalPLaces = betterNumber.toFixed(2);
-    const string = twoDecimalPLaces.toString();
-    const percentage = `${string}%`;
-    return percentage;
+    if (number > 100) {
+      return `100%`;
+    } else {
+      return parseFloat(number.toFixed(2)) + "%";
+    }
   });
 }
 
