@@ -11,7 +11,24 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(level) {
+  let firstSafeLevel = level
+    .filter((value) => value.endsWith("%"))
+    .find((value) => {
+      value = value.replace("%", "");
+      return value > 19.5 && value < 23.5;
+    });
+
+  return firstSafeLevel;
+}
+
+// const oxygenLevels = ["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
+
+// const secondOxygenLevels = ["200%", "-21.5%", "20", "apes", "21.1%"];
+
+// console.log(findSafeOxygenLevel(oxygenLevels));
+
+// console.log(findSafeOxygenLevel(secondOxygenLevels));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

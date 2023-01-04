@@ -15,7 +15,16 @@
   
 */
 
-function getSettlers() {}
+let settlerFamilies = [];
+
+function getSettlers(family) {
+  for (let i = 0; i < family.length; i++) {
+    if (family[i].startsWith("A") && family[i].endsWith("family")) {
+      settlerFamilies.push(family[i]);
+    }
+  }
+  return settlerFamilies;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

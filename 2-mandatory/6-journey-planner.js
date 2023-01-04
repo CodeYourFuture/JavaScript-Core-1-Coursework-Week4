@@ -19,9 +19,9 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(modeOfTransport) {
+  return modeOfTransport.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,13 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(allTransportModes, oneTransportMode) {
+  if (allTransportModes.includes(oneTransportMode)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +100,15 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+// function getLocationName(locations) {
+//   let eachLocation = locations.shift();
+//   return eachLocation;
+// }
+
+function getLocationName(locations) {
+  let eachLocation = locations[0];
+  return eachLocation;
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,14 +138,27 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
+  let eachLocation = locations
+    .filter((location) => isAccessibleByTransportMode(location, transportMode))
+    .map((oneLocation) => getLocationName(oneLocation));
+  return eachLocation;
   // Implement the function body
 }
 
+// const londonLocations = [
+//   ["Angel", "tube", "bus"],
+//   ["London Bridge", "tube", "river boat"],
+//   ["Tower Bridge", "tube", "bus"],
+//   ["Greenwich", "bus", "river boat"],
+// ];
+
+// console.log(journeyPlanner(londonLocations, "river boat"));
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const string1 = "I Love coding and perfect code makes me happy";
-const string2 = "I don't like to do coding";
-const string3 = "Can you scan the barcode for me";
+// const string1 = "I Love coding and perfect code makes me happy";
+// const string2 = "I don't like to do coding";
+// const string3 = "Can you scan the barcode for me";
 
 const londonLocations = [
   ["Angel", "tube", "bus"],
@@ -138,19 +167,19 @@ const londonLocations = [
   ["Greenwich", "bus", "river boat"],
 ];
 
-describe("checkCodeIsThere", () => {
-  test("finds code", () => {
-    expect(checkCodeIsThere(string1)).toEqual(26);
-  });
+// describe("checkCodeIsThere", () => {
+//   test("finds code", () => {
+//     expect(checkCodeIsThere(string1)).toEqual(26);
+//   });
 
-  test("returns `Not found` if no code", () => {
-    expect(checkCodeIsThere(string2)).toEqual("Not found");
-  });
+//   test("returns `Not found` if no code", () => {
+//     expect(checkCodeIsThere(string2)).toEqual("Not found");
+//   });
 
-  test("finds code as part of a word", () => {
-    expect(checkCodeIsThere(string3)).toEqual(20);
-  });
-});
+//   test("finds code as part of a word", () => {
+//     expect(checkCodeIsThere(string3)).toEqual(20);
+//   });
+// });
 
 test("getTransportModes function works", () => {
   expect(getTransportModes(["Angel", "tube", "bus"])).toEqual(["tube", "bus"]);

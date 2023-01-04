@@ -21,9 +21,18 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+//array2.every((element) => array1.includes(element));
+
 function isBushSafe(berryArray) {
+  if (berryArray.every((color) => color === "pink")) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
   //Write your code here
 }
+
+// console.log(array1.every(isBelowThreshold));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
