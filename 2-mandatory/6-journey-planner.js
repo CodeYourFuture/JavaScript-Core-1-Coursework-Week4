@@ -20,12 +20,14 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
 }
+
+
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +66,10 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationsAndTransportsArray) {
+  let transportArray = locationsAndTransportsArray.map( element => element.slice(1));
+  return transportArray;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +86,10 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportArr, transportString) {
+ return transportArr.some(transport => transport === transportString) 
+
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +100,10 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationsAndTransportsArray) {
+  let locationName = locationsAndTransportsArray[0];
+  return locationName;
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,14 +133,24 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
+  let locationName =  locations.filter( transport => transport.indexOf(transportMode) !== -1).map(loc => loc[0]);
+  return locationName
   // Implement the function body
 }
 
+//test:
+
+let locations = [
+         ["Angel", "tube", "bus"],
+         ["London Bridge", "tube", "river boat"]
+       ]
+console.log(journeyPlanner(locations,'tube'))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
 const string3 = "Can you scan the barcode for me";
+
 
 const londonLocations = [
   ["Angel", "tube", "bus"],
