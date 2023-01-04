@@ -24,16 +24,31 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  let validPassword = passwords.map(
-    (element) =>
+  let validPassword = [];
+
+  let previousPasswords = [];
+
+  passwords.forEach((element) => {
+    validPassword.push(
       element.length > 5 &&
-      containsLowercaseLetter(element) &&
-      containsUppercaseLetter(element) &&
-      containsNumber(element) &&
-      containsSymbol(element)
-  );
+        containsLowercaseLetter(element) &&
+        containsUppercaseLetter(element) &&
+        containsNumber(element) &&
+        containsSymbol(element) &&
+        !previousPasswords.includes(element)
+    );
+
+    previousPasswords.push(element);
+  });
+
   return validPassword;
 }
+
+function unique(element, passwords) {
+  return passwords.filter((e) => e === element).length === 1;
+}
+
+console.log(unique("e", ["a", "e", "z"]));
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
