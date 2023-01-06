@@ -13,14 +13,14 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story.replaceAll("dogs", "cats").replaceAll("day", "night").replace("10", "100000").replace("great", "brilliant");
 
 /* EXPECTED OUTPUT */
 
 const util = require("util");
 
 function test(test_name, actual, expected) {
-  console.log("");
+  console.log("result");
   let status;
   if (actual === expected) {
     status = "PASSED";
