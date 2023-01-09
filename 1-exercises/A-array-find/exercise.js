@@ -16,6 +16,20 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+function nameStartsWithA(name) {
+  const startsWithA = name[0] === "A";
+  return startsWithA;
+}
+
+function graterThanSeven(name) {
+  return name.length > 7;
+}
+
+function findLongNameThatStartsWithA(names) {
+  const namesWithA = names.filter(nameStartsWithA);
+  const nameLongerThanSeven = namesWithA.find(graterThanSeven);
+  return nameLongerThanSeven;
+}
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
@@ -23,3 +37,4 @@ console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
+// console.log(longNameThatStartsWithA);
