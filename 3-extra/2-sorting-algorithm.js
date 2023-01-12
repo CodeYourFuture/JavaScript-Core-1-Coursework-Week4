@@ -13,7 +13,12 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
-function sortAge
+
+function sortAges(array) {
+  return array
+    .filter((element) => typeof element === "number")
+    .sort((a, b) => a - b);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
