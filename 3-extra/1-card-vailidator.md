@@ -1,4 +1,5 @@
-## **PROJECT: Credit Card Validator**
+ 
+ ## **PROJECT: Credit Card Validator**
 
 In this project you'll write a script that validates whether or not a credit card number is valid.
 
@@ -34,3 +35,4 @@ These are the requirements your project needs to fulfill:
 - Use `node` from the command line to test if your code works as expected.
 
 Good luck!
+
