@@ -22,6 +22,10 @@
 */
 
 function isBushSafe(berryArray) {
+
+  if (berryArray.every(str => str === "pink")) {
+    return "Bush is safe to eat from";
+  } return "Toxic! Leave bush alone!"
   //Write your code here
 }
 

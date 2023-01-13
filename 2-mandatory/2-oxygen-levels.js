@@ -10,9 +10,19 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
+function isPercentageEnough(str) {
+  return parseFloat(str);
+}
 
-function findSafeOxygenLevel() {}
-
+function findSafeOxygenLevel(arr) {
+  let smth = arr.map(function(str) {if(str.includes("%")) return str});
+  let newArr = smth.map(isPercentageEnough);
+  let final = newArr.find((percentage) => percentage > 19.5 && percentage < 23.5);
+  if (final !== undefined) {
+  return final + "%"} else return undefined;
+}
+// let fk = ["200%", "-21.5%", "20", "apes", "21.1%"];
+// console.log(findSafeOxygenLevel(fk));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

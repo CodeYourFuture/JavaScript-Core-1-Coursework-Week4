@@ -14,8 +14,29 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+// function countWords(str) {
+//   const arr = str.split(" ");
+//   return arr.filter((word) => word !== "").length;
+// }
 
-function getSettlers() {}
+// console.log(countWords("one two three"));
+
+function getSettlers(arr) {
+  let newArr = arr.filter(function (str) {
+    if (str.includes("family")) return str;
+  });
+
+  // let families = newArr.map(function (str) {
+  //   if (countWords(str) < 3) return str;
+  // });
+  let AFamilies = newArr.map(function (str) {
+    if (str !== undefined) {
+      if (str.substring(0, 1) === "A") return str;
+    }
+  });
+  let finalArr = AFamilies.filter((family) => family !== undefined);
+  return finalArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

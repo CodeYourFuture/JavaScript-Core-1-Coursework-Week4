@@ -5,6 +5,23 @@
 
 // write your code here
 
+// function findLongNameThatStartsWithA(arr) {
+//   let finalName;
+//   for (const element of arr) {
+//     if (element[0] === "A" && element.length > 7) {
+//       // console.log(element);
+//       finalName = element;
+//       break;
+//     }
+//   }
+//   return finalName;
+// }
+
+
+// const function2 = (element) => {
+//   return element[0] === "A" && element.length > 7;
+// };
+
 let names = [
   "Rakesh",
   "Antonio",
@@ -17,8 +34,12 @@ let names = [
   "Ahmed",
 ];
 
-let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+// let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
+let longNameThatStartsWithA = 
+  names.find((element) => 
+     element[0] === "A" && element.length > 7
+  );
 console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
