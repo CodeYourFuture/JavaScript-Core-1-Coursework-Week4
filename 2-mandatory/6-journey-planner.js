@@ -19,6 +19,8 @@
 
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
+  // const wordIndex = string.indexOf(magicWord);
+  // return wordIndex === -1 ? "Not found" : wordIndex;}
   //edit code below
   if (stringText.includes(magicWord)) {
     return stringText.indexOf(magicWord);
@@ -64,8 +66,9 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes(arr) {
-  return arr.slice(1);
+function getTransportModes(locationInfo) {
+  let transportMethods = locationInfo.slice(1);
+  return transportMethods;
 }
 
 /*
@@ -84,10 +87,11 @@ function getTransportModes(arr) {
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
 function isAccessibleByTransportMode(arr, str) {
-  if (arr.includes(str)) {
-    return true;
-  }
-  return false;
+  // if (arr.includes(str)) {
+  //   return true;
+  // }
+  // return false;
+  return arr.includes(str);
 }
 
 /*
@@ -99,8 +103,8 @@ function isAccessibleByTransportMode(arr, str) {
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName(arr) {
-  return arr[0];
+function getLocationName(locationData) {
+  return locationData[0];
 }
 
 /*
@@ -154,11 +158,21 @@ function getLocationName(arr) {
 // }
 
 function journeyPlanner(locations, transportMode) {
-  let newArr = [];
-  if (locations.includes(transportMode)) {
-    newArr.push(locations.slice(1));
-  }
-  return newArr;
+  // let newArr = [];
+  // if (locations.includes(transportMode)) {
+  //   newArr.push(locations.slice(1));
+  // }
+  // return newArr;
+
+  const possibleDestinationInfo = locations.filter((locationData) => {
+    const transportModes = getTransportModes(locationData);
+    return isAccessibleByTransportMode(transportModes, transportMode);
+  });
+  const destinationArray = possibleDestinationInfo.map((destination) => {
+    return destination[0];
+  });
+
+  return destinationArray;
 }
 
 // const londonLocations = [
