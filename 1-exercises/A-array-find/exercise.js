@@ -15,6 +15,8 @@ let names = [
   "Anastasia",
   "Karim",
   "Ahmed",
+
+  
 ];
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
