@@ -7,8 +7,10 @@
 */
 
 let statement = "I do not like programming";
-
-let result = "";
+// let result = "";
+let subStr1 = statement.substring(0, 5);
+let subStr2 = statement.substring(9, statement.length);
+let result = subStr1.concat(subStr2);
 
 console.log(result);
 
