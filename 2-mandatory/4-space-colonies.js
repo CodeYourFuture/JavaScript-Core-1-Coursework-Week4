@@ -15,8 +15,16 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(colonisers) {
+  const settlers = [];
 
+  for (const coloniser of colonisers) {
+    if (coloniser.startsWith("A") && coloniser.endsWith("family")) {
+      settlers.push(coloniser);
+    }
+  }
+  return settlers;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
