@@ -6,7 +6,15 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(array) {
+  let newArray = [];
+ array.forEach(element => {
+   if (element.includes("Lane")) { 
+     newArray.push(element);
+   }
+ });
+  return newArray;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

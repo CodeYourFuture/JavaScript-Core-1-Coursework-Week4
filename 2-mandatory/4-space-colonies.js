@@ -24,7 +24,7 @@ function getSettlers(array) {
       }
     }
   });
-  console.log(families);
+  // console.log(families);
   return families;
 }
 
