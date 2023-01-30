@@ -15,7 +15,7 @@ function findSafeOxygenLevel(array) {
   for (let x in array) {
     array[x] = array[x].replace("%", "");
     array[x] = parseFloat(array[x]);
-    console.log(array[x]);
+    // console.log(array[x]);
    }
   array.sort();
   let newArray = [];
