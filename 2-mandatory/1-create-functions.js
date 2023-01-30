@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+ const first5Elements = arr.slice(0,5)
+ return first5Elements;
 }
 
 /*
@@ -12,6 +14,11 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray() {
+  function sortArray(arr) {
+    const newArray = arr.slice();
+    newArray.sort((a,b) => a -b);
+    return newArray;
+  }
 }
 
 /*
@@ -24,7 +31,13 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].trim();
+    arr[i] = arr[i].replace(/\//g, "");
+    arr[i] = arr[i].toLowerCase();
+  }
+  return arr;
 }
 
 /*
@@ -33,7 +46,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  const newArray = arr.slice(0, index).concat(arr.slice(index + 1));
+  return newArray;
 }
 
 /*
@@ -44,7 +59,19 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  const formattedNumbers = [];
+
+  for (const number of numbers) {
+    let formattedNumber = number;
+    if (number > 100) {
+      formattedNumber = 100;
+    }
+    formattedNumber = Math.round(formattedNumber * 100) / 100;
+    formattedNumbers.push(formattedNumber + "%");
+  }
+
+  return formattedNumbers;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
