@@ -42,7 +42,7 @@ function validatePasswords(passwords) {
     }
   );
  
-   console.log(validPasswordArray);
+  //  console.log(validPasswordArray);
    return validPasswordArray;
 
  
