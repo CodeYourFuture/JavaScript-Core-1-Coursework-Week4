@@ -13,9 +13,14 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story
+.replace(/dogs/gi, 'cats')// this is method  /a/gi  return all the coincidences in the array, and return the second parametre
+.replace(/day/gi, "night")
+.replace(10, 100000) // the numbers dont need the " "
+.replace("great", "brilliant");//this case is only one word, so we dont need to use /gi and need to be in  ""
 
-/* EXPECTED OUTPUT */
+console.log(result);
+/* EXPEC TED OUTPUT */
 
 const util = require("util");
 

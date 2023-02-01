@@ -15,8 +15,8 @@ let everyone = [
   "Swathi",
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.slice(0, 5);
+let lastFive = everyone.slice(everyone.length -5, everyone.length)
 
 /* 
   DO NOT EDIT BELOW THIS LINE

@@ -25,11 +25,12 @@ let names = [
 
 
 
-  function findLongNameThatStartWithA(array){
+function findLongNameThatStartWithA(array){
     return array.find(value => value[0] === 'A' && value.length > 7)
   }
 
 console.log(findLongNameThatStartWithA(names));
+
 
 
 /* EXPECTED OUTPUT */

@@ -7,7 +7,10 @@
   Tip: use the string method .split() and the array method .join()
 */
 
-function capitalise(str) {}
+function capitalise(str) {
+  return str[0].toUpperCase() + str.slice(3); // with slice we are removing from the string until the position 1= D because we create
+  
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE

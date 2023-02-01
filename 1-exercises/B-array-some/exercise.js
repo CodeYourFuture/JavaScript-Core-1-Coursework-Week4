@@ -15,11 +15,20 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-const found = pairsByIndex.find(element => element === null);
+const found = pairsByIndex.some(element => element === null);
+process.exit(1);
 
-if (found === null) {
-  process.exit(1);
-}
+// // ============option b=================
+// const found = pairsByIndex.find(element => element === null);
+// function isNull(found) {
+//   return found === null;
+// }
+
+// if (pairsByIndex.some(isNull)) {
+//   process.exit(1);
+// }
+
+
 
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
