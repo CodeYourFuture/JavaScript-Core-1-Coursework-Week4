@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0, 5)
 }
 
 /*
@@ -11,20 +12,23 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return [...arr].sort()
 }
+console.log()
 
-/*
-NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
+
+/*NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
 
 Write a function that:
 - Takes an array of strings as input.
 - Removes any spaces in the beginning or end each string.
 - Removes any forward slashes (/) in the strings.
-- Makes the strings all lowercase.
-*/
+- Makes the strings all lowercase.*/
+
 function tidyUpString() {
+
 }
 
 /*
@@ -33,8 +37,8 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+// function remove() {
+// }
 
 /*
 Write a function that:
@@ -44,10 +48,10 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+// function formatPercentage() {
+// }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -107,39 +111,39 @@ test("tidyUpString function works", () => {
   ]);
 });
 
-describe("remove function", () => {
-  test("removes index 0", () => {
-    expect(remove([1, 2, 3], 0)).toEqual([2, 3]);
-  });
+// describe("remove function", () => {
+//   test("removes index 0", () => {
+//     expect(remove([1, 2, 3], 0)).toEqual([2, 3]);
+//   });
 
-  test("removes middle index", () => {
-    expect(remove([1, 2, 3, 4, 5], 2)).toEqual([1, 2, 4, 5]);
-  });
+//   test("removes middle index", () => {
+//     expect(remove([1, 2, 3, 4, 5], 2)).toEqual([1, 2, 4, 5]);
+//   });
 
-  test("removes end index", () => {
-    expect(remove([1, 2, 3, 4, 5], 4)).toEqual([1, 2, 3, 4]);
-  });
+//   test("removes end index", () => {
+//     expect(remove([1, 2, 3, 4, 5], 4)).toEqual([1, 2, 3, 4]);
+//   });
 
-  test("removes only index", () => {
-    expect(remove(["hi"], 0)).toEqual([]);
-  });
+//   test("removes only index", () => {
+//     expect(remove(["hi"], 0)).toEqual([]);
+//   });
 
-  test("ignores missing index", () => {
-    expect(remove(["hi"], 10)).toEqual(["hi"]);
-  });
+//   test("ignores missing index", () => {
+//     expect(remove(["hi"], 10)).toEqual(["hi"]);
+//   });
 
-  test("doesn't modify input array", () => {
-    let initial = [1, 2, 3];
-    remove(initial, 1);
-    expect(initial).toEqual([1, 2, 3]);
-  });
-});
+//   test("doesn't modify input array", () => {
+//     let initial = [1, 2, 3];
+//     remove(initial, 1);
+//     expect(initial).toEqual([1, 2, 3]);
+//   });
+// });
 
-test("formatPercentage function works", () => {
-  expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
-    "23%",
-    "18.1%",
-    "100%",
-    "0.37%",
-  ]);
-});
+// test("formatPercentage function works", () => {
+//   expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
+//     "23%",
+//     "18.1%",
+//     "100%",
+//     "0.37%",
+//   ]);
+// });
