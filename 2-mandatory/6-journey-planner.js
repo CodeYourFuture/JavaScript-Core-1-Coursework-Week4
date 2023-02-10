@@ -20,12 +20,13 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
+  let pos = stringText.indexOf(magicWord); 
   if (stringText) {
     return stringText;
   } else {
     return "Not found";
   }
-}
+};
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.

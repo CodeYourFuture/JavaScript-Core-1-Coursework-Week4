@@ -23,7 +23,15 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  return passwords.map((aString,index) => aString.length >= 5 && 
+                                        containsUppercaseLetter(aString) &&
+                                        containsLowercaseLetter(aString) &&
+                                        containsNumber(aString) &&
+                                        containsSymbol(aString) &&
+                                        !(passwords.slice(0,index).includes(aString)))
+
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

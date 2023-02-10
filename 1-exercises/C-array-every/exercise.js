@@ -5,13 +5,19 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+let groupIsOnlyStudents = group.every(isAboveThreshold); // complete this statement
+
+function isAboveThreshold(name) {
+  return name.length < 3;
+}
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
 } else {
   console.log("The group does not contain only students");
 }
+
+ 
 
 /* EXPECTED RESULT */
 

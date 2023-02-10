@@ -4,6 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5() {
+  return array.slice(0,5);
 }
 
 /*
@@ -12,7 +13,9 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray() {
-}
+  const copy = array.slice();
+  return copy.sort();
+};
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -25,7 +28,8 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString() {
-}
+  return aString.map(element => element.trim().replace(/\//g,"").toLowerCase())
+};
 
 /*
 Write a function that:
@@ -34,6 +38,11 @@ Write a function that:
 */
 
 function remove() {
+  let removed = [];
+
+  if (index !== 0) // if nonzero then slice all the elements before 'index'
+         removed = array.slice(0,index);
+  return removed.concat(array.slice(index+1)) // concatenate all the elements that follow 'index'
 }
 
 /*
@@ -45,7 +54,8 @@ Write a function that:
 */
 
 function formatPercentage() {
-}
+  return array.map(number => number >= 100 ? "100%" : `${Math.round(number*100)/100}%`);
+};
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

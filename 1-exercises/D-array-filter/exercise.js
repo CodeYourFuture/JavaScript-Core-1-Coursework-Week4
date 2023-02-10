@@ -8,18 +8,19 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+
+let pairsByIndex = pairsByIndexRaw.filter(element => Array.isArray(element) && e.length == 2); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-let pairs = pairsByIndex.map(function (indexes) {
+let pairs = pairsByIndex.map (function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
 });
 
-console.log(pairs);
+console.log(pairs); 
 
 /* EXPECTED RESULT
 
