@@ -13,8 +13,51 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+function sortAges(arr) {
+  let validAges = [];
+  arr.forEach((val) => (typeof val === "number" ? validAges.push(val) : null));
+  return validAges.sort((a, b) => a - b);
+}
 
-function sortAges(arr) {}
+// function sortAges(arr) {
+//   const ages = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] === "number") {
+//       ages.push(arr[i]);
+//     }
+//   }
+//   for (let i = 0; i < ages.length; i++) {
+//     for (let j = i + 1; j < ages.length; j++) {
+//       if (ages[j] < ages[i]) {
+//         const temp = ages[i];
+//         ages[i] = ages[j];
+//         ages[j] = temp;
+//       }
+//     }
+//   }
+//   return ages;
+// }
+function sortAges(arr) {
+  const ages = [];
+  arr.forEach((element) => {
+    if (typeof element === "number") {
+      ages.push(element);
+    }
+  });
+  let i = 0;
+  let j = 1;
+  let temp;
+  for (i = 0; i < ages.length; i++) {
+    for (j = 1; j < ages.length; j++) {
+      if (ages[j - 1] > ages[j]) {
+        temp = ages[j - 1];
+        ages[j - 1] = ages[j];
+        ages[j] = temp;
+      }
+    }
+  }
+  return ages;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
