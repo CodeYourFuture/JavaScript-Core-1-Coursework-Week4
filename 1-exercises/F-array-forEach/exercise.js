@@ -8,6 +8,23 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+arr.forEach(num => {
+  if (num % 5 === 0 && num % 3 === 0) {
+  console.log(`'FizzBuzz'`);
+  } else if (num % 5 === 0) {
+  console.log(`'Buzz'`);
+  } else if (num % 3 === 0) {
+  console.log(`'Fizz'`);
+  } else {
+  console.log(num);
+}
+});
+// Check for multiples of 3 : num % 3 === 0
+// Check for multiples of 5 : num % 5 === 0
+// Check for multiples of 3 & 5 : num % 3 === 0 && num % 5 === 0
+// be careful of the order checks (order matters)
+
+// arr.forEach(num => console.log(num % 15 === 0 ? `'FizzBuzz'` : num % 5 === 0 ? `'Buzz'` : num % 3 === 0 ? `'Fizz'` : num));
 
 /* EXPECTED OUTPUT */
 

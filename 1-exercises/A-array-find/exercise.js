@@ -16,6 +16,11 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+// console.log(names.find((el) => el.includes("A") && el.length > 7));
+function findLongNameThatStartsWithA(names) {
+  let nameArr = names.find((el) => el.startsWith("A") && el.length > 7);
+  return nameArr;
+}
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
@@ -23,3 +28,4 @@ console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
+// (el) => el.includes("ITV");
