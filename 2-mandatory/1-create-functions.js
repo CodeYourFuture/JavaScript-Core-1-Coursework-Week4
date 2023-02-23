@@ -57,9 +57,10 @@ function formatPercentage(arr) {
     if (arr[i] > 100) {
       formatNumbers.push("100%");
     } else {
-      formatNumbers.push(`${Math.round(arr[i] * 100) / 100}%`)
+      formatNumbers.push(`${Number(arr[i].toFixed(2))}%`)
     }
   }
+  
   return formatNumbers;
 }
 

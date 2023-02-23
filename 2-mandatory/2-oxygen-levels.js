@@ -9,9 +9,37 @@
     Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
 
     Some string methods that might help you here are .replace() and .substring().
+     const safeLevel = array.find((oxygen) => {
+   
+    const oxygenLevel = Number(oxygen.replace("%", ""));
+    if (19.5 < oxygenLevel && oxygenLevel < 23.5) {
+      return oxygen;
+    }
+    console.log(oxygenLevel);
+  })
+  return safeLevel;
+  console.log(safeLevel);
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(array) {
+  let safeLevel = ""; 
+  
+  for (const oxygen of array) {
+    if (oxygen.includes("%")) {
+      
+      const oxygenNum = Number(oxygen.replace("%", ""));
+        if (19.5 < oxygenNum && oxygenNum < 23.5) {
+          safeLevel += oxygen;
+          break
+        } 
+        
+    } else if (array.length <= 1) {
+      return undefined;
+    }
+  }
+ return safeLevel;
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

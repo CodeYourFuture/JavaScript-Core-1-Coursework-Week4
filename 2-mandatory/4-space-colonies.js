@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  let settlers = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].charAt(0) == "A" && array[i].includes("family")) {
+      settlers.push(array[i]);
+    }
+  }
+  return settlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
