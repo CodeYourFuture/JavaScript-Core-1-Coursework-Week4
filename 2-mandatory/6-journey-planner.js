@@ -84,11 +84,7 @@ function getTransportModes(arr) {
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
 function isAccessibleByTransportMode(arr, mode) {
-  if (arr.includes(mode)) {
-    return true
-  } else {
-    return false
-  }
+  return arr.includes(mode);
 }
 
 /*
@@ -133,14 +129,7 @@ function getLocationName(arr) {
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
-  let availableModes = [];
-  for (let i = 0; i < locations.length; i++) {
-    const modes = locations[i].slice(1);
-    if (modes.includes(transportMode)) {
-      availableModes.push(locations[i][0]);
-    }
-  }
-    return availableModes;
+return locations.filter(location => location.includes(transportMode)).map(location => location[0])
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

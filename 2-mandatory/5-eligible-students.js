@@ -8,14 +8,7 @@
 */
 
 function getEligibleStudents(arr) {
-  let eligibleStudents = [];
-  for (let i = 0 ; i < arr.length; i++) {
-    if (arr[i][1] >= 8) {
-      eligibleStudents.push(arr[i][0]);
-    }
-  }
-  
-    return eligibleStudents;
+  return arr.filter(student => student[1] >= 8).map(student => student[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

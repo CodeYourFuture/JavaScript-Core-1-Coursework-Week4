@@ -16,13 +16,7 @@
 */
 
 function getSettlers(array) {
-  let settlers = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].charAt(0) == "A" && array[i].includes("family")) {
-      settlers.push(array[i]);
-    }
-  }
-  return settlers;
+  return array.filter(voyager => voyager.charAt(0) == "A" && voyager.includes("family"))
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
