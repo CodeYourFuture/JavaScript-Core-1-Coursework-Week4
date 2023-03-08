@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter(voyager => voyager.charAt(0) == "A" && voyager.includes("family"))
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
