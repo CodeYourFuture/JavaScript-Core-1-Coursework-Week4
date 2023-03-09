@@ -17,14 +17,15 @@ let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 function isNull(a) {
   if (a === null) {
+    console.log("          There was a null value exiting now      " + a);
     process.exit(1);
   }
 }
-let pairs = pairsByIndex.map(function (indexes) {
+let pairs = pairsByIndex.some(isNull).map(function (indexes) {
   console.log("                " + indexes);
   // indexes
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
 });
-console.log(pairs.some(isNull));
+console.log(pairs);
