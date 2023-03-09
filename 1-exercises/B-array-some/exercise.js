@@ -8,6 +8,13 @@
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
+for (let i = 0; i < pairsByIndex.length; i++) {
+  if (pairsByIndex[i] === null) {
+    console.log("Error: null value found in pairsByIndex array. Exiting program...");
+    process.exit(1); // exit program with error code 1
+  }
+}
+
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);

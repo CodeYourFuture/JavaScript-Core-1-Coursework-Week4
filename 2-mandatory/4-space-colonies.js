@@ -15,7 +15,19 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+    // Filter out any elements that are not strings or do not end with "family"
+  const families = voyagers.filter((name) => {
+    return typeof name === "string" && name.endsWith("family");
+  });
+
+  // Filter out any families that do not start with "A"
+  const aFamilies = families.filter((name) => {
+    return name.charAt(0).toUpperCase() === "A";
+  });
+
+  return aFamilies;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

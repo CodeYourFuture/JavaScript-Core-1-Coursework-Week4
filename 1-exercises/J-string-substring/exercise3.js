@@ -8,7 +8,8 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let notIndex = statement.indexOf("not");
+let result = statement.substring(0, notIndex) + statement.substring(notIndex + 3);
 
 console.log(result);
 
