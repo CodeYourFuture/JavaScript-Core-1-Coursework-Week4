@@ -45,7 +45,7 @@ undefined
 
 Did you notice how calling the concat method did not change `arr`? This is because `concat`, like most array methods, returns a _new_ array, it does not alter the one you called the method on.
 
-If you wan to use the array returned by calling `.concat()` you should store it in a new variable.
+If you want to use the array returned by calling `.concat()` you should store it in a new variable.
 
 ```js
 let arr = [1, 2, 3];
