@@ -16,7 +16,7 @@
 */
 
 function getSettlers(settlers) {
-  return settlers.filter((name) => name.match(/family/i));
+  return settlers.filter((name) => name.match(/family/i)).filter((alpha) => alpha[0] === "A");
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
