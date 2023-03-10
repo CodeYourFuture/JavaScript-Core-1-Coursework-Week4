@@ -45,9 +45,9 @@
 //   ["Nina", 10],
 // ];
 
-// function getSettlers(students) {
-//   return students.filter((marks) => marks[1] > 7).map((name) => name[0]);
-// }
+function getSettlers(students) {
+  return students.filter((marks) => marks[1] > 7).map((name) => name[0]);
+}
 // console.log(getSettlers(attendance));
 
 function checkCodeIsThere(stringText) {
@@ -58,8 +58,111 @@ function checkCodeIsThere(stringText) {
   }
 }
 
-const string1 = "I Love coding and perfect code makes me happy";
+// const string1 = "I Love coding and perfect code makes me happy";
 
-console.log(checkCodeIsThere(string1));
+// // console.log(checkCodeIsThere(string1));
 
 // console.log(string1.includes("code"));
+
+const londonLocations = [
+  ["Angel", "tube", "bus"],
+  ["London Bridge", "tube", "river boat"],
+  ["Tower Bridge", "tube", "bus"],
+  ["Greenwich", "bus", "river boat"],
+];
+
+// console.log(journeyPlanner(londonLocations));
+
+function getTransportModes(arr) {
+  const mode = [];
+  for (let i = 1; i < arr.length; i++) {
+    console.log(" mode " + arr[i]);
+    mode.push(arr[i]);
+  }
+  return mode;
+}
+//
+// console.log(getTransportModes(["Angel", "tube", "bus"])); //  .toEqual(["tube", "bus"]);
+//
+// getTransportModes(["Angel", "tube", "bus"]); //  .toEqual(["tube", "bus"]);
+//
+function isAccessibleByTransportMode(arr_mode, mode) {
+  return arr_mode.some((element) => element.includes(mode));
+}
+function getLocationName(arr) {
+  return arr[0];
+}
+
+// console.log(getLocationName(["Angel", "tube", "bus"])); //  .toEqual(["tube", "bus"]);
+
+// const deciduous = ["birch", "maple", "oak"];
+
+// const evergreens = [
+//   { name: "cedar", count: 2 },
+//   { name: "fir", count: 6 },
+//   { name: "pine", count: 3 },
+// ];
+
+// // our testing function
+// let hasFiveOrMore = "oak";
+
+// console.log(deciduous.some((a) => a.includes(hasFiveOrMore)));
+// { name: "maple", count: 5 }
+
+// console.log(evergreens.find("oak"));
+// { name: "fir", count: 6 }
+function journeyPlanner(locations) {
+  const arr = new Array(locations);
+  for (i in arr) {
+    console.log("    local    " + arr);
+  }
+}
+
+// console.log(journeyPlanner(londonLocations, "river boat")); //  .toEqual(["London Bridge", "Greenwich"]);
+
+const streetNames = ["Abchurch Lane", "Adam's Court", "Addle Hill", "Addle Lane", "Alban Highwalk"];
+
+function getLanes(st_name) {
+  return st_name.filter((names) => names.includes("Lane"));
+}
+
+// console.log(getLanes(streetNames)); //   .toEqual(["Abchurch Lane", "Addle Lane"]);
+
+//
+//
+//
+
+function validatePasswords(passwords) {
+  for (i in passwords) {
+    if (containsUppercaseLetter(passwords[i]) && containsLowercaseLetter(passwords[i]) && containsNumber(passwords[i]) && containsSymbol(passwords[i])) {
+      console.log("got it for   =   " + i);
+    }
+  }
+  console.log("   pass  " + passwords);
+}
+
+// Returns true if string contains at least one uppercase letter.
+function containsUppercaseLetter(string) {
+  return /[A-Z]/.test(string);
+}
+
+// Returns true if string contains at least one lowercase letter.
+function containsLowercaseLetter(string) {
+  return /[a-z]/.test(string);
+}
+
+// Returns true if string contains at least one number.
+function containsNumber(string) {
+  return /[0-9]/.test(string);
+}
+
+// Returns true if string contains at least one symbol.
+function containsSymbol(string) {
+  return /[!#$%.*&]/.test(string);
+}
+
+/* ======= TESTS - DO NOT MODIFY ===== */
+
+console.log(validatePasswords(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"])); // .toEqual([false, false, true, false, false]);
+
+console.log(validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])); // .toEqual([true, true, false, false, false]);

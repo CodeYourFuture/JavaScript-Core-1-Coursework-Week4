@@ -62,8 +62,14 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
-
+function getTransportModes(arr) {
+  const mode = [];
+  for (let i = 1; i < arr.length; i++) {
+    console.log(" mode " + arr[i]);
+    mode.push(arr[i]);
+  }
+  return mode;
+}
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -79,7 +85,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arr_mode, mode) {
+  return arr_mode.some((element) => element.includes(mode));
+}
 
 /*
   Implement the function getLocationName that
@@ -90,7 +98,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(arr) {
+  return arr[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
