@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(settlers) {
+  return settlers.filter((name) => name.match(/family/i));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -37,10 +39,5 @@ test("getSettlers function works", () => {
     "A Great family",
   ];
 
-  expect(getSettlers(voyagers)).toEqual([
-    "Adam family",
-    "Avery family",
-    "Archer family",
-    "A Great family",
-  ]);
+  expect(getSettlers(voyagers)).toEqual(["Adam family", "Avery family", "Archer family", "A Great family"]);
 });
