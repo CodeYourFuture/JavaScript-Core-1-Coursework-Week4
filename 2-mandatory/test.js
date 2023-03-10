@@ -36,24 +36,16 @@ function findSafeOxygenLevel(safe_fruit) {
 
 // console.log(findSafeOxygenLevel(["pink", "pink", "pink", "pink"]));
 
-const voyagers = [
-  "Adam family",
-  "Potter family",
-  "Eric",
-  "Aldous",
-  "Button family",
-  "Jude",
-  "Carmichael",
-  "Bunny",
-  "Asimov",
-  "Oscar family",
-  "Avery family",
-  "Archer family",
-  "Just A. family",
-  "A Great family",
+const attendance = [
+  ["Ahmed", 8],
+  ["Clement", 10],
+  ["Elamin", 6],
+  ["Adam", 7],
+  ["Tayoa", 11],
+  ["Nina", 10],
 ];
 
-function getSettlers(settlers) {
-  return settlers.filter((name) => name.match(/family/i));
+function getSettlers(students) {
+  return students.filter((marks) => marks[1] > 7).map((name) => name[0]);
 }
-console.log(getSettlers(voyagers));
+console.log(getSettlers(attendance));
