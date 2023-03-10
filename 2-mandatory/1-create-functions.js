@@ -26,7 +26,7 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(str) {
   return str.map((word) => word.replace(/\s+/g, "").replace(/\//g, "").toLowerCase());
 }
 
@@ -48,8 +48,14 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
-
-function formatPercentage() {}
+function formatPercentage(arr) {
+  for (i in arr) {
+    if (arr[i] > 99) {
+      arr[i] = 100;
+    }
+  }
+  return arr.map((num) => num.toFixed(2).replace(/\.?0+$/, "") + "%");
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

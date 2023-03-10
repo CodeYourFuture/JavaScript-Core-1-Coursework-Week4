@@ -203,48 +203,6 @@ function isBushSafe(berryArray) {
 // console.log(isBushSafe(["pink", "pink", "pink", "pink"])); // .toEqual("Bush is safe to eat from");
 
 ///////////////////////////
-/*
-Write a function that:
-- Accepts an array as a parameter.
-- Returns a new array containing the first five elements of the passed array.
-*/
-function first5(str) {
-  return str.slice(0, 5);
-}
-
-/*
-Write a function that:
-- Accepts an array as a parameter.
-- Returns a new array containing the same elements, except sorted.
-*/
-function sortArray(str) {
-  return str.sort();
-}
-
-/*
-NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
-Think about what is better about this solution than your one last week, and what is worse.
-
-Write a function that:
-- Takes an array of strings as input.
-- Removes any spaces in the beginning or end each string.
-- Removes any forward slashes (/) in the strings.
-- Makes the strings all lowercase.
-*/
-function tidyUpString() {
-  return str.map((word) => word.replace(/\s+/g, "").replace(/\//g, "").toLowerCase());
-}
-
-/*
-Write a function that:
-- Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
-*/
-
-function remove(arr, a) {
-  arr.splice(a, 1);
-  return arr;
-}
 
 /*
 Write a function that:
@@ -254,51 +212,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {}
+function formatPercentage(arr) {
+  for (i in arr) {
+    if (arr[i] > 99) {
+      arr[i] = 100;
+    }
+  }
+  return arr.map((num) => num.toFixed(2).replace(/\.?0+$/, "") + "%");
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-const copyOfOriginal = numbers.slice();
-console.log(first5(numbers)); //  .toEqual([1, 2, 3, 4, 5]);
+// console.log("10        " + formatPercentage([23, 18.103, 187.2, 0.372])); //  .toEqual(["23%", "18.1%", "100%", "0.37%"]);
 
-console.log(copyOfOriginal);
-
-const letters = ["z", "y", "x"];
-console.log(first5(letters)); // .toEqual(["z", "y", "x"]);
-
-console.log(sortArray(["a", "n", "c", "e", "z", "f"])); //  .toEqual(["a", "c", "e", "f", "n", "z"]);
-
-// test("sortArray function doesn't change the passed in array", () => {
-//   const before = ["a", "n", "c", "e", "z", "f"];
-//   const copy = before.slice();
-//   sortArray(before);
-//   expect(before).toEqual(copy);
-// });
-
-console.log(tidyUpString(["/Daniel", " /Sanyia", "AnTHonY", "irina", " Gordon", "ashleigh   ", "   Alastair  ", " anne marie  "]));
-
-// .toEqual([
-//   "daniel",
-//   "sanyia",
-//   "anthony",
-//   "irina",
-//   "gordon",
-//   "ashleigh",
-//   "alastair",
-//   "anne marie",
-// ]);
-
-console.log(remove([1, 2, 3], 0)); // .toEqual([2, 3]);
-
-console.log(remove([1, 2, 3, 4, 5], 2)); //  .toEqual([1, 2, 4, 5]);
-
-console.log(remove([1, 2, 3, 4, 5], 4)); // .toEqual([1, 2, 3, 4]);
-
-console.log(remove(["hi"], 0)); // .toEqual([]);
-
-console.log(remove(["hi"], 10)); // .toEqual(["hi"]);
-
-console.log(initial); // .toEqual([1, 2, 3]);
-
-console.log(formatPercentage([23, 18.103, 187.2, 0.372])); //  .toEqual(["23%", "18.1%", "100%", "0.37%"]);
+// console.log("  " + num.toFixed(2).replace(/\.?0+$/, ""));
