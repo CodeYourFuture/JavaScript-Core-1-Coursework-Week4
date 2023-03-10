@@ -11,8 +11,18 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel(planets) {
-  
+function findSafeOxygenLevel(levels) {
+  // loop through each level and check if it's within the safe range
+  for (let i = 0; i < levels.length; i++) {
+    const level = levels[i];
+    const percentage = parseFloat(level.replace("%", " "));
+    // check if the percentage is a valid number within the safe range
+    if (!isNaN(percentage) && percentage >= 19.5 && percentage <= 23.5) {
+      return level;
+    }
+  }
+  // no valid levels found
+  return undefined;
   
 }
 

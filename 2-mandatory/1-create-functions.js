@@ -52,19 +52,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage(nums) {
-  return nums.map(num => {
-    // round the number to 2 decimal places
-    num = Math.round(num * 100) / 100;
-    
-    // replace numbers greater than 100 with 100
-    if (num > 100) {
-      num = 100;
-    }
-    
-    // format the number as a percentage string
-    return num.toFixed(2) + "%";
+function formatPercentage(numbers) {
+const formattedNumbers = numbers.map(number => {
+    // limit the value to 100 if it's greater than 100
+    const limitedNumber = Math.min(number, 100);
+    // round to 2 decimal places and append %
+    return (limitedNumber.toFixed(2) + "%");
   });
+  return formattedNumbers;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
