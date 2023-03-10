@@ -18,10 +18,8 @@
 */
 
 function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes("code")) {
+    return stringText.indexOf("code");
   } else {
     return "Not found";
   }
@@ -162,23 +160,17 @@ describe("isAccessibleByTransportMode", () => {
   });
 
   test("negative case", () => {
-    expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(
-      false
-    );
+    expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(false);
   });
 
   test("ignores substring matches", () => {
-    expect(
-      isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")
-    ).toEqual(false);
+    expect(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")).toEqual(false);
   });
 });
 
 describe("getLocationName", () => {
   test("example 1", () => {
-    expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual(
-      "London Bridge"
-    );
+    expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual("London Bridge");
   });
 
   test("example 1", () => {
@@ -188,25 +180,14 @@ describe("getLocationName", () => {
 
 describe("journeyPlanner", () => {
   test("river boat", () => {
-    expect(journeyPlanner(londonLocations, "river boat")).toEqual([
-      "London Bridge",
-      "Greenwich",
-    ]);
+    expect(journeyPlanner(londonLocations, "river boat")).toEqual(["London Bridge", "Greenwich"]);
   });
 
   test("bus", () => {
-    expect(journeyPlanner(londonLocations, "bus")).toEqual([
-      "Angel",
-      "Tower Bridge",
-      "Greenwich",
-    ]);
+    expect(journeyPlanner(londonLocations, "bus")).toEqual(["Angel", "Tower Bridge", "Greenwich"]);
   });
 
   test("tube", () => {
-    expect(journeyPlanner(londonLocations, "tube")).toEqual([
-      "Angel",
-      "London Bridge",
-      "Tower Bridge",
-    ]);
+    expect(journeyPlanner(londonLocations, "tube")).toEqual(["Angel", "London Bridge", "Tower Bridge"]);
   });
 });

@@ -26,26 +26,40 @@
 // console.log(`myArray values: ${myArray}`);
 // console.log(`variable x value: ${x}`);
 
-function findSafeOxygenLevel(safe_fruit) {
-  if (safe_fruit.every((fruit) => fruit === "pink")) {
-    return "Bush is safe to eat from";
+// function findSafeOxygenLevel(safe_fruit) {
+//   if (safe_fruit.every((fruit) => fruit === "pink")) {
+//     return "Bush is safe to eat from";
+//   } else {
+//     return "Toxic! Leave bush alone!";
+//   }
+// }
+
+// // console.log(findSafeOxygenLevel(["pink", "pink", "pink", "pink"]));
+
+// const attendance = [
+//   ["Ahmed", 8],
+//   ["Clement", 10],
+//   ["Elamin", 6],
+//   ["Adam", 7],
+//   ["Tayoa", 11],
+//   ["Nina", 10],
+// ];
+
+// function getSettlers(students) {
+//   return students.filter((marks) => marks[1] > 7).map((name) => name[0]);
+// }
+// console.log(getSettlers(attendance));
+
+function checkCodeIsThere(stringText) {
+  if (stringText.includes("code")) {
+    return stringText.indexOf("code");
   } else {
-    return "Toxic! Leave bush alone!";
+    return "Not found";
   }
 }
 
-// console.log(findSafeOxygenLevel(["pink", "pink", "pink", "pink"]));
+const string1 = "I Love coding and perfect code makes me happy";
 
-const attendance = [
-  ["Ahmed", 8],
-  ["Clement", 10],
-  ["Elamin", 6],
-  ["Adam", 7],
-  ["Tayoa", 11],
-  ["Nina", 10],
-];
+console.log(checkCodeIsThere(string1));
 
-function getSettlers(students) {
-  return students.filter((marks) => marks[1] > 7).map((name) => name[0]);
-}
-console.log(getSettlers(attendance));
+// console.log(string1.includes("code"));
