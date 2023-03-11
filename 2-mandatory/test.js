@@ -64,12 +64,12 @@ function checkCodeIsThere(stringText) {
 
 // console.log(string1.includes("code"));
 
-const londonLocations = [
-  ["Angel", "tube", "bus"],
-  ["London Bridge", "tube", "river boat"],
-  ["Tower Bridge", "tube", "bus"],
-  ["Greenwich", "bus", "river boat"],
-];
+// const londonLocations = [
+//   ["Angel", "tube", "bus"],
+//   ["London Bridge", "tube", "river boat"],
+//   ["Tower Bridge", "tube", "bus"],
+//   ["Greenwich", "bus", "river boat"],
+// ];
 
 // console.log(journeyPlanner(londonLocations));
 
@@ -226,3 +226,49 @@ function formatPercentage(arr) {
 // console.log("10        " + formatPercentage([23, 18.103, 187.2, 0.372])); //  .toEqual(["23%", "18.1%", "100%", "0.37%"]);
 
 // console.log("  " + num.toFixed(2).replace(/\.?0+$/, ""));
+
+const londonLocations = [
+  ["Angel", "tube", "bus"],
+  ["London Bridge", "tube", "river boat"],
+  ["Tower Bridge", "tube", "bus"],
+  ["Greenwich", "bus", "river boat"],
+];
+
+function journeyPlanner(locations, transportMode) {
+  const new_places = [];
+  for (i in locations) {
+    if (locations[i].includes(transportMode)) {
+      new_places.push(locations[i][0]);
+    }
+  }
+  console.log("   " + new_places);
+}
+
+// console.log(journeyPlanner(londonLocations, "river boat")); //  .toEqual(["London Bridge", "Greenwich"]);
+
+//////////////////////
+
+function isAccessibleByTransportMode(arr_mode, mode) {
+  return arr_mode.some((element) => element.includes(mode));
+}
+
+// console.log(isAccessibleByTransportMode(["tube", "bus"], "tube")); //  .toEqual(true);
+// console.log(isAccessibleByTransportMode(["tube", "bus"], "river boat")); // .toEqual(false);
+
+// console.log(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")); // ).toEqual(false);
+////////////////////////////////
+
+function first5(str) {
+  console.log("first 5 = " + str.slice());
+  // return str.split(/\s+/).slice(0, 5).join(" ");
+}
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+const copyOfOrigina = numbers.slice();
+console.log("copyOfOriginal =    " + copyOfOrigina);
+console.log(first5(numbers)); // .toEqual([1, 2, 3, 4, 5]);
+const letters = ["z", "y", "x"];
+const copyOfOriginal = letters.slice();
+console.log("copyOfOriginal =    " + copyOfOriginal);
+console.log(first5(letters)); // .toEqual(["z", "y", "x"]);
+
+/////////////////////////////////////////

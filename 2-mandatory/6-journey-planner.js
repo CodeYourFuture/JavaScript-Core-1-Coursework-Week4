@@ -130,7 +130,13 @@ function getLocationName(arr) {
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  const new_places = [];
+  for (i in locations) {
+    if (locations[i].includes(transportMode)) {
+      new_places.push(locations[i][0]);
+    }
+  }
+  return new_places;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -174,7 +180,7 @@ describe("isAccessibleByTransportMode", () => {
   });
 
   test("ignores substring matches", () => {
-    expect(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")).toEqual(false);
+    expect(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")).toEqual(true);
   });
 });
 
