@@ -23,7 +23,29 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const finalArr = [];
+
+  for (let i = 0; i < passwords.length; i++) {
+    if (
+      containsUppercaseLetter(passwords[i]) &&
+      containsLowercaseLetter(passwords[i]) &&
+      containsNumber(passwords[i]) &&
+      containsSymbol(passwords[i]) &&
+      passwords[i].length >= 5
+    ) {
+      const newArr = passwords.slice(0, i);
+      if (newArr.some((x) => x == passwords[i])) {
+        finalArr.push(false);
+      } else {
+        finalArr.push(true);
+      }
+    } else {
+      finalArr.push(false);
+    }
+  }
+  return finalArr;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
