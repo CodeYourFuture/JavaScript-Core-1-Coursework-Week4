@@ -11,7 +11,21 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  let planet;
+  for (let word of arr) {
+    if (word.endsWith("%") && !word.startsWith("-")) {
+      if (
+        parseFloat("19.5%") < parseFloat(word) &&
+        parseFloat(word) < parseFloat("23.5%")
+      ) {
+        planet = word;
+        break;
+      }
+    }
+  }
+  return planet;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
