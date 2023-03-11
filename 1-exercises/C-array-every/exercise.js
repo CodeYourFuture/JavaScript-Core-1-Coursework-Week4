@@ -5,7 +5,13 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents; // complete this statement
+let groupIsOnlyStudents = group.map(function (student) {
+  if (student == null) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
