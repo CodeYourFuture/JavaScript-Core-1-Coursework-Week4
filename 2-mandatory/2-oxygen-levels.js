@@ -6,7 +6,12 @@
 
     To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
 
+    Sometimes the computer reports values that are not percentages (ending with "%"). The Space Voyagers
+    cannot trust these values, so they have to ignore anything that is not a percentage.
+
     Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
+
+    If no safe planet can be found, the function must return `undefined`.
 
     Some string methods that might help you here are .replace() and .substring().
 */
