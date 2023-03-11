@@ -8,6 +8,25 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+function checkMultiple(item){
+  if(item%5===0 && item%3===0){
+    return 'FizzBuzz';
+  }
+  if(item%3===0){
+    return 'Fizz';
+  } 
+  if(item%5===0){
+    return 'Buzz';
+  }
+  else return item;
+}
+// console.log(arr.map(checkMultiple))
+arr.forEach((item)=>{
+  console.log(checkMultiple(item));
+})
+
+
+  
 
 /* EXPECTED OUTPUT */
 
