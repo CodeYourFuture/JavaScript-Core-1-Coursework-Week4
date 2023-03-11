@@ -11,20 +11,21 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel(levels) {
-  // loop through each level and check if it's within the safe range
-  for (let i = 0; i < levels.length; i++) {
-    const level = levels[i];
-    const percentage = parseFloat(level.replace("%", " "));
-    // check if the percentage is a valid number within the safe range
-    if (!isNaN(percentage) && percentage >= 19.5 && percentage <= 23.5) {
-      return level;
-    }
+
+function findSafeOxygenLevel(planets) {
+  let levels = planets
+    .filter(planet => planet.includes("%"))
+    .map(planet => Number(planet.replace("%", "")));
+
+  let safePlanetLevel = levels.find(level => level > 19.5 && level < 23.5);
+  if (safePlanetLevel === undefined) {
+    return undefined;
   }
-  // no valid levels found
-  return undefined;
-  
+  return `${safePlanetLevel}%`;
 }
+
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -52,15 +52,15 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage(numbers) {
-const formattedNumbers = numbers.map(number => {
-    // limit the value to 100 if it's greater than 100
-    const limitedNumber = Math.min(number, 100);
-    // round to 2 decimal places and append %
-    return (limitedNumber.toFixed(2) + "%");
-  });
-  return formattedNumbers;
+function formatPercentage(arr) {
+for (i in arr) {
+    if (arr[i] > 99) {
+      arr[i] = 100;
+    }
+  }
+  return arr.map((num) => num.toFixed(2).replace(/\.?0+$/, "") + "%");
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

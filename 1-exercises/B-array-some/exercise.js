@@ -8,12 +8,11 @@
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
-for (let i = 0; i < pairsByIndex.length; i++) {
-  if (pairsByIndex[i] === null) {
-    console.log("Error: null value found in pairsByIndex array. Exiting program...");
-    process.exit(1); // exit program with error code 1
-  }
+if (pairsByIndex.includes(null)) {
+  console.error("The pairsByIndex array contains a null value.");
+  process.exit(1);
 }
+
 
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
@@ -22,8 +21,10 @@ for (let i = 0; i < pairsByIndex.length; i++) {
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+
+
 let pairs = pairsByIndex.map(function (indexes) {
-  let student = students[indexes[0]];
+let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
 });
