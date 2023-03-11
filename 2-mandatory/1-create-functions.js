@@ -61,7 +61,7 @@ function formatPercentage(arr) {
 
 test("first5 function works for more than five elements", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-  const copyOfOriginal = numbers.slice();
+  const copyOfOriginal = numbers++;
   expect(first5(numbers)).toEqual([1, 2, 3, 4, 5]);
   // Make sure first5 didn't change its input array.
   expect(numbers).toEqual(copyOfOriginal);

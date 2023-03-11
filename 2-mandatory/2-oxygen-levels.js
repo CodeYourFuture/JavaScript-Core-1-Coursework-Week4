@@ -11,22 +11,20 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel(o_level) {
-  let best;
-  for (i in o_level) {
-    let int_o_level = parseInt(o_level[i].replace("%", ""));
+function findSafeOxygenLevel(planets) {
+  const levels = planets.filter((planet) => planet.includes("%")).map((planet) => Number(planet.replace("%", "")));
 
-    if (int_o_level >= 19.5 && int_o_level <= 23.5) {
-      best = o_level[i];
-    }
+  const safePlanetLevel = levels.find((level) => level > 19.5 && level < 23.5);
+  if (safePlanetLevel === undefined) {
+    return undefined;
   }
-  return best;
+  return `${safePlanetLevel}%`;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
-  expect(findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])).toEqual("19.9%");
+  expect(findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1", "29.3%", "20.2%"])).toEqual("19.9%");
 });
 
 test("findSafeOxygenLevel function works - case 2", () => {

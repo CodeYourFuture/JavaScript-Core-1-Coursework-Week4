@@ -256,19 +256,33 @@ function isAccessibleByTransportMode(arr_mode, mode) {
 // console.log(isAccessibleByTransportMode(["tube", "bus"], "river boat")); // .toEqual(false);
 
 // console.log(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")); // ).toEqual(false);
-////////////////////////////////
+// ////////////////////////////////
 
-function first5(str) {
-  console.log("first 5 = " + str.slice());
-  // return str.split(/\s+/).slice(0, 5).join(" ");
-}
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-const copyOfOrigina = numbers.slice();
-console.log("copyOfOriginal =    " + copyOfOrigina);
-console.log(first5(numbers)); // .toEqual([1, 2, 3, 4, 5]);
-const letters = ["z", "y", "x"];
-const copyOfOriginal = letters.slice();
-console.log("copyOfOriginal =    " + copyOfOriginal);
-console.log(first5(letters)); // .toEqual(["z", "y", "x"]);
+// function first5(str) {
+//   console.log("first 5 = " + str.slice());
+//   // return str.split(/\s+/).slice(0, 5).join(" ");
+// }
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const copyOfOrigina = numbers.slice();
+// console.log("copyOfOriginal =    " + copyOfOrigina);
+// console.log(first5(numbers)); // .toEqual([1, 2, 3, 4, 5]);
+// const letters = ["z", "y", "x"];
+// const copyOfOriginal = letters.slice();
+// console.log("copyOfOriginal =    " + copyOfOriginal);
+// console.log(first5(letters)); // .toEqual(["z", "y", "x"]);
+//
+//
+//
+//
 
-/////////////////////////////////////////
+// × first5 function works for more than five elements (2 ms)
+//   × first5 function returns a a smaller array for fewer than five elements (1 ms)
+//   √ sortArray function returns a sorted version of the array (2 ms)
+//   × sortArray function doesn't change the passed in array (5 ms)
+//   × tidyUpString function works (1 ms)
+//   √ formatPercentage function works (1 ms)
+//
+//
+//
+
+///////////////////////////////////////////////////////////
