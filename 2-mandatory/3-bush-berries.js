@@ -27,7 +27,7 @@ function isBushSafe(berryArray) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("isBushSafe finds toxic busy", () => {
+test("isBushSafe finds toxic bush", () => {
   expect(
     isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
   ).toEqual("Toxic! Leave bush alone!");

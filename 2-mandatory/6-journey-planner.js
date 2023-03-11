@@ -10,7 +10,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -119,7 +119,7 @@ function getLocationName() {}
    - Use array method to remove locations that are not accessible by the given transportMode.
    - Use array method to manipulate its elements.
 
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
