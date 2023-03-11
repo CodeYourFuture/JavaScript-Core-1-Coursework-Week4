@@ -6,18 +6,20 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arr) {
+    return arr.filter((item) => item.includes("Lane"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getLanes function works", () => {
-  const streetNames = [
-    "Abchurch Lane",
-    "Adam's Court",
-    "Addle Hill",
-    "Addle Lane",
-    "Alban Highwalk",
-  ];
+    const streetNames = [
+        "Abchurch Lane",
+        "Adam's Court",
+        "Addle Hill",
+        "Addle Lane",
+        "Alban Highwalk",
+    ];
 
-  expect(getLanes(streetNames)).toEqual(["Abchurch Lane", "Addle Lane"]);
+    expect(getLanes(streetNames)).toEqual(["Abchurch Lane", "Addle Lane"]);
 });
