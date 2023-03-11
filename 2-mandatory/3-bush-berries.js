@@ -25,7 +25,14 @@ function isBushSafe(berryArray) {
   //Write your code here
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* 
+===================================================
+======= TESTS - DO NOT MODIFY BELOW THIS LINE =====
+There are some Tests in this file that will help you work out if your code is working.
+To run the tests for just this one file, type `npm test -- --testPathPattern 3-bush-berries` into your terminal
+(Reminder: You must have run `npm install` one time before this will work!)
+===================================================
+*/
 
 test("isBushSafe finds toxic bush", () => {
   expect(
@@ -36,5 +43,11 @@ test("isBushSafe finds toxic bush", () => {
 test("isBushSafe function finds safe bush", () => {
   expect(isBushSafe(["pink", "pink", "pink", "pink"])).toEqual(
     "Bush is safe to eat from"
+  );
+});
+
+test("isBushSafe finds toxic bush when all toxic", () => {
+  expect(isBushSafe(["neon", "transparent", "red", "green", "grey"])).toEqual(
+    "Toxic! Leave bush alone!"
   );
 });

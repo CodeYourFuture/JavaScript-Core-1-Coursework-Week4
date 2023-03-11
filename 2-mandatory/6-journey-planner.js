@@ -125,7 +125,14 @@ function journeyPlanner(locations, transportMode) {
   // Implement the function body
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* 
+===================================================
+======= TESTS - DO NOT MODIFY BELOW THIS LINE =====
+There are some Tests in this file that will help you work out if your code is working.
+To run the tests for just this one file, type `npm test -- --testPathPattern 6-journey-planner` into your terminal
+(Reminder: You must have run `npm install` one time before this will work!)
+===================================================
+*/
 
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
