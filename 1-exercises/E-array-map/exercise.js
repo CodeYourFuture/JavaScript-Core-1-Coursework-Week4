@@ -11,8 +11,3 @@ let numbersMultipliedByOneHundred = numbers.map(timesByHundred);
 
 console.log(numbersMultipliedByOneHundred);
 
-```
-/* EXPECTED RESULT
-
-  [10, 20, 30, 40, 50]
-*/
