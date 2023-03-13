@@ -15,7 +15,21 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(colonisers) {
+  let thoseToStay = [];
+  for (let i = 0; i < colonisers.length; i++) {
+    if (colonisers[i].startsWith("A") && colonisers[i].includes("family")) {
+      thoseToStay.push(colonisers[i]);
+
+    }
+    
+
+  }
+  return thoseToStay;
+  }
+  
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

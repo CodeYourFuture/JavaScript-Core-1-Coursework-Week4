@@ -10,7 +10,7 @@
  Now let's do this small exercise
 
  Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a paramter
+  - The function will have a string as a parameter
   - The function should check if the word "code" exists in the string
   - If it does exist, return the index of it, if not return "Not found"
 
@@ -20,8 +20,9 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  for (let i = 0; i < stringText.length; i++)
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +65,14 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(transportModeArray, transportModeString) {
+  if (transportModeArray.includes(transportModeString)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
