@@ -6,11 +6,17 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function containsLane(aStreet) {
+  return aStreet.indexOf("Lane") > -1;
+}
+
+function getLanes(streetNames) {
+  return streetNames.filter(containsLane);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("getLanes function works", () => {
+test.only("getLanes function works", () => {
   const streetNames = [
     "Abchurch Lane",
     "Adam's Court",
