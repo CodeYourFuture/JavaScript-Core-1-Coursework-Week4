@@ -45,25 +45,25 @@ return resultUpperCase && resultLowerCase && resultNumberSet && resultSymbolSet;
 function containsUppercaseLetter(string) {
   const upperCaseLetters = /[A-Z]/;
   
-  return upperCaseLetters.test(string);
+  return /[A-Z]/.test(string);
 }
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
   const lowerCaseLetters = /[a-z]/;
-  return lowerCaseLetters.test(string);
+  return /[a-z]/.test(string);
 }
 
 // Returns true if string contains at least one number.
 function containsNumber(string) {
   const numberSet = /[0-9]/;
-  return numberSet.test(string);
+  return /[0-9]/.test(string);
 }
 
 // Returns true if string contains at least one symbol.
 function containsSymbol(string) {
   const symbolSet = /[!#$%.*&]/ ;
-  return symbolSet.test(string);
+  return /[!#$%.*&]/.test(string);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
