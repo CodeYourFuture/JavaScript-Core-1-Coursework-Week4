@@ -22,47 +22,50 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-
+// previousPasswords.push(string);
 function validatePasswords(passwords) {
-  // Make variables for letters and numbers to be Tested
-  const upperCaseLetters = /[A-Z]/;
-  const lowerCaseLetters = /[a-z]/;
-  const numberSet = /[0-9]/;
-  const symbolSet = /[!#$%.*&]/ ;
-  
- 
-// Test each of these variables and store the result in another variable
-const resultUpperCase = upperCaseLetters.test(passwords);
-const resultLowerCase = lowerCaseLetters.test;(passwords);
-const resultNumberSet = numberSet.test(passwords);
-const resultSymbolSet = symbolSet.test(passwords)
-// return the result for all the three tests together into a single boolean
-return resultUpperCase && resultLowerCase && resultNumberSet && resultSymbolSet;
-  
+  let previousPasswords = [];
+  function isValidPassword(string) {
+    let isNotDuplicate = !previousPasswords.includes(string);
+    previousPasswords.push(string);
+    return (
+      containsLowercaseLetter(string) &&
+      containsUppercaseLetter(string) &&
+      containsSymbol(string) &&
+      containsNumber(string) &&
+      string.length >= 5 &&
+      isNotDuplicate
+    );
+  }
+  return passwords.map(isValidPassword);
 }
+
+// if (isValidPassword = true) {
+//   previousPasswords.push(string);
+// }
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
-  const upperCaseLetters = /[A-Z]/;
-  
+  // const upperCaseLetters = /[A-Z]/;
+
   return /[A-Z]/.test(string);
 }
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
-  const lowerCaseLetters = /[a-z]/;
+  // const lowerCaseLetters = /[a-z]/;
   return /[a-z]/.test(string);
 }
 
 // Returns true if string contains at least one number.
 function containsNumber(string) {
-  const numberSet = /[0-9]/;
+  // const numberSet = /[0-9]/;
   return /[0-9]/.test(string);
 }
 
 // Returns true if string contains at least one symbol.
 function containsSymbol(string) {
-  const symbolSet = /[!#$%.*&]/ ;
+  // const symbolSet = /[!#$%.*&]/ ;
   return /[!#$%.*&]/.test(string);
 }
 
@@ -83,7 +86,7 @@ test("Example 1", () => {
 test("Example 2", () => {
   expect(
     validatePasswords([
-      "StUFf27%",
+      "384#HsHF",
       "Pl3nty!",
       "Jai33",
       "shajsaUA**&&",
