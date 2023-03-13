@@ -24,27 +24,46 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  if (passwords.includes)
+  // Make variables for letters and numbers to be Tested
+  const upperCaseLetters = /[A-Z]/;
+  const lowerCaseLetters = /[a-z]/;
+  const numberSet = /[0-9]/;
+  const symbolSet = /[!#$%.*&]/ ;
+  
+ 
+// Test each of these variables and store the result in another variable
+const resultUpperCase = upperCaseLetters.test(passwords);
+const resultLowerCase = lowerCaseLetters.test;(passwords);
+const resultNumberSet = numberSet.test(passwords);
+const resultSymbolSet = symbolSet.test(passwords)
+// return the result for all the three tests together into a single boolean
+return resultUpperCase && resultLowerCase && resultNumberSet && resultSymbolSet;
+  
 }
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
-  return /[A-Z]/.test(string);
+  const upperCaseLetters = /[A-Z]/;
+  
+  return upperCaseLetters.test(string);
 }
 
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
-  return /[a-z]/.test(string);
+  const lowerCaseLetters = /[a-z]/;
+  return lowerCaseLetters.test(string);
 }
 
 // Returns true if string contains at least one number.
 function containsNumber(string) {
-  return /[0-9]/.test(string);
+  const numberSet = /[0-9]/;
+  return numberSet.test(string);
 }
 
 // Returns true if string contains at least one symbol.
 function containsSymbol(string) {
-  return /[!#$%.*&]/.test(string);
+  const symbolSet = /[!#$%.*&]/ ;
+  return symbolSet.test(string);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
