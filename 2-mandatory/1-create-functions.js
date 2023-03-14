@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+
+function first5(array) {
+  return array.slice(0, 5);
 }
 
 /*
@@ -11,7 +13,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+    // ES6 way to copy an array - I could use slice() too.
+    let clonedArray = [...array];
+    return clonedArray.sort();
 }
 
 /*
@@ -24,7 +29,16 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arrayOfStrings) {
+    return arrayOfStrings.map(cleanElementsInArray);
+}
+
+function cleanElementsInArray(element) {
+    let removeForwardSlashes = element.replace(/\//g, '');
+    let removeWhitespaceFromStartEnd = removeForwardSlashes.trim();
+    // cleaned up result is presented in lowercase
+    let cleanedUpResult = removeWhitespaceFromStartEnd.toLowerCase();
+    return cleanedUpResult;
 }
 
 /*
@@ -33,7 +47,7 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array, index) {
 }
 
 /*
