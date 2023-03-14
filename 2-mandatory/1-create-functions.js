@@ -26,7 +26,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(strings) {
+  return strings.map((str => str.trim().replace(/\//g, '').toLowerCase()));
 }
 
 /*
@@ -35,8 +36,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
-}
+function remove(array, index) {
+    return array.filter(function(element, idx) {
+      return idx !== index;
+    });
+  }
 
 /*
 Write a function that:
