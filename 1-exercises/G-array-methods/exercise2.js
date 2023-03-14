@@ -7,7 +7,7 @@
 let mentors = ["Daniel", "Irina", "Rares"];
 let students = ["Rukmini", "Abdul", "Austine", "Swathi"];
 
-let everyone = mentors.concat(students);
+let everyone = mentors.concat(students); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

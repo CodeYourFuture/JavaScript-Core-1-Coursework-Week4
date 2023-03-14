@@ -4,7 +4,8 @@
 */
 
 let numbers = [3, 2, 1];
-let sortedNumbers = numbers.sort((elementOne, elementTwo) => elementOne - elementTwo);
+let sortedNumbers = numbers.sort(); // complete this statement
+
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
