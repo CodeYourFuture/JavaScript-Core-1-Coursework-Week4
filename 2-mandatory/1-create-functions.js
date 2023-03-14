@@ -171,7 +171,7 @@ test("tidyUpString function works", () => {
 test("removes index 0", () => {
   expect(remove([1, 2, 3], 0)).toEqual([2, 3]);
 });
-/*describe("remove function", () => {
+describe("remove function", () => {
   test("removes index 0", () => {
     expect(remove([1, 2, 3], 0)).toEqual([2, 3]);
   });
@@ -197,7 +197,7 @@ test("removes index 0", () => {
     remove(initial, 1);
     expect(initial).toEqual([1, 2, 3]);
   });
-});*/
+});
 
 test("formatPercentage function works", () => {
   expect(formatPercentage([23, 18.103, 187.2, 0.372])).toEqual([
