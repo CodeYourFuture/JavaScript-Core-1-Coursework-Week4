@@ -15,7 +15,20 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  const settlers = voyagers.filter(function(voyager) {
+    if (typeof voyager !== "string") {
+    return false;
+    }
+    const lastName = voyager.split(" ")[1];
+    return lastName.startsWith("A") && lastName.endsWith("family");
+    });
+    return settlers;
+    }
+  //if last name starts with a and ends with family can stay.
+//others go search for other planets
+//make an array of those who should stay
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

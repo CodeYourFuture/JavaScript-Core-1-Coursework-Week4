@@ -11,7 +11,17 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(planets) 
+{
+  for (let i = 0; i < planets.length; i++) {
+  const planet = planets[i];
+  const oxygenLevel = Number(planet.substring(0, planet.length - 1));
+  if (oxygenLevel >= 19.5 && oxygenLevel <= 23.5) {
+  return planet;
+  }
+  }
+  return "No safe oxygen level found.";
+  }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

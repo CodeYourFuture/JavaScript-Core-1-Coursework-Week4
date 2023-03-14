@@ -3,11 +3,11 @@
 
 let numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
-let numbersMultipliedByOneHundred; // complete this statement
+function timesByHundred(number) {
+  return number * 100;
+}
+
+let numbersMultipliedByOneHundred = numbers.map(timesByHundred); 
 
 console.log(numbersMultipliedByOneHundred);
 
-/* EXPECTED RESULT
-
-  [10, 20, 30, 40, 50]
-*/
