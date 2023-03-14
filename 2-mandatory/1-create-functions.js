@@ -50,8 +50,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage(numbers) {
+  // return numbers.map(function(number) {
+  //   return number.concat("%").replace(number>100, 100).number.toFixed(2);
+  // })
+    return numbers.map(function(number) {
+      if (number > 100) {
+        number = 100;
+      }
+      return `${number.toFixed(2)}%`;
+    });
+  }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
