@@ -9,6 +9,26 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function multiples (item) {
+  if (item % 3 === 0 && item % 5 === 0) {
+    return 'FizzBuzz';
+  } else if (item % 3 === 0) {
+    return 'Fizz';
+  } else if (item % 5 === 0){
+    return 'Buzz';
+  } else {
+    return item;
+  }
+}
+
+const result = (arr) => {
+  arr.forEach(item => {
+    console.log(multiples(item));
+  });
+}
+
+result(arr)
+
 /* EXPECTED OUTPUT */
 
 /*
