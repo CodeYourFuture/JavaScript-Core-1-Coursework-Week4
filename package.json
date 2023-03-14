@@ -4,8 +4,7 @@
   "description": "Exercises for JS1 Week 4",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
-    "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,6 +14,20 @@
     "url": "https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week4/issues"
   },
   "jest": {
+    "projects": [
+      {
+        "displayName": "mandatory",
+        "testMatch": [
+          "<rootDir>/2-mandatory/*.js"
+        ]
+      },
+      {
+        "displayName": "extra",
+        "testMatch": [
+          "<rootDir>/3-extra/*.js"
+        ]
+      }
+    ],
     "reporters": [
       "default",
       "<rootDir>/util/github-action-reporter.js"
