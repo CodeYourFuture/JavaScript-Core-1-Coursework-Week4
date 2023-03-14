@@ -27,9 +27,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function removeExtraThings(word) {
-  let newWord;
-  newWord = word.trim().replace('/', '').toLowerCase();
+function removeExtraThings(newword) {
+  const newWord = newword.trim().replace('/', '').toLowerCase();
   return newWord;
 }
 
@@ -48,10 +47,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove(arr, number) {
-  arr.splice(number, 1);
-  return arr;
-}
+function remove(arr, number) { 
+    arr.splice(number, 1);
+    return arr;
+  }
 
 /*
 Write a function that:

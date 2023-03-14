@@ -22,9 +22,9 @@ function multiples (item) {
 }
 
 const result = (arr) => {
-  for (const item of arr) {
+  arr.forEach(item => {
     console.log(multiples(item));
-  }
+  });
 }
 
 result(arr)
