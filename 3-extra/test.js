@@ -143,7 +143,7 @@ To be valid, a password must:
 - Must not be any previous password in the passwords array. 
 
 */
-function validatePasswords(passwords) {
+function cardValidator(passwords) {
   return passwords.map(
     (password, index) =>
       passwords.indexOf(password) === index &&
@@ -182,9 +182,9 @@ function containsSymbol(string) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-// console.log(validatePasswords(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"])); // .toEqual([false, false, true, false, false]);
+// console.log(cardValidator(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"])); // .toEqual([false, false, true, false, false]);
 
-// console.log(validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])); // .toEqual([true, true, false, false, false]);
+// console.log(cardValidator(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])); // .toEqual([true, true, false, false, false]);
 
 ////////////////////////////
 
@@ -258,26 +258,19 @@ function isAccessibleByTransportMode(arr_mode, mode) {
 // console.log(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")); // ).toEqual(false);
 // ////////////////////////////////
 
-// function first5(str) {
-//   console.log("first 5 = " + str.slice());
-//   // return str.split(/\s+/).slice(0, 5).join(" ");
-// }
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-// const copyOfOrigina = numbers.slice();
-// console.log("copyOfOriginal =    " + copyOfOrigina);
-// console.log(first5(numbers)); // .toEqual([1, 2, 3, 4, 5]);
-// const letters = ["z", "y", "x"];
-// const copyOfOriginal = letters.slice();
-// console.log("copyOfOriginal =    " + copyOfOriginal);
+function first5(str) {
+  return str.slice(0, 5);
+}
+
+const letters = ["z", "y", "x"];
+const copyOfOriginal = letters.slice();
 // console.log(first5(letters)); // .toEqual(["z", "y", "x"]);
-//
-//
+// Make sure first5 didn't change its input array.
+// expect(letters).toEqual(copyOfOriginal);
+
 //
 //
 
-// × first5 function works for more than five elements (2 ms)
-//   × first5 function returns a a smaller array for fewer than five elements (1 ms)
-//   √ sortArray function returns a sorted version of the array (2 ms)
 //   × sortArray function doesn't change the passed in array (5 ms)
 //   × tidyUpString function works (1 ms)
 //   √ formatPercentage function works (1 ms)
@@ -286,3 +279,109 @@ function isAccessibleByTransportMode(arr_mode, mode) {
 //
 
 ///////////////////////////////////////////////////////////
+// function first5(str) {
+//   return str.split(/\s+/).slice(0, 5).join(" ");
+// }
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+// function solution(arr) {
+//   let largest = [];
+//   for (var i = 0; i < arr.length; i++) {
+//     if (largest < arr[i]) {
+//       largest = arr[i];
+//     }
+//   }
+//   return largest - 1;
+// }
+
+// console.log(solution([1, 3, 6, 4, 1, 2]));
+////////////////////////////////////////////////
+
+// function match(candidate, job) {
+// is this job a valid match for the candidate?
+
+//   let wiggleRoomSalary = candidate.minSalary * 0.9;
+
+//   if (candidate.minSalary === undefined || job.maxSalary === undefined) {
+//     throw new Error("");
+//   } else {
+//     if (wiggleRoomSalary <= job.maxSalary) {
+//       return true;
+//     } else if (candidate.minSalary < job.maxSalary) {
+//       return false;
+//     } else {
+//       return console.error();
+//     }
+//   }
+// }
+
+// function matchh({ minSalary }, { maxSalary }) {
+//   if (!minSalary || !maxSalary) throw new Error("");
+//   return minSalary * 0.9 <= maxSalary;
+// }
+
+// candidate1 = { minSalary: 120000 };
+// job1 = { maxSalary: 130000 };
+// job2 = { maxSalary: 80000 };
+
+// console.log(match(candidate1, job1)); // , true);
+// console.log(match(candidate1, job2)); // , false);
+////////////////////////////////////
+
+function cardValidator(cardDigits) {
+  // return containsNumbersOnly(cardDigits) && containsLowercaseLetter(cardDigits) && lastNumberEven(cardDigits) && cardDigits.length > 15 && sumAllNumberGreaterThen16(cardDigits);
+
+  console.log("   test =  " + containsNumbersOnly(cardDigits));
+}
+
+// Returns true if it contains only number .
+function containsNumbersOnly(number) {
+  let diff = [];
+  let array_num = String(number);
+
+  for (let i = 0; i < array_num.length; i++) {
+    // console.log(" includeaa   =  " + diff.includes(array_num[i]));
+    // diff.push(array_num[i]);
+    if (diff.includes(array_num[i])) {
+      return true; //<-- break the loop
+    } else {
+      console.log("          " + diff);
+      diff.push(array_num[i]);
+    }
+  }
+  console.log("                 " + diff);
+  // return false;
+}
+// function containsNumbersOnly(number) {
+//   const nonUnique = (arr) => arr.some((x, i) => arr.includes(x, i + 1));
+//   console.log("        unin unqe    " + nonUnique);
+//   return nonUnique(number);
+// }
+
+// Returns true if all numbers are not same.
+function allNumberNotSame(number) {
+  return /(?!\1)/.test(number);
+}
+
+// Returns true if last number is even.
+function lastNumberEven(number) {
+  if (containsNumbersOnly(number)) {
+    let lastNumber = String(number).slice(-1);
+    return !(lastNumber % 2);
+  }
+  return false;
+}
+
+//
+
+// console.log(cardValidator(["11111112347871111111"])); // .toEqual([false]);
+// console.log(cardValidator(["9999777788880007"])); // .toEqual([true]);
+
+// console.log(cardValidator(["555555555555555"])); // .toEqual([true]);
+// console.log(cardValidator(["666666666666666"])); // .toEqual([true]);
+// let num = "8237737327";
+// console.log(num[num.length - 1]);
+let message = "3333333333333333";
+console.log(message.split("")); // returns ["I am a Happy Go lucky Guy"]

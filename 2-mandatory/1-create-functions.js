@@ -4,7 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(str) {
-  return str.split(/\s+/).slice(0, 5).join(" ");
+  return str.slice(0, 5);
 }
 
 /*
@@ -27,7 +27,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(str) {
-  return str.map((word) => word.replace(/\s+/g, "").replace(/\//g, "").toLowerCase());
+  return str.map((word) => word.trim().replace(/\//g, "").toLowerCase());
 }
 
 /*

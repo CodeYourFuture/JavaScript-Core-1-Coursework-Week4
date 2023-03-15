@@ -18,22 +18,7 @@ function sortAges(arr) {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const agesCase1 = [
-  "🎹",
-  100,
-  "💩",
-  55,
-  "🥵",
-  "🙈",
-  45,
-  "🍕",
-  "Sanyia",
-  66,
-  "James",
-  23,
-  "🎖",
-  "Ismeal",
-];
+const agesCase1 = ["🎹", 100, "💩", 55, "🥵", "🙈", 45, "🍕", "Sanyia", 66, "James", 23, "🎖", "Ismeal"];
 const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
