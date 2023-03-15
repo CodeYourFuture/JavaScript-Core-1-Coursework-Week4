@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  coloniserStayArray = [];
+  for (let family of voyagers){
+    if(family[0] === 'A' && (family.split(' '))[family.split(' ').length-1] ==='family'){
+    coloniserStayArray.push(family)}
+  }
+  return coloniserStayArray;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

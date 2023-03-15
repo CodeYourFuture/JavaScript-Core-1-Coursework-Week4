@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.match(magicWord)) {
+    return stringText.split(' ').indexOf('code');
   } else {
     return "Not found";
   }

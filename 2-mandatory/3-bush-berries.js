@@ -23,6 +23,14 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+  for (let berry of berryArray){
+    if (berry ==="pink"){
+     return "Bush is safe to eat from";
+    }else{
+     return "Toxic! Leave bush alone!";
+    }
+}
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
