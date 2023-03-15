@@ -6,7 +6,14 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  const streetNameWithLane = [];
+  for (let streetName of streetNames) {
+    if (streetName.split(" ")[streetName.split(" ").length - 1].match("lane")) {
+      streetNameWithLane.push(streetName);
+    }
+  }return streetNameWithLane;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
