@@ -9,6 +9,23 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+arr.forEach(function (number){
+  if (number%15===0){
+    console.log('FizzBuzz')
+  }else if (number%3===0){
+console.log('Fizz')
+  }else if(number%5===0){
+    console.log('Buzz')
+  } else {
+    console.log(number)
+  }
+})
+
+/* 
+here is the smaller version
+arr.forEach(number => console.log(
+  (number % 3 === 0 ? 'Fizz' : '') + (number % 5 === 0 ? 'Buzz' : '') || number
+)); */
 /* EXPECTED OUTPUT */
 
 /*
