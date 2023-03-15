@@ -11,7 +11,17 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function isSuitablePlanet(oxygenPercentage) {
+  let withoutPercentage = oxygenPercentage.substr(
+    0,
+    oxygenPercentage.length - 1
+  );
+  return withoutPercentage > 19.5 && withoutPercentage < 23.5;
+}
+
+function findSafeOxygenLevel(oxygenPercentages) {
+  return oxygenPercentages.find(isSuitablePlanet);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

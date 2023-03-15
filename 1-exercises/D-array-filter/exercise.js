@@ -8,7 +8,17 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+function isAPair(aCell) {
+  if (aCell === null) {
+    return false;
+  } else if (aCell.length === 2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let pairsByIndex = pairsByIndexRaw.filter(isAPair); // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

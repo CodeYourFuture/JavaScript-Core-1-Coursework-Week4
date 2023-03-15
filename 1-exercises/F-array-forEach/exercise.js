@@ -10,6 +10,16 @@
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 /* EXPECTED OUTPUT */
+console.log(arr.forEach);
+arr.forEach(function (currentElement, index) {
+  if (currentElement % 3 === 0 && currentElement % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (currentElement % 3 === 0) {
+    console.log("Fizz");
+  } else if (currentElement % 5 === 0) {
+    console.log("Buzz");
+  } else console.log(currentElement);
+});
 
 /*
 1

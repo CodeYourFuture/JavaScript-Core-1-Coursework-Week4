@@ -14,8 +14,14 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+function isStaying(family) {
+  return family.endsWith("family") && family.startsWith("A");
+}
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  let settlers = voyagers.filter(isStaying);
+  return settlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

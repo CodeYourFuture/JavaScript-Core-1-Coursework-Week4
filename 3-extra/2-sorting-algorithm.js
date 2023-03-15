@@ -14,7 +14,36 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function filterAges(ages) {
+  let numbersOnly = [];
+  for (let age of ages) {
+    if (typeof age === "number") {
+      numbersOnly.push(age);
+    }
+  }
+  return numbersOnly;
+}
+function findPosition(agesSoFar, ageToPosition) {
+  let counter = 0;
+  let i = 0;
+  while (ageToPosition > agesSoFar[counter] && counter < agesSoFar.length) {
+    counter++;
+  }
+  return counter;
+}
+
+function sortAges(arr) {
+  let sortedAges = [];
+  let filteredAges = filterAges(arr);
+  for (let filteredAge of filteredAges) {
+    // if (sortedAges.length === 0) {
+    //   sortedAges.push(filteredAge);
+    // }
+    let insertPosition = findPosition(sortedAges, filteredAge);
+    sortedAges.splice(insertPosition, 0, filteredAge);
+  }
+  return sortedAges;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
