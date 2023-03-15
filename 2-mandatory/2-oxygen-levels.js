@@ -11,7 +11,22 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+
+function findSafeOxygenLevel(planets) {
+  let levels = planets
+    .filter(planet => planet.includes("%"))
+    .map(planet => Number(planet.replace("%", "")));
+
+  let safePlanetLevel = levels.find(level => level > 19.5 && level < 23.5);
+  if (safePlanetLevel === undefined) {
+    return undefined;
+  }
+  return `${safePlanetLevel}%`;
+}
+
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
