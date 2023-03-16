@@ -8,6 +8,12 @@
 */
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+let multiplesOfThree = arr.map(number * 3);
+let multiplesOfFive = arr.map(number * 5);
+let multiplesOfBoth = arr.map(number * 3 & number *5);
+
+multiplesOfThree.forEach(fizz);
+
 
 /* EXPECTED OUTPUT */
 

@@ -3,15 +3,18 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
-}
+function first5(numbers) {
+  let newArr =numbers.slice(0,5);
+  return newArr;
+  
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return arr.slice().sort();
 }
 
 /*

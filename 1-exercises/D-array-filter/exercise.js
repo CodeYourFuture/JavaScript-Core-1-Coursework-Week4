@@ -7,18 +7,13 @@
 */
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
-function validArray(pairsByIndexRaw){
- for (let item of pairsByIndexRaw){
-  if(item === [0,1]){
-    return true;
-  }else{
-    return false;
-  }
 
- }
-}
 
-let pairsByIndex = pairsByIndexRaw.filter(validArray);
+
+ 
+
+
+let pairsByIndex = pairsByIndexRaw.filter(indexes[0,1]);
 
 
 
