@@ -22,3 +22,14 @@ let pairs = pairsByIndex.map(function (indexes) {
 });
 
 console.log(pairs);
+
+ function checkArray(check){
+if(check===null){
+  process.exit(1);
+  return "error"
+}
+
+}
+
+let finalcheck = pairsByIndex.some(checkArray);
+console.log(finalcheck); 

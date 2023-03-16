@@ -15,8 +15,15 @@
   
 */
 
-function getSettlers() {}
-
+function getSettlers(arr) {
+  let newarr = arr.filter(function (voyager) {
+    let last6letter = voyager.substring(voyager.length - 6, voyager.length);
+    if (voyager[0] === "A" && last6letter === "family") {
+      return voyager;
+    }
+  });
+  return newarr;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
