@@ -1,13 +1,17 @@
 /*
   You are given a list of some London street names.
-  
+
   Write a function that will return all street names which contain 'Lane' in their name.
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
-
+function getLanes(lane) {
+  return lane.filter(allStreetName);
+}
+function allStreetName(name){
+  return name.indexOf('Lane')>=0 ;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getLanes function works", () => {
