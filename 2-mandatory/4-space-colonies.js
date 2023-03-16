@@ -12,10 +12,13 @@
         Input: Is an array
         Output: Is an array
         Logic: Only strings that start with A, and finish with family
-  
+
 */
 
-function getSettlers() {}
+
+function getSettlers(names) {
+  return names.filter(name => name.startsWith('A') && name.endsWith('family'));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

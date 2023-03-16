@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+
+function findSafeOxygenLevel(levels) {
+
+}
+
+     
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

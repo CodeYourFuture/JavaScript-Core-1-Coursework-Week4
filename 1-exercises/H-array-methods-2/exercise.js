@@ -15,17 +15,17 @@ let everyone = [
   "Swathi",
 ];
 
-let firstFive; // complete this statement
-let lastFive; // complete this statement
+let firstFive = everyone.slice(0, 5);
+let lastFive = everyone.slice(2);
 
-/* 
+/*
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
 
 console.log(firstFive);
 console.log(lastFive);
 
-/* 
+/*
   EXPECTED RESULT
   ---------------
   ["Daniel", "Irina", "Rares", "Rukmini", "Abdul"]
