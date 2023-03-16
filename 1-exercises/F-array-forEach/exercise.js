@@ -9,6 +9,21 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function fizzBuzz(item) {
+    if (item % 3 === 0 && item % 5 === 0){
+      item = "FizzBuzz";
+    }
+    else if (item % 3 === 0) {
+      item = "Fizz";
+    } else if (item % 5 === 0) {
+      item = "Buzz";
+    }
+    return item;
+  }
+
+  arr.map(fizzBuzz).forEach(number => console.log(number));
+  
+
 /* EXPECTED OUTPUT */
 
 /*
