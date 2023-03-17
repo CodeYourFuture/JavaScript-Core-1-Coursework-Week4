@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  let family = families.filter(word=>word.startsWith("A") && word.endsWith("family"))
+  return family;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

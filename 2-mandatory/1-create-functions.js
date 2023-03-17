@@ -3,9 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5(numbers) {
-  let newArr =numbers.slice(0,5);
-  return newArr;
+function first5(arr) {
+  let newArr =arr.slice(0,5);
+  return newArr;}
   
 
 /*
@@ -27,7 +27,8 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  
 }
 
 /*
@@ -36,7 +37,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(array,index) {
+  let arr =array.slice();
+  arr.splice(index,1);
+  return arr;
 }
 
 /*
@@ -47,7 +51,8 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  return
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

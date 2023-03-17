@@ -6,10 +6,7 @@
   HINT: You will need to use .substring() twice
 */
 
-let statement = "I do not like programming";
-
-let result = "";
-
+let statement = "I do not like programming"
 console.log(result);
 
 /* EXPECTED OUTPUT 
