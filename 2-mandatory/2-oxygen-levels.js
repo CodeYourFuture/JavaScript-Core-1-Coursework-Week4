@@ -11,7 +11,22 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  let newArr = arr.filter(function (oxygen) {
+    let newoxygen = oxygen.substring(0, oxygen.length - 1);
+    let oxygennumber = parseFloat(newoxygen);
+
+    if (oxygennumber > 0) {
+      if (!isNaN(oxygennumber) && oxygennumber > 19.5 && oxygennumber < 23.5) {
+        return oxygen;
+      }
+    }
+  });
+
+  let result = newArr[0];
+  return result;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

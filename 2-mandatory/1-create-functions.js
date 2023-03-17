@@ -3,16 +3,36 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+
+function first5(arr) {
+let newarr = arr.slice(0, 5);
+  return newarr;
 }
+
+
+
+
+
+
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+   
+  return arr.slice().sort(); 
+  
 }
+
+
+
+
+
+
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,16 +44,30 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+ 
+function tidyUpString(arr) {
+  newarr = arr.map(function change(string) {
+    string = string.trim();
+    string = string.replace("/", "");
+    string = string.toLowerCase();
+    return string;
+  });
+  return newarr;
 }
-
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== index) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 /*
@@ -44,9 +78,18 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage(numbers) {
+  let newnumbers = numbers.map(function (number) {
+    if (number > 100) {
+      number = "100%";
+    } else {
+      number = `${Math.round(number * 100) / 100}%`;
+    }
 
+    return number;
+  });
+  return newnumbers;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

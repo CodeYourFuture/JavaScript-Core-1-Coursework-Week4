@@ -7,7 +7,26 @@
   An array with numbers 1-15 has been provided.
 */
 
+
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+
+function test(number){
+  
+  if (number % 3 == 0 && number % 5 == 0){
+    console.log("FizzBuzz");
+  }else if (number % 3 == 0){
+    
+    console.log("Fizz");
+    
+  }else if (number % 5 == 0){
+   console.log('Buzz'); 
+  }
+console.log(number); 
+}
+
+
+arr.forEach(test);
 
 /* EXPECTED OUTPUT */
 
