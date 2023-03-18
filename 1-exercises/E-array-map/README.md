@@ -8,7 +8,8 @@ function double(number) {
 }
 
 let numbers = [1, 2, 3];
-let numbersDoubled = numbers.map(double);
+let numbersDoubled =   return number * 2;
+
 ```
 
 The `map()` method runs the function we provided (`double`) on each item in the array and uses the return values to create a new array. In the example `numbersDoubled` is a new array containing `[2, 4, 6]`.

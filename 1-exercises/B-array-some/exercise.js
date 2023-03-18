@@ -8,6 +8,11 @@
 
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
+if (pairsByIndex.some(value => value === null)) {
+  console.error("Error: Null value found in pairsByIndex array");
+  process.exit(1);
+}
+
 
 // [1,0] keep
 // null nop
@@ -32,6 +37,10 @@ let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 // check and exit if null is present
+if (students.some(value => value === null) || mentors.some(value => value === null)) {
+  console.error("Error: Null value found in arrays");
+  process.exit(1);
+}
 
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];

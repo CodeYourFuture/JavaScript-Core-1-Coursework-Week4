@@ -8,7 +8,12 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let notIndex = statement.indexOf("not");
+let firsStatement = statement.substring(0, notIndex);
+let secondStatement = statement.substring( notIndex + 4);
+
+
+let result = firsStatement + secondStatement;
 
 console.log(result);
 
