@@ -36,7 +36,7 @@ function removeSpaces(string) {
 }
 
 function removeSlashes(string) {
-  return string.replace("/", "")
+  return string.replace("/", "");
 }
 
 function makeLowercase(string) {
@@ -56,7 +56,7 @@ Write a function that:
 function remove(inputArray, index) {
   let returnArr = [];
   for (let i = 0; i < index; i++) {
-    returnArr.push(inputArray[i])
+    returnArr.push(inputArray[i]);
   }
   for (let i = index + 1; i < inputArray.length; i++) {
     returnArr.push(inputArray[i]);
@@ -71,8 +71,24 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+function convertToPercentage(number) {
+  return `${number}%`;
+}
 
-function formatPercentage() {
+function roundNumber(number) {
+  return Math.round(number * 100) / 100;
+}
+
+function belowhundred(number) {
+  if (number <= 100) {
+    return number;
+  } else {
+    return 100;
+  }
+}
+
+function formatPercentage(inputArray) {
+  return inputArray.map(belowhundred).map(roundNumber).map(convertToPercentage);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
