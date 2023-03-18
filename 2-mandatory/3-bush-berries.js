@@ -16,7 +16,7 @@
   The .some() method tests to see if some of the values (at least 1) in an array 
   match what you're looking for and returns true or false. 
   
-  The .every() method will only return true if all values match watch you're looking for. 
+  The .every() method will only return true if all values match what you're looking for. 
   
   Let's first look at an example that will teach you how to use these methods.
 */
