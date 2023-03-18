@@ -15,9 +15,7 @@
   
 */
 
-function getSettlers(array) {
-  return array.filter(element => element.slice(0,1) === "A" && element.slice(-6,element.length) === "family");
-}
+function getSettlers(array) {}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
