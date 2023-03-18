@@ -84,7 +84,12 @@ function getTransportModes(locationTransportArr) {
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(
+  availableModeOfTransportArr,
+  chosenModeOfTransport
+) {
+  return availableModeOfTransportArr.includes(chosenModeOfTransport);
+}
 
 /*
   Implement the function getLocationName that
