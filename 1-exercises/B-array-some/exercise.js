@@ -9,6 +9,21 @@
 let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 
+// [1,0] keep
+// null nop
+
+// function shouldIKeepIt(value) {
+//   if (value !== null) {
+//     return true;
+//   } else {
+//     return false
+//   }
+// }
+
+// const pairsByIndexFiltered = pairsByIndex.filter(shouldIKeepIt);
+// console.log(pairsByIndexFiltered);
+
+
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
@@ -16,12 +31,13 @@ let pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+// check and exit if null is present
 
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
   let mentor = mentors[indexes[1]];
   return [student, mentor];
-})
+});
 
 
 console.log(pairs);
