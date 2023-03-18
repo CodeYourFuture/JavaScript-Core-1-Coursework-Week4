@@ -4,10 +4,7 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5(inputArray) {
-  firstFiveNumbersArr = [];
-  for (let i = 0; i < 5; i++) {
-    firstFiveNumbersArr.push(inputArray[i]);
-  }
+  firstFiveNumbersArr = inputArray.slice(0, 5);
   return firstFiveNumbersArr;
 }
 
@@ -17,7 +14,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(inputArray) {
-  return inputArray.sort();
+  let sortedArr = inputArray.sort();
+  return sortedArr;
 }
 
 /*
