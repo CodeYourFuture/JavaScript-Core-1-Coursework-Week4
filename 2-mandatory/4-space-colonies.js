@@ -15,7 +15,18 @@
   
 */
 
-function getSettlers() {}
+function isFamily(element) {
+  return element.includes("family");
+}
+
+function isNameStartwithA(name) {
+  return name[0] === "A";
+}
+
+function getSettlers(listOfElements) {
+  let validFamilies = listOfElements.filter(isFamily).filter(isNameStartwithA);
+  return validFamilies;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
