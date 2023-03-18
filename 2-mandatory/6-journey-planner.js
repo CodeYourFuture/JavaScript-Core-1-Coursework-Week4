@@ -64,7 +64,10 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(locationTransportArr) {
+  let lastIndex = locationTransportArr.length;
+  return locationTransportArr.splice(1, lastIndex);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
