@@ -21,8 +21,14 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
+function isBushSafe(berryArray) { 
+  let safeBush = berryArray.every(berry => berry.includes("pink"))
+  if(safeBush){
+    return "Bush is safe to eat from"
+  }else{
+    return  "Toxic! Leave bush alone!"
+
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

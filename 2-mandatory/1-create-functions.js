@@ -27,8 +27,14 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString(array) {
-  
+function tidyUpString(arr) {
+  newArr = arr.map(function (string) {
+    string = string.trim();
+    string = string.replace("/", "");
+    string = string.toLowerCase();
+    return string;
+  });
+  return newArr;
 }
 
 /*
@@ -52,7 +58,16 @@ Write a function that:
 */
 
 function formatPercentage(numbers) {
-  return
+  let newnumbers = numbers.map(function (number) {
+    if (number > 100) {
+      number = "100%";
+    } else {
+      number = `${Math.round(number * 100) / 100}%`;
+    }
+
+    return number;
+  });
+  return newnumbers;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

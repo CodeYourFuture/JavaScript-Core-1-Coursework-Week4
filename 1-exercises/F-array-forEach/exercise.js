@@ -24,9 +24,6 @@ arr.forEach(n => {
 }
 );
 
-// let multiplesOfThree = arr.map(number * 3);
-// let multiplesOfFive = arr.map(number * 5);
-// let multiplesOfBoth = arr.map(number * 3 & number *5);
 
 
 

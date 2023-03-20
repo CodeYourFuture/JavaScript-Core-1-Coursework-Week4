@@ -13,7 +13,8 @@ let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
  
 
 
-let pairsByIndex = pairsByIndexRaw.filter(indexes[0,1]);
+let pairsByIndex = pairsByIndexRaw.filter(item => Array.isArray(item) && item.length === 2);
+
 
 
 

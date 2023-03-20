@@ -16,11 +16,11 @@ let names = [
   "Karim",
   "Ahmed",
 ];
- function longNameWithA(name) {
-  return name.length > 7;
-}
+ //function longNameWithA(name) {
+ // return name.length > 7;
+//}
 
-let longNameThatStartsWithA = names.find(longNameWithA);
+let longNameThatStartsWithA = names.find(name => name.length > 7);
 
 console.log(longNameThatStartsWithA);
 
