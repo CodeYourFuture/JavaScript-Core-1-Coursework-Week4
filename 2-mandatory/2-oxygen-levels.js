@@ -11,7 +11,25 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function removePercentage(percentString) {
+  percentString.replace("%", "");
+}
+
+function isAboveMinOxygenLevel(numberString) {
+  return 19.5 > Number(numberString);
+}
+
+function isBelowMaxOxygenLevel(numberString) {
+  return Number(numberString) < 23.5;
+}
+
+function findSafeOxygenLevel(input) {
+  validLevelsArr = input
+    .map(removePercentage)
+    .filter(isAboveMinOxygenLevel)
+    .filter(isBelowMaxOxygenLevel);
+  return validLevelsArr[0];
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
