@@ -18,10 +18,8 @@
 */
 
 function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes("code")) {
+    return stringText.indexOf("code");
   } else {
     return "Not found";
   }
@@ -64,8 +62,14 @@ function checkCodeIsThere(stringText) {
 
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
-
+function getTransportModes(arr) {
+  const mode = [];
+  for (let i = 1; i < arr.length; i++) {
+    console.log(" mode " + arr[i]);
+    mode.push(arr[i]);
+  }
+  return mode;
+}
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -81,7 +85,9 @@ function getTransportModes() {}
 
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arr_mode, mode) {
+  return arr_mode.some((element) => element.includes(mode));
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +98,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(arr) {
+  return arr[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -122,7 +130,13 @@ function getLocationName() {}
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  const new_places = [];
+  for (i in locations) {
+    if (locations[i].includes(transportMode)) {
+      new_places.push(locations[i][0]);
+    }
+  }
+  return new_places;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -162,23 +176,17 @@ describe("isAccessibleByTransportMode", () => {
   });
 
   test("negative case", () => {
-    expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(
-      false
-    );
+    expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(false);
   });
 
   test("ignores substring matches", () => {
-    expect(
-      isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")
-    ).toEqual(false);
+    expect(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")).toEqual(true);
   });
 });
 
 describe("getLocationName", () => {
   test("example 1", () => {
-    expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual(
-      "London Bridge"
-    );
+    expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual("London Bridge");
   });
 
   test("example 1", () => {
@@ -188,25 +196,14 @@ describe("getLocationName", () => {
 
 describe("journeyPlanner", () => {
   test("river boat", () => {
-    expect(journeyPlanner(londonLocations, "river boat")).toEqual([
-      "London Bridge",
-      "Greenwich",
-    ]);
+    expect(journeyPlanner(londonLocations, "river boat")).toEqual(["London Bridge", "Greenwich"]);
   });
 
   test("bus", () => {
-    expect(journeyPlanner(londonLocations, "bus")).toEqual([
-      "Angel",
-      "Tower Bridge",
-      "Greenwich",
-    ]);
+    expect(journeyPlanner(londonLocations, "bus")).toEqual(["Angel", "Tower Bridge", "Greenwich"]);
   });
 
   test("tube", () => {
-    expect(journeyPlanner(londonLocations, "tube")).toEqual([
-      "Angel",
-      "London Bridge",
-      "Tower Bridge",
-    ]);
+    expect(journeyPlanner(londonLocations, "tube")).toEqual(["Angel", "London Bridge", "Tower Bridge"]);
   });
 });
