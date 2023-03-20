@@ -23,11 +23,14 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+     
+
+
+
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
-  return /[A-Z]/.test(string);
+  return string.test(string);
 }
 
 // Returns true if string contains at least one lowercase letter.
