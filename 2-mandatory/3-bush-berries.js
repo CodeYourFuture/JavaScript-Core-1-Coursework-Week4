@@ -21,15 +21,75 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe(berryArray) {
-  //Write your code here
-}
+// function isBerrySafe(berry){
+//   if(berry=== "pink"){
+//     return  true;
+//   }else{
+//     return false;
+//   }
+// }
+
+//let myArray = ["Indian", "Chinese", "Indian","Indian", "Chinese", "Indian"];
+    
+
+function isBerrySafe(berry){
+    if(berry=== "pink"){
+      return  true;
+   }else{
+     return false;
+     }
+   };
+
+
+
+//// Main function
+function isBushSafe(berries){
+  // berries is a list ["pink", "pink", "pink", "neon", "pink", "transparent"]
+  let allBerriesArePink = berries.every(isBerrySafe); // eitger true or false
+
+    if(allBerriesArePink===true){
+      return "Bush is safe to eat from" ;
+    }else{
+     return  "Toxic! Leave bush alone!"
+    }
+};
+
+      
+      
+   
+
+
+
+// function isBushSafe(berryArray) {
+//   let allPinkBerries = berryArray.every(isBushSafe);
+
+
+//   if(allPinkBerries){
+//     return "Bush is safe to eat"
+//   }else{
+//     return "Bush is not safe to eat"
+//   }
+// }
+
+// const isBelowThreshold = (currentValue) => currentValue < 40;
+
+// const array1 = [1, 30, 39, 29, 10, 13];
+
+// console.log(array1.every(isBelowThreshold));
+// Expected output: true
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("isBushSafe finds toxic busy", () => {
   expect(
     isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
+  ).toEqual("Toxic! Leave bush alone!");
+});
+
+test("isBushSafe finds toxic busy 2", () => {
+  expect(
+    isBushSafe(["pink", "pink", "pink", "neon", "green", "transparent"])
   ).toEqual("Toxic! Leave bush alone!");
 });
 

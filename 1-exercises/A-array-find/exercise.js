@@ -18,6 +18,10 @@ let names = [
 ];
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+function findLongNameThatStartsWithA (names) {
+  let longName = names.find(names => names.length>7 && names.startsWith("A"));
+  return longName;
+}
 
 console.log(longNameThatStartsWithA);
 

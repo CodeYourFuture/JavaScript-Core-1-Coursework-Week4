@@ -7,7 +7,31 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function eligibleForExam(student){
+  if(attendence >= 8){
+    return true;
+  }else{
+    return false;
+  }
+};
+
+
+
+function getEligibleStudents(students) {
+   let eligibleStudentsArray = students.filter(attendedEnoughClass);
+   return eligibleStudentsArray;
+
+//   let allStudentsAreEligible = students.every(eligibleForExam);
+//   if(studentsAttendence>=8){
+//     return sit for exam;
+//   }else{
+//     return not allowed;
+//   }
+// };
+     
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
