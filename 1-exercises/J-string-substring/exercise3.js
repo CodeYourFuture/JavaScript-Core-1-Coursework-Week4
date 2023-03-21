@@ -7,11 +7,22 @@
 */
 
 let statement = "I do not like programming";
-
 let result = "";
 
-console.log(result);
+let wordToRemove = "not";
 
+let index = statement.indexOf(wordToRemove);
+
+if (index !== -1) {
+  let length = wordToRemove.length;
+
+  let firstPart = statement.substring(0, index);
+  let secondPart = statement.substring(index + length);
+
+  result = firstPart + secondPart;
+
+  console.log(result);
+}
 /* EXPECTED OUTPUT 
 
   "I do like programming"
