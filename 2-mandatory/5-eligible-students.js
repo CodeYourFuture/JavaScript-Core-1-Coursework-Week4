@@ -18,16 +18,10 @@ function eligibleForExam(student){
 
 
 function getEligibleStudents(students) {
-   let eligibleStudentsArray = students.filter(attendedEnoughClass);
+   let eligibleStudentsArray = students.filter(eligibleForExam);
    return eligibleStudentsArray;
 
-//   let allStudentsAreEligible = students.every(eligibleForExam);
-//   if(studentsAttendence>=8){
-//     return sit for exam;
-//   }else{
-//     return not allowed;
-//   }
-// };
+// unable to complete it.
      
 
 
