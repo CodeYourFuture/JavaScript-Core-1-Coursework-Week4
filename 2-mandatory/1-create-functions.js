@@ -13,7 +13,7 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  array.slice().sort();
+  return array.slice().sort();
 }
 
 /*
@@ -27,10 +27,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
-  array.trim();
-  array.replace("/", "");
-  array.toLowerCase();
-  return array;
+  return array.map(string => string.trim().replace("/", "").toLowerCase());
 }
 
 /*
@@ -41,9 +38,13 @@ Write a function that:
 
 function remove(array, index) {
   let newArray = array.slice();
-  newArray.slice(index, 1);
-  return newArray;
+  let firstPart = array.slice(0,index);
+  let lastPart = array.slice(index+1, newArray.length)
+  return firstPart.concat(lastPart); 
+  // return array.filter((_, i) => i !== index);
 }
+
+
 
 /*
 Write a function that:
