@@ -14,7 +14,20 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
+function sortAges(arr) {
+  let result=[];
+
+ for (let i = 0; i < arr.length; i++) {
+
+   if (!isNaN(arr[i])) {
+     result.push(arr[i]);
+   } 
+ }
+
+ return result.sort((a,b)=> a-b)
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -34,6 +47,7 @@ const agesCase1 = [
   "🎖",
   "Ismeal",
 ];
+
 const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
