@@ -4,10 +4,25 @@
   Create a function which:
   - Accepts an array which contains all the students' names and their attendance counts
     (see tests to confirm how this data will be structured)
-  - Returns an array containing only the names of the who have attended AT LEAST 8 classes
+  - Returns an array containing only the names of those who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function studentsAttendedEnoughClasses(student) {
+  return student[1] >= 8;
+}
+
+function removeClasses(student) {
+  return student.slice(0, 1);
+}
+
+function getEligibleStudents(array) {
+  let eligibleStudentsAndClasses = array.filter(studentsAttendedEnoughClasses);
+
+  let eligibleStudentNames = eligibleStudentsAndClasses.map(removeClasses).flat();
+
+  return eligibleStudentNames;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
