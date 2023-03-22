@@ -15,7 +15,13 @@
   
 */
 
-function getSettlers() {}
+function isFamilyAndStartsWithA(name) {
+  return name.indexOf("family") != -1 && name[0] === "A";
+}
+
+function getSettlers(array) {
+  return array.filter(isFamilyAndStartsWithA);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
