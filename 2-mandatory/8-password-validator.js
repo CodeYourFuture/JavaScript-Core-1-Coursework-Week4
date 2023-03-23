@@ -24,14 +24,15 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  return passwords.map((element, index, array) => {
-    return element.length >= 5 &&
-            containsUppercaseLetter(element) &&
-            containsLowercaseLetter(element) &&
-            containsNumber(element) &&
-            containsSymbol(element) &&
-            array.indexOf(element) === index
-          });}
+  return passwords.map(element => {
+     element.length >= 5 && 
+     containsUppercaseLetter(element) &&
+     containsLowercaseLetter(element) &&
+     containsNumber(element) &&
+     containsSymbol(element) 
+})
+}
+// ??? 
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -52,7 +53,13 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
-
+console.log(validatePasswords([
+  "Se%5",
+  "TktE.TJTU",
+  "384#HsHF",
+  "dvyyeyy!5",
+  "tryT3729",
+]))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Example 1", () => {

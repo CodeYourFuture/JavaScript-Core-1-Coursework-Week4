@@ -18,13 +18,18 @@
 */
 
 function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-   if (stringText.indexOf(magicWord) > -1) {
-    return stringText.indexOf(magicWord);
-  } else {
-    return "Not found";
-  }
+  if(stringText.includes("code")){
+    return stringText.indexOf("code")
+  } else return "Not found"
+   
+  // let magicWord = "code";
+  //  if (stringText.indexOf(magicWord) > -1) {
+  //   return stringText.indexOf(magicWord);
+  // } else {
+  //   return "Not found";
+  // }
 }
+// console.log(checkCodeIsThere("ajjad code kndjf"))
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -82,7 +87,7 @@ function getTransportModes(array) {
   Hint: Use the corresponding array method to decide if an element is included in an array.
 */
 function isAccessibleByTransportMode(array, string) {
-  return array.some(element => element === string)
+  return array.includes(string)
 }
 /*
   Implement the function getLocationName that
@@ -124,9 +129,8 @@ function getLocationName(array) {
   Advanced challange: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-return locations.filter(element => element.indexOf(transportMode) > -1)
-                  .map(element => element[0]);
-                }
+  return locations.filter(element => element.indexOf(transportMode) > -1).map(element => element[0]);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -7,7 +7,7 @@
 */
 
 function getLanes(array) {
-  return array.filter(element => element.includes("Lane"));
+  return array.filter(element => element.includes("Lane"))
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 

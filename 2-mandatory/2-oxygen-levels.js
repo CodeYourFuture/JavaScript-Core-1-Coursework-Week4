@@ -12,35 +12,11 @@
 */
 
 function findSafeOxygenLevel(arr) {
-  let arrOfCleanNumbers = arr.map((element) =>
-    Number(element.replace("%", ""))
-  );
-  function checking(element) {
-    if (element > 19.5 && element < 23.5) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  let i = 0;
-  while (i < arrOfCleanNumbers.length) {
-    if (arrOfCleanNumbers[i].includes(checking(arrOfCleanNumbers))) {
-      return arrOfCleanNumbers[i];
-    }
-    i++;
-  }
+  return arr.find((element) => element.includes("%") && parseFloat(element) > 19.5 && parseFloat(element) < 23.5);
 }
-console.log(
-  findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
-);
-// num = [];
-// for (let element of arrOfCleanNumbers) {
-//   if (element > 19.5 && element < 23.5) {
-//     num.push(`${element}%`);
-//   }
-// }
+console.log(findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"]));
 
-// return num;
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

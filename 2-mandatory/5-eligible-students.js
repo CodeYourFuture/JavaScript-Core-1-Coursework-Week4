@@ -8,9 +8,16 @@
 */
 
 function getEligibleStudents(array) {
-  return array.filter(element => element[1] >= 8)
-              .map(element => element[0]);
+  return array.filter(element => element[1] >= 8).map(element => element[0]);
 }
+// getEligibleStudents([
+//   ["Ahmed", 8],
+//   ["Clement", 10],
+//   ["Elamin", 6],
+//   ["Adam", 7],
+//   ["Tayoa", 11],
+//   ["Nina", 10],
+// ])
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getEligibleStudents function works", () => {

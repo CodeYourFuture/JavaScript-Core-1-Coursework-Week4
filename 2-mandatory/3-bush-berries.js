@@ -26,9 +26,9 @@ function isBushSafe(berryArray) {
     ? "Bush is safe to eat from"
     : "Toxic! Leave bush alone!";
 }
-// console.log(
-//   isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
-// );
+console.log(
+  isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
+);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
