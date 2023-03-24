@@ -21,8 +21,18 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+// every() will check all the elements pass the test, so the test is if the berry is pink.
+// I could use .toLowerCase() if the arrays included capital letters
+const isBerrySafe = (currentValue) => currentValue === "pink";
+
 function isBushSafe(berryArray) {
-  //Write your code here
+  let berryResult = berryArray.every(isBerrySafe);
+
+  if (berryResult === true) {
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

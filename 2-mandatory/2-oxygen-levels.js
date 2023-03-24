@@ -11,7 +11,27 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findPlanetsWithPercentage(planet) {
+  return planet.includes("%");
+}
+
+function isPlanetBetweenOxygenLimit(planet) {
+  // I realised the array contains strings, not numbers
+  // I need to extract the numbers without the percentages
+  let extractNumber = planet.substring(0, planet.length - 1);
+  return extractNumber > 19.5 && extractNumber < 23.5;
+}
+
+function findSafeOxygenLevel(array) {
+  // removes any data with no %
+  let planetsWithPercentageData = array.filter(findPlanetsWithPercentage);
+
+  let safePlanets = planetsWithPercentageData.filter(
+    isPlanetBetweenOxygenLimit
+  );
+
+  return safePlanets[0];
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
