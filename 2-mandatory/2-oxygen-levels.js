@@ -11,11 +11,22 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  //result = "";
+  for (let i = 0; i < arr.length; i++) {
+    if ((arr[i].split("%"))[0] < 23.5 && (arr[i].split("%"))[0] > 19.5 && arr[i].includes("%")) {
+      return arr[i];
+    }
+  }
+}
+
+// console.log(
+//   findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
+// );
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("findSafeOxygenLevel function works - case 1", () => {
+ test("findSafeOxygenLevel function works - case 1", () => {
   expect(
     findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])
   ).toEqual("19.9%");
@@ -35,4 +46,4 @@ test("findSafeOxygenLevel function filters out invalid percentages", () => {
 
 test("findSafeOxygenLevel function returns undefined if no valid planets found", () => {
   expect(findSafeOxygenLevel(["50"])).toBeUndefined();
-});
+}); 
