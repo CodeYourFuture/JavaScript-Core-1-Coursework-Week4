@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0,5)
 }
 
 /*
@@ -11,7 +12,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  let newArr = arr.slice().sort();
+  return newArr;
 }
 
 /*
@@ -24,7 +27,13 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i].trim().replace(/\//g, "").toLowerCase();
+    newArr.push(element);
+  }
+  return newArr;
 }
 
 /*
@@ -33,7 +42,14 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== index) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 /*
@@ -41,11 +57,25 @@ Write a function that:
 - Takes an array of numbers as input.
 - Returns an array of strings formatted as percentages (e.g. 10 => "10%").
 - The numbers must be rounded to 2 decimal places.
-- Numbers greater 100 must be replaced with 100.
+- Numbers greater 100 must be replaced  with100.
 */
 
-function formatPercentage() {
+
+  
+function formatPercentage(arr) {
+  let result = [];
+  for (let number of arr) {
+    if (number > 100) {
+      result.push("100%");
+    } else {
+      let rounded = Math.round(number * 100) / 100; // Round to 2 decimal places
+      result.push(`${rounded}%`);
+    }
+  }
+  return result;
 }
+ 
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

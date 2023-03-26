@@ -11,8 +11,19 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(levels) {
+  for (let i = 0; i < levels.length; i++) {
+    const level = levels[i];
+    const percentageString = level.substring(0, level.length - 1);
+    const percentage = parseFloat(percentageString);
 
+    if (!isNaN(percentage) && percentage > 19.5 && percentage < 23.5) {
+      return level;
+    }
+  }
+
+  return undefined;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
