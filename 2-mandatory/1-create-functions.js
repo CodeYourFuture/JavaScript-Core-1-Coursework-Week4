@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  for (let i =0; i < 5 ; i++  ){
+    return arr[i]
 }
 
 /*
@@ -11,7 +13,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+ let arrSorted = arr.sort()
+ return arrSorted
 }
 
 /*
@@ -24,7 +28,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(str) {
+  trimStr = str.trim();
+  mystring = trimStr.replace('/','');
+  lowerStr = mystring.toLowerCase()
+
 }
 
 /*
@@ -33,7 +41,9 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  arr.splice(index, 1);
+ return arr;
 }
 
 /*
@@ -44,7 +54,42 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+/*function formatPercentage(arr) {
+let arrD = []
+let arrE = []
+let arrB = arr.toString()
+console.log(arrB)
+let arrC = arrB.split(",")
+console.log(arrC)
+for (let i = 0; i < arrC.length; i++){
+ arrD.push(arrC[i] + "!")
+}  
+
+console.log(arrD)
+
+for (let num of arrD){
+if (num.length > 3){
+arrE.push('100%')
+}
+else{ 
+arrE.push(num)
+}
+
+ 
+  }
+
+formatPercentage([1,2,1000,5,6,34])*/
+
+function formatPercentage(arr) {
+  let result = [];
+  for (const number of arr) {
+    if (number > 100) {
+      result.push('100%')
+    } else {
+      result.push(`${Number(number.toFixed(2))}%`)
+    }
+  }
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

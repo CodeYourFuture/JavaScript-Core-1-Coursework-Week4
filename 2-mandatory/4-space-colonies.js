@@ -15,7 +15,9 @@
   
 */
 
-function getSettlers() {}
+function getSettlers() {
+  return allpeople.filter(person => person.includes('family') && person.startsWith('A'));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

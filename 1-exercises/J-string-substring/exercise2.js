@@ -24,6 +24,28 @@ names.forEach((name) => {
   console.log(name);
 });
 
+/*Other function j
+
+function getFirstNames (){
+let splitNames =[]
+for(let i =0; i<names.length; i++){
+splitNames.push(names[i].split(" "))
+}
+
+console.log(splitNames)
+
+let firstNames = []
+
+for(let i =0; i<splitNames.length; i++){
+firstNames.push(splitNames[i][0])
+}
+
+console.log(firstNames)
+//returns names as an array
+}
+
+*/
+
 /* EXPECTED OUTPUT 
 
   "Tamzin"

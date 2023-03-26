@@ -11,7 +11,21 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel() {
+   let firstProperPlanet = "" ;
+  for (const oxygenlevel of oxygenLevels) {
+    if(oxygenlevel.includes('%')) {
+      const oxygenlevelNum = Number(oxygenlevel.replace('%', ''));
+      if (oxygenlevelNum > 19.5 && oxygenlevelNum < 23.5){
+        firstProperPlanet = oxygenlevel;
+        break
+    }} else {
+      continue
+    } 
+  }
+  let output = firstProperPlanet === "" ? undefined : firstProperPlanet;
+  return output;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

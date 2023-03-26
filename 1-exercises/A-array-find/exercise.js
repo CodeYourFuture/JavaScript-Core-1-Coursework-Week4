@@ -16,10 +16,16 @@ let names = [
   "Karim",
   "Ahmed",
 ];
-
+/*
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 console.log(longNameThatStartsWithA);
+
+const found = names.find(element => element[0] === "A" );*/
+
+
+
+const found = names.find(element => element[0] === "A" && element.length > 7 );
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
