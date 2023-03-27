@@ -11,7 +11,24 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+//ERROR --->>>> indSafeOxygenLevel function returns undefined if no valid planets found
+
+function findSafeOxygenLevel(array) {
+  let arrayWithPercentegOnly = array.filter((number) => number.includes("%"));
+  let convertedToNumbers = arrayWithPercentegOnly.map((number) =>
+    parseFloat(number)
+  );
+
+  return `${convertedToNumbers.find(checkLevel)}%`;
+}
+
+function checkLevel(number) {
+  if (number > 19.5 && number < 23.5) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
