@@ -3,15 +3,9 @@
 */
 
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
-let group = ["Austine", "Dany", "Swathi", "Daniel"];
+let group = ["Austine", "Dany", "Swathi"];
 
-let groupIsOnlyStudents = group.map(function (student) {
-  if (student == null) {
-    return true;
-  } else {
-    return false;
-  }
-});
+let groupIsOnlyStudents = group.every((element) => students.includes(element));
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
