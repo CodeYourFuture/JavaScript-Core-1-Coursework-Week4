@@ -14,19 +14,21 @@
 //ERROR --->>>> indSafeOxygenLevel function returns undefined if no valid planets found
 
 function findSafeOxygenLevel(array) {
-  let arrayWithPercentegOnly = array.filter((number) => number.includes("%"));
-  let convertedToNumbers = arrayWithPercentegOnly.map((number) =>
-    parseFloat(number)
-  );
+  if (array.some((number) => number.includes("%"))) {
+    let arrayWithPercentegOnly = array.filter((number) => number.includes("%"));
+    let convertedToNumbers = arrayWithPercentegOnly.map((number) =>
+      parseFloat(number)
+    );
+    let result = convertedToNumbers.find(checkLevel) + "%";
+    return result;
+  }
 
-  return `${convertedToNumbers.find(checkLevel)}%`;
-}
-
-function checkLevel(number) {
-  if (number > 19.5 && number < 23.5) {
-    return true;
-  } else {
-    return false;
+  function checkLevel(number) {
+    if (number > 19.5 && number < 23.5) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 

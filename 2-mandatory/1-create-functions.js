@@ -16,9 +16,10 @@ function sortArray(array) {
   //array = array.sort();
   //return array;
   let sortedArray = [...array];
-  return sortedArray.sort();
+  //return sortedArray.sort();
+  sortedArray = sortedArray.sort();
+  return sortedArray;
 }
-//ERROR ---->>> sortArray function doesn't change the passed in array (4 ms)
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
