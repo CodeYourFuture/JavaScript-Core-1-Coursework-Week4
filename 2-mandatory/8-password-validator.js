@@ -22,8 +22,39 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+function validatePasswords(passwords) {
+  let rightPassword = [];
+  let passFailList = [];
+  for(let validPassword of passwords){
+    if(
+      isFiveOrMoreLength(validPassword) &&
+      containsUppercaseLetter(validPassword) &&
+      containsLowercaseLetter(validPassword) &&
+      containsNumber(validPassword) &&
+      containsSymbol(validPassword) &&
+      isNewPassword(validPassword, rightPassword)
+    ){
+      passFailList.push(true);
+     }else{
+      passFailList.push(false);
+     }
+rightPassword.push(validPassword);
+    }
+  return passFailList;
+   };
 
-function validatePasswords(passwords) {}
+
+// Returns true if password is not already used
+function isNewPassword(passwordToCheck, listSoFar) {
+  return !listSoFar.includes(passwordToCheck);
+};
+
+// Returns true if string is at least 5 characters long
+function isFiveOrMoreLength(string) {
+  return string.length >= 5;
+};
+
+
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

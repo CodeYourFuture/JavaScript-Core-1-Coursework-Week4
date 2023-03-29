@@ -21,17 +21,6 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-// function isBerrySafe(berry){
-//   if(berry=== "pink"){
-//     return  true;
-//   }else{
-//     return false;
-//   }
-// }
-
-//let myArray = ["Indian", "Chinese", "Indian","Indian", "Chinese", "Indian"];
-    
-
 function isBerrySafe(berry){
     if(berry=== "pink"){
       return  true;
@@ -40,12 +29,10 @@ function isBerrySafe(berry){
      }
    };
 
-
-
 //// Main function
 function isBushSafe(berries){
-  // berries is a list ["pink", "pink", "pink", "neon", "pink", "transparent"]
-  let allBerriesArePink = berries.every(isBerrySafe); // eitger true or false
+  
+  let allBerriesArePink = berries.every(isBerrySafe); // either true or false
 
     if(allBerriesArePink===true){
       return "Bush is safe to eat from" ;
@@ -53,6 +40,8 @@ function isBushSafe(berries){
      return  "Toxic! Leave bush alone!"
     }
 };
+
+// with arrow function
 
       
       
