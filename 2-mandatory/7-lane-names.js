@@ -6,7 +6,9 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  return streetNames.filter((street) => street.indexOf("Lane") > 0);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
