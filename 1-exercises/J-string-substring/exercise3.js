@@ -8,7 +8,7 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let result = statement.substring(0, 5).concat(statement.substring(8, statement.length));
 
 console.log(result);
 

@@ -15,7 +15,30 @@
   
 */
 
-function getSettlers() {}
+function likeThisPlanet(voyager){
+if(voyager.startsWith("A") && voyager.endsWith("family")) {
+  return true;
+  }else{
+    return false;
+  }
+  
+};
+
+function getSettlers(voyagers) {
+    let stayingFamiliesArray = voyagers.filter(likeThisPlanet);
+       return stayingFamiliesArray;
+};
+
+
+    
+
+
+// if(stayingFamiliesArray===voyagers){
+//       return "they will settle and colonise";
+//     }else{
+//       return "they will search other planets";
+//     }
+//   };
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
