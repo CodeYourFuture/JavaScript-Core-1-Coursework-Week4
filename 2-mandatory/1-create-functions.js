@@ -13,11 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(array) {
-  //array = array.sort();
-  //return array;
-  let sortedArray = [...array];
-  //return sortedArray.sort();
-  sortedArray = sortedArray.sort();
+  let sortedArray = [...array]; //[...array] to make copy of value not as a reference
+  sortedArray = sortedArray.sort(); // this way the original / passed array won't be affected
   return sortedArray;
 }
 
