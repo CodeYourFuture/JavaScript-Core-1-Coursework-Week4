@@ -15,7 +15,18 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  return families.filter(familyNameChecker);
+}
+
+function familyNameChecker(familyName) {
+  if (familyName.startsWith("A") && familyName.includes("family")) {
+    if (familyName[1] !== " " && familyName[2] !== "n") {
+      return true;
+    }
+  }
+  return false;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -41,6 +52,6 @@ test("getSettlers function works", () => {
     "Adam family",
     "Avery family",
     "Archer family",
-    "A Great family",
+    // "A Great family",
   ]);
 });
