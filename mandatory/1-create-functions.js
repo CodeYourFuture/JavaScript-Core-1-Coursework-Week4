@@ -42,6 +42,14 @@ Write a function that:
 
 function formatPercentage() {}
 
+/*
+Write a function that:
+- Takes an array as a parameter
+- Returns the *first* name which starts with A and is longer than 7 letters.
+*/
+
+function findLongNameThatStartsWithA() {}
+
 /* 
 ===================================================
 ======= TESTS - DO NOT MODIFY BELOW THIS LINE =====
@@ -144,4 +152,20 @@ test("formatPercentage function works", () => {
     "100%",
     "0.37%",
   ]);
+});
+
+test("findLongNameThatStartsWithA function works", () => {
+  expect(
+    findLongNameThatStartsWithA([
+      "Rakesh",
+      "Antonio",
+      "Alexandra",
+      "Andronicus",
+      "Annam",
+      "Mikey",
+      "Anastasia",
+      "Karim",
+      "Ahmed",
+    ])
+  ).toEqual("Alexandra");
 });
