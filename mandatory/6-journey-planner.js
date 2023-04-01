@@ -1,33 +1,4 @@
 /*
- Before we go to the big story, we will introduce some more string methods.
- Some of the methods you're using on arrays are similar to ones you can use on strings.
- Methods like: IndexOf, Include, Search, Slice , Spilt and more.
-
- You can always Google how a method of a string works!
- Here are links to some of those:
-  - https://www.w3schools.com/js/js_string_methods.asp
-  - https://javascript.info/string#quotes
- Now let's do this small exercise
-
- Using string methods update the checkCodeIsThere() function
-  - The function will have a string as a parameter
-  - The function should check if the word "code" exists in the string
-  - If it does exist, return the index of it, if not return "Not found"
-
- Hint: search for string methods like Includes and IndexOf.
-*/
-
-function checkCodeIsThere(stringText) {
-  let magicWord = "code";
-  //edit code below
-  if (stringText) {
-    return stringText;
-  } else {
-    return "Not found";
-  }
-}
-
-/*
   I am new to London and would like to know what transport I can take to different famous locations.
   The input provided contains a list of locations in London. Each of locations is followed by a list
   of transport modes that can be used to get there.
