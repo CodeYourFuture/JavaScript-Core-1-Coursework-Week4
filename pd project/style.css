@@ -1,0 +1,20 @@
+.orderForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+
+}
+
+
+.input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgb(198, 198, 225);
+}
+
+.input:focus {
+    background: red;
+    border: 10px solid green;
+
+}
