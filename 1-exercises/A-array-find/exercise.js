@@ -17,8 +17,8 @@ let names = [
 ];
 // === : 
 function findLongNameThatStartsWithA(array){
-  const findedWords = array.find(word => word.length>7 && word[0]==='A')
-  return findedWords;
+  const findWords = array.find(word => word.length>7 && word[0]==='A')
+  return findWords;
 }
 
 // let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
