@@ -9,7 +9,9 @@
 let statement = "I do not like programming";
 
 let result = "";
-
+let wordToRemove ="not"
+let index = statement.indexOf(wordToRemove);
+result = statement.substring(0, index) + statement.substring(index + wordToRemove.length);
 console.log(result);
 
 /* EXPECTED OUTPUT 

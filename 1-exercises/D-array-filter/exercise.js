@@ -8,7 +8,15 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
+let pairsByIndex = [];
+for (let i = 0; i < pairsByIndexRaw.length; i++) {
+  let indexes = pairsByIndexRaw[i];
+
+  if (Array.isArray(indexes) && indexes.length === 2) {
+    pairsByIndex.push(indexes);
+  }
+}
+
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

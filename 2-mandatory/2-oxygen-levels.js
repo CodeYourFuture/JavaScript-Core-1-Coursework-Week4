@@ -11,8 +11,19 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
 
+function findSafeOxygenLevel(oxygenLevels) {
+    let filteredLevels = oxygenLevels.filter(function (item) {
+      return (
+        !isNaN(parseFloat(item)) &&
+        parseFloat(item) > 19.5 &&
+        parseFloat(item) < 23.5
+      );
+    });
+
+    return filteredLevels[0];
+  }
+  
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

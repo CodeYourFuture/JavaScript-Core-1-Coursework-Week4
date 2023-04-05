@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  return voyagers.filter((person) => {
+    return (
+      typeof person === "string" &&
+      person.startsWith("A") &&
+      person.endsWith("family")
+    );
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

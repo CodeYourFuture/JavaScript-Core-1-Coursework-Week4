@@ -6,7 +6,22 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+    return streetNames.filter((name) => {
+    return typeof name === "string" && 
+    name.includes("Lane");
+  });
+}
+
+// function getSettlers(voyagers) {
+//   return voyagers.filter((person) => {
+//     return (
+//       typeof person === "string" &&
+//       person.startsWith("A") &&
+//       person.endsWith("family")
+//     );
+//   });
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
