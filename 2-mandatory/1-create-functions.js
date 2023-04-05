@@ -51,6 +51,7 @@ Write a function that:
 */
 
 function formatPercentage() {
+  
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
