@@ -13,18 +13,17 @@
 
 
 function findSafeOxygenLevel(oxygenLevels) {
-  let filteredLevels = oxygenLevels.filter(function(item) {
-    return (
-      !isNaN(parseFloat(item)) && 
-      parseFloat(item) > 19.5 &&
-      parseFloat(item) < 23.5
-    );
-  });
-  
-  // return filteredLevels.length === 1 ? filteredLevels[0] : filteredLevels.length > 1 ? filteredLevels : undefined;
-return filteredLevels;
-}
+    let filteredLevels = oxygenLevels.filter(function (item) {
+      return (
+        !isNaN(parseFloat(item)) &&
+        parseFloat(item) > 19.5 &&
+        parseFloat(item) < 23.5
+      );
+    });
 
+    return filteredLevels[0];
+  }
+  
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {
