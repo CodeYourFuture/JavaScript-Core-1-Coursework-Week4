@@ -15,7 +15,20 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyager) {
+  return voyager.filter((word) => {
+    if (word.includes("family") && word.startsWith("A")) {
+      return word;
+    }
+  });
+
+  // const findedWords = voyager.find(
+  //   (word) => { if (word.includes("family") && word.startsWith("A")){
+  //     return word;
+  //   }
+  // );
+  // return findedWords;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
