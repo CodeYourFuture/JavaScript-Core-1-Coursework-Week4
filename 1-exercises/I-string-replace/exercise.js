@@ -13,8 +13,16 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let ObjOfReplacesWords = {
+  dogs: "cats",
+  10: "100000",
+  great: "brilliant",
+  day: "night",
+};
 
+let result = story.replace(/dogs|10|great|day/gi, function (matched) {
+  return ObjOfReplacesWords[matched];
+});
 /* EXPECTED OUTPUT */
 
 const util = require("util");

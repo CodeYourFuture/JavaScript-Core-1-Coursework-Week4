@@ -15,8 +15,19 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  return arr.filter((element) => 
+  element.includes("family")
+   && element.charAt(0) === "A" 
+  // && element.split(' ')[0].length > 1 
+  )
+}
 
+// getSettlers([
+//   "Archer family",
+//   "Just A. family",
+//   "A Great family",
+// ])
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {
