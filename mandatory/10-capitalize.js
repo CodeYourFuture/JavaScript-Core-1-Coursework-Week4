@@ -15,14 +15,14 @@ To run the tests for just this one file, type `npm test -- --testPathPattern 10-
 ===================================================
 */
 
-test("Capitalize works - case 1", () => {
+test("capitalize works - case 1", () => {
   expect(capitalize("hello")).toEqual("Hello");
 });
 
-test("Capitalize works - case 2", () => {
+test("capitalize works - case 2", () => {
   expect(capitalize("daniel")).toEqual("Daniel");
 });
 
-test("Capitalize works - case 2", () => {
+test("capitalize works - case 3", () => {
   expect(capitalize("ivina")).toEqual("Ivina");
 });
