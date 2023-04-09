@@ -17,7 +17,7 @@ To run the tests for just this one file, type `npm test -- --testPathPattern 2-o
 ===================================================
 */
 
-TestScheduler("volunteersAndTrainees works", () => {
+test("volunteersAndTrainees works", () => {
   let volunteers = ["Daniel", "Irina", "Rares"];
   let trainees = ["Rukmini", "Abdul", "Austine", "Swathi"];
 
