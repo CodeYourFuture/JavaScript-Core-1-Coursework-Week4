@@ -15,8 +15,17 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
 
+ let array=[];
+ let array1= [ array+"family" , "family"];
+ for(let familyName of voyagers){
+  if(familyName.split(' ').slice(-1).join(' ') && familyName[0] === "A"){
+  array.push(familyName)}
+}
+
+return array1;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

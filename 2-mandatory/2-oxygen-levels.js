@@ -10,17 +10,15 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
-
-function findSafeOxygenLevel(array) {
-
-   array.find((element) => {
-    return (
-      Number(element.replace("%", "")) > 19.5 &&
-      Number(element.replace("%", "")) < 23.5
-    );
-  });
-
+let oxegenLevel= [];
+function findSafeOxygenLevel(result) {
+  if(value > 19.5 && value < 23.5)
+  return result === "%", " . ";
 }
+
+//let array=[value];
+ //return array.find((value) => value > 19.5 , "%" && value < 23.5 , "%");
+
 
   
 
