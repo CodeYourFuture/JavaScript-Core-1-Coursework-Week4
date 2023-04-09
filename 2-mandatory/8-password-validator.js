@@ -50,9 +50,6 @@ function validatePasswords(passwords) {
 
 
 
-
-
-
 // Returns true if string has at least 5 characters
 function containsAtLeast5Chars(string) {
   return string.length >= 5;
