@@ -23,15 +23,48 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+
+const arr = ["fhD8!yrjj", "ttkT", "dvyy", "ttkT", "qwbfj76%", "tytT3729."];
+
+function validatePasswords(passwords) {
+  const result = [];
+  for (let i = 0; i < passwords.length; i++) {
+    const check1 = containsAtLeast5Chars(passwords[i]);
+    const check2 = containsUppercaseLetter(passwords[i]);
+    const check3 = containsLowercaseLetter(passwords[i]);
+    const check4 = containsNumber(passwords[i]);
+    const check5 = containsSymbol(passwords[i]);
+    let isNotRepeatedPassword = true;
+    for (let j = 0; j < i; j++) {
+      if (passwords[j] === passwords[i]) {
+        isNotRepeatedPassword = false;
+      }
+    }
+    result.push(
+      check1 && check2 && check3 && check4 && check5 && isNotRepeatedPassword
+    );
+  }
+  return result;
+}
+
+
+
+
+
+
+
+// Returns true if string has at least 5 characters
+function containsAtLeast5Chars(string) {
+  return string.length >= 5;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
-
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
+  
   return /[a-z]/.test(string);
 }
 
