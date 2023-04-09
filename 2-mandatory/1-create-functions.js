@@ -40,6 +40,7 @@ function tidyUpString(array) {
 
 }
 
+
 /*
 Write a function that:
 - Takes an array and an index as input.
