@@ -16,7 +16,8 @@ let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 function isNull(input){
-  return input === null};
+  return input === null
+};
 
 if (pairsByIndex.some(isNull)){return console.log("There is an error");}
 let pairs = pairsByIndex.map(function (indexes) {
