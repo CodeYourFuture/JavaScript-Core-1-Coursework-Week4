@@ -6,8 +6,16 @@
   For example, capitailise("hello") should return "Hello"
   Tip: use the string method .split() and the array method .join()
 */
+//******
+//originanl: 
+//function capitalise(str) {}
+//*******
 
-function capitalise(str) {}
+function capitalise(str){
+let uppercase = str.split("");
+uppercase[0] = uppercase[0].toUpperCase();
+return uppercase.join("");
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE
