@@ -11,7 +11,14 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(planets) {
+  for (let i = 0; i < planets.length; i++) {
+    let oxygenLevels = parseFloat(planets[i].replace('%', ''));
+    if (oxygenLevels >= 19.5 && oxygenLevels <= 23.5) {
+      return oxygenLevels;
+    }
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
