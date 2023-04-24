@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(settledFamily) {
+  //We will filter the array to only include strings that start with "A" and end with "family"
+  const settlers = settledFamily.filter(str => str.startsWith('A') && str.endsWith('family'));
+  return settlers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
