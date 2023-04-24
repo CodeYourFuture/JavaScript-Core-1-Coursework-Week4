@@ -13,9 +13,9 @@
 
 function findSafeOxygenLevel(planets) {
   for (let i = 0; i < planets.length; i++) {
-    let oxygenLevels = parseFloat(planets[i].replace('%', ''));
-    if (oxygenLevels >= 19.5 && oxygenLevels <= 23.5) {
-      return oxygenLevels;
+    let oxygenLevel = parseFloat(planets[i].replace('%', ''));
+    if (!isNaN(oxygenLevel) && oxygenLevel >= 19.5 && oxygenLevel <= 23.5) {
+      return planets[i];
     }
   }
 }
