@@ -14,8 +14,15 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+//in planet "Alpha" the families who start whit A should stay the others will search for
+//other planets
+//Create a function that returns an array of colonisers.
+//hint empieza por A y debe de contener la palabra family al final
 
-function getSettlers() {}
+function getSettlers(voyager) {
+  return  voyager.includes("family") && voyagers[0] == "A";
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

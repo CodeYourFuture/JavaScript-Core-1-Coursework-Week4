@@ -5,8 +5,8 @@
 let students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 let group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-let groupIsOnlyStudents = group.every(any);{
-return students.includes(any);
+let groupIsOnlyStudents = group.every(students);{
+return students.includes(students);
 }
 console.log(groupIsOnlyStudents);
 
