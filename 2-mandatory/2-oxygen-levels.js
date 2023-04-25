@@ -11,7 +11,22 @@
     Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+ 
+
+function findSafeOxygenLevel(planets) {
+  for (let i = 0; i < planets.length; i++) {
+    const string = planets[i];
+    if (string.includes('%')) {
+      const number = string.replace("%", "");
+      const oxigenLevel = Number(number);
+      if (oxigenLevel > 19.5 && oxigenLevel < 23.5 ){
+        return number + '%'
+      
+      }
+    }
+  }
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -5,6 +5,7 @@
 
 // write your code here
 
+
 let names = [
   "Rakesh",
   "Antonio",
@@ -16,6 +17,14 @@ let names = [
   "Karim",
   "Ahmed",
 ];
+
+function isLongNameAndStartsWithA(name) {
+  return name.length > 7 && name[0] == "A";
+}
+function findLongNameThatStartsWithA(names){
+  return names.find(isLongNameAndStartsWithA);
+
+}
 
 let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 

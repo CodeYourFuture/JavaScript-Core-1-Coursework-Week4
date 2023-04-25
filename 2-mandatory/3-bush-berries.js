@@ -20,10 +20,23 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
+//pink berries only safe to eat
+//other berries not safe to eat
+//Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
+//Use the tests to confirm which message to return
 
 function isBushSafe(berryArray) {
+  //for (let safeBerries = pink; index = berryArray;) {
+    const safeBerries = berryArray.filter ((pink) => pink).sort();
+    return safeBerries;
+    
+  }
   //Write your code here
-}
+//for (let index = 0; index < array.length; index++) {
+  //const element = array[index];
+  
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -6,9 +6,9 @@
 
 let statement = "I like programming and dogs";
 
-statement = statement.substring();
+let newStatement = statement.substring(0, 19);
 
-console.log(statement);
+console.log(newStatement);
 
 /* EXPECTED OUTPUT 
 
