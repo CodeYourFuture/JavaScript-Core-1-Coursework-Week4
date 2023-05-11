@@ -23,13 +23,57 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  /*   let result = [];
+  for (let i = 0; i < passwords.length; i++) {
+    if (
+      containsLowercaseLetter(passwords[i]) &&
+      containsUppercaseLetter(passwords[i]) &&
+      containsNumber(passwords[i]) &&
+      containsSymbol(passwords[i]) &&
+      passwords[i].length >= 5
+    ) {
+      if (result.indexOf(passwords[i]) === -1) {
+        result.push(true);
+      } else {
+        result.push(false);
+      }
+    } else {
+      result.push(false);
+    }
+  }
+  return result; */
+  let result = [];
+  let seenPasswords = []; // create a new array to keep track of seen passwords
+  for (let i = 0; i < passwords.length; i++) {
+    if (
+      containsLowercaseLetter(passwords[i]) &&
+      containsUppercaseLetter(passwords[i]) &&
+      containsNumber(passwords[i]) &&
+      containsSymbol(passwords[i]) &&
+      passwords[i].length >= 5
+    ) {
+      if (seenPasswords.indexOf(passwords[i]) === -1) {
+        result.push(true);
+        seenPasswords.push(passwords[i]); // add current password to seen passwords array
+      } else {
+        result.push(false);
+      }
+    } else {
+      result.push(false);
+    }
+  }
+  return result;
+}
+console.log(
+  validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"])
+);
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
 }
-
+//console.log(containsUppercaseLetter("yUhbsdj"));
 // Returns true if string contains at least one lowercase letter.
 function containsLowercaseLetter(string) {
   return /[a-z]/.test(string);
@@ -44,7 +88,7 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
-
+console.log(containsSymbol);
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Example 1", () => {
