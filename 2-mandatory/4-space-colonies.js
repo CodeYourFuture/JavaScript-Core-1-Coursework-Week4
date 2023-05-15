@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(colonisers) 
+{ const settlers = colonisers.filter(coloniser => {
+  return coloniser.startsWith('A') && coloniser.endsWith('family');
+});
+
+return settlers;}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
