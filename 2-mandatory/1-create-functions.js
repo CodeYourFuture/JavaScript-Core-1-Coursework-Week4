@@ -4,15 +4,32 @@ Write a function that:
 - Returns a new array containing the first five elements of the passed array.
 */
 function first5() {
-}
 
+  return arr.slice(0, 5);
+}
+const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const firstFive = first5(myArray); // returns [1, 2, 3, 4, 5]
+// This code defines a function first5() that takes no arguments and returns the first five elements of an array
+// slice method to extract a new array containing the first five elements of the original array. The slice method takes two arguments: 
+// the starting index and the ending index (exclusive), so we're passing 0 as the starting index and 5 as the ending index.
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(arr) {
+  return arr.slice().sort();
 }
+// the function sortArray accepts an array as a parameter named arr.
+
+// The slice() method is called on the arr array to create a shallow copy of the array. This is done to avoid modifying the original array when calling the sort() method.
+
+// The sort() method is then called on the copied array to sort its elements in ascending order. The method modifies the copied array and returns the sorted array.
+
+// The sorted array is then returned by the function.
+
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,7 +41,20 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+// function tidyUpString() {
+// }
+function tidyUpString(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let str = arr[i];
+    str = str.trim();
+    str = str.replace(/\//g, '');
+    str = str.toLowerCase();
+    result.push(str);
+  }
+
+  return result;
 }
 
 /*
@@ -33,7 +63,17 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+
+function remove(arr, index) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== index) {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
 }
 
 /*
@@ -44,7 +84,11 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numbers) {
+  return numbers.map(num => {
+    num = Math.min(num, 100);
+    return `${(Math.round(num * 100) / 100).toFixed(2)}%`;
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
