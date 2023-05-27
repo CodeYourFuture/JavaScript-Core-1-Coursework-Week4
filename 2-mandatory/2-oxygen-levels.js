@@ -10,8 +10,12 @@
 
     Some string methods that might help you here are .replace() and .substring().
 */
-
-function findSafeOxygenLevel() {}
+function isSafeOxygenLevel(oxygenLevel){
+  return parseFloat(oxygenLevel)>19.5 && parseFloat(oxygenLevel)<23.5;
+}
+function findSafeOxygenLevel(oxygenLevels) {
+  return oxygenLevels.find(isSafeOxygenLevel);
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
