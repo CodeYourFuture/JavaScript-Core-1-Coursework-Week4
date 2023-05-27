@@ -1,3 +1,4 @@
+
 /*
   The space travellers have safely landed and are foraging for food in the natural wildlife.
 
@@ -24,6 +25,12 @@
 function isBushSafe(berryArray) {
   //Write your code here
 }
+
+/*if (isVegetarian) {
+  return "Macaroni and Cheese";
+} else {
+  return "Steak and Chips";
+}*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -8,10 +8,16 @@
 
 let pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex; // Complete this statement
 
 let students = ["Islam", "Lesley", "Harun", "Rukmini"];
 let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+
+let pairsByIndex = pairsByIndexRaw.filter(function(pair){
+  return Array.isArray(pair) && pair.length === 2 && typeof pair[0] === "number" && typeof pair[1] === "number" && pair[0] < students.length && pair[1] < mentors.length;
+}); // Complete this statement
+
+// let students = ["Islam", "Lesley", "Harun", "Rukmini"];
+// let mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 let pairs = pairsByIndex.map(function (indexes) {
   let student = students[indexes[0]];
