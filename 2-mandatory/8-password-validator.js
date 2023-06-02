@@ -22,8 +22,43 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const passwordSet = new Set();
+  return passwords.map(password => {
+    if (password.length < 5) {
+      return false;
+    }
+    let hasUppercaseLetter = false;
+    let hasLowercaseLetter = false;
+    let hasNumber = false;
+    let hasSymbol = false;
+    for (let i = 0; i < password.length; i++) {
+      const char = password.charAt(i);
+      switch (true) {
+        case /[A-Z]/.test(char):
+          hasUppercaseLetter = true;
+          break;
+        case /[a-z]/.test(char):
+          hasLowercaseLetter = true;
+          break;
+        case /[0-9]/.test(char):
+          hasNumber = true;
+          break;
+        case /[!#$%.*&]/.test(char):
+          hasSymbol = true;
+          break;
+      }
+    }
+    if (!hasUppercaseLetter || !hasLowercaseLetter || !hasNumber || !hasSymbol) {
+      return false;
+    }
+    if (passwordSet.has(password)) {
+      return false;
+    }
+    passwordSet.add(password);
+    return true;
+  });
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
