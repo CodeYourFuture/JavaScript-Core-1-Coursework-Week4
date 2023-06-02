@@ -22,7 +22,13 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  const hasToxicBerries = berryArray.some((berry) => berry !== 'pink');
+
+  if (hasToxicBerries) {
+    return 'Toxic! Leave bush alone!';
+  } else {
+    return 'Bush is safe to eat from';
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
