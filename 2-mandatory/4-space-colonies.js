@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  return families.filter(family => {
+    if (typeof family === 'string') {
+      const trimmedFamily = family.trim();
+      //return trimmedFamily.startsWith('A') && trimmedFamily.endsWith('family');})
+      return trimmedFamily[0] === 'A' && trimmedFamily.slice(-6) === 'family'
+    }
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
